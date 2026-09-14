@@ -1,0 +1,412 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://momentive-bi-digest.invalid/contracts/RunManifest.schema.json",
+  "title": "RunManifest",
+  "description": "Written at runs/<run_id>/manifest.json at the end of every run. Counts are derived from the audit log by digest.audit.summary, so the manifest and the log can never disagree. usage.by_stage stage names are the fixed ten. stability is only computed when a reference run is supplied.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "type": "string",
+      "description": "Contract version of this document. Bump minor for an additive change, major for a breaking one."
+    },
+    "run_id": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}Z$"
+    },
+    "run_type": {
+      "type": "string",
+      "enum": [
+        "ingest",
+        "build",
+        "eval",
+        "ask",
+        "approve",
+        "demo"
+      ]
+    },
+    "week": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^\\d{4}-W\\d{2}$"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "replay",
+        "live",
+        "record"
+      ]
+    },
+    "started_at": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?(Z|[+-]\\d{2}:\\d{2})$"
+    },
+    "finished_at": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?(Z|[+-]\\d{2}:\\d{2})$"
+    },
+    "counts": {
+      "type": "object",
+      "properties": {
+        "sources_listed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "sources_read": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "sources_skipped": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Listed but not ingested, for example an unresolvable account."
+        },
+        "comments_withheld": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "IsPublished = false comments the query never returned."
+        },
+        "pii_redactions": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Total placeholder substitutions across every scrubbed turn."
+        },
+        "claims_extracted": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "claims_verified": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "claims_rejected": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "themes_appended": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "themes_opened": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "themes_quiet": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "themes_stale": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "proposals_written": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "issues_filed": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "sources_listed",
+        "sources_read",
+        "sources_skipped",
+        "comments_withheld",
+        "pii_redactions",
+        "claims_extracted",
+        "claims_verified",
+        "claims_rejected",
+        "themes_appended",
+        "themes_opened",
+        "themes_quiet",
+        "themes_stale",
+        "proposals_written",
+        "issues_filed"
+      ],
+      "additionalProperties": false
+    },
+    "rejected_by_reason": {
+      "type": "object",
+      "properties": {
+        "schema_invalid": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "citation_unresolved": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "speaker_not_client": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "duplicate": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "window_violation": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "schema_invalid",
+        "citation_unresolved",
+        "speaker_not_client",
+        "duplicate",
+        "window_violation"
+      ],
+      "additionalProperties": false
+    },
+    "pii_redactions_by_kind": {
+      "type": "object",
+      "properties": {
+        "EMAIL": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "PHONE": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "ADDRESS": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "NAME": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "EMAIL",
+        "PHONE",
+        "ADDRESS",
+        "NAME"
+      ],
+      "additionalProperties": false
+    },
+    "usage": {
+      "type": "object",
+      "properties": {
+        "by_stage": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "stage": {
+                "type": "string",
+                "enum": [
+                  "connect",
+                  "scrub",
+                  "extract",
+                  "verify",
+                  "enrich",
+                  "edit",
+                  "score",
+                  "render",
+                  "store",
+                  "propose"
+                ],
+                "description": "One of the fixed ten stage names."
+              },
+              "calls": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "tokens_in": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "tokens_out": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "cache_read": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "cache_write": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "cost_usd": {
+                "type": "number",
+                "minimum": 0
+              }
+            },
+            "required": [
+              "stage",
+              "calls",
+              "tokens_in",
+              "tokens_out",
+              "cache_read",
+              "cache_write",
+              "cost_usd"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0
+        },
+        "by_tier": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "tier": {
+                "type": "string",
+                "enum": [
+                  "extraction",
+                  "synthesis",
+                  "narrative"
+                ],
+                "description": "One of the three tier names."
+              },
+              "calls": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "tokens_in": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "tokens_out": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "cache_read": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "cache_write": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "cost_usd": {
+                "type": "number",
+                "minimum": 0
+              }
+            },
+            "required": [
+              "tier",
+              "calls",
+              "tokens_in",
+              "tokens_out",
+              "cache_read",
+              "cache_write",
+              "cost_usd"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0
+        },
+        "total": {
+          "type": "object",
+          "properties": {
+            "calls": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "tokens_in": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "tokens_out": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "cache_read": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "cache_write": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "cost_usd": {
+              "type": "number",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "calls",
+            "tokens_in",
+            "tokens_out",
+            "cache_read",
+            "cache_write",
+            "cost_usd"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "by_stage",
+        "by_tier",
+        "total"
+      ],
+      "additionalProperties": false
+    },
+    "stability": {
+      "type": "object",
+      "properties": {
+        "computed": {
+          "type": "boolean"
+        },
+        "jaccard": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Jaccard overlap of claim to theme assignment against compared_run_id."
+        },
+        "top3_stable": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "compared_run_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}Z$"
+        }
+      },
+      "required": [
+        "computed",
+        "jaccard",
+        "top3_stable",
+        "compared_run_id"
+      ],
+      "additionalProperties": false
+    },
+    "exit_code": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 255
+    }
+  },
+  "required": [
+    "schema_version",
+    "run_id",
+    "run_type",
+    "week",
+    "mode",
+    "started_at",
+    "finished_at",
+    "counts",
+    "rejected_by_reason",
+    "pii_redactions_by_kind",
+    "usage",
+    "stability",
+    "exit_code"
+  ],
+  "additionalProperties": false
+}

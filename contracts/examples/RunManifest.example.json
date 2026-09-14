@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-14T07:00Z",
+  "run_type": "build",
+  "week": "2026-W37",
+  "mode": "replay",
+  "started_at": "2026-09-14T07:00:00Z",
+  "finished_at": "2026-09-14T07:02:41.004Z",
+  "counts": {
+    "sources_listed": 25,
+    "sources_read": 25,
+    "sources_skipped": 0,
+    "comments_withheld": 4,
+    "pii_redactions": 11,
+    "claims_extracted": 61,
+    "claims_verified": 57,
+    "claims_rejected": 4,
+    "themes_appended": 0,
+    "themes_opened": 8,
+    "themes_quiet": 0,
+    "themes_stale": 0,
+    "proposals_written": 3,
+    "issues_filed": 0
+  },
+  "rejected_by_reason": {
+    "schema_invalid": 1,
+    "citation_unresolved": 2,
+    "speaker_not_client": 1,
+    "duplicate": 0,
+    "window_violation": 0
+  },
+  "pii_redactions_by_kind": {
+    "EMAIL": 4,
+    "PHONE": 3,
+    "ADDRESS": 1,
+    "NAME": 3
+  },
+  "usage": {
+    "by_stage": [
+      {
+        "stage": "extract",
+        "calls": 25,
+        "tokens_in": 79400,
+        "tokens_out": 10120,
+        "cache_read": 0,
+        "cache_write": 0,
+        "cost_usd": 0.13
+      },
+      {
+        "stage": "edit",
+        "calls": 2,
+        "tokens_in": 41200,
+        "tokens_out": 6100,
+        "cache_read": 0,
+        "cache_write": 0,
+        "cost_usd": 0.3585
+      }
+    ],
+    "by_tier": [
+      {
+        "tier": "extraction",
+        "calls": 25,
+        "tokens_in": 79400,
+        "tokens_out": 10120,
+        "cache_read": 0,
+        "cache_write": 0,
+        "cost_usd": 0.13
+      },
+      {
+        "tier": "synthesis",
+        "calls": 2,
+        "tokens_in": 41200,
+        "tokens_out": 6100,
+        "cache_read": 0,
+        "cache_write": 0,
+        "cost_usd": 0.3585
+      }
+    ],
+    "total": {
+      "calls": 27,
+      "tokens_in": 120600,
+      "tokens_out": 16220,
+      "cache_read": 0,
+      "cache_write": 0,
+      "cost_usd": 0.4885
+    }
+  },
+  "stability": {
+    "computed": true,
+    "jaccard": 1.0,
+    "top3_stable": true,
+    "compared_run_id": "2026-09-14T07:00Z"
+  },
+  "exit_code": 0
+}

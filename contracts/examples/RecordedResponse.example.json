@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0.0",
+  "key": "d54eb475feac9e4b",
+  "recorded_at": "2026-09-08T06:04:11.512Z",
+  "request": {
+    "tier": "extraction",
+    "agent": "gong_reader",
+    "schema_name": "ReaderOutput",
+    "system": "You are gong_reader.",
+    "user": "CALL 7782934451002",
+    "attempt": 1
+  },
+  "result": {
+    "data": {
+      "schema_version": "1.0.0",
+      "source": "gong",
+      "source_id": "7782934451002",
+      "claims": [
+        {
+          "source": "gong",
+          "source_ref": {
+            "call_id": "7782934451002",
+            "speaker_id": "4521",
+            "start_ms": 418000,
+            "end_ms": 437000
+          },
+          "verbatim": "Our renewal invoice came through with the full annual amount and there is no line anywhere showing the dues we already paid in March.",
+          "paraphrase": "Renewal invoices do not show the dues already paid earlier in the year.",
+          "topic": "renewal invoice credit",
+          "product_area": "membership",
+          "claim_type": "support_issue",
+          "importance": "high",
+          "importance_reason": "Finance has to correct every renewal invoice by hand before it goes out."
+        }
+      ],
+      "no_claims_reason": null
+    },
+    "model_id": "claude-haiku-4-5",
+    "tier": "extraction",
+    "tokens_in": 3184,
+    "tokens_out": 412,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_usd": 0.005244,
+    "prompt_hash": "80ab0b6e75c1789d",
+    "provider": "agent_sdk_seat",
+    "raw_text": "{\"schema_version\": \"1.0.0\", \"source\": \"gong\", \"source_id\": \"7782934451002\", \"claims\": [{\"source\": \"gong\", \"source_ref\": {\"call_id\": \"7782934451002\", \"speaker_id\": \"4521\", \"start_ms\": 418000, \"end_ms\": 437000}, \"verbatim\": \"Our renewal invoice came through with the full annual amount and there is no line anywhere showing the dues we already paid in March.\", \"paraphrase\": \"Renewal invoices do not show the dues already paid earlier in the year.\", \"topic\": \"renewal invoice credit\", \"product_area\": \"membership\", \"claim_type\": \"support_issue\", \"importance\": \"high\", \"importance_reason\": \"Finance has to correct every renewal invoice by hand before it goes out.\"}], \"no_claims_reason\": null}",
+    "replayed": false
+  }
+}

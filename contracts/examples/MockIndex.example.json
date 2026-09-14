@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-09-14T09:12:00Z",
+  "seed": 20260914,
+  "entries": [
+    {
+      "path": "gong/calls/7782934451002.json",
+      "kind": "gong_call",
+      "id": "7782934451002",
+      "account_id": "ACC-0001",
+      "occurred_at": "2026-09-08T15:00:00Z",
+      "day": "2026-09-08",
+      "week": "2026-W37",
+      "theme_key": "renewal_invoice_credit",
+      "trap": false
+    },
+    {
+      "path": "traps/salesforce/cases/5008W00002aQpLrQAK.json",
+      "kind": "sfdc_case",
+      "id": "5008W00002aQpLrQAK",
+      "account_id": "ACC-0003",
+      "occurred_at": "2026-09-10T13:58:41Z",
+      "day": "2026-09-10",
+      "week": "2026-W37",
+      "theme_key": "renewal_invoice_credit",
+      "trap": true
+    }
+  ]
+}

@@ -1,0 +1,301 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://momentive-bi-digest.invalid/contracts/EditorProposal.schema.json",
+  "title": "EditorProposal",
+  "description": "Everything the editor proposes for one weekly build. It is a proposal: code performs every write. Five cross checks code runs after schema validation, in this order, each a hard rejection with exit code 2: (1) every decisions[].claim_id is one of this run's verified claim ids; (2) every existing THEME-nnnn referenced anywhere exists in themes/_INDEX.md; (3) every NEW-n placeholder referenced anywhere is defined exactly once in new_themes; (4) every digest.sections[].evidence_claim_ids entry is one of this run's verified claim ids and its claim was assigned by decisions to that same theme or placeholder; (5) every decisions[].theme_id with action open is a NEW-n placeholder and every one with action append is an existing THEME-nnnn. Placeholders are numbered from NEW-1 upward and code assigns real theme ids in that numeric order.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "type": "string",
+      "description": "Contract version of this document. Bump minor for an additive change, major for a breaking one."
+    },
+    "run_id": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}Z$"
+    },
+    "week": {
+      "type": "string",
+      "pattern": "^\\d{4}-W\\d{2}$"
+    },
+    "decisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "claim_id": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{12}$"
+          },
+          "action": {
+            "type": "string",
+            "enum": [
+              "append",
+              "open"
+            ]
+          },
+          "theme_id": {
+            "type": "string",
+            "pattern": "^(THEME-\\d{4}|NEW-[1-9]\\d*)$",
+            "description": "An existing THEME-nnnn from the index, or a NEW-n placeholder defined in new_themes."
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 300
+          }
+        },
+        "required": [
+          "claim_id",
+          "action",
+          "theme_id",
+          "reason"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0,
+      "maxItems": 500
+    },
+    "new_themes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "placeholder": {
+            "type": "string",
+            "pattern": "^NEW-[1-9]\\d*$"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "aliases": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 80
+            },
+            "minItems": 0,
+            "maxItems": 20,
+            "uniqueItems": true
+          },
+          "product_area": {
+            "type": "string",
+            "enum": [
+              "membership",
+              "events",
+              "fundraising",
+              "lms",
+              "jobs",
+              "accounting",
+              "integrations",
+              "reporting"
+            ]
+          },
+          "rationale_seed": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 400
+          }
+        },
+        "required": [
+          "placeholder",
+          "title",
+          "aliases",
+          "product_area",
+          "rationale_seed"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0,
+      "maxItems": 25
+    },
+    "theme_rationales": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "theme_id_or_placeholder": {
+            "type": "string",
+            "pattern": "^(THEME-\\d{4}|NEW-[1-9]\\d*)$",
+            "description": "An existing THEME-nnnn from the index, or a NEW-n placeholder defined in new_themes."
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 900
+          }
+        },
+        "required": [
+          "theme_id_or_placeholder",
+          "rationale"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0,
+      "maxItems": 60
+    },
+    "digest": {
+      "type": "object",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1200
+        },
+        "sections": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "theme_id_or_placeholder": {
+                "type": "string",
+                "pattern": "^(THEME-\\d{4}|NEW-[1-9]\\d*)$",
+                "description": "An existing THEME-nnnn from the index, or a NEW-n placeholder defined in new_themes."
+              },
+              "heading": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "body": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1500
+              },
+              "evidence_claim_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{12}$"
+                },
+                "minItems": 1,
+                "maxItems": 50,
+                "uniqueItems": true
+              }
+            },
+            "required": [
+              "theme_id_or_placeholder",
+              "heading",
+              "body",
+              "evidence_claim_ids"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "maxItems": 40
+        },
+        "reconciliations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "theme_id_or_placeholder": {
+                "type": "string",
+                "pattern": "^(THEME-\\d{4}|NEW-[1-9]\\d*)$",
+                "description": "An existing THEME-nnnn from the index, or a NEW-n placeholder defined in new_themes."
+              },
+              "names": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 80
+                },
+                "minItems": 2,
+                "maxItems": 10,
+                "uniqueItems": true
+              },
+              "note": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 300
+              }
+            },
+            "required": [
+              "theme_id_or_placeholder",
+              "names",
+              "note"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "maxItems": 20
+        },
+        "quiet_or_stale_notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 300
+          },
+          "minItems": 0,
+          "maxItems": 20
+        }
+      },
+      "required": [
+        "headline",
+        "summary",
+        "sections",
+        "reconciliations",
+        "quiet_or_stale_notes"
+      ],
+      "additionalProperties": false
+    },
+    "file_proposals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "theme_id_or_placeholder": {
+            "type": "string",
+            "pattern": "^(THEME-\\d{4}|NEW-[1-9]\\d*)$",
+            "description": "An existing THEME-nnnn from the index, or a NEW-n placeholder defined in new_themes."
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "body": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 300
+          }
+        },
+        "required": [
+          "theme_id_or_placeholder",
+          "title",
+          "body",
+          "reason"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0,
+      "maxItems": 20
+    }
+  },
+  "required": [
+    "schema_version",
+    "run_id",
+    "week",
+    "decisions",
+    "new_themes",
+    "theme_rationales",
+    "digest",
+    "file_proposals"
+  ],
+  "additionalProperties": false
+}

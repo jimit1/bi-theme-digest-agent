@@ -1,0 +1,194 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://momentive-bi-digest.invalid/contracts/ReaderOutput.schema.json",
+  "title": "ReaderOutput",
+  "description": "What one reader agent returns for exactly ONE source document. The model fills only the ReaderClaim subset. The pipeline fills claim_id, run_id, captured_at, account_id, account_name, account_type, speaker_side, prompt_hash, model_tier and the code-owned parts of source_ref before a Claim exists. A reader that finds nothing returns an empty claims array and a no_claims_reason string. When claims is non-empty, no_claims_reason must be null.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "type": "string",
+      "description": "Contract version of this document. Bump minor for an additive change, major for a breaking one."
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "gong",
+        "salesforce"
+      ]
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40,
+      "description": "Gong call id or Salesforce Case Id. Must equal the source document the reader was given."
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/ReaderClaim"
+      },
+      "minItems": 0,
+      "maxItems": 40
+    },
+    "no_claims_reason": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 300
+    }
+  },
+  "required": [
+    "schema_version",
+    "source",
+    "source_id",
+    "claims",
+    "no_claims_reason"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "GongSourceRefModel": {
+      "type": "object",
+      "properties": {
+        "call_id": {
+          "type": "string",
+          "pattern": "^\\d{6,20}$",
+          "description": "Gong call id, digits, as returned by the API."
+        },
+        "speaker_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "description": "Gong speakerId of the cited monologue block."
+        },
+        "start_ms": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Start of the cited turn in the source system native unit, milliseconds."
+        },
+        "end_ms": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "End of the cited turn in milliseconds. Must be greater than or equal to start_ms."
+        }
+      },
+      "required": [
+        "call_id",
+        "speaker_id",
+        "start_ms",
+        "end_ms"
+      ],
+      "additionalProperties": false,
+      "description": "The Gong locator the reader model fills. Code adds speaker_name and affiliation."
+    },
+    "SalesforceSourceRefModel": {
+      "type": "object",
+      "properties": {
+        "case_id": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9]{15,18}$"
+        },
+        "comment_id": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9]{15,18}$",
+          "description": "CaseComment.Id of the cited comment."
+        }
+      },
+      "required": [
+        "case_id",
+        "comment_id"
+      ],
+      "additionalProperties": false,
+      "description": "The Salesforce locator the reader model fills. Code adds the rest."
+    },
+    "ReaderClaim": {
+      "type": "object",
+      "properties": {
+        "source": {
+          "type": "string",
+          "enum": [
+            "gong",
+            "salesforce"
+          ]
+        },
+        "source_ref": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/GongSourceRefModel"
+            },
+            {
+              "$ref": "#/$defs/SalesforceSourceRefModel"
+            }
+          ],
+          "description": "Copy the locator of the cited turn exactly as it was shown to you. Do not compute it."
+        },
+        "verbatim": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 600
+        },
+        "paraphrase": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "topic": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80
+        },
+        "product_area": {
+          "type": "string",
+          "enum": [
+            "membership",
+            "events",
+            "fundraising",
+            "lms",
+            "jobs",
+            "accounting",
+            "integrations",
+            "reporting"
+          ]
+        },
+        "claim_type": {
+          "type": "string",
+          "enum": [
+            "feature_request",
+            "support_issue",
+            "churn_risk",
+            "pricing",
+            "integration",
+            "praise"
+          ]
+        },
+        "importance": {
+          "type": "string",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        },
+        "importance_reason": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300
+        }
+      },
+      "required": [
+        "source",
+        "source_ref",
+        "verbatim",
+        "paraphrase",
+        "topic",
+        "product_area",
+        "claim_type",
+        "importance",
+        "importance_reason"
+      ],
+      "additionalProperties": false,
+      "description": "The model-facing subset of Claim. Exactly these nine fields, no others."
+    }
+  }
+}

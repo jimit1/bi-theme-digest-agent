@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0.0",
+  "totalSize": 1,
+  "done": true,
+  "records": [
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v62.0/sobjects/Case/5008W00002aQpLrQAK"
+      },
+      "Id": "5008W00002aQpLrQAK",
+      "CaseNumber": "00001042",
+      "AccountId": "0018W00002HkLmNQAV",
+      "Subject": "Renewal invoice missing prior dues credit",
+      "Status": "Working",
+      "Priority": "High",
+      "CreatedDate": "2026-09-10T13:58:41.000Z",
+      "ClosedDate": null
+    }
+  ],
+  "meta": {
+    "window": {
+      "from": "2026-09-10T00:00:00Z",
+      "to": "2026-09-10T23:59:59Z"
+    },
+    "rows_returned": 1,
+    "row_cap": 200,
+    "withheld_comment_count": 0,
+    "fields_allowlisted": [
+      "Id",
+      "CaseNumber",
+      "AccountId",
+      "Subject",
+      "Status",
+      "Priority",
+      "CreatedDate",
+      "ClosedDate"
+    ],
+    "soql": "SELECT Id, CaseNumber, AccountId, Subject, Status, Priority, CreatedDate, ClosedDate FROM Case WHERE CreatedDate >= 2026-09-10T00:00:00Z AND CreatedDate <= 2026-09-10T23:59:59Z ORDER BY CreatedDate ASC LIMIT 200"
+  }
+}

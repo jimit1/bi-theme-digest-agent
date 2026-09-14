@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0.0",
+  "ts": "2026-09-08T06:04:11.512Z",
+  "run_id": "2026-09-08T06:00Z",
+  "agent": "gong_reader",
+  "action": "call_model",
+  "stage": "extract",
+  "target": "gong:7782934451002",
+  "model_tier": "extraction",
+  "model_id": "claude-haiku-4-5",
+  "prompt_hash": "80ab0b6e75c1789d",
+  "tokens_in": 3184,
+  "tokens_out": 412,
+  "cache_read": 0,
+  "cache_write": 0,
+  "cost_usd": 0.005244,
+  "outcome": "ok",
+  "detail": {
+    "attempt": 1,
+    "turns": 1,
+    "replayed": true
+  }
+}

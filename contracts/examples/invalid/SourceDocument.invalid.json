@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "source": "gong",
+  "source_id": "7782934451002",
+  "title": "Great Lakes Museum Alliance quarterly check in",
+  "account_id": "ACC-0001",
+  "account_name": "Great Lakes Museum Alliance",
+  "occurred_at": "2026-09-08T15:00:00Z",
+  "doc_type": "call",
+  "ingest_run_id": "2026-09-08T06:00Z",
+  "scrubbed": false,
+  "pii_counts": {
+    "EMAIL": 1,
+    "PHONE": 0,
+    "ADDRESS": 0,
+    "NAME": 1
+  },
+  "participants": [
+    {
+      "id": "p-4521",
+      "name": "Dana Ruiz",
+      "side": "client",
+      "title": "Director of Membership"
+    },
+    {
+      "id": "p-1187",
+      "name": "Marcus Feld",
+      "side": "momentive",
+      "title": "Client Success Manager"
+    }
+  ],
+  "turns": [
+    {
+      "ref": {
+        "call_id": "7782934451002",
+        "speaker_id": "4521",
+        "speaker_name": "Dana Ruiz",
+        "affiliation": "External",
+        "start_ms": 418000,
+        "end_ms": 437000
+      },
+      "speaker_id": "4521",
+      "speaker_side": "client",
+      "text": "Our renewal invoice came through with the full annual amount and there is no line anywhere showing the dues we already paid in March. We raised it in March and it has happened on every renewal since.",
+      "sentences": [
+        {
+          "start_ms": 418000,
+          "end_ms": 430500,
+          "text": "Our renewal invoice came through with the full annual amount and there is no line anywhere showing the dues we already paid in March."
+        },
+        {
+          "start_ms": 430500,
+          "end_ms": 437000,
+          "text": "We raised it in March and it has happened on every renewal since."
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "withheld_comment_count": 0,
+    "turn_count": 1,
+    "soql": null
+  }
+}

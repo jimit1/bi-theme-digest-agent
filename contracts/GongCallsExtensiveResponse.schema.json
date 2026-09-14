@@ -1,0 +1,357 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://momentive-bi-digest.invalid/contracts/GongCallsExtensiveResponse.schema.json",
+  "title": "GongCallsExtensiveResponse",
+  "description": "Response of the gong_get_calls_extensive MCP tool, which mirrors POST /v2/calls/extensive plus the meta envelope. Only metaData and parties are returned, because the field allowlist asks for nothing else. parties[].affiliation is the field trap T4(c) depends on.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "type": "string",
+      "description": "Contract version of this document. Bump minor for an additive change, major for a breaking one."
+    },
+    "requestId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80
+    },
+    "records": {
+      "type": "object",
+      "properties": {
+        "totalRecords": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "currentPageSize": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "currentPageNumber": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "cursor": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 400,
+          "description": "Null on the last page. The real API omits the key entirely; an adapter must treat missing and null identically."
+        }
+      },
+      "required": [
+        "totalRecords",
+        "currentPageSize",
+        "currentPageNumber",
+        "cursor"
+      ],
+      "additionalProperties": false
+    },
+    "calls": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "metaData": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^\\d{6,20}$"
+              },
+              "url": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 500
+              },
+              "title": {
+                "type": "string",
+                "minLength": 0,
+                "maxLength": 300
+              },
+              "scheduled": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?(Z|[+-]\\d{2}:\\d{2})$"
+              },
+              "started": {
+                "type": "string",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?(Z|[+-]\\d{2}:\\d{2})$"
+              },
+              "duration": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Call length in whole seconds, as Gong returns it."
+              },
+              "primaryUserId": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 40
+              },
+              "direction": {
+                "type": "string",
+                "enum": [
+                  "Inbound",
+                  "Outbound",
+                  "Conference",
+                  "Unknown"
+                ]
+              },
+              "system": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 40
+              },
+              "scope": {
+                "type": "string",
+                "enum": [
+                  "Internal",
+                  "External",
+                  "Unknown"
+                ]
+              },
+              "media": {
+                "type": "string",
+                "enum": [
+                  "Video",
+                  "Audio"
+                ]
+              },
+              "language": {
+                "type": "string",
+                "minLength": 2,
+                "maxLength": 10
+              },
+              "workspaceId": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 40
+              },
+              "sdrDisposition": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 80
+              },
+              "clientUniqueId": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 80
+              },
+              "customData": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 2000
+              },
+              "purpose": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 200
+              },
+              "meetingUrl": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 500
+              },
+              "isPrivate": {
+                "type": "boolean"
+              },
+              "calendarEventId": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 120
+              }
+            },
+            "required": [
+              "id",
+              "url",
+              "title",
+              "scheduled",
+              "started",
+              "duration",
+              "primaryUserId",
+              "direction",
+              "system",
+              "scope",
+              "media",
+              "language",
+              "workspaceId",
+              "sdrDisposition",
+              "clientUniqueId",
+              "customData",
+              "purpose",
+              "meetingUrl",
+              "isPrivate",
+              "calendarEventId"
+            ],
+            "additionalProperties": false,
+            "description": "The Gong call metadata object, field for field as GET /v2/calls returns it."
+          },
+          "parties": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 40
+                },
+                "emailAddress": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "maxLength": 200
+                },
+                "name": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 120
+                },
+                "title": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "maxLength": 120
+                },
+                "userId": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "maxLength": 40,
+                  "description": "Gong user id. Null for an external party."
+                },
+                "speakerId": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "maxLength": 40,
+                  "description": "Null for a party who never spoke."
+                },
+                "context": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "description": "Gong CRM context entry. The mock always emits an empty array."
+                  },
+                  "minItems": 0
+                },
+                "affiliation": {
+                  "type": "string",
+                  "enum": [
+                    "Internal",
+                    "External",
+                    "Unknown"
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "emailAddress",
+                "name",
+                "title",
+                "userId",
+                "speakerId",
+                "context",
+                "affiliation"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1
+          }
+        },
+        "required": [
+          "metaData",
+          "parties"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0,
+      "maxItems": 200
+    },
+    "meta": {
+      "type": "object",
+      "properties": {
+        "window": {
+          "type": "object",
+          "properties": {
+            "from": {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?(Z|[+-]\\d{2}:\\d{2})$"
+            },
+            "to": {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?(Z|[+-]\\d{2}:\\d{2})$"
+            }
+          },
+          "required": [
+            "from",
+            "to"
+          ],
+          "additionalProperties": false
+        },
+        "rows_returned": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "row_cap": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "withheld_comment_count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "description": "Null for Gong, an integer for Salesforce."
+        },
+        "fields_allowlisted": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "window",
+        "rows_returned",
+        "row_cap",
+        "withheld_comment_count",
+        "fields_allowlisted"
+      ],
+      "additionalProperties": false,
+      "description": "MCP envelope metadata. Added by the mock server and dropped by a real API adapter."
+    }
+  },
+  "required": [
+    "schema_version",
+    "requestId",
+    "records",
+    "calls",
+    "meta"
+  ],
+  "additionalProperties": false
+}

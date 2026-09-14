@@ -1,0 +1,90 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-14T07:00Z",
+  "week": "2026-W37",
+  "decisions": [
+    {
+      "claim_id": "e7e3c117f5c5",
+      "action": "append",
+      "theme_id": "THEME-0003",
+      "reason": "Same failure as the existing theme: the renewal invoice shows no line for dues already paid."
+    },
+    {
+      "claim_id": "df11dfd159ae",
+      "action": "append",
+      "theme_id": "THEME-0003",
+      "reason": "Different wording, same failure. The manual finance adjustment is the same workaround."
+    },
+    {
+      "claim_id": "9f2b71c0a4de",
+      "action": "open",
+      "theme_id": "NEW-1",
+      "reason": "Single sign on provisioning has no existing theme and the index has no near alias for it."
+    }
+  ],
+  "new_themes": [
+    {
+      "placeholder": "NEW-1",
+      "title": "Single sign on provisioning drops staff role changes",
+      "aliases": [
+        "SSO provisioning",
+        "SCIM sync",
+        "role sync"
+      ],
+      "product_area": "integrations",
+      "rationale_seed": "Two staff role changes did not propagate from the identity provider, so people kept access they should have lost."
+    }
+  ],
+  "theme_rationales": [
+    {
+      "theme_id_or_placeholder": "THEME-0003",
+      "rationale": "Two customers, two vocabularies, one failure. Both end in a manual finance correction before an invoice can go out."
+    },
+    {
+      "theme_id_or_placeholder": "NEW-1",
+      "rationale": "New this week. Role changes made in the identity provider do not reach the membership records, which is an access control problem, not a convenience one."
+    }
+  ],
+  "digest": {
+    "headline": "Renewal invoice credit is now a two customer problem",
+    "summary": "The renewal invoice credit theme picked up a second customer this week, described in completely different language from the first. One new theme opened, on single sign on provisioning. Nothing went quiet.",
+    "sections": [
+      {
+        "theme_id_or_placeholder": "THEME-0003",
+        "heading": "Renewal invoices do not show prior dues credit",
+        "body": "Two customers now report that a renewal invoice arrives with the full annual amount and no line for dues already paid. Both correct it by hand before the invoice goes out.",
+        "evidence_claim_ids": [
+          "e7e3c117f5c5",
+          "df11dfd159ae"
+        ]
+      },
+      {
+        "theme_id_or_placeholder": "NEW-1",
+        "heading": "Single sign on provisioning drops staff role changes",
+        "body": "Role changes made in the identity provider did not reach the membership records.",
+        "evidence_claim_ids": [
+          "9f2b71c0a4de"
+        ]
+      }
+    ],
+    "reconciliations": [
+      {
+        "theme_id_or_placeholder": "THEME-0003",
+        "names": [
+          "dues proration",
+          "credit on renewal"
+        ],
+        "note": "Two product lineages use different names for the same credit line. Both are carried as aliases."
+      }
+    ],
+    "quiet_or_stale_notes": []
+  },
+  "file_proposals": [
+    {
+      "theme_id_or_placeholder": "THEME-0003",
+      "title": "Renewal invoices do not show prior dues credit",
+      "body": "Two customers, two independent reports, both ending in a manual finance correction. Evidence is listed in the theme file with the call second and case comment each claim came from.",
+      "reason": "Two distinct customers, both high importance, and a manual workaround in the finance path."
+    }
+  ]
+}

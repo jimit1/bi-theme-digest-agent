@@ -1,0 +1,218 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://momentive-bi-digest.invalid/contracts/Theme.schema.json",
+  "title": "Theme",
+  "description": "The YAML frontmatter of themes/<theme_id>.md. The markdown body below the frontmatter holds the human readable evidence list and is not part of this schema. run_id is the StoreFrontmatter field and always equals last_updated_run; both are present so one frontmatter reader serves every stored file. Verify horizon, stated once: stale is true when (build date minus last_verified) is greater than 14 days. status is quiet when score_inputs.recency_days is greater than 14 and status is not filed. stale_reason is null when stale is false. proposal_id is <week>/<theme_id> and is null until the editor proposes the theme. filed_issue_url is null until a human runs approve.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "type": "string",
+      "description": "Contract version of this document. Bump minor for an additive change, major for a breaking one."
+    },
+    "theme_id": {
+      "type": "string",
+      "pattern": "^THEME-\\d{4}$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200,
+      "description": "Must not contain a pipe character or a newline; the index line is a markdown table row."
+    },
+    "aliases": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 80
+      },
+      "minItems": 0,
+      "maxItems": 20,
+      "uniqueItems": true,
+      "description": "Other names the same capability or problem goes by. This is how the post-acquisition vocabulary problem is solved."
+    },
+    "product_area": {
+      "type": "string",
+      "enum": [
+        "membership",
+        "events",
+        "fundraising",
+        "lms",
+        "jobs",
+        "accounting",
+        "integrations",
+        "reporting"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "open",
+        "quiet",
+        "filed"
+      ]
+    },
+    "owner": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 60
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "synthesized",
+        "imported"
+      ]
+    },
+    "last_verified": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "run_id": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}Z$"
+    },
+    "created_run": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}Z$"
+    },
+    "last_updated_run": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}Z$"
+    },
+    "accounts": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^ACC-\\d{4}$"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{12}$"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "score": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "score_inputs": {
+      "type": "object",
+      "properties": {
+        "distinct_customers": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Count of distinct account_ids on this theme whose account_type is customer."
+        },
+        "distinct_prospects": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Count of distinct account_ids whose account_type is prospect."
+        },
+        "arr_sum": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Sum of arr_usd across the distinct customer accounts. Prospects contribute zero."
+        },
+        "open_cases": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Sum of open_case_count across the distinct customer accounts, capped at 4 by the formula."
+        },
+        "recency_days": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Whole days between as_of and the newest evidence claim date. Zero when evidence landed today."
+        },
+        "claim_count": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Length of theme.evidence."
+        },
+        "high_importance_count": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Count of evidence claims with importance high."
+        }
+      },
+      "required": [
+        "distinct_customers",
+        "distinct_prospects",
+        "arr_sum",
+        "open_cases",
+        "recency_days",
+        "claim_count",
+        "high_importance_count"
+      ],
+      "additionalProperties": false,
+      "description": "The seven inputs to the score formula. A reviewer can recompute score from these alone."
+    },
+    "rationale": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 900,
+      "description": "Written by the editor model, grounded only in the listed evidence."
+    },
+    "stale": {
+      "type": "boolean"
+    },
+    "stale_reason": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 200
+    },
+    "last_evidence_at": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?(Z|[+-]\\d{2}:\\d{2})$"
+    },
+    "proposal_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^\\d{4}-W\\d{2}/THEME-\\d{4}$"
+    },
+    "filed_issue_url": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 400
+    }
+  },
+  "required": [
+    "schema_version",
+    "theme_id",
+    "title",
+    "aliases",
+    "product_area",
+    "status",
+    "owner",
+    "source",
+    "last_verified",
+    "run_id",
+    "created_run",
+    "last_updated_run",
+    "accounts",
+    "evidence",
+    "score",
+    "score_inputs",
+    "rationale",
+    "stale",
+    "stale_reason",
+    "last_evidence_at",
+    "proposal_id",
+    "filed_issue_url"
+  ],
+  "additionalProperties": false
+}

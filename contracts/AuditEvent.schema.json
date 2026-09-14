@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://momentive-bi-digest.invalid/contracts/AuditEvent.schema.json",
+  "title": "AuditEvent",
+  "description": "One line of runs/<run_id>/run.log.jsonl. Reads are logged, not only writes, because what did it touch has to be a query. Code-only events (scrub, verify, score, write, commit, read) carry null model_tier, model_id and prompt_hash and zero token and cost fields. tokens_in excludes cache reads and cache writes, matching the API usage block. detail is free form and is the only object in the pack with additionalProperties true; it must never contain raw source text or a PII value.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "type": "string",
+      "description": "Contract version of this document. Bump minor for an additive change, major for a breaking one."
+    },
+    "ts": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?(Z|[+-]\\d{2}:\\d{2})$"
+    },
+    "run_id": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}Z$"
+    },
+    "agent": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 60,
+      "description": "gong_reader, sfdc_reader, editor, analyst, or the code component name such as connectors, scrubber, verifier, scorer, renderer, store, gate, pipeline."
+    },
+    "action": {
+      "type": "string",
+      "enum": [
+        "read",
+        "call_model",
+        "validate",
+        "reject",
+        "verify",
+        "scrub",
+        "write",
+        "commit",
+        "withhold",
+        "propose",
+        "approve",
+        "score"
+      ]
+    },
+    "stage": {
+      "type": "string",
+      "enum": [
+        "connect",
+        "scrub",
+        "extract",
+        "verify",
+        "enrich",
+        "edit",
+        "score",
+        "render",
+        "store",
+        "propose"
+      ],
+      "description": "Fixed stage name, used for the cost table."
+    },
+    "target": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 300,
+      "description": "What was acted on: a source_id, a theme_id, a file path, a schema name."
+    },
+    "model_tier": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "extraction",
+        "synthesis",
+        "narrative",
+        null
+      ]
+    },
+    "model_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 120,
+      "description": "Resolved from config at call time. Present only on call_model events."
+    },
+    "prompt_hash": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[0-9a-f]{16}$"
+    },
+    "tokens_in": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "tokens_out": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "cache_read": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "cache_write": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "cost_usd": {
+      "type": "number",
+      "minimum": 0
+    },
+    "outcome": {
+      "type": "string",
+      "enum": [
+        "ok",
+        "rejected",
+        "error",
+        "withheld"
+      ]
+    },
+    "detail": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Free form context. Never raw source text, never a PII value."
+    }
+  },
+  "required": [
+    "schema_version",
+    "ts",
+    "run_id",
+    "agent",
+    "action",
+    "stage",
+    "target",
+    "model_tier",
+    "model_id",
+    "prompt_hash",
+    "tokens_in",
+    "tokens_out",
+    "cache_read",
+    "cache_write",
+    "cost_usd",
+    "outcome",
+    "detail"
+  ],
+  "additionalProperties": false
+}

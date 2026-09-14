@@ -1,0 +1,245 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://momentive-bi-digest.invalid/contracts/Claim.schema.json",
+  "title": "Claim",
+  "description": "One client claim extracted from one source turn, with the exact moment it came from. Model-filled fields are listed in ReaderOutput.schema.json under ReaderClaim. Every other field is filled by pipeline code: schema_version, claim_id, run_id, captured_at, account_id, account_name, account_type, speaker_side, prompt_hash, model_tier, and inside source_ref the Gong speaker_name and affiliation or the Salesforce case_number, author_id, author_name and created_at. claim_id is sha256(canonical_json(source_ref) + verbatim) truncated to 12 hex characters, where canonical_json is json.dumps(source_ref, sort_keys=True, separators=(',', ':'), ensure_ascii=False) and the two parts are concatenated as UTF-8 before hashing. source must agree with the source_ref variant; code asserts it. verbatim must be an exact substring of the SCRUBBED text of the cited turn, because scrubbing runs before any model call.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "type": "string",
+      "description": "Contract version of this document. Bump minor for an additive change, major for a breaking one."
+    },
+    "claim_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{12}$"
+    },
+    "run_id": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}Z$",
+      "description": "The ingest run that captured this claim."
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "gong",
+        "salesforce"
+      ]
+    },
+    "source_ref": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "call_id": {
+              "type": "string",
+              "pattern": "^\\d{6,20}$"
+            },
+            "speaker_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            "speaker_name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 120,
+              "description": "Filled by code from the parties list, never by the model."
+            },
+            "affiliation": {
+              "type": "string",
+              "enum": [
+                "Internal",
+                "External",
+                "Unknown"
+              ],
+              "description": "Gong parties[].affiliation. Filled by code."
+            },
+            "start_ms": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "end_ms": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "call_id",
+            "speaker_id",
+            "speaker_name",
+            "affiliation",
+            "start_ms",
+            "end_ms"
+          ],
+          "additionalProperties": false,
+          "description": "The full Gong source_ref as stored in a Claim."
+        },
+        {
+          "type": "object",
+          "properties": {
+            "case_id": {
+              "type": "string",
+              "pattern": "^[a-zA-Z0-9]{15,18}$"
+            },
+            "case_number": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 30
+            },
+            "comment_id": {
+              "type": "string",
+              "pattern": "^[a-zA-Z0-9]{15,18}$"
+            },
+            "author_id": {
+              "type": "string",
+              "pattern": "^[a-zA-Z0-9]{15,18}$",
+              "description": "CaseComment.CreatedById. Filled by code."
+            },
+            "author_name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 120,
+              "description": "Filled by code from sfdc_get_users."
+            },
+            "created_at": {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?(Z|[+-]\\d{2}:\\d{2})$",
+              "description": "CaseComment.CreatedDate. Filled by code."
+            }
+          },
+          "required": [
+            "case_id",
+            "case_number",
+            "comment_id",
+            "author_id",
+            "author_name",
+            "created_at"
+          ],
+          "additionalProperties": false,
+          "description": "The full Salesforce source_ref as stored in a Claim."
+        }
+      ],
+      "description": "Exactly one of the two locator shapes. additionalProperties is false on both, so the variant is unambiguous."
+    },
+    "account_id": {
+      "type": "string",
+      "pattern": "^ACC-\\d{4}$"
+    },
+    "account_name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "account_type": {
+      "type": "string",
+      "enum": [
+        "customer",
+        "prospect"
+      ]
+    },
+    "speaker_side": {
+      "type": "string",
+      "enum": [
+        "client",
+        "momentive"
+      ],
+      "description": "Derived by code from the connector participant side. A claim only survives verification when this is client."
+    },
+    "verbatim": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 600,
+      "description": "Exact substring of the scrubbed source turn. No paraphrase, no ellipsis, no normalisation."
+    },
+    "paraphrase": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 240,
+      "description": "One plain sentence for the digest."
+    },
+    "topic": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80,
+      "description": "Short noun phrase."
+    },
+    "product_area": {
+      "type": "string",
+      "enum": [
+        "membership",
+        "events",
+        "fundraising",
+        "lms",
+        "jobs",
+        "accounting",
+        "integrations",
+        "reporting"
+      ]
+    },
+    "claim_type": {
+      "type": "string",
+      "enum": [
+        "feature_request",
+        "support_issue",
+        "churn_risk",
+        "pricing",
+        "integration",
+        "praise"
+      ]
+    },
+    "importance": {
+      "type": "string",
+      "enum": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    "importance_reason": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 300
+    },
+    "captured_at": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?(Z|[+-]\\d{2}:\\d{2})$"
+    },
+    "prompt_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{16}$",
+      "description": "sha256 of system, user and schema name joined by U+001F, first 16 hex characters."
+    },
+    "model_tier": {
+      "type": "string",
+      "enum": [
+        "extraction",
+        "synthesis",
+        "narrative"
+      ],
+      "description": "Tier name only. A model id never appears in a Claim."
+    }
+  },
+  "required": [
+    "schema_version",
+    "claim_id",
+    "run_id",
+    "source",
+    "source_ref",
+    "account_id",
+    "account_name",
+    "account_type",
+    "speaker_side",
+    "verbatim",
+    "paraphrase",
+    "topic",
+    "product_area",
+    "claim_type",
+    "importance",
+    "importance_reason",
+    "captured_at",
+    "prompt_hash",
+    "model_tier"
+  ],
+  "additionalProperties": false
+}

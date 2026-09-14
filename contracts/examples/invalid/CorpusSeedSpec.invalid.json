@@ -1,0 +1,560 @@
+{
+  "schema_version": "1.0.0",
+  "seed": 20260914,
+  "calendar": {
+    "weeks": [
+      {
+        "label": "2026-W37",
+        "start": "2026-09-07",
+        "end": "2026-09-13",
+        "build_run_id": "2026-09-14T07:00Z"
+      },
+      {
+        "label": "2026-W38",
+        "start": "2026-09-14",
+        "end": "2026-09-20",
+        "build_run_id": "2026-09-21T07:00Z"
+      },
+      {
+        "label": "2026-W39",
+        "start": "2026-09-21",
+        "end": "2026-09-27",
+        "build_run_id": "2026-09-28T07:00Z"
+      }
+    ],
+    "ingestion_days": [
+      "2026-09-07",
+      "2026-09-08",
+      "2026-09-09",
+      "2026-09-10",
+      "2026-09-11",
+      "2026-09-14",
+      "2026-09-15",
+      "2026-09-16",
+      "2026-09-17",
+      "2026-09-18",
+      "2026-09-21",
+      "2026-09-22",
+      "2026-09-23",
+      "2026-09-24",
+      "2026-09-25"
+    ],
+    "ingest_run_id_suffix": "T00:00Z",
+    "build_run_id_suffix": "T07:00Z"
+  },
+  "product_areas": [
+    "membership",
+    "events",
+    "fundraising",
+    "lms",
+    "jobs",
+    "accounting",
+    "integrations",
+    "reporting"
+  ],
+  "accounts": [
+    {
+      "account_id": "ACC-0001",
+      "name": "Great Lakes Museum Alliance",
+      "domain": "greatlakesmuseums.example.org",
+      "sfdc_account_id": "0018W00002HkLmNQAV",
+      "account_type": "customer",
+      "tier": "enterprise",
+      "arr_usd": 340000,
+      "renewal_date": "2026-12-31",
+      "products": [
+        "membership",
+        "events",
+        "fundraising"
+      ]
+    },
+    {
+      "account_id": "ACC-0002",
+      "name": "Cascadia Nurses Association",
+      "domain": "cascadianurses.example.org",
+      "sfdc_account_id": "0018W00002HkLmOQAV",
+      "account_type": "customer",
+      "tier": "enterprise",
+      "arr_usd": 268000,
+      "renewal_date": "2027-03-31",
+      "products": [
+        "membership",
+        "lms",
+        "events"
+      ]
+    },
+    {
+      "account_id": "ACC-0003",
+      "name": "Prairie Land Trust Council",
+      "domain": "prairielandtrust.example.org",
+      "sfdc_account_id": "0018W00002HkLmQQAV",
+      "account_type": "customer",
+      "tier": "professional",
+      "arr_usd": 154000,
+      "renewal_date": "2026-11-30",
+      "products": [
+        "fundraising",
+        "accounting"
+      ]
+    },
+    {
+      "account_id": "ACC-0004",
+      "name": "Atlantic Shipwrights Guild",
+      "domain": "atlanticshipwrights.example.org",
+      "sfdc_account_id": "0018W00002HkLmRQAV",
+      "account_type": "customer",
+      "tier": "professional",
+      "arr_usd": 96000,
+      "renewal_date": "2027-01-31",
+      "products": [
+        "membership",
+        "jobs"
+      ]
+    },
+    {
+      "account_id": "ACC-0005",
+      "name": "Sunbelt Literacy Network",
+      "domain": "sunbeltliteracy.example.org",
+      "sfdc_account_id": "0018W00002HkLmSQAV",
+      "account_type": "customer",
+      "tier": "standard",
+      "arr_usd": 41000,
+      "renewal_date": "2026-10-31",
+      "products": [
+        "membership",
+        "fundraising"
+      ]
+    },
+    {
+      "account_id": "ACC-0006",
+      "name": "Copper Ridge Youth Foundation",
+      "domain": "copperridgeyouth.example.org",
+      "sfdc_account_id": "0018W00002HkLmTQAV",
+      "account_type": "customer",
+      "tier": "standard",
+      "arr_usd": 18000,
+      "renewal_date": "2027-02-28",
+      "products": [
+        "fundraising",
+        "events",
+        "reporting"
+      ]
+    },
+    {
+      "account_id": "ACC-0007",
+      "name": "Northwoods Arborists Society",
+      "domain": "northwoodsarborists.example.org",
+      "sfdc_account_id": "0018W00002HkLmPQAV",
+      "account_type": "prospect",
+      "tier": "prospect",
+      "arr_usd": 0,
+      "renewal_date": null,
+      "products": []
+    },
+    {
+      "account_id": "ACC-0008",
+      "name": "Harbor City Teachers Collective",
+      "domain": "harborcityteachers.example.org",
+      "sfdc_account_id": "0018W00002HkLmUQAV",
+      "account_type": "prospect",
+      "tier": "prospect",
+      "arr_usd": 0,
+      "renewal_date": null,
+      "products": []
+    },
+    {
+      "account_id": "ACC-0009",
+      "name": "Silver Creek Veterinary Association",
+      "domain": "silvercreekvets.example.org",
+      "sfdc_account_id": "0018W00002HkLmVQAV",
+      "account_type": "prospect",
+      "tier": "prospect",
+      "arr_usd": 0,
+      "renewal_date": null,
+      "products": []
+    }
+  ],
+  "theme_plan": [
+    {
+      "key": "renewal_invoice_credit",
+      "title_hint": "Renewal invoices do not show prior dues credit",
+      "aliases": [
+        "dues proration",
+        "credit on renewal",
+        "invoice credit line"
+      ],
+      "product_area": "membership",
+      "accounts": [
+        "ACC-0001",
+        "ACC-0003"
+      ],
+      "volumes": [
+        {
+          "week": "2026-W37",
+          "calls": 2,
+          "cases": 1
+        },
+        {
+          "week": "2026-W38",
+          "calls": 1,
+          "cases": 1
+        },
+        {
+          "week": "2026-W39",
+          "calls": 1,
+          "cases": 0
+        }
+      ]
+    },
+    {
+      "key": "event_checkin_kiosk",
+      "title_hint": "Event check in and the attendee kiosk are the same capability under two names",
+      "aliases": [
+        "event check-in",
+        "attendee kiosk",
+        "onsite check in"
+      ],
+      "product_area": "events",
+      "accounts": [
+        "ACC-0002",
+        "ACC-0004"
+      ],
+      "volumes": [
+        {
+          "week": "2026-W37",
+          "calls": 2,
+          "cases": 1
+        },
+        {
+          "week": "2026-W38",
+          "calls": 1,
+          "cases": 1
+        },
+        {
+          "week": "2026-W39",
+          "calls": 1,
+          "cases": 0
+        }
+      ]
+    },
+    {
+      "key": "lms_scorm_support",
+      "title_hint": "Prospects expect SCORM package support in the learning module",
+      "aliases": [
+        "SCORM",
+        "course package import"
+      ],
+      "product_area": "lms",
+      "accounts": [
+        "ACC-0007",
+        "ACC-0008"
+      ],
+      "volumes": [
+        {
+          "week": "2026-W37",
+          "calls": 1,
+          "cases": 0
+        },
+        {
+          "week": "2026-W38",
+          "calls": 1,
+          "cases": 0
+        },
+        {
+          "week": "2026-W39",
+          "calls": 1,
+          "cases": 0
+        }
+      ]
+    },
+    {
+      "key": "dues_notice_deliverability",
+      "title_hint": "Dues renewal notices are landing in spam",
+      "aliases": [
+        "email deliverability",
+        "renewal notice bounce"
+      ],
+      "product_area": "integrations",
+      "accounts": [
+        "ACC-0005",
+        "ACC-0006"
+      ],
+      "volumes": [
+        {
+          "week": "2026-W37",
+          "calls": 2,
+          "cases": 2
+        },
+        {
+          "week": "2026-W38",
+          "calls": 0,
+          "cases": 0
+        },
+        {
+          "week": "2026-W39",
+          "calls": 0,
+          "cases": 0
+        }
+      ]
+    },
+    {
+      "key": "reporting_export_limits",
+      "title_hint": "Report exports truncate above ten thousand rows",
+      "aliases": [
+        "export cap",
+        "report truncation"
+      ],
+      "product_area": "reporting",
+      "accounts": [
+        "ACC-0001",
+        "ACC-0006"
+      ],
+      "volumes": [
+        {
+          "week": "2026-W37",
+          "calls": 3,
+          "cases": 2
+        },
+        {
+          "week": "2026-W38",
+          "calls": 2,
+          "cases": 1
+        },
+        {
+          "week": "2026-W39",
+          "calls": 1,
+          "cases": 1
+        }
+      ]
+    },
+    {
+      "key": "accounting_gl_sync",
+      "title_hint": "General ledger sync posts duplicate journal entries",
+      "aliases": [
+        "GL sync",
+        "journal duplication"
+      ],
+      "product_area": "accounting",
+      "accounts": [
+        "ACC-0003",
+        "ACC-0005"
+      ],
+      "volumes": [
+        {
+          "week": "2026-W37",
+          "calls": 1,
+          "cases": 2
+        },
+        {
+          "week": "2026-W38",
+          "calls": 1,
+          "cases": 1
+        },
+        {
+          "week": "2026-W39",
+          "calls": 1,
+          "cases": 1
+        }
+      ]
+    },
+    {
+      "key": "job_board_posting_expiry",
+      "title_hint": "Job postings expire without warning the poster",
+      "aliases": [
+        "posting expiry",
+        "job board renewal"
+      ],
+      "product_area": "jobs",
+      "accounts": [
+        "ACC-0004"
+      ],
+      "volumes": [
+        {
+          "week": "2026-W37",
+          "calls": 1,
+          "cases": 1
+        },
+        {
+          "week": "2026-W38",
+          "calls": 0,
+          "cases": 1
+        },
+        {
+          "week": "2026-W39",
+          "calls": 0,
+          "cases": 1
+        }
+      ]
+    },
+    {
+      "key": "fundraising_pledge_reminders",
+      "title_hint": "Pledge reminders ignore the donor communication preference",
+      "aliases": [
+        "pledge reminder",
+        "donor preference"
+      ],
+      "product_area": "fundraising",
+      "accounts": [
+        "ACC-0002",
+        "ACC-0005"
+      ],
+      "volumes": [
+        {
+          "week": "2026-W37",
+          "calls": 2,
+          "cases": 2
+        },
+        {
+          "week": "2026-W38",
+          "calls": 1,
+          "cases": 1
+        },
+        {
+          "week": "2026-W39",
+          "calls": 1,
+          "cases": 1
+        }
+      ]
+    },
+    {
+      "key": "sso_provisioning_gaps",
+      "title_hint": "Single sign on provisioning drops staff role changes",
+      "aliases": [
+        "SSO provisioning",
+        "SCIM sync",
+        "role sync"
+      ],
+      "product_area": "integrations",
+      "accounts": [
+        "ACC-0001",
+        "ACC-0002"
+      ],
+      "volumes": [
+        {
+          "week": "2026-W37",
+          "calls": 0,
+          "cases": 0
+        },
+        {
+          "week": "2026-W38",
+          "calls": 2,
+          "cases": 1
+        },
+        {
+          "week": "2026-W39",
+          "calls": 1,
+          "cases": 1
+        }
+      ]
+    }
+  ],
+  "week_totals": [
+    {
+      "week": "2026-W37",
+      "calls": 14,
+      "cases": 11
+    },
+    {
+      "week": "2026-W38",
+      "calls": 9,
+      "cases": 7
+    },
+    {
+      "week": "2026-W39",
+      "calls": 7,
+      "cases": 5
+    }
+  ],
+  "trap_slots": [
+    {
+      "trap": "T1",
+      "part": "a",
+      "kind": "gong_call",
+      "id": "7782934451002",
+      "path": "traps/gong/calls/7782934451002.json",
+      "account_id": "ACC-0001",
+      "theme_key": "renewal_invoice_credit",
+      "day": "2026-09-08",
+      "week": "2026-W37",
+      "what_it_proves": "Customer A describes the renewal credit problem on a client success call, sharing no keyword with T1b beyond invoice."
+    },
+    {
+      "trap": "T1",
+      "part": "b",
+      "kind": "sfdc_case",
+      "id": "5008W00002aQpLrQAK",
+      "path": "traps/salesforce/cases/5008W00002aQpLrQAK.json",
+      "account_id": "ACC-0003",
+      "theme_key": "renewal_invoice_credit",
+      "day": "2026-09-10",
+      "week": "2026-W37",
+      "what_it_proves": "Customer B describes the same problem in a support case in different words, and carries the T4a private comment."
+    },
+    {
+      "trap": "T2",
+      "part": "a",
+      "kind": "gong_call",
+      "id": "7782934451118",
+      "path": "traps/gong/calls/7782934451118.json",
+      "account_id": "ACC-0002",
+      "theme_key": "event_checkin_kiosk",
+      "day": "2026-09-08",
+      "week": "2026-W37",
+      "what_it_proves": "One customer calls the capability event check-in."
+    },
+    {
+      "trap": "T2",
+      "part": "b",
+      "kind": "gong_call",
+      "id": "7782934451207",
+      "path": "traps/gong/calls/7782934451207.json",
+      "account_id": "ACC-0004",
+      "theme_key": "event_checkin_kiosk",
+      "day": "2026-09-11",
+      "week": "2026-W37",
+      "what_it_proves": "A post acquisition customer calls the same capability the attendee kiosk."
+    },
+    {
+      "trap": "T3",
+      "part": "a",
+      "kind": "gong_call",
+      "id": "7782934451311",
+      "path": "traps/gong/calls/7782934451311.json",
+      "account_id": "ACC-0007",
+      "theme_key": "lms_scorm_support",
+      "day": "2026-09-09",
+      "week": "2026-W37",
+      "what_it_proves": "A prospect asks for SCORM support, so the claim must classify as prospect and rank below customer backed themes."
+    },
+    {
+      "trap": "T4",
+      "part": "b",
+      "kind": "gong_call",
+      "id": "7782934451404",
+      "path": "traps/gong/calls/7782934451404.json",
+      "account_id": "ACC-0005",
+      "theme_key": "fundraising_pledge_reminders",
+      "day": "2026-09-09",
+      "week": "2026-W37",
+      "what_it_proves": "A transcript turn carries a member email address, a phone number and a donor name for the scrubber to redact."
+    },
+    {
+      "trap": "T4",
+      "part": "c",
+      "kind": "gong_call",
+      "id": "7782934451119",
+      "path": "traps/gong/calls/7782934451119.json",
+      "account_id": "ACC-0006",
+      "theme_key": "reporting_export_limits",
+      "day": "2026-09-11",
+      "week": "2026-W37",
+      "what_it_proves": "A Momentive Software account executive says a lot of our customers ask for this, which is not a client claim."
+    }
+  ],
+  "pii_plant": {
+    "emails": 4,
+    "phones": 3,
+    "addresses": 1,
+    "names": 3
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://momentive-bi-digest.invalid/contracts/MockAccountsFile.schema.json",
+  "title": "MockAccountsFile",
+  "description": "data/mock/accounts.json. Each entry wraps the real Salesforce Account record together with two mock only fields that live OUTSIDE the record: account_id, the ACC-nnnn id the pipeline uses, and domain, the email domain used to map a Gong external party to an account. domain is mock only because Gong does not tell you the Salesforce account; in production that mapping is a CRM lookup.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "type": "string",
+      "description": "Contract version of this document. Bump minor for an additive change, major for a breaking one."
+    },
+    "accounts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "account_id": {
+            "type": "string",
+            "pattern": "^ACC-\\d{4}$"
+          },
+          "account_type": {
+            "type": "string",
+            "enum": [
+              "customer",
+              "prospect"
+            ]
+          },
+          "domain": {
+            "type": "string",
+            "pattern": "^[a-z0-9.-]+\\.example\\.(org|com|net)$",
+            "description": "Mock only. Matched case insensitively against the part of a Gong party emailAddress after the at sign."
+          },
+          "record": {
+            "type": "object",
+            "properties": {
+              "attributes": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "const": "Account",
+                    "type": "string"
+                  },
+                  "url": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 300
+                  }
+                },
+                "required": [
+                  "type",
+                  "url"
+                ],
+                "additionalProperties": false
+              },
+              "Id": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9]{15,18}$"
+              },
+              "Name": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "Tier__c": {
+                "type": "string",
+                "enum": [
+                  "Enterprise",
+                  "Professional",
+                  "Standard",
+                  "Prospect"
+                ]
+              },
+              "ARR__c": {
+                "type": "number",
+                "minimum": 0
+              },
+              "Renewal_Date__c": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+              },
+              "Products__c": {
+                "type": "string",
+                "maxLength": 300,
+                "description": "Salesforce multi select picklist, semicolon joined, for example membership;events. Empty string when none."
+              }
+            },
+            "required": [
+              "attributes",
+              "Id",
+              "Name",
+              "Tier__c",
+              "ARR__c",
+              "Renewal_Date__c",
+              "Products__c"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "account_id",
+          "account_type",
+          "domain",
+          "record"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "maxItems": 50
+    }
+  },
+  "required": [
+    "schema_version",
+    "accounts"
+  ],
+  "additionalProperties": false
+}

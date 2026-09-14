@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "case": {
+    "attributes": {
+      "type": "Case",
+      "url": "/services/data/v62.0/sobjects/Case/5008W00002aQpLrQAK"
+    },
+    "Id": "5008W00002aQpLrQAK",
+    "CaseNumber": "00001042",
+    "AccountId": "0018W00002HkLmNQAV",
+    "Subject": "Renewal invoice missing prior dues credit",
+    "Status": "Working",
+    "Priority": "High",
+    "CreatedDate": "2026-09-10T13:58:41.000Z",
+    "ClosedDate": null
+  },
+  "comments": [
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a8W00000XfT2mQAF"
+      },
+      "Id": "00a8W00000XfT2mQAF",
+      "ParentId": "5008W00002aQpLrQAK",
+      "CommentBody": "The credit from the part year membership never shows up, so finance keeps having to raise a manual adjustment against every renewal we send.",
+      "IsPublished": true,
+      "CreatedById": "0058W00000LmNoPQAV",
+      "CreatedDate": "2026-09-10T14:22:05.000Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a8W00000XfT2nQAF"
+      },
+      "Id": "00a8W00000XfT2nQAF",
+      "ParentId": "5008W00002aQpLrQAK",
+      "CommentBody": "Internal note: if this drags on much longer I would put them at real risk of not renewing.",
+      "IsPublished": false,
+      "CreatedById": "0058W00000JkPqRQAV",
+      "CreatedDate": "2026-09-10T15:02:11.000Z"
+    }
+  ]
+}

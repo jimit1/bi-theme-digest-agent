@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://momentive-bi-digest.invalid/contracts/SalesforceCaseFile.schema.json",
+  "title": "SalesforceCaseFile",
+  "description": "One file per case at data/mock/salesforce/cases/<case_id>.json, and at data/mock/traps/salesforce/cases/<case_id>.json for a hand written trap. comments holds ALL comments including IsPublished false ones, because the connector is what filters and the filtering has to be demonstrable. The MCP server never returns a false row.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "type": "string",
+      "description": "Contract version of this document. Bump minor for an additive change, major for a breaking one."
+    },
+    "case": {
+      "type": "object",
+      "properties": {
+        "attributes": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "Case",
+              "type": "string"
+            },
+            "url": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 300
+            }
+          },
+          "required": [
+            "type",
+            "url"
+          ],
+          "additionalProperties": false
+        },
+        "Id": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9]{15,18}$"
+        },
+        "CaseNumber": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 30
+        },
+        "AccountId": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9]{15,18}$"
+        },
+        "Subject": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 300
+        },
+        "Status": {
+          "type": "string",
+          "enum": [
+            "New",
+            "Working",
+            "Escalated",
+            "Closed"
+          ]
+        },
+        "Priority": {
+          "type": "string",
+          "enum": [
+            "High",
+            "Medium",
+            "Low"
+          ]
+        },
+        "CreatedDate": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?(Z|[+-]\\d{2}:\\d{2})$"
+        },
+        "ClosedDate": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?(Z|[+-]\\d{2}:\\d{2})$"
+        }
+      },
+      "required": [
+        "attributes",
+        "Id",
+        "CaseNumber",
+        "AccountId",
+        "Subject",
+        "Status",
+        "Priority",
+        "CreatedDate",
+        "ClosedDate"
+      ],
+      "additionalProperties": false
+    },
+    "comments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "attributes": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "const": "CaseComment",
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 300
+              }
+            },
+            "required": [
+              "type",
+              "url"
+            ],
+            "additionalProperties": false
+          },
+          "Id": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9]{15,18}$"
+          },
+          "ParentId": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9]{15,18}$",
+            "description": "The Case Id this comment belongs to."
+          },
+          "CommentBody": {
+            "type": "string",
+            "minLength": 0,
+            "maxLength": 20000
+          },
+          "IsPublished": {
+            "type": "boolean",
+            "description": "Salesforce's own flag. False means private to internal users. The connector's SOQL carries IsPublished = true, so a false comment is never in the result set."
+          },
+          "CreatedById": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9]{15,18}$"
+          },
+          "CreatedDate": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?(Z|[+-]\\d{2}:\\d{2})$"
+          }
+        },
+        "required": [
+          "attributes",
+          "Id",
+          "ParentId",
+          "CommentBody",
+          "IsPublished",
+          "CreatedById",
+          "CreatedDate"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "maxItems": 200
+    }
+  },
+  "required": [
+    "schema_version",
+    "case",
+    "comments"
+  ],
+  "additionalProperties": false
+}

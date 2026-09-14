@@ -1,0 +1,214 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://momentive-bi-digest.invalid/contracts/ModelsConfig.schema.json",
+  "title": "ModelsConfig",
+  "description": "The shape of config/models.yaml and config/models.cheap.yaml. This is the ONLY runtime file that names a model id. Application code asks for a tier. There is deliberately no thinking key: thinking handling is derived from the model family by the adapter, because that is where a per model 400 belongs. pricing is per model id in dollars per million tokens; cache_read and cache_write are absolute rates, not multipliers, so a reviewer can read the bill without arithmetic.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "type": "string",
+      "description": "Contract version of this document. Bump minor for an additive change, major for a breaking one."
+    },
+    "provider": {
+      "type": "string",
+      "enum": [
+        "agent_sdk_seat",
+        "anthropic_direct",
+        "bedrock",
+        "vertex",
+        "foundry",
+        "openai_compatible"
+      ]
+    },
+    "tiers": {
+      "type": "object",
+      "properties": {
+        "extraction": {
+          "type": "object",
+          "properties": {
+            "model": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 120
+            },
+            "effort": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "enum": [
+                "low",
+                "medium",
+                "high",
+                "xhigh",
+                "max",
+                null
+              ],
+              "description": "Dropped by the adapter for a family that rejects effort."
+            },
+            "max_tokens": {
+              "type": "integer",
+              "minimum": 256,
+              "maximum": 200000
+            },
+            "temperature": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "maximum": 1,
+              "description": "Omitted by the adapter whenever thinking is active."
+            }
+          },
+          "required": [
+            "model",
+            "effort",
+            "max_tokens",
+            "temperature"
+          ],
+          "additionalProperties": false
+        },
+        "synthesis": {
+          "type": "object",
+          "properties": {
+            "model": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 120
+            },
+            "effort": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "enum": [
+                "low",
+                "medium",
+                "high",
+                "xhigh",
+                "max",
+                null
+              ],
+              "description": "Dropped by the adapter for a family that rejects effort."
+            },
+            "max_tokens": {
+              "type": "integer",
+              "minimum": 256,
+              "maximum": 200000
+            },
+            "temperature": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "maximum": 1,
+              "description": "Omitted by the adapter whenever thinking is active."
+            }
+          },
+          "required": [
+            "model",
+            "effort",
+            "max_tokens",
+            "temperature"
+          ],
+          "additionalProperties": false
+        },
+        "narrative": {
+          "type": "object",
+          "properties": {
+            "model": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 120
+            },
+            "effort": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "enum": [
+                "low",
+                "medium",
+                "high",
+                "xhigh",
+                "max",
+                null
+              ],
+              "description": "Dropped by the adapter for a family that rejects effort."
+            },
+            "max_tokens": {
+              "type": "integer",
+              "minimum": 256,
+              "maximum": 200000
+            },
+            "temperature": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "maximum": 1,
+              "description": "Omitted by the adapter whenever thinking is active."
+            }
+          },
+          "required": [
+            "model",
+            "effort",
+            "max_tokens",
+            "temperature"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "extraction",
+        "synthesis",
+        "narrative"
+      ],
+      "additionalProperties": false
+    },
+    "pricing": {
+      "type": "object",
+      "description": "Keyed by model id. Dollars per million tokens.",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "number",
+            "minimum": 0
+          },
+          "output": {
+            "type": "number",
+            "minimum": 0
+          },
+          "cache_read": {
+            "type": "number",
+            "minimum": 0
+          },
+          "cache_write": {
+            "type": "number",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "input",
+          "output",
+          "cache_read",
+          "cache_write"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "provider",
+    "tiers",
+    "pricing"
+  ],
+  "additionalProperties": false
+}

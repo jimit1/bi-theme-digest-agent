@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://momentive-bi-digest.invalid/contracts/MockIndex.schema.json",
+  "title": "MockIndex",
+  "description": "data/mock/index.json. Lists every corpus file with its date so a connector can apply a date window without opening every file. Written by the generator and it INCLUDES the trap entries, which the generator knows from seed_spec.trap_slots even though it does not write the trap files. entries[].account_id exists for corpus QA only: a connector must never use it for account resolution, because resolving from the Gong party email domain and Case.AccountId is the behaviour being demonstrated.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "type": "string",
+      "description": "Contract version of this document. Bump minor for an additive change, major for a breaking one."
+    },
+    "generated_at": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?(Z|[+-]\\d{2}:\\d{2})$"
+    },
+    "seed": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 300,
+            "description": "Path relative to data/mock/, for example gong/calls/7782934451002.json or traps/salesforce/cases/5008W00002aQpLrQAK.json."
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "gong_call",
+              "sfdc_case"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 40
+          },
+          "account_id": {
+            "type": "string",
+            "pattern": "^ACC-\\d{4}$"
+          },
+          "occurred_at": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?(Z|[+-]\\d{2}:\\d{2})$"
+          },
+          "day": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          },
+          "week": {
+            "type": "string",
+            "pattern": "^\\d{4}-W\\d{2}$"
+          },
+          "theme_key": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 60
+          },
+          "trap": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "path",
+          "kind",
+          "id",
+          "account_id",
+          "occurred_at",
+          "day",
+          "week",
+          "theme_key",
+          "trap"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "maxItems": 500
+    }
+  },
+  "required": [
+    "schema_version",
+    "generated_at",
+    "seed",
+    "entries"
+  ],
+  "additionalProperties": false
+}

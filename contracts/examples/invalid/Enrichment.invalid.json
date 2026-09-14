@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "account_id": "ACC-0001",
+  "account_name": "Great Lakes Museum Alliance",
+  "account_type": "customer",
+  "tier": "Enterprise",
+  "arr_usd": 340000,
+  "renewal_date": "2026-12-31",
+  "open_case_count": 2,
+  "open_case_ids": [
+    "5008W00002aQpLrQAK",
+    "5008W00002aQpLsQAK"
+  ],
+  "products": [
+    "membership",
+    "events",
+    "fundraising"
+  ]
+}

@@ -1,0 +1,422 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://momentive-bi-digest.invalid/contracts/CorpusSeedSpec.schema.json",
+  "title": "CorpusSeedSpec",
+  "description": "The shape of data/mock/seed_spec.yaml. The YAML file must parse to a document that validates against this schema. The calendar is pinned: W37 is Monday 2026-09-07 to Sunday 2026-09-13, W38 is 09-14 to 09-20, W39 is 09-21 to 09-27. Ingestion days are Monday to Friday, fifteen in total. An ingest run_id is <YYYY-MM-DD>T06:00Z for the day it covers; a build run_id is <Monday after the week>T07:00Z. theme_plan volumes are exact and must sum to the per week totals, and each generated call or case carries exactly ONE planted theme. Files named in trap_slots are NOT generated: they are hand written under data/mock/traps/ by the trap author, and the generator still lists them in index.json.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "type": "string",
+      "description": "Contract version of this document. Bump minor for an additive change, major for a breaking one."
+    },
+    "seed": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Random seed. The generator must be deterministic given this seed."
+    },
+    "calendar": {
+      "type": "object",
+      "properties": {
+        "weeks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string",
+                "pattern": "^\\d{4}-W\\d{2}$"
+              },
+              "start": {
+                "type": "string",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+              },
+              "end": {
+                "type": "string",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+              },
+              "build_run_id": {
+                "type": "string",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}Z$"
+              }
+            },
+            "required": [
+              "label",
+              "start",
+              "end",
+              "build_run_id"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 12
+        },
+        "ingestion_days": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          },
+          "minItems": 1,
+          "maxItems": 60,
+          "uniqueItems": true
+        },
+        "ingest_run_id_suffix": {
+          "const": "T06:00Z",
+          "type": "string"
+        },
+        "build_run_id_suffix": {
+          "const": "T07:00Z",
+          "type": "string"
+        }
+      },
+      "required": [
+        "weeks",
+        "ingestion_days",
+        "ingest_run_id_suffix",
+        "build_run_id_suffix"
+      ],
+      "additionalProperties": false
+    },
+    "product_areas": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "membership",
+          "events",
+          "fundraising",
+          "lms",
+          "jobs",
+          "accounting",
+          "integrations",
+          "reporting"
+        ]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "accounts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "account_id": {
+            "type": "string",
+            "pattern": "^ACC-\\d{4}$"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "domain": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 120
+          },
+          "sfdc_account_id": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9]{15,18}$"
+          },
+          "account_type": {
+            "type": "string",
+            "enum": [
+              "customer",
+              "prospect"
+            ]
+          },
+          "tier": {
+            "type": "string",
+            "enum": [
+              "enterprise",
+              "professional",
+              "standard",
+              "prospect"
+            ]
+          },
+          "arr_usd": {
+            "type": "number",
+            "minimum": 0
+          },
+          "renewal_date": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          },
+          "products": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "membership",
+                "events",
+                "fundraising",
+                "lms",
+                "jobs",
+                "accounting",
+                "integrations",
+                "reporting"
+              ]
+            },
+            "minItems": 0,
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "account_id",
+          "name",
+          "domain",
+          "sfdc_account_id",
+          "account_type",
+          "tier",
+          "arr_usd",
+          "renewal_date",
+          "products"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "maxItems": 50
+    },
+    "theme_plan": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 60,
+            "description": "Stable snake_case key. Not a theme_id: theme ids are assigned at build time by code."
+          },
+          "title_hint": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "aliases": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 80
+            },
+            "minItems": 0,
+            "maxItems": 20,
+            "uniqueItems": true
+          },
+          "product_area": {
+            "type": "string",
+            "enum": [
+              "membership",
+              "events",
+              "fundraising",
+              "lms",
+              "jobs",
+              "accounting",
+              "integrations",
+              "reporting"
+            ]
+          },
+          "accounts": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^ACC-\\d{4}$"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "volumes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "week": {
+                  "type": "string",
+                  "pattern": "^\\d{4}-W\\d{2}$"
+                },
+                "calls": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "cases": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "week",
+                "calls",
+                "cases"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1,
+            "maxItems": 12
+          }
+        },
+        "required": [
+          "key",
+          "title_hint",
+          "aliases",
+          "product_area",
+          "accounts",
+          "volumes"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "maxItems": 40
+    },
+    "week_totals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "week": {
+            "type": "string",
+            "pattern": "^\\d{4}-W\\d{2}$"
+          },
+          "calls": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "cases": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "week",
+          "calls",
+          "cases"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "maxItems": 12
+    },
+    "trap_slots": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "trap": {
+            "type": "string",
+            "enum": [
+              "T1",
+              "T2",
+              "T3",
+              "T4"
+            ]
+          },
+          "part": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4,
+            "description": "a, b, c for the multi part traps."
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "gong_call",
+              "sfdc_case"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 40
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 300
+          },
+          "account_id": {
+            "type": "string",
+            "pattern": "^ACC-\\d{4}$"
+          },
+          "theme_key": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 60
+          },
+          "day": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          },
+          "week": {
+            "type": "string",
+            "pattern": "^\\d{4}-W\\d{2}$"
+          },
+          "what_it_proves": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 400
+          }
+        },
+        "required": [
+          "trap",
+          "part",
+          "kind",
+          "id",
+          "path",
+          "account_id",
+          "theme_key",
+          "day",
+          "week",
+          "what_it_proves"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0,
+      "maxItems": 20
+    },
+    "pii_plant": {
+      "type": "object",
+      "properties": {
+        "emails": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "phones": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "addresses": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "names": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "emails",
+        "phones",
+        "addresses",
+        "names"
+      ],
+      "additionalProperties": false,
+      "description": "How many of each planted value the generator must place, so the scrubber count is checkable."
+    }
+  },
+  "required": [
+    "schema_version",
+    "seed",
+    "calendar",
+    "product_areas",
+    "accounts",
+    "theme_plan",
+    "week_totals",
+    "trap_slots",
+    "pii_plant"
+  ],
+  "additionalProperties": false
+}

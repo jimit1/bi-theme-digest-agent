@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://momentive-bi-digest.invalid/contracts/PiiNames.schema.json",
+  "title": "PiiNames",
+  "description": "data/mock/pii_names.json. Every person name the scrubber must redact. The generated corpus and the hand written traps both register their planted names here, and the eval greps the whole store repository for each one expecting zero hits. Stored as an object rather than a bare array so it can carry schema_version like everything else in the pack.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "type": "string",
+      "description": "Contract version of this document. Bump minor for an additive change, major for a breaking one."
+    },
+    "names": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 3,
+        "maxLength": 120
+      },
+      "minItems": 1,
+      "maxItems": 500,
+      "uniqueItems": true,
+      "description": "Full names, for example Dana Ruiz. The scrubber matches the full name and the standalone surname, case insensitively, on word boundaries."
+    }
+  },
+  "required": [
+    "schema_version",
+    "names"
+  ],
+  "additionalProperties": false
+}

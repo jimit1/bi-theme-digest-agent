@@ -1,0 +1,326 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://momentive-bi-digest.invalid/contracts/GongCallFile.schema.json",
+  "title": "GongCallFile",
+  "description": "One file per call at data/mock/gong/calls/<call_id>.json, and at data/mock/traps/gong/calls/<call_id>.json for a hand written trap. One file rather than two because a fetch is one logical object and two files drift. The MCP server reads these and assembles the three Gong responses from them.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "type": "string",
+      "description": "Contract version of this document. Bump minor for an additive change, major for a breaking one."
+    },
+    "call": {
+      "type": "object",
+      "properties": {
+        "metaData": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^\\d{6,20}$"
+            },
+            "url": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500
+            },
+            "title": {
+              "type": "string",
+              "minLength": 0,
+              "maxLength": 300
+            },
+            "scheduled": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?(Z|[+-]\\d{2}:\\d{2})$"
+            },
+            "started": {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?(Z|[+-]\\d{2}:\\d{2})$"
+            },
+            "duration": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Call length in whole seconds, as Gong returns it."
+            },
+            "primaryUserId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            "direction": {
+              "type": "string",
+              "enum": [
+                "Inbound",
+                "Outbound",
+                "Conference",
+                "Unknown"
+              ]
+            },
+            "system": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            "scope": {
+              "type": "string",
+              "enum": [
+                "Internal",
+                "External",
+                "Unknown"
+              ]
+            },
+            "media": {
+              "type": "string",
+              "enum": [
+                "Video",
+                "Audio"
+              ]
+            },
+            "language": {
+              "type": "string",
+              "minLength": 2,
+              "maxLength": 10
+            },
+            "workspaceId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 40
+            },
+            "sdrDisposition": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 80
+            },
+            "clientUniqueId": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 80
+            },
+            "customData": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 2000
+            },
+            "purpose": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 200
+            },
+            "meetingUrl": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 500
+            },
+            "isPrivate": {
+              "type": "boolean"
+            },
+            "calendarEventId": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 120
+            }
+          },
+          "required": [
+            "id",
+            "url",
+            "title",
+            "scheduled",
+            "started",
+            "duration",
+            "primaryUserId",
+            "direction",
+            "system",
+            "scope",
+            "media",
+            "language",
+            "workspaceId",
+            "sdrDisposition",
+            "clientUniqueId",
+            "customData",
+            "purpose",
+            "meetingUrl",
+            "isPrivate",
+            "calendarEventId"
+          ],
+          "additionalProperties": false,
+          "description": "The Gong call metadata object, field for field as GET /v2/calls returns it."
+        },
+        "parties": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 40
+              },
+              "emailAddress": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 200
+              },
+              "name": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 120
+              },
+              "title": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 120
+              },
+              "userId": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 40,
+                "description": "Gong user id. Null for an external party."
+              },
+              "speakerId": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 40,
+                "description": "Null for a party who never spoke."
+              },
+              "context": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "description": "Gong CRM context entry. The mock always emits an empty array."
+                },
+                "minItems": 0
+              },
+              "affiliation": {
+                "type": "string",
+                "enum": [
+                  "Internal",
+                  "External",
+                  "Unknown"
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "emailAddress",
+              "name",
+              "title",
+              "userId",
+              "speakerId",
+              "context",
+              "affiliation"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "metaData",
+        "parties"
+      ],
+      "additionalProperties": false
+    },
+    "transcript": {
+      "type": "object",
+      "properties": {
+        "callId": {
+          "type": "string",
+          "pattern": "^\\d{6,20}$"
+        },
+        "transcript": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "speakerId": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 40
+              },
+              "topic": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 120
+              },
+              "sentences": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "start": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "description": "Milliseconds from the start of the call. See the unit assumption in contracts/README.md."
+                    },
+                    "end": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "text": {
+                      "type": "string",
+                      "minLength": 0,
+                      "maxLength": 4000
+                    }
+                  },
+                  "required": [
+                    "start",
+                    "end",
+                    "text"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 1
+              }
+            },
+            "required": [
+              "speakerId",
+              "topic",
+              "sentences"
+            ],
+            "additionalProperties": false,
+            "description": "One monologue block. A turn in a SourceDocument is exactly one of these."
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "callId",
+        "transcript"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "call",
+    "transcript"
+  ],
+  "additionalProperties": false
+}

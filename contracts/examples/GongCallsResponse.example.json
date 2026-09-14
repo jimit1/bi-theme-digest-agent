@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0.0",
+  "requestId": "req-3f21a8",
+  "records": {
+    "totalRecords": 1,
+    "currentPageSize": 1,
+    "currentPageNumber": 0,
+    "cursor": null
+  },
+  "calls": [
+    {
+      "id": "7782934451002",
+      "url": "https://gong.invalid/call?id=7782934451002",
+      "title": "Great Lakes Museum Alliance quarterly check in",
+      "scheduled": "2026-09-08T15:00:00Z",
+      "started": "2026-09-08T15:01:12Z",
+      "duration": 1840,
+      "primaryUserId": "1187",
+      "direction": "Conference",
+      "system": "Gong",
+      "scope": "External",
+      "media": "Video",
+      "language": "eng",
+      "workspaceId": "9911",
+      "sdrDisposition": null,
+      "clientUniqueId": null,
+      "customData": null,
+      "purpose": "Quarterly check in",
+      "meetingUrl": null,
+      "isPrivate": false,
+      "calendarEventId": "cal-88213"
+    }
+  ],
+  "meta": {
+    "window": {
+      "from": "2026-09-08T00:00:00Z",
+      "to": "2026-09-08T23:59:59Z"
+    },
+    "rows_returned": 1,
+    "row_cap": 200,
+    "withheld_comment_count": null,
+    "fields_allowlisted": [
+      "id",
+      "url",
+      "title",
+      "scheduled",
+      "started",
+      "duration",
+      "primaryUserId",
+      "direction",
+      "system",
+      "scope",
+      "media",
+      "language",
+      "workspaceId",
+      "sdrDisposition",
+      "clientUniqueId",
+      "customData",
+      "purpose",
+      "meetingUrl",
+      "isPrivate",
+      "calendarEventId"
+    ]
+  }
+}

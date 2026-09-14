@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0.0",
+  "call": {
+    "metaData": {
+      "id": "7782934451002",
+      "url": "https://gong.invalid/call?id=7782934451002",
+      "title": "Great Lakes Museum Alliance quarterly check in",
+      "scheduled": "2026-09-08T15:00:00Z",
+      "started": "2026-09-08T15:01:12Z",
+      "duration": 1840,
+      "primaryUserId": "1187",
+      "direction": "Conference",
+      "system": "Gong",
+      "scope": "External",
+      "media": "Video",
+      "language": "eng",
+      "workspaceId": "9911",
+      "sdrDisposition": null,
+      "clientUniqueId": null,
+      "customData": null,
+      "purpose": "Quarterly check in",
+      "meetingUrl": null,
+      "isPrivate": false,
+      "calendarEventId": "cal-88213"
+    },
+    "parties": [
+      {
+        "id": "p-4521",
+        "emailAddress": "dana.ruiz@greatlakesmuseums.example.org",
+        "name": "Dana Ruiz",
+        "title": "Director of Membership",
+        "userId": null,
+        "speakerId": "4521",
+        "context": [],
+        "affiliation": "External"
+      },
+      {
+        "id": "p-1187",
+        "emailAddress": "csm@momentive.invalid",
+        "name": "Marcus Feld",
+        "title": "Client Success Manager",
+        "userId": "1187",
+        "speakerId": "1187",
+        "context": [],
+        "affiliation": "Internal"
+      }
+    ]
+  }
+}

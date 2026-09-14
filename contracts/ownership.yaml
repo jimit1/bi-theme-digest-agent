@@ -1,0 +1,349 @@
+# Exclusive file ownership for the parallel build.
+#
+# Exactly one task may write any given path. Two agents writing one file is how a parallel
+# build corrupts itself, so this map is enforced before dispatch and no path appears twice.
+# Paths are globs relative to the repository named in `repo`.
+#
+#   repo: code   ->  bi-theme-digest-agent/
+#   repo: store  ->  bi-theme-digest-store/
+#
+# Reading is separate from writing: a worker may read `contracts/**` and
+# `build/COMMON_RULES.md` always, and whatever else its own brief lists. Nothing else.
+
+schema_version: "1.0.0"
+
+conventions:
+  unlisted_is_unowned: >
+    A path that appears in no entry below is unowned. A worker that needs one stops and
+    reports a contract conflict rather than claiming it.
+  tests: >
+    Every task writes tests ONLY in the file its entry names. A task with no test file in
+    its paths writes no tests.
+  store_repo: >
+    B6 owns the store scaffold, that is the files that exist before any run. B16 owns
+    everything a run produces. No other task writes to the store repository at all.
+  reserved: >
+    .git in either repository, and the build/ directory under the build root, belong to the
+    orchestrator. No worker touches them, and no worker runs git commit.
+
+tasks:
+
+  - task_id: B1
+    tier: T1
+    wave: 0
+    owns:
+      - repo: code
+        paths:
+          - contracts/**
+          - src/digest/contracts.py
+          - src/digest/errors.py
+          - tests/test_contracts.py
+
+  - task_id: B2
+    tier: T3
+    wave: 1
+    owns:
+      - repo: code
+        paths:
+          - tools/generate_corpus.py
+          - data/mock/seed_spec.yaml
+          - data/mock/accounts.json
+          - data/mock/pii_names.json
+          - data/mock/index.json
+          - data/mock/gong/**
+          - data/mock/salesforce/**
+
+  - task_id: B3
+    tier: T1
+    wave: 1
+    owns:
+      - repo: code
+        paths:
+          - data/mock/traps/**
+          - evals/golden_set.yaml
+          - tests/test_traps_fixtures.py
+
+  - task_id: B4
+    tier: T2
+    wave: 1
+    owns:
+      - repo: code
+        paths:
+          - mcp/**
+          - src/digest/connectors/**
+          - tests/test_connectors.py
+
+  - task_id: B5
+    tier: T2
+    wave: 1
+    owns:
+      - repo: code
+        paths:
+          - src/digest/router.py
+          - src/digest/providers/**
+          - config/models.yaml
+          - config/models.cheap.yaml
+          - tests/test_router.py
+
+  - task_id: B6
+    tier: T2
+    wave: 1
+    owns:
+      - repo: code
+        paths:
+          - src/digest/store.py
+          - src/digest/audit.py
+          - tests/test_store.py
+      - repo: store
+        paths:
+          - ROUTER.md
+          - themes/_INDEX.md
+          - sources/_INDEX.md
+          - themes/.gitkeep
+          - sources/.gitkeep
+          - evidence/claims/.gitkeep
+          - evidence/rejected/.gitkeep
+          - proposals/.gitkeep
+          - digests/.gitkeep
+          - runs/.gitkeep
+          - .gitignore
+          - README.md
+
+  - task_id: B7
+    tier: T2
+    wave: 1
+    owns:
+      - repo: code
+        paths:
+          - src/digest/pii/**
+          - tests/test_scrubber.py
+
+  - task_id: B8
+    tier: T3
+    wave: 1
+    owns:
+      - repo: code
+        paths:
+          - pyproject.toml
+          - Makefile
+          - .gitignore
+          - .github/**
+          - .claude/**
+          - src/digest/__init__.py
+          - src/digest/agents/__init__.py
+          - config/build_models.yaml
+          - config/build_models.cheap.yaml
+          - tests/conftest.py
+
+  - task_id: B9
+    tier: T2
+    wave: 2
+    owns:
+      - repo: code
+        paths:
+          - src/digest/agents/readers/**
+          - tests/test_readers.py
+
+  - task_id: B10
+    tier: T2
+    wave: 2
+    owns:
+      - repo: code
+        paths:
+          - src/digest/verify.py
+          - tests/test_verify.py
+
+  - task_id: B11
+    tier: T2
+    wave: 2
+    owns:
+      - repo: code
+        paths:
+          - src/digest/enrich.py
+          - src/digest/score.py
+          - tests/test_score.py
+
+  - task_id: B12
+    tier: T1
+    wave: 2
+    owns:
+      - repo: code
+        paths:
+          - src/digest/agents/editor/**
+          - tests/test_editor.py
+
+  - task_id: B13
+    tier: T2
+    wave: 2
+    owns:
+      - repo: code
+        paths:
+          - src/digest/render/**
+          - tests/test_render.py
+
+  - task_id: B14
+    tier: T2
+    wave: 2
+    owns:
+      - repo: code
+        paths:
+          - src/digest/agents/analyst/**
+          - tests/test_analyst.py
+
+  - task_id: B15
+    tier: T2
+    wave: 2
+    owns:
+      - repo: code
+        paths:
+          - src/digest/gate.py
+          - tests/test_gate.py
+
+  - task_id: B16
+    tier: T2
+    wave: 3
+    owns:
+      - repo: code
+        paths:
+          - src/digest/__main__.py
+          - src/digest/pipeline.py
+          - src/digest/eval.py
+          - src/digest/swap.py
+          - tests/test_pipeline.py
+      - repo: store
+        paths:
+          - themes/THEME-*.md
+          - evidence/claims/**
+          - evidence/rejected/**
+          - sources/*.json
+          - proposals/**
+          - digests/**
+          - runs/**
+
+  - task_id: B17
+    tier: T2
+    wave: 3
+    owns:
+      - repo: code
+        paths:
+          - evals/results.md
+
+  - task_id: B18
+    tier: T2
+    wave: 3
+    owns:
+      - repo: code
+        paths:
+          - docs/metrics/**
+
+  - task_id: B19
+    tier: T1
+    wave: 4
+    owns:
+      - repo: code
+        paths:
+          - README.md
+          - walkthrough.md
+
+  - task_id: B20
+    tier: T1
+    wave: 4
+    owns:
+      - repo: code
+        paths:
+          - docs/PRODUCTION_CONTEXT.md
+
+  - task_id: B21
+    tier: T1
+    wave: 4
+    owns:
+      - repo: code
+        paths:
+          - docs/GOVERNANCE.md
+
+  - task_id: B22
+    tier: T2
+    wave: 4
+    owns:
+      - repo: code
+        paths:
+          - docs/COST_AND_KPIS.md
+
+  - task_id: B23
+    tier: T1
+    wave: 4
+    owns:
+      - repo: code
+        paths:
+          - docs/DECISIONS.md
+          - docs/FUTURE_BUILDS.md
+
+  - task_id: B24
+    tier: T1
+    wave: 5
+    owns: []
+    note: Adversarial QA. Runs the acceptance checklist and produces evidence per line. Writes no files in either repository.
+
+  - task_id: B25
+    tier: T1
+    wave: 5
+    owns: []
+    note: Independent citation audit. Resolves sampled claims by hand against the raw mock data without using the pipeline's own verifier. Writes no files.
+
+  - task_id: B26
+    tier: T2
+    wave: 5
+    owns: []
+    note: Compliance scan for en and em dashes, forbidden references, real customer names, secrets and voice drift. Writes no files.
+
+  - task_id: B27
+    tier: T2
+    wave: 5
+    owns: []
+    note: Fresh clone into a clean environment, make setup, make demo, from nothing. Writes no files in the repositories.
+
+  - task_id: B28
+    tier: T3
+    wave: 6
+    owns:
+      - repo: code
+        paths:
+          - deck/assets/**
+
+  - task_id: B29
+    tier: T1
+    wave: 6
+    owns:
+      - repo: code
+        paths:
+          - deck/outline.md
+          - deck/momentive-bi-digest.pptx
+          - deck/momentive-bi-digest.pdf
+
+  - task_id: B30
+    tier: T1
+    wave: 6
+    owns: []
+    note: Deck audit. Checks every number on every slide back to its manifest, plus the cold read test. The only agent permitted to fail the deck. Writes no files.
+
+# Paths in the section 12 layout that the roster did not name, assigned here so nothing is
+# unowned at integration time. Each is called out in the B1 envelope assumptions.
+inferred_assignments:
+  - path: walkthrough.md
+    owner: B19
+    why: It is the reader facing companion to the README and the same writer should keep one voice across both.
+  - path: config/build_models.yaml
+    owner: B8
+    why: Build time tier map. It is scaffolding for the build roster, not runtime configuration, so it sits with the scaffolding task rather than with the runtime router.
+  - path: config/build_models.cheap.yaml
+    owner: B8
+    why: Same reason.
+  - path: tests/conftest.py
+    owner: B8
+    why: Shared test fixtures are scaffolding. No other task may write it, so a task needing a fixture puts it in its own test file.
+  - path: data/mock/salesforce/users.json
+    owner: B2
+    why: Already covered by the data/mock/salesforce/** glob. Called out because the file itself is an addition this pack made, to resolve the side of a case comment author.
+  - path: bi-theme-digest-store/README.md and .gitignore
+    owner: B6
+    why: Part of the store scaffold. The store repository contains no code, so these are the only two non content files in it.

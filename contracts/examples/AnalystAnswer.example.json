@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0.0",
+  "question": "why does the renewal credit issue matter",
+  "answer": "Two customers worth 494,000 dollars of combined annual recurring revenue correct every renewal invoice by hand because the credit for dues already paid is not on it. Both reported it independently within three days.",
+  "supported": true,
+  "citations": [
+    {
+      "theme_id": "THEME-0003",
+      "claim_id": "e7e3c117f5c5"
+    },
+    {
+      "theme_id": "THEME-0003",
+      "claim_id": "df11dfd159ae"
+    }
+  ],
+  "decline_reason": null
+}

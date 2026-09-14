@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://momentive-bi-digest.invalid/contracts/Enrichment.schema.json",
+  "title": "Enrichment",
+  "description": "Deterministic account enrichment. No model touches this. Produced by digest.enrich from sfdc_get_accounts plus sfdc_query_cases. tier is the lowercase form of the Salesforce Tier__c picklist. arr_usd is zero for a prospect and renewal_date is null for a prospect.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "type": "string",
+      "description": "Contract version of this document. Bump minor for an additive change, major for a breaking one."
+    },
+    "account_id": {
+      "type": "string",
+      "pattern": "^ACC-\\d{4}$"
+    },
+    "account_name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "account_type": {
+      "type": "string",
+      "enum": [
+        "customer",
+        "prospect"
+      ]
+    },
+    "tier": {
+      "type": "string",
+      "enum": [
+        "enterprise",
+        "professional",
+        "standard",
+        "prospect"
+      ]
+    },
+    "arr_usd": {
+      "type": "number",
+      "minimum": 0
+    },
+    "renewal_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "open_case_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "open_case_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-zA-Z0-9]{15,18}$"
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    },
+    "products": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "membership",
+          "events",
+          "fundraising",
+          "lms",
+          "jobs",
+          "accounting",
+          "integrations",
+          "reporting"
+        ]
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "schema_version",
+    "account_id",
+    "account_name",
+    "account_type",
+    "tier",
+    "arr_usd",
+    "renewal_date",
+    "open_case_count",
+    "open_case_ids",
+    "products"
+  ],
+  "additionalProperties": false
+}

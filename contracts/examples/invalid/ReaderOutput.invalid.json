@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0.0",
+  "source": "gong",
+  "source_id": "7782934451002",
+  "claims": [
+    {
+      "source": "gong",
+      "source_ref": {
+        "call_id": "7782934451002",
+        "speaker_id": "4521",
+        "start_ms": 418000,
+        "end_ms": 437000,
+        "speaker_name": "Dana Ruiz"
+      },
+      "verbatim": "Our renewal invoice came through with the full annual amount and there is no line anywhere showing the dues we already paid in March.",
+      "paraphrase": "Renewal invoices do not show the dues already paid earlier in the year.",
+      "topic": "renewal invoice credit",
+      "product_area": "membership",
+      "claim_type": "support_issue",
+      "importance": "high",
+      "importance_reason": "Finance has to correct every renewal invoice by hand before it goes out."
+    }
+  ],
+  "no_claims_reason": null
+}

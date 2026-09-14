@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "accounts": [
+    {
+      "account_id": "ACC-0001",
+      "account_type": "customer",
+      "domain": "greatlakesmuseums.example.org",
+      "record": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v62.0/sobjects/Account/0018W00002HkLmNQAV"
+        },
+        "Id": "0018W00002HkLmNQAV",
+        "Name": "Great Lakes Museum Alliance",
+        "Tier__c": "Enterprise",
+        "ARR__c": 340000,
+        "Renewal_Date__c": "2026-12-31",
+        "Products__c": "membership;events;fundraising"
+      }
+    },
+    {
+      "account_id": "ACC-0007",
+      "account_type": "prospect",
+      "domain": "northwoodsarborists.example.org",
+      "record": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v62.0/sobjects/Account/0018W00002HkLmPQAV"
+        },
+        "Id": "0018W00002HkLmPQAV",
+        "Name": "Northwoods Arborists Society",
+        "Tier__c": "Prospect",
+        "ARR__c": 0,
+        "Renewal_Date__c": null,
+        "Products__c": ""
+      }
+    }
+  ]
+}

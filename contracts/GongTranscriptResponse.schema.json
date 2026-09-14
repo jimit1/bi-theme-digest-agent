@@ -1,0 +1,193 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://momentive-bi-digest.invalid/contracts/GongTranscriptResponse.schema.json",
+  "title": "GongTranscriptResponse",
+  "description": "Response of the gong_get_transcripts MCP tool, which mirrors POST /v2/calls/transcript plus the meta envelope. sentences[].start and .end are treated as MILLISECONDS. That is an assumption to confirm against Gong's own documentation at build time; the rule regardless of the answer is that source_ref stores the source system native unit and the digest renders human readable seconds.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "type": "string",
+      "description": "Contract version of this document. Bump minor for an additive change, major for a breaking one."
+    },
+    "requestId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80
+    },
+    "records": {
+      "type": "object",
+      "properties": {
+        "totalRecords": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "currentPageSize": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "currentPageNumber": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "cursor": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 400,
+          "description": "Null on the last page. The real API omits the key entirely; an adapter must treat missing and null identically."
+        }
+      },
+      "required": [
+        "totalRecords",
+        "currentPageSize",
+        "currentPageNumber",
+        "cursor"
+      ],
+      "additionalProperties": false
+    },
+    "callTranscripts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "callId": {
+            "type": "string",
+            "pattern": "^\\d{6,20}$"
+          },
+          "transcript": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "speakerId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 40
+                },
+                "topic": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "maxLength": 120
+                },
+                "sentences": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "start": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "description": "Milliseconds from the start of the call. See the unit assumption in contracts/README.md."
+                      },
+                      "end": {
+                        "type": "integer",
+                        "minimum": 0
+                      },
+                      "text": {
+                        "type": "string",
+                        "minLength": 0,
+                        "maxLength": 4000
+                      }
+                    },
+                    "required": [
+                      "start",
+                      "end",
+                      "text"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "speakerId",
+                "topic",
+                "sentences"
+              ],
+              "additionalProperties": false,
+              "description": "One monologue block. A turn in a SourceDocument is exactly one of these."
+            },
+            "minItems": 1
+          }
+        },
+        "required": [
+          "callId",
+          "transcript"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0,
+      "maxItems": 200
+    },
+    "meta": {
+      "type": "object",
+      "properties": {
+        "window": {
+          "type": "object",
+          "properties": {
+            "from": {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?(Z|[+-]\\d{2}:\\d{2})$"
+            },
+            "to": {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?(Z|[+-]\\d{2}:\\d{2})$"
+            }
+          },
+          "required": [
+            "from",
+            "to"
+          ],
+          "additionalProperties": false
+        },
+        "rows_returned": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "row_cap": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "withheld_comment_count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "description": "Null for Gong, an integer for Salesforce."
+        },
+        "fields_allowlisted": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "window",
+        "rows_returned",
+        "row_cap",
+        "withheld_comment_count",
+        "fields_allowlisted"
+      ],
+      "additionalProperties": false,
+      "description": "MCP envelope metadata. Added by the mock server and dropped by a real API adapter."
+    }
+  },
+  "required": [
+    "schema_version",
+    "requestId",
+    "records",
+    "callTranscripts",
+    "meta"
+  ],
+  "additionalProperties": false
+}

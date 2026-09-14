@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0.0",
+  "theme_id": "THEME-0003",
+  "title": "Renewal invoices do not show prior dues credit",
+  "aliases": [
+    "dues proration",
+    "credit on renewal",
+    "invoice credit line"
+  ],
+  "product_area": "membership",
+  "status": "open",
+  "owner": "ai-operations",
+  "source": "synthesized",
+  "last_verified": "2026-09-14",
+  "run_id": "2026-09-14T07:00Z",
+  "created_run": "2026-09-14T07:00Z",
+  "last_updated_run": "2026-09-14T07:00Z",
+  "accounts": [
+    "ACC-0001",
+    "ACC-0003"
+  ],
+  "evidence": [
+    "e7e3c117f5c5",
+    "df11dfd159ae"
+  ],
+  "score": 74,
+  "score_inputs": {
+    "distinct_customers": 2,
+    "distinct_prospects": 0,
+    "arr_sum": 494000,
+    "open_cases": 3,
+    "recency_days": 1,
+    "claim_count": 2,
+    "high_importance_count": 2
+  },
+  "rationale": "Two customers on different product lines describe the same failure: the renewal invoice carries the full annual amount with no line for dues already paid. One raised it on a client success call and one in a support case, and neither used the other's words, which is why the alias list matters more than the title.",
+  "stale": false,
+  "stale_reason": null,
+  "last_evidence_at": "2026-09-10T14:22:05.000Z",
+  "proposal_id": "2026-W37/THEME-0003",
+  "filed_issue_url": null
+}

@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-08T06:00Z",
+  "source": "gong",
+  "source_id": "7782934451119",
+  "reason_code": "speaker_not_client",
+  "reason": "The cited turn belongs to speaker 1187, whose Gong affiliation is Internal, so speaker_side is momentive.",
+  "raw": {
+    "verbatim": "a lot of our customers ask for this",
+    "topic": "reporting exports",
+    "source_ref": {
+      "call_id": "7782934451119",
+      "speaker_id": "1187",
+      "start_ms": 91000,
+      "end_ms": 96000
+    }
+  }
+}

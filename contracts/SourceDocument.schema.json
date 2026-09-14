@@ -1,0 +1,338 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://momentive-bi-digest.invalid/contracts/SourceDocument.schema.json",
+  "title": "SourceDocument",
+  "description": "One scrubbed source document as the connectors produce it and as the store persists it at sources/<source_id>.json. This is the only thing a reader agent ever sees. Scrubbing has already run, so turns[].text contains placeholders and never raw PII. account_id is null when the connector could not resolve the account; ingest skips such a document and counts it in RunManifest.counts.sources_skipped. title is metadata for the renderer, not a turn, and no claim may cite it.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "type": "string",
+      "description": "Contract version of this document. Bump minor for an additive change, major for a breaking one."
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "gong",
+        "salesforce"
+      ]
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40
+    },
+    "title": {
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 300
+    },
+    "account_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^ACC-\\d{4}$"
+    },
+    "account_name": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "occurred_at": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?(Z|[+-]\\d{2}:\\d{2})$"
+    },
+    "doc_type": {
+      "type": "string",
+      "enum": [
+        "call",
+        "case"
+      ]
+    },
+    "ingest_run_id": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}Z$"
+    },
+    "scrubbed": {
+      "const": true,
+      "type": "boolean"
+    },
+    "pii_counts": {
+      "type": "object",
+      "properties": {
+        "EMAIL": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "PHONE": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "ADDRESS": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "NAME": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "EMAIL",
+        "PHONE",
+        "ADDRESS",
+        "NAME"
+      ],
+      "additionalProperties": false
+    },
+    "participants": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 40
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          },
+          "side": {
+            "type": "string",
+            "enum": [
+              "client",
+              "momentive"
+            ]
+          },
+          "title": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 120
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "side",
+          "title"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "turns": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "ref": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "call_id": {
+                    "type": "string",
+                    "pattern": "^\\d{6,20}$"
+                  },
+                  "speaker_id": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 40
+                  },
+                  "speaker_name": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 120,
+                    "description": "Filled by code from the parties list, never by the model."
+                  },
+                  "affiliation": {
+                    "type": "string",
+                    "enum": [
+                      "Internal",
+                      "External",
+                      "Unknown"
+                    ],
+                    "description": "Gong parties[].affiliation. Filled by code."
+                  },
+                  "start_ms": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "end_ms": {
+                    "type": "integer",
+                    "minimum": 0
+                  }
+                },
+                "required": [
+                  "call_id",
+                  "speaker_id",
+                  "speaker_name",
+                  "affiliation",
+                  "start_ms",
+                  "end_ms"
+                ],
+                "additionalProperties": false,
+                "description": "The full Gong source_ref as stored in a Claim."
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "case_id": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9]{15,18}$"
+                  },
+                  "case_number": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 30
+                  },
+                  "comment_id": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9]{15,18}$"
+                  },
+                  "author_id": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9]{15,18}$",
+                    "description": "CaseComment.CreatedById. Filled by code."
+                  },
+                  "author_name": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 120,
+                    "description": "Filled by code from sfdc_get_users."
+                  },
+                  "created_at": {
+                    "type": "string",
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?(Z|[+-]\\d{2}:\\d{2})$",
+                    "description": "CaseComment.CreatedDate. Filled by code."
+                  }
+                },
+                "required": [
+                  "case_id",
+                  "case_number",
+                  "comment_id",
+                  "author_id",
+                  "author_name",
+                  "created_at"
+                ],
+                "additionalProperties": false,
+                "description": "The full Salesforce source_ref as stored in a Claim."
+              }
+            ],
+            "description": "Identical shape to Claim.source_ref. A claim cites a turn by copying this object."
+          },
+          "speaker_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 40
+          },
+          "speaker_side": {
+            "type": "string",
+            "enum": [
+              "client",
+              "momentive"
+            ]
+          },
+          "text": {
+            "type": "string",
+            "minLength": 0,
+            "maxLength": 20000,
+            "description": "SCRUBBED turn text. For Gong this is the monologue block sentences joined by a single ASCII space. For Salesforce it is the scrubbed CommentBody."
+          },
+          "sentences": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "start_ms": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "end_ms": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 0,
+                  "maxLength": 4000
+                }
+              },
+              "required": [
+                "start_ms",
+                "end_ms",
+                "text"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 0,
+            "description": "Gong sentence granularity, used by the renderer for neighbouring context. Empty array for Salesforce."
+          }
+        },
+        "required": [
+          "ref",
+          "speaker_id",
+          "speaker_side",
+          "text",
+          "sentences"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "meta": {
+      "type": "object",
+      "properties": {
+        "withheld_comment_count": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Comments the connector never received because IsPublished = true was in the query. Zero for Gong."
+        },
+        "turn_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "soql": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 2000,
+          "description": "The exact SOQL the Salesforce server ran. Null for Gong."
+        }
+      },
+      "required": [
+        "withheld_comment_count",
+        "turn_count",
+        "soql"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "source",
+    "source_id",
+    "title",
+    "account_id",
+    "account_name",
+    "occurred_at",
+    "doc_type",
+    "ingest_run_id",
+    "scrubbed",
+    "pii_counts",
+    "participants",
+    "turns",
+    "meta"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://momentive-bi-digest.invalid/contracts/EditorThemeRequest.schema.json",
+  "title": "EditorThemeRequest",
+  "description": "Call one of the two editor calls. The editor has seen themes/_INDEX.md, this run's verified claims and the account enrichment. It returns the ids of the themes it wants opened in full. An empty list is legal and means the index was enough. Code resolves each id with read_theme and rejects any id not present in the index. This is also how the audit log gets an honest read event per theme.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "type": "string",
+      "description": "Contract version of this document. Bump minor for an additive change, major for a breaking one."
+    },
+    "needs_themes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^THEME-\\d{4}$"
+      },
+      "minItems": 0,
+      "maxItems": 25,
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "schema_version",
+    "needs_themes"
+  ],
+  "additionalProperties": false
+}

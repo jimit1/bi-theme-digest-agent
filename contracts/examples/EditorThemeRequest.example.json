@@ -1,0 +1,7 @@
+{
+  "schema_version": "1.0.0",
+  "needs_themes": [
+    "THEME-0003",
+    "THEME-0007"
+  ]
+}
