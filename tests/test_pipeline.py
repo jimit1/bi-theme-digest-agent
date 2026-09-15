@@ -66,6 +66,64 @@ def test_assignment_pairs_and_top_three():
     }
     # score descending, then theme id ascending. The tiebreak is what makes a rerun stable.
     assert pipeline.top_three(themes) == ["THEME-0001", "THEME-0002", "THEME-0003"]
+    # Same ranking, described by the evidence instead of by the allocated id.
+    assert pipeline.top_three_claim_sets(themes) == [
+        frozenset({"bbbbbbbbbbbb", "cccccccccccc"}),
+        frozenset({"aaaaaaaaaaaa"}),
+        frozenset(),
+    ]
+
+
+def test_top_three_claim_sets_ignore_a_renumbering():
+    """The finding OD27's write up rests on: same piles, different ids, same top three."""
+    first = [
+        {"theme_id": "THEME-0001", "score": 80, "evidence": ["aaaaaaaaaaaa"]},
+        {"theme_id": "THEME-0002", "score": 70, "evidence": ["bbbbbbbbbbbb"]},
+        {"theme_id": "THEME-0003", "score": 60, "evidence": ["cccccccccccc"]},
+    ]
+    # The second opinion listed the same three themes in a different placeholder order, so
+    # store.allocate_theme_ids handed the same claim piles different ids.
+    second = [
+        {"theme_id": "THEME-0003", "score": 80, "evidence": ["aaaaaaaaaaaa"]},
+        {"theme_id": "THEME-0001", "score": 70, "evidence": ["bbbbbbbbbbbb"]},
+        {"theme_id": "THEME-0002", "score": 60, "evidence": ["cccccccccccc"]},
+    ]
+    claim_ids = {"aaaaaaaaaaaa", "bbbbbbbbbbbb", "cccccccccccc"}
+    block = pipeline._compare(first, second, "2026-09-14T07:00Z", claim_ids)
+    assert block["top3_stable"] is True
+    assert block["top3_stable_by_id"] is False
+    assert block["top3_first"] == ["THEME-0001", "THEME-0002", "THEME-0003"]
+    assert block["top3_second"] == ["THEME-0003", "THEME-0001", "THEME-0002"]
+    assert block["top3_first_claim_sets"] == block["top3_second_claim_sets"]
+    assert "top3_stable_by_id" in block["top3_note"]
+    # The four keys the manifest is allowed to carry, and top3_stable is the new one.
+    assert set(pipeline.contract_stability(block)) == {
+        "computed", "jaccard", "top3_stable", "compared_run_id"}
+    assert pipeline.contract_stability(block)["top3_stable"] is True
+
+
+def test_a_real_top_three_difference_is_still_reported():
+    """A different claim on the top theme is a real move, not a renumbering."""
+    first = [{"theme_id": "THEME-0001", "score": 80, "evidence": ["aaaaaaaaaaaa"]}]
+    second = [{"theme_id": "THEME-0001", "score": 80, "evidence": ["dddddddddddd"]}]
+    claim_ids = {"aaaaaaaaaaaa", "dddddddddddd"}
+    block = pipeline._compare(first, second, "2026-09-14T07:00Z", claim_ids)
+    assert block["top3_stable"] is False
+    assert block["top3_stable_by_id"] is True
+
+
+def test_the_stability_block_is_written_beside_the_manifest(tmp_path):
+    """RunManifest.stability is closed to four keys, so the rest goes in its own file."""
+    class _Store:
+        path = tmp_path
+    block = {"computed": True, "jaccard": 1.0, "top3_stable": True,
+             "top3_stable_by_id": False, "top3_note": pipeline.TOP3_NOTE,
+             "compared_run_id": "2026-09-14T07:00Z"}
+    written = pipeline.write_stability(_Store(), "2026-09-14T07:00Z", block)
+    assert written == tmp_path / "runs" / "2026-09-14T07:00Z" / "stability.json"
+    on_disk = json.loads(written.read_text(encoding="utf-8"))
+    assert on_disk["top3_stable"] is True and on_disk["top3_stable_by_id"] is False
+    assert on_disk["top3_note"] == pipeline.TOP3_NOTE
 
 
 def test_jaccard_including_the_two_empty_sets():

@@ -11,7 +11,7 @@ offline.
 
 | Control | Command | What it prints |
 | --- | --- | --- |
-| 1. PII removed before the model | `grep -h '"action": "scrub"' $S/runs/*/run.log.jsonl \| wc -l` and `grep -rl "Harold Pemberton-Vance" --exclude-dir=.git $S` | `53`, one scrub event per source document, each carrying counts only. The second prints nothing and exits 1: ten redactions were made (2 email, 2 phone, 2 address, 4 name) and no planted value survives anywhere in the store, audit log and raw sources included |
+| 1. PII removed before the model | `grep -h '"action": "scrub"' $S/runs/*/run.log.jsonl \| wc -l` and `grep -rl "Harold Pemberton-Vance" --exclude-dir=.git $S` | `53`, one scrub event per source document, each carrying counts only. The second prints nothing and exits 1: five redactions were made (1 email, 1 phone, 1 address, 2 name) and no planted value survives anywhere in the store, audit log and raw sources included |
 | 2. Every action audited, reads included | `grep -ho '"action": "[a-z_]*"' $S/runs/*/run.log.jsonl \| sort \| uniq -c \| sort -rn` | 1123 events across 20 runs: 565 reads, 218 writes, 61 model calls, 61 validations, 53 verifies, 53 scrubs, 47 scores, 33 proposals, 20 commits, 10 withholds, 2 approvals |
 | 3. Private case comments never in the result set | `grep -c '"action": "withhold"' $S/runs/*/run.log.jsonl` | 10 withhold events across the 15 ingest runs, 4 in week 37, 5 in week 38, 1 in week 39 |
 | 4. Structured output rejected, never patched | `cat $S/evidence/claims/*.jsonl \| wc -l` and `ls $S/evidence/rejected/` | `55` accepted, rejected empty. The run manifest carries a zero against each of `schema_invalid`, `citation_unresolved`, `speaker_not_client`, `duplicate`, `window_violation`, and every digest prints verified and rejected on its run line |
@@ -32,9 +32,12 @@ private comment is never in the result set the agent receives.
 
 Drift is measured, not asserted, and that keeps the other seven honest over time.
 `digest build --week 2026-W37 --stability --mode replay` asks for a second independent opinion
-on the same claims. The two grouped every claim identically, Jaccard 1.000, and ranked a
-different top three. I report that as measured rather than tuning until it looks tidy. Prompts
-and schemas are versioned files, so a prompt change is a diff on a pull request.
+on the same claims. The two grouped every claim identically, Jaccard 1.000, and put the same
+three themes at the top in the same order. They named those themes differently, because theme
+ids are allocated in the editor's placeholder order and on a cold start week that order is
+arbitrary, so the top three are compared by the claim set each theme carries and the id
+comparison is reported beside it. I report both as measured rather than tuning until it looks
+tidy. Prompts and schemas are versioned files, so a prompt change is a diff on a pull request.
 
 ## Least privilege
 

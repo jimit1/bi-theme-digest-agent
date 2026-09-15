@@ -385,9 +385,18 @@ def compute(store: Path) -> dict[str, Any]:
                       if theme_id in score_events}
     reference_rank = ranked(reference, score_of_group)
 
+    def top3_claim_sets(side: dict[str, Any], rank: list[dict[str, Any]]) -> list[list[str]]:
+        """The top three described by the claims they carry, which is label independent."""
+        return [sorted(side["claims"][row["theme_id"]]) for row in rank[:3]]
+
     drift = {"reference": {"responses_dir": "responses",
                            "ranked": reference_rank,
-                           "top3": [row["theme_id"] for row in reference_rank[:3]]},
+                           "top3": [row["theme_id"] for row in reference_rank[:3]],
+                           "top3_claim_sets": top3_claim_sets(reference, reference_rank)},
+             "top3_note": ("top3_stable compares the claim set of each of the top three, so it "
+                           "is independent of the theme ids, which are allocated in the "
+                           "editor's placeholder order; top3_stable_by_id is the old id "
+                           "comparison, kept beside it. Same rule as pipeline._compare."),
              "comparisons": []}
     for name, side in opinions.items():
         if name == "responses":
@@ -405,7 +414,10 @@ def compute(store: Path) -> dict[str, Any]:
             "labelled_claim_to_theme_jaccard": round(
                 jaccard(labelled(reference["claims"]), labelled(side["claims"])), 6),
             "top3": [row["theme_id"] for row in side_rank[:3]],
-            "top3_stable": [r["theme_id"] for r in side_rank[:3]] == drift["reference"]["top3"],
+            "top3_claim_sets": top3_claim_sets(side, side_rank),
+            "top3_stable": (top3_claim_sets(side, side_rank)
+                            == drift["reference"]["top3_claim_sets"]),
+            "top3_stable_by_id": [r["theme_id"] for r in side_rank[:3]] == drift["reference"]["top3"],
             "ranked": side_rank,
             "underlying_order_identical": (
                 [row["claim_count"] for row in side_rank] == [row["claim_count"] for row in reference_rank]

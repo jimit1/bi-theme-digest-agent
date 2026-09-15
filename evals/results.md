@@ -7,9 +7,12 @@ Command: `python -m digest eval --mode replay`, run from the code repo with the 
 `/Users/jimabmatic.ai/momentive-bi-digest/.venv/bin/python`. Replay mode, zero network calls,
 zero live model spend.
 
-Store commit sha (HEAD at run time): 0d25d4ff84bc3745e5f6ddcd6daaef6dd920b330
-("run 2026-09-28T08:00Z: ask, declined"). This is the polish pass regeneration from B16, the
-final state named in the brief.
+Store commit sha (HEAD at run time): 65b7b0a25f3c2af17b78253337435f6818978d5f
+("run 2026-09-28T08:00Z: ask, declined"). This is the consolidation regeneration: the same
+replay from the scaffold commit and the run 3 recordings that B16's polish pass did, redone
+on the scrubber fix in OD27, so the redaction counts in the run logs, the manifests, the
+week summaries and the 2026-W37 run line now count each redaction once. 23 commits, the same
+run for run history as before.
 
 Run ids covered (every `runs/*` directory in the store, in order):
 2026-09-07T06:00Z, 2026-09-08T06:00Z, 2026-09-09T06:00Z, 2026-09-10T06:00Z, 2026-09-11T06:00Z,
@@ -103,10 +106,13 @@ sources and recorded responses included.
 From `runs/2026-09-14T07:00Z/manifest.json`, the build manifest for the 2026-W37 digest:
 
 ```
-"stability": {"computed": true, "jaccard": 1.0, "top3_stable": false, "compared_run_id": "2026-09-14T07:00Z"}
+"stability": {"computed": true, "jaccard": 1.0, "top3_stable": true, "compared_run_id": "2026-09-14T07:00Z"}
 ```
 
-Claim co-assignment jaccard: 1.000. Top three stable: false.
+Claim co-assignment jaccard: 1.000. Top three stable: true, by claim set. The same flag
+compared by allocated theme id reads false, which is the number earlier drafts quoted. Both
+are in `runs/2026-09-14T07:00Z/stability.json` alongside the manifest, because
+RunManifest.stability is closed to four keys.
 
 How this was measured, per B16's envelope: the build for week 2026-W37 was run a second time
 with `--stability`, asking for a second live opinion from the synthesis model on the same
@@ -115,8 +121,14 @@ input claims. That second opinion was recorded into
 never touched the committed theme set. Jaccard compares which claims the two opinions grouped
 into the same theme as each other, independent of what either opinion named the theme, so a
 score of 1.000 means both opinions partitioned the week's claims into themes identically.
-Top three stable compares the three highest scoring theme ids by name across the two runs,
-and the two opinions ranked a different three at the top even though they agreed on every
-grouping, so that flag reads false. The golden set expects this metric at 1.0 and asks for it
-to be reported whatever it is; both the earlier build (B16, run 3) and this replay agree on
+Top three stable now compares the set of claim ids each of the top three themes carries, and
+the top three are the same three themes under different ids: the two opinions produced
+identical claim sets in identical rank order, so that flag reads true. It read false before
+because it compared allocated theme ids, and `store.allocate_theme_ids` hands out
+THEME-000n in the editor's placeholder order, which on a cold start week is arbitrary: the
+same three themes came back as THEME-0002, THEME-0001, THEME-0006 on one side and
+THEME-0005, THEME-0001, THEME-0003 on the other. Both numbers are reported, the claim set
+one as `top3_stable` and the id one as `top3_stable_by_id`, so the change is visible rather
+than silent. The golden set expects the co-assignment metric at 1.0 and asks for it to be
+reported whatever it is; both the earlier build (B16, run 3) and this replay agree on
 1.000.

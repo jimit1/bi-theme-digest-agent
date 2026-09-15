@@ -467,8 +467,18 @@ def _stability_rows(store: Store) -> list[dict[str, Any]]:
         except (OSError, json.JSONDecodeError):
             continue
         if manifest.get("run_type") == "build" and manifest.get("stability", {}).get("computed"):
-            rows.append({"run_id": manifest["run_id"], "week": manifest.get("week"),
-                         **manifest["stability"]})
+            row = {"run_id": manifest["run_id"], "week": manifest.get("week"),
+                   **manifest["stability"]}
+            # The manifest carries only the four keys the contract allows. The id level
+            # comparison lives beside it, so report it when the file is there.
+            beside = manifest_path.parent / "stability.json"
+            if beside.is_file():
+                try:
+                    row["top3_stable_by_id"] = json.loads(
+                        beside.read_text(encoding="utf-8")).get("top3_stable_by_id")
+                except (OSError, json.JSONDecodeError):
+                    pass
+            rows.append(row)
     return rows
 
 
@@ -490,8 +500,12 @@ def report_markdown(result: dict[str, Any]) -> str:
         lines.append("No build run computed a stability number.")
     else:
         for row in result["stability"]:
-            lines.append("- %s %s: jaccard %.3f, top three stable %s"
-                         % (row["week"], row["run_id"], row["jaccard"], row["top3_stable"]))
+            by_id = ("" if row.get("top3_stable_by_id") is None else
+                     " (%s by theme id, which is allocated in the editor's placeholder "
+                     "order)" % row["top3_stable_by_id"])
+            lines.append("- %s %s: jaccard %.3f, top three stable %s by claim set%s"
+                         % (row["week"], row["run_id"], row["jaccard"], row["top3_stable"],
+                            by_id))
     lines.append("")
     if result["failed"]:
         lines.append("Failed: %s" % ", ".join(r["id"] for r in result["results"]

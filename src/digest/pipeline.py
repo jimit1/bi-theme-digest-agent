@@ -147,6 +147,25 @@ def top_three(themes: Iterable[dict[str, Any]]) -> list[str]:
     return [t["theme_id"] for t in ordered[:3]]
 
 
+def top_three_claim_sets(themes: Iterable[dict[str, Any]],
+                         claim_ids: set[str] | None = None) -> list[frozenset[str]]:
+    """The same top three, described by the claims each theme carries instead of by its id.
+
+    Theme ids are allocated in the editor's placeholder order, so two runs that produce the
+    same three themes in the same order can still hand them different ids on a cold start
+    week. Comparing evidence sets asks what the metric means: is the same evidence at the
+    top, in the same rank order.
+    """
+    ordered = sorted(themes, key=lambda t: (-int(t["score"]), t["theme_id"]))
+    out: list[frozenset[str]] = []
+    for theme in ordered[:3]:
+        evidence = theme.get("evidence") or []
+        if claim_ids is not None:
+            evidence = [claim_id for claim_id in evidence if claim_id in claim_ids]
+        out.append(frozenset(evidence))
+    return out
+
+
 def jaccard(left: set[Any], right: set[Any]) -> float:
     """Intersection over union. Two empty sets are identical, which is 1.0."""
     if not left and not right:
@@ -873,6 +892,8 @@ def build_week(week: str, context: Context, stability: bool = False) -> dict[str
     # Written from the same summary the digest was rendered from, so the file and the run
     # line can never drift apart.
     write_week_summary(store, run_id, summary)
+    if stability_block["computed"]:
+        write_stability(store, run_id, stability_block)
     store.commit("run %s: build %s digest, %d themes appended, %d opened"
                  % (run_id, week, appended, opened), run_id)
 
@@ -885,12 +906,14 @@ def build_week(week: str, context: Context, stability: bool = False) -> dict[str
     context.say("  %s" % md_path)
     context.say("  %s" % html_path)
     if stability_block["computed"]:
-        context.say("  stability: jaccard %.3f (labelled %.3f), top three stable %s%s"
+        context.say("  stability: jaccard %.3f (labelled %.3f), top three stable %s by claim "
+                    "set, %s by theme id%s"
                     % (stability_block["jaccard"], stability_block["labelled_jaccard"],
-                       stability_block["top3_stable"],
+                       stability_block["top3_stable"], stability_block["top3_stable_by_id"],
                        "" if context.mode != "replay" else
                        " (both sides replay the same recordings here, so this is trivially "
                        "1.0; the live number is the one worth reporting)"))
+        context.say("  %s" % TOP3_NOTE)
     return manifest
 
 
@@ -957,6 +980,19 @@ def co_assignment(themes: Iterable[dict[str, Any]], claim_ids: set[str]) -> set[
     return out
 
 
+TOP3_NOTE = ("top3_stable compares the claim set of each of the top three, so it is "
+             "independent of the theme ids, which are allocated in the editor's placeholder "
+             "order; top3_stable_by_id is the old id comparison, kept beside it.")
+
+
+def write_stability(store: Store, run_id: str, block: dict[str, Any]) -> Path:
+    """Alongside the manifest, not inside it: RunManifest.stability is closed to four keys."""
+    path = store.path / "runs" / run_id / "stability.json"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(block, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return path
+
+
 def contract_stability(block: dict[str, Any]) -> dict[str, Any]:
     """Just the four keys RunManifest.stability allows. The extra numbers are for the run
     output and the write up, and the schema is closed on purpose."""
@@ -971,16 +1007,28 @@ def _compare(first: list[dict[str, Any]], second: list[dict[str, Any]], run_id: 
     `jaccard` is the label independent one, because that is the question the golden set is
     asking. `labelled_jaccard` is the strict pair overlap including the allocated theme id,
     which is the harsher number and is reported alongside rather than hidden.
+
+    `top3_stable` is label independent for the same reason: it compares the set of claim ids
+    each of the top three carries. `top3_stable_by_id` is the old comparison of allocated
+    theme ids, kept so the change is visible rather than silent.
     """
     left = _restrict(assignment_pairs(first), week_claim_ids)
     right = _restrict(assignment_pairs(second), week_claim_ids)
+    first_top3 = top_three_claim_sets(first, week_claim_ids)
+    second_top3 = top_three_claim_sets(second, week_claim_ids)
     return {
         "computed": True,
         "jaccard": round(jaccard(co_assignment(first, week_claim_ids),
                                  co_assignment(second, week_claim_ids)), 6),
-        "top3_stable": top_three(second) == top_three(first),
+        "top3_stable": second_top3 == first_top3,
+        "top3_stable_by_id": top_three(second) == top_three(first),
+        "top3_note": TOP3_NOTE,
         "compared_run_id": run_id,
         "labelled_jaccard": round(jaccard(left, right), 6),
+        "top3_first": top_three(first),
+        "top3_second": top_three(second),
+        "top3_first_claim_sets": [sorted(group) for group in first_top3],
+        "top3_second_claim_sets": [sorted(group) for group in second_top3],
         "themes_first": len(first),
         "themes_second": len(second),
     }
@@ -1018,14 +1066,17 @@ def measure_stability(week: str, context: Context) -> dict[str, Any]:
     manifest["stability"] = contract_stability(block)
     validate(manifest, "RunManifest")
     store.write_run_manifest(manifest)
+    write_stability(store, run_id, block)
     store.commit("run %s: stability for %s, jaccard %.3f" % (run_id, week, block["jaccard"]),
                  run_id)
     context.say(
         "stability %s: claim co-assignment jaccard %.3f, with theme ids %.3f, "
-        "top three %s, %d themes against %d"
+        "top three %s by claim set (%s by theme id), %d themes against %d"
         % (week, block["jaccard"], block["labelled_jaccard"],
            "stable" if block["top3_stable"] else "CHANGED",
+           "stable" if block["top3_stable_by_id"] else "CHANGED",
            block["themes_second"], block["themes_first"]))
+    context.say("  %s" % TOP3_NOTE)
     context.say(
         "  second opinion cost $%.4f against the reference run's $%.4f. Both sides were run "
         "from the commit the build started from, against separate recordings, so this is a "

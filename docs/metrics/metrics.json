@@ -2,7 +2,7 @@
   "recomputed_from": {
     "store": "bi-theme-digest-store",
     "run_directories": 20,
-    "log_lines": 1127,
+    "log_lines": 1118,
     "log_lines_in_runs_with_a_manifest": 1079,
     "model_call_lines": 61,
     "manifests": 18,
@@ -399,8 +399,28 @@
         "THEME-0002",
         "THEME-0001",
         "THEME-0006"
+      ],
+      "top3_claim_sets": [
+        [
+          "03a7ca4ae6d8",
+          "260d27e4dad0",
+          "306b8bbab997"
+        ],
+        [
+          "147e1313dfcd",
+          "1fa1d77cb5b7",
+          "76c56a349aad",
+          "bcdbd51f7f21",
+          "ef6d2438a30e"
+        ],
+        [
+          "79e3e7aa0bbd",
+          "ae96fcdf3b0a",
+          "dcb169d12187"
+        ]
       ]
     },
+    "top3_note": "top3_stable compares the claim set of each of the top three, so it is independent of the theme ids, which are allocated in the editor's placeholder order; top3_stable_by_id is the old id comparison, kept beside it. Same rule as pipeline._compare.",
     "comparisons": [
       {
         "responses_dir": "responses-stability",
@@ -412,7 +432,27 @@
           "THEME-0001",
           "THEME-0003"
         ],
-        "top3_stable": false,
+        "top3_claim_sets": [
+          [
+            "03a7ca4ae6d8",
+            "260d27e4dad0",
+            "306b8bbab997"
+          ],
+          [
+            "147e1313dfcd",
+            "1fa1d77cb5b7",
+            "76c56a349aad",
+            "bcdbd51f7f21",
+            "ef6d2438a30e"
+          ],
+          [
+            "79e3e7aa0bbd",
+            "ae96fcdf3b0a",
+            "dcb169d12187"
+          ]
+        ],
+        "top3_stable": true,
+        "top3_stable_by_id": false,
         "ranked": [
           {
             "theme_id": "THEME-0005",
@@ -489,7 +529,27 @@
           "THEME-0001",
           "THEME-0003"
         ],
-        "top3_stable": false,
+        "top3_claim_sets": [
+          [
+            "03a7ca4ae6d8",
+            "260d27e4dad0",
+            "306b8bbab997"
+          ],
+          [
+            "147e1313dfcd",
+            "1fa1d77cb5b7",
+            "76c56a349aad",
+            "bcdbd51f7f21",
+            "ef6d2438a30e"
+          ],
+          [
+            "79e3e7aa0bbd",
+            "ae96fcdf3b0a",
+            "dcb169d12187"
+          ]
+        ],
+        "top3_stable": true,
+        "top3_stable_by_id": false,
         "ranked": [
           {
             "theme_id": "THEME-0007",
