@@ -170,7 +170,8 @@ def _theme_html(
 def _status_line_plain(theme: dict[str, Any]) -> str:
     inputs = theme["score_inputs"]
     text = (
-        "Accounts: %d customer, %d prospect. Open cases: %d. Last evidence: %s. Status: %s."
+        "Accounts: %d customer, %d prospect. Open cases on these accounts: %d. "
+        "Last evidence: %s. Status: %s."
         % (
             inputs["distinct_customers"],
             inputs["distinct_prospects"],

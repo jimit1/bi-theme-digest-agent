@@ -90,21 +90,42 @@ def render_markdown(
 
 
 def _run_line(manifest: dict[str, Any]) -> str:
+    """One line a reader can check the week against.
+
+    The numbers here are the week's, not the build run's. A build reads no sources and
+    verifies no claims of its own, so `digest.pipeline.week_summary` adds up the week's
+    ingest runs plus this build and hands the result in through this same argument. A plain
+    RunManifest still renders, without the call and case split and without the weekly cost.
+    """
     counts = manifest["counts"]
     usage = manifest["usage"]
     tiers = ", ".join(sorted(row["tier"] for row in usage.get("by_tier", []))) or "none"
+    by_doc_type = manifest.get("sources_by_doc_type")
+    sources = "%d sources read" % counts["sources_read"]
+    if by_doc_type is not None:
+        sources += " (%d calls, %d cases)" % (by_doc_type.get("call", 0),
+                                              by_doc_type.get("case", 0))
     cost = usage["total"]["cost_usd"]
+    build_cost = manifest.get("build_cost_usd")
+    cost_text = ("cost $%.2f for the week ($%.2f this build)" % (cost, build_cost)
+                 if build_cost is not None else "cost $%.2f" % cost)
+    scope = ("Run %s, week %s" % (manifest["run_id"], manifest["week"])
+             if by_doc_type is not None and manifest.get("week")
+             else "Run %s" % manifest["run_id"])
     return (
-        "Run %s: %d sources read, %d claims verified, %d rejected, "
-        "%d themes appended, %d opened, cost $%.2f, model tiers used: %s."
+        "%s: %s, %d private comments withheld, %d PII redactions, "
+        "%d claims verified, %d rejected, %d themes appended, %d opened, %s, "
+        "model tiers used: %s."
         % (
-            manifest["run_id"],
-            counts["sources_read"],
+            scope,
+            sources,
+            counts["comments_withheld"],
+            counts["pii_redactions"],
             counts["claims_verified"],
             counts["claims_rejected"],
             counts["themes_appended"],
             counts["themes_opened"],
-            cost,
+            cost_text,
             tiers,
         )
     )
@@ -154,7 +175,7 @@ def _status_line(theme: dict[str, Any]) -> str:
     parts = [
         "Accounts: %d customer, %d prospect."
         % (inputs["distinct_customers"], inputs["distinct_prospects"]),
-        "Open cases: %d." % inputs["open_cases"],
+        "Open cases on these accounts: %d." % inputs["open_cases"],
         "Last evidence: %s." % theme["last_evidence_at"][:10],
         "Status: %s." % theme["status"],
     ]

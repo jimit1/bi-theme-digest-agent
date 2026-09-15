@@ -141,6 +141,106 @@ def test_extra_counts_reach_the_manifest(tmp_path):
     assert manifest["counts"]["themes_opened"] == 8
 
 
+# ------------------------------------------------------------------ the week's own numbers
+
+
+def _ingest_manifest(store, day: str, week: str, counts: dict, cost: float) -> None:
+    """One ingest run manifest on disk, with the counts and the cost this test needs."""
+    run_id = pipeline.ingest_run_id(day)
+    audit = Audit(run_id, store.path)
+    manifest = pipeline._manifest(run_id, "ingest", week, "replay",
+                                  "%sT06:00:00.000Z" % day, audit, extra_counts=counts)
+    manifest["usage"]["by_tier"] = [{"tier": "extraction", "calls": 2, "tokens_in": 10,
+                                     "tokens_out": 5, "cache_read": 0, "cache_write": 0,
+                                     "cost_usd": cost}]
+    manifest["usage"]["total"] = {"calls": 2, "tokens_in": 10, "tokens_out": 5,
+                                  "cache_read": 0, "cache_write": 0, "cost_usd": cost}
+    validate(manifest, "RunManifest")
+    store.write_run_manifest(manifest)
+
+
+def test_week_summary_adds_the_weeks_ingest_runs_to_this_build(tmp_path):
+    """The build run alone reads nothing. The digest's run line has to report the week."""
+    from digest.store import Store
+
+    store = Store(tmp_path)
+    _ingest_manifest(store, "2026-09-08", "2026-W37",
+                     {"sources_read": 9, "comments_withheld": 4, "pii_redactions": 3,
+                      "claims_extracted": 11, "claims_verified": 11}, 0.40)
+    _ingest_manifest(store, "2026-09-09", "2026-W37",
+                     {"sources_read": 7, "comments_withheld": 2, "pii_redactions": 1,
+                      "claims_extracted": 7, "claims_verified": 7}, 0.30)
+    # A different week's ingest run must not be counted.
+    _ingest_manifest(store, "2026-09-21", "2026-W38",
+                     {"sources_read": 1, "claims_verified": 1}, 0.10)
+    store.record_sources("2026-09-08T06:00Z", [
+        {"source": "gong", "source_id": "7782934451001", "account_id": "ACC-0001",
+         "doc_type": "call", "occurred_at": "2026-09-08T15:00:00Z", "turn_count": 4,
+         "withheld_comment_count": 0},
+        {"source": "salesforce", "source_id": "5008W00002aQpLrQAK",
+         "account_id": "ACC-0001", "doc_type": "case",
+         "occurred_at": "2026-09-08T16:00:00Z", "turn_count": 3,
+         "withheld_comment_count": 2},
+    ])
+    store.record_sources("2026-09-21T06:00Z", [
+        {"source": "gong", "source_id": "7782934451099", "account_id": "ACC-0001",
+         "doc_type": "call", "occurred_at": "2026-09-21T15:00:00Z", "turn_count": 2,
+         "withheld_comment_count": 0},
+    ])
+
+    audit = Audit("2026-09-14T07:00Z", tmp_path)
+    build = pipeline._manifest("2026-09-14T07:00Z", "build", "2026-W37", "replay",
+                               "2026-09-14T07:00:00.000Z", audit,
+                               extra_counts={"themes_appended": 0, "themes_opened": 10})
+    build["usage"]["by_tier"] = [{"tier": "synthesis", "calls": 2, "tokens_in": 20,
+                                  "tokens_out": 9, "cache_read": 0, "cache_write": 0,
+                                  "cost_usd": 1.2187}]
+    build["usage"]["total"] = {"calls": 2, "tokens_in": 20, "tokens_out": 9,
+                               "cache_read": 0, "cache_write": 0, "cost_usd": 1.2187}
+
+    summary = pipeline.week_summary("2026-W37", store, build)
+    assert summary["ingest_run_ids"] == ["2026-09-08T06:00Z", "2026-09-09T06:00Z"]
+    assert summary["counts"]["sources_read"] == 16
+    assert summary["counts"]["comments_withheld"] == 6
+    assert summary["counts"]["pii_redactions"] == 4
+    assert summary["counts"]["claims_verified"] == 18
+    assert summary["counts"]["themes_opened"] == 10
+    assert summary["sources_by_doc_type"] == {"call": 1, "case": 1}
+    assert summary["cost_usd"] == {"ingest": 0.7, "build": 1.2187, "total": 1.9187}
+    assert summary["model_tiers"] == ["extraction", "synthesis"]
+
+    # The build's own manifest is untouched by the aggregation.
+    assert build["counts"]["sources_read"] == 0
+    assert build["usage"]["total"]["cost_usd"] == 1.2187
+
+    # And the renderers see the week through the manifest argument, without a new one.
+    view = pipeline.week_run_line_view(build, summary)
+    from digest.render.markdown import _run_line
+
+    line = _run_line(view)
+    assert "16 sources read (1 calls, 1 cases)" in line
+    assert "6 private comments withheld, 4 PII redactions" in line
+    assert "18 claims verified, 0 rejected, 0 themes appended, 10 opened" in line
+    assert "cost $1.92 for the week ($1.22 this build)" in line
+    assert "model tiers used: extraction, synthesis." in line
+
+
+def test_week_summary_is_written_next_to_the_manifest_not_inside_it(tmp_path):
+    from digest.store import Store
+
+    store = Store(tmp_path)
+    audit = Audit("2026-09-14T07:00Z", tmp_path)
+    build = pipeline._manifest("2026-09-14T07:00Z", "build", "2026-W37", "replay",
+                               "2026-09-14T07:00:00.000Z", audit)
+    summary = pipeline.week_summary("2026-W37", store, build)
+    path = pipeline.write_week_summary(store, "2026-09-14T07:00Z", summary)
+    assert path == tmp_path / "runs" / "2026-09-14T07:00Z" / "week_summary.json"
+    assert json.loads(path.read_text(encoding="utf-8"))["week"] == "2026-W37"
+    # RunManifest is a closed schema, so the aggregate must not have leaked into it.
+    validate(build, "RunManifest")
+    assert "sources_by_doc_type" not in build
+
+
 # --------------------------------------------------------------------------- negotiation
 
 

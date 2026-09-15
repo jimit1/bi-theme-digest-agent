@@ -9,6 +9,7 @@ in a `<mark>`, that the mm:ss arithmetic is right, and that the HTML file parses
 from __future__ import annotations
 
 import html.parser
+import json
 import sys
 from pathlib import Path
 
@@ -23,6 +24,7 @@ if str(FIXTURES.parent.parent) not in sys.path:
     sys.path.insert(0, str(FIXTURES.parent.parent))
 
 from digest.render import citation_label, render_html, render_markdown, source_moment  # noqa: E402
+from digest.render.markdown import _run_line  # noqa: E402
 from digest.render.scoring import explain_score  # noqa: E402
 from digest.store import mmss  # noqa: E402
 
@@ -73,8 +75,41 @@ def html_text(store: FakeStore) -> str:
 def test_markdown_title_and_run_line(markdown_text: str) -> None:
     assert "Theme digest, week 2026-W37" in markdown_text
     assert MANIFEST["run_id"] in markdown_text
-    assert "4 claims verified" in markdown_text
+    assert "4 sources read" in markdown_text
+    assert "1 private comments withheld" in markdown_text
+    assert "0 PII redactions" in markdown_text
+    assert "4 claims verified, 1 rejected" in markdown_text
+    assert "1 themes appended, 0 opened" in markdown_text
     assert "$0.05" in markdown_text  # usage.total.cost_usd 0.0475 rounded to cents
+    assert "model tiers used: extraction, synthesis." in markdown_text
+
+
+def test_run_line_reports_the_week_when_the_weekly_summary_is_passed_in() -> None:
+    """The pipeline hands the week's aggregate in through the manifest argument, so the
+    line names the week, splits sources into calls and cases and prints the week's cost
+    with this build's own cost in brackets."""
+    weekly = json.loads(json.dumps(MANIFEST))
+    weekly["counts"]["sources_read"] = 53
+    weekly["counts"]["comments_withheld"] = 10
+    weekly["counts"]["pii_redactions"] = 10
+    weekly["counts"]["claims_verified"] = 55
+    weekly["usage"]["total"]["cost_usd"] = 3.1234
+    weekly["sources_by_doc_type"] = {"call": 24, "case": 29}
+    weekly["build_cost_usd"] = 1.2187
+    line = _run_line(weekly)
+    assert line.startswith("Run 2026-09-14T07:00Z, week 2026-W37: ")
+    assert "53 sources read (24 calls, 29 cases)" in line
+    assert "10 private comments withheld, 10 PII redactions" in line
+    assert "55 claims verified, 1 rejected" in line
+    assert "cost $3.12 for the week ($1.22 this build)" in line
+
+
+def test_status_line_names_the_accounts_the_open_cases_are_on(markdown_text: str,
+                                                              html_text: str) -> None:
+    assert "Open cases on these accounts:" in markdown_text
+    assert "Open cases on these accounts:" in html_text
+    assert "Open cases:" not in markdown_text
+    assert "Open cases:" not in html_text
 
 
 def test_markdown_has_every_citation_label_and_claim_id(markdown_text: str) -> None:

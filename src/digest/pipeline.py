@@ -300,6 +300,124 @@ def _manifest(run_id: str, run_type: str, week: str | None, mode: str,
     return manifest
 
 
+# ------------------------------------------------------------------- the week's own numbers
+
+_USAGE_NUMBERS = ("calls", "tokens_in", "tokens_out", "cache_read", "cache_write", "cost_usd")
+
+
+def _sum_usage(usages: list[dict[str, Any]]) -> dict[str, Any]:
+    """Add usage blocks together, keeping the by_stage and by_tier splits."""
+    def rows(key: str, name: str) -> list[dict[str, Any]]:
+        merged: dict[str, dict[str, Any]] = {}
+        for usage in usages:
+            for row in usage.get(key) or []:
+                into = merged.setdefault(row[name],
+                                         dict({name: row[name]},
+                                              **{n: 0 for n in _USAGE_NUMBERS}))
+                for number in _USAGE_NUMBERS:
+                    into[number] += row[number]
+        for row in merged.values():
+            row["cost_usd"] = round(row["cost_usd"], 6)
+        return [merged[key] for key in sorted(merged)]
+
+    total = {number: 0 for number in _USAGE_NUMBERS}
+    for usage in usages:
+        for number in _USAGE_NUMBERS:
+            total[number] += usage["total"][number]
+    total["cost_usd"] = round(total["cost_usd"], 6)
+    return {"by_stage": rows("by_stage", "stage"), "by_tier": rows("by_tier", "tier"),
+            "total": total}
+
+
+def _ingest_manifests(store: Store, week: str) -> list[dict[str, Any]]:
+    """Every ingest run manifest already written for this week, oldest first."""
+    runs = store.path / "runs"
+    if not runs.is_dir():
+        return []
+    out: list[dict[str, Any]] = []
+    for directory in sorted(runs.iterdir()):
+        path = directory / "manifest.json"
+        if not path.is_file():
+            continue
+        one = json.loads(path.read_text(encoding="utf-8"))
+        if one.get("run_type") == "ingest" and one.get("week") == week:
+            out.append(one)
+    return out
+
+
+def week_summary(week: str, store: Store, build_manifest: dict[str, Any]) -> dict[str, Any]:
+    """What the week read, withheld, verified and cost: the ingest runs plus this build.
+
+    A build run's own manifest honestly says zero sources and zero claims, because a build
+    reads what earlier runs extracted. That is right for the manifest and useless in the
+    digest, where the reader wants the week. So the week's ingest manifests are added up
+    here, in code, off the files those runs already wrote, and handed to the renderers
+    through the manifest argument. The RunManifest on disk keeps its own counts; this goes
+    next to it as runs/<build_run_id>/week_summary.json so the metrics can cite exactly the
+    numbers the digest shows.
+    """
+    manifests = _ingest_manifests(store, week)
+    run_ids = [one["run_id"] for one in manifests]
+    counts = {key: 0 for key in build_manifest["counts"]}
+    rejected = {key: 0 for key in build_manifest["rejected_by_reason"]}
+    redactions = {key: 0 for key in build_manifest["pii_redactions_by_kind"]}
+    for one in manifests + [build_manifest]:
+        for key in counts:
+            counts[key] += one["counts"].get(key, 0)
+        for key in rejected:
+            rejected[key] += one["rejected_by_reason"].get(key, 0)
+        for key in redactions:
+            redactions[key] += one["pii_redactions_by_kind"].get(key, 0)
+    usage = _sum_usage([one["usage"] for one in manifests] + [build_manifest["usage"]])
+    by_doc_type = {"call": 0, "case": 0}
+    for row in store.read_source_rows():
+        if row["ingest_run"] in set(run_ids):
+            by_doc_type[row["doc_type"]] = by_doc_type.get(row["doc_type"], 0) + 1
+    ingest_cost = round(sum(one["usage"]["total"]["cost_usd"] for one in manifests), 6)
+    return {
+        "schema_version": "1.0.0",
+        "week": week,
+        "build_run_id": build_manifest["run_id"],
+        "ingest_run_ids": run_ids,
+        "counts": counts,
+        "sources_by_doc_type": by_doc_type,
+        "rejected_by_reason": rejected,
+        "pii_redactions_by_kind": redactions,
+        "cost_usd": {"ingest": ingest_cost,
+                     "build": build_manifest["usage"]["total"]["cost_usd"],
+                     "total": usage["total"]["cost_usd"]},
+        "model_tiers": [row["tier"] for row in usage["by_tier"]],
+        "usage": usage,
+    }
+
+
+def week_run_line_view(build_manifest: dict[str, Any],
+                       summary: dict[str, Any]) -> dict[str, Any]:
+    """The build manifest with the week's numbers in it, for the renderers.
+
+    The renderers take a manifest and nothing else, and the digest's run line is a weekly
+    line, so the weekly numbers travel in that argument rather than in a new one. This is
+    never validated or written: `RunManifest` is a closed schema and the run on disk keeps
+    its own counts.
+    """
+    view = json.loads(json.dumps(build_manifest))
+    view["counts"] = summary["counts"]
+    view["rejected_by_reason"] = summary["rejected_by_reason"]
+    view["pii_redactions_by_kind"] = summary["pii_redactions_by_kind"]
+    view["usage"] = summary["usage"]
+    view["sources_by_doc_type"] = summary["sources_by_doc_type"]
+    view["build_cost_usd"] = summary["cost_usd"]["build"]
+    return view
+
+
+def write_week_summary(store: Store, run_id: str, summary: dict[str, Any]) -> Path:
+    """Alongside the manifest, not inside it."""
+    path = store.path / "runs" / run_id / "week_summary.json"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return path
+
+
 # --------------------------------------------------------------------------- ingest
 
 
@@ -731,9 +849,13 @@ def build_week(week: str, context: Context, stability: bool = False) -> dict[str
                          extra_counts={"themes_appended": appended, "themes_opened": opened,
                                        "themes_quiet": quiet_now, "themes_stale": stale_now})
 
+    # The run line is the week's line, so the renderers get the week's numbers: this build
+    # plus the ingest runs that fed it. The manifest itself is untouched.
+    summary = week_summary(week, store, manifest)
+    week_view = week_run_line_view(manifest, summary)
     with audit.timed("renderer", "write", "render", "digests/%s" % week):
-        md = render_markdown(week, digest, themes_ranked, claims_by_id, manifest, store)
-        html = render_html(week, digest, themes_ranked, claims_by_id, manifest, store)
+        md = render_markdown(week, digest, themes_ranked, claims_by_id, week_view, store)
+        html = render_html(week, digest, themes_ranked, claims_by_id, week_view, store)
     md_path, html_path = store.write_digest(week, _digest_frontmatter(week, run_id, as_of) + md,
                                             html)
 
@@ -748,6 +870,9 @@ def build_week(week: str, context: Context, stability: bool = False) -> dict[str
                          extra_counts={"themes_appended": appended, "themes_opened": opened,
                                        "themes_quiet": quiet_now, "themes_stale": stale_now})
     store.write_run_manifest(manifest)
+    # Written from the same summary the digest was rendered from, so the file and the run
+    # line can never drift apart.
+    write_week_summary(store, run_id, summary)
     store.commit("run %s: build %s digest, %d themes appended, %d opened"
                  % (run_id, week, appended, opened), run_id)
 
