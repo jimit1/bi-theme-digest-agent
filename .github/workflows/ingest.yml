@@ -6,6 +6,13 @@
 # repository, so it is green with no secret configured. The store commit and push step is
 # skipped unless the STORE_TOKEN secret is present. In production this would run
 # --mode live with model credentials held in a secret store, never committed here.
+#
+# Two things run here and they show different halves of the same property. The ingest step
+# is the real nightly command, and on a store that is already at the end of the corpus it
+# is a no-op, which is the watermark doing its job. The demo step then replays the whole
+# pipeline into a scratch clone of the store's first commit, so the Actions log shows
+# fifteen ingests and three builds actually executing and the golden set passing against
+# what they produced. The checked out store is only ever read by that step.
 name: ingest
 
 on:
@@ -28,6 +35,9 @@ jobs:
           repository: jimit1/bi-theme-digest-store
           path: store
           token: ${{ secrets.STORE_TOKEN || secrets.GITHUB_TOKEN }}
+          # Full history, because the demo's fresh mode starts from the store's FIRST
+          # commit and checkout would otherwise fetch only the tip.
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -39,6 +49,11 @@ jobs:
 
       - name: Run ingest in replay mode
         run: python -m digest ingest --since-watermark --mode replay --store store
+
+      - name: Replay the whole pipeline from an empty store
+        run: >
+          python -m digest demo --mode replay --fresh --store store
+          --scratch ${{ runner.temp }}/bi-theme-digest-store-demo
 
       - name: Run the golden set eval
         run: python -m digest eval --store store

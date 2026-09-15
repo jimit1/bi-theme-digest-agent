@@ -486,3 +486,42 @@ def test_the_recorded_corpus_index_maps_a_theme_key_to_its_sources():
     expected = {e["id"] for e in index["entries"]
                 if e.get("theme_key") == "dues_notice_deliverability"}
     assert ids == expected
+
+
+def test_the_fresh_demo_builds_beside_the_store_and_never_inside_it(tmp_path):
+    from digest.errors import GateRefused
+
+    store = tmp_path / "bi-theme-digest-store"
+    store.mkdir()
+    # The default is the sibling directory the README names, so a reader who runs
+    # `make demo` knows where to look without passing anything.
+    assert pipeline._scratch_path(store, None) == tmp_path / "bi-theme-digest-store-demo"
+    assert pipeline._scratch_path(store, tmp_path / "elsewhere") == tmp_path / "elsewhere"
+    # A scratch path inside the store would make the demo write into the published record,
+    # which is the one thing it must never do, so it is refused rather than tidied up.
+    for bad in (store, store / "runs" / "scratch"):
+        with pytest.raises(GateRefused):
+            pipeline._scratch_path(store, bad)
+
+
+def test_the_fresh_demo_refuses_a_shallow_store(tmp_path):
+    from digest.errors import GateRefused
+
+    store = tmp_path / "store"
+    store.mkdir()
+    with pytest.raises(GateRefused):
+        pipeline._clone_scaffold(store, tmp_path / "store-demo")
+    subprocess.run(["git", "init", "-q", str(store)], check=True)
+    (store / ".git" / "shallow").write_text("", encoding="utf-8")
+    with pytest.raises(GateRefused) as caught:
+        pipeline._clone_scaffold(store, tmp_path / "store-demo")
+    assert "fetch-depth" in str(caught.value)
+
+
+def test_the_demo_verb_carries_fresh_and_scratch_to_the_pipeline():
+    args = build_parser().parse_args(["demo", "--fresh", "--scratch", "/tmp/somewhere"])
+    assert args.fresh is True
+    assert args.scratch == "/tmp/somewhere"
+    plain = build_parser().parse_args(["demo"])
+    assert plain.fresh is False
+    assert plain.scratch is None

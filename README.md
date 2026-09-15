@@ -10,9 +10,9 @@ Clone two repositories side by side into one parent directory: the code, the bi-
 make demo
 ```
 
-That runs the whole sample from recorded model responses: fifteen nightly ingests and three weekly builds, no network, no API key. The digests are in `../bi-theme-digest-store/digests/` as `2026-W37.md`, `2026-W38.md`, `2026-W39.md` and an HTML page for each. `make clean-store` puts the store back.
+That is a full replay of three weeks from an empty store: about twenty seconds, no network, no API key. It clones the store's first commit, the empty scaffold, into `../bi-theme-digest-store-demo`, puts the recorded model responses back, runs the fifteen nightly ingests and the three weekly builds into that scratch store, then runs the golden set against what came out. It prints the three digest paths, the nineteen commits the pipeline made one per run, and `18 of 18 assertions passed`. The committed store beside it is only read, never written, and it already holds the same digests, themes and evidence byte for byte.
 
-On a clone the store already carries that run, so every step reports itself as already done and nothing is rewritten: an ingest day at or behind the watermark is a no-op and so is a week whose build run is already in the store. That is the point of a store that persists between runs, and it is why the command is safe to run twice. To watch it replay for real, byte identical to what is committed, put the store back to its first commit while keeping `runs/*/responses*`, then run `make demo` again: about seventeen seconds, fifteen ingests, three builds, nineteen commits, and the digests, themes and evidence come out identical to the committed ones.
+`make demo-inplace` runs the same pipeline against the committed store at `../bi-theme-digest-store` instead, where every ingest day is behind the watermark and every week is already built, so every step reports itself as already done and nothing is rewritten, which is what a store that persists between runs is for. `make clean-store` puts that store back if anything ever does write to it.
 
 ```
 make demo-live     # the same run live: about 54 minutes, $4.26 by the rate table
@@ -20,10 +20,10 @@ make eval          # the golden set, 18 assertions, the exit code is the result
 make ask Q="why does the renewal invoice credit issue matter"
 make approve THEME=THEME-0002
 make swap-models   # rebuild week 2026-W37 on the cheap tier map and compare
-make test          # 527 tests
+make test          # 531 tests
 ```
 
-`make ask` answers from the theme store only, with no access to the sources, and when the store does not support an answer it says so instead of guessing. `make approve` is the human gate: it passes `--yes` for you and the command exits 4 without it. Add `--dry-run` to print the issue and file nothing.
+`make ask` answers from the theme store only, with no access to the sources, and when the store does not support an answer it says so instead of guessing. `make approve` is the human gate: it passes `--yes` and `--repo` for you, the repository being `REPO=owner/name` if you want a different one, and the command exits 4 without `--yes`. Add `--dry-run` to print the issue and file nothing.
 
 ## Architecture
 

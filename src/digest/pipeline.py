@@ -39,7 +39,7 @@ from digest.audit import Audit
 from digest.connectors import AccountDirectory, GongConnector, McpToolClient, SalesforceConnector
 from digest.contracts import validate
 from digest.enrich import enrich
-from digest.errors import ContractViolation, SchemaRejected
+from digest.errors import ContractViolation, EvalFailure, GateRefused, SchemaRejected
 from digest.gate import write_proposals
 from digest.pii.scrubber import load_names, scrub_document
 from digest.providers import get_provider
@@ -1167,8 +1167,29 @@ def ask(question: str, context: Context) -> dict[str, Any]:
     return answer
 
 
-def demo(context: Context) -> dict[str, Any]:
-    """Every ingest day, then every week, in order. The only command a reader has to run."""
+def demo(context: Context, *, fresh: bool = False,
+         scratch: str | os.PathLike[str] | None = None) -> dict[str, Any]:
+    """Every ingest day, then every week, in order. The only command a reader has to run.
+
+    Two modes, because a store that persists between runs has two honest things to show.
+
+    `fresh` is what `make demo` does. The committed store is the finished record of the
+    three weeks, so running the pipeline straight at it is fifteen no-op ingests and three
+    no-op builds: correct, and it shows a reader nothing. Fresh mode clones the store's
+    FIRST commit, the empty scaffold, into a scratch directory beside it, puts the
+    recordings back, and replays the whole three weeks into that. The committed store is
+    only ever read.
+
+    In place is the old behaviour, kept as `make demo-inplace`: run against the committed
+    store, where every step reports itself as already done and nothing is rewritten.
+    """
+    if fresh:
+        return _demo_fresh(context, scratch)
+    return _demo_in_place(context)
+
+
+def _demo_in_place(context: Context) -> dict[str, Any]:
+    """The pipeline against the committed store. On a clone every step is already done."""
     started = time.monotonic()
     for day in INGEST_DAYS:
         ingest_day(day, context)
@@ -1184,6 +1205,125 @@ def demo(context: Context) -> dict[str, Any]:
         context.say("  %s" % path)
     context.say("  store commits: %s" % commits)
     return {"digests": paths, "commits": commits, "mode": context.mode}
+
+
+def _demo_fresh(context: Context, scratch: str | os.PathLike[str] | None = None
+                ) -> dict[str, Any]:
+    """Replay all three weeks into a scratch clone of the store's scaffold commit.
+
+    The recordings are the only thing carried forward from the committed store, because
+    they are the model's side of the conversation and re-recording them would cost real
+    money for no new information. Everything else, every claim, every theme, every digest
+    and every commit, is produced by this run from an empty store.
+    """
+    import subprocess
+
+    started = time.monotonic()
+    source = context.store_path
+    dest = _scratch_path(source, scratch)
+    context.say("fresh demo: replaying three weeks into %s" % dest)
+    context.say("  recordings come from %s, which is only read" % source)
+
+    # Stage the recordings outside both directories first, because the clone in the next
+    # step wipes the destination and the recordings have to survive it.
+    staging = Path(tempfile.mkdtemp(prefix="digest-recordings-"))
+    relative = [path.relative_to(source)
+                for path in sorted(source.glob("runs/*/responses*")) if path.is_dir()]
+    try:
+        for rel in relative:
+            shutil.copytree(source / rel, staging / rel)
+        scaffold = _clone_scaffold(source, dest)
+        for rel in relative:
+            shutil.copytree(staging / rel, dest / rel, dirs_exist_ok=True)
+    finally:
+        shutil.rmtree(staging, ignore_errors=True)
+    context.say("  scaffold commit %s cloned, %d recording directories restored"
+                % (scaffold[:7], len(relative)))
+    context.say("")
+
+    scratch_context = context.with_overrides(store_path=dest)
+    for day in INGEST_DAYS:
+        ingest_day(day, scratch_context)
+    paths: list[str] = []
+    for week in WEEKS:
+        build_week(week, scratch_context)
+        paths.append(str(dest / "digests" / ("%s.md" % week)))
+
+    # The eval is part of the demo in fresh mode: a replay that produced the wrong digests
+    # would otherwise still look green, because every ingest and every build exited 0.
+    from digest.eval import run_eval
+
+    result = run_eval(scratch_context.store(), context=scratch_context,
+                      mock_dir=scratch_context.mock_dir)
+    context.activate()
+
+    elapsed = time.monotonic() - started
+    commits = _commit_count(dest)
+    log = subprocess.run(["git", "-C", str(dest), "log", "--oneline"],
+                         capture_output=True, text=True, check=False).stdout.strip()
+    context.say("")
+    context.say("demo complete in %.1fs, mode %s, from an empty store" % (elapsed, context.mode))
+    for path in paths:
+        context.say("  %s" % path)
+    context.say("")
+    context.say("eval: %d of %d assertions passed" % (result["passed"], result["total"]))
+    context.say("")
+    context.say("%s, %s commits:" % (dest, commits))
+    for line in log.splitlines():
+        context.say("  %s" % line)
+    context.say("")
+    context.say("The committed store next door at %s already holds these same outputs, "
+                "byte for byte; this run rebuilt all of it from the scaffold commit "
+                "without writing a thing to it." % source)
+    if result["failed"]:
+        raise EvalFailure(row["id"] for row in result["results"] if not row["passed"])
+    return {"digests": paths, "commits": commits, "mode": context.mode,
+            "store": str(dest), "eval_passed": result["passed"], "eval_total": result["total"]}
+
+
+def _scratch_path(source: Path, scratch: str | os.PathLike[str] | None) -> Path:
+    """Where the fresh demo builds. Beside the store by default, never inside it."""
+    dest = Path(scratch).resolve() if scratch else source.parent / ("%s-demo" % source.name)
+    dest = dest.resolve()
+    if dest == source or source in dest.parents:
+        raise GateRefused(
+            "the fresh demo's scratch store has to sit outside the real store, and %s "
+            "does not" % dest)
+    return dest
+
+
+def _clone_scaffold(source: Path, dest: Path) -> str:
+    """Wipe `dest` and recreate it as the store at its first commit. Returns that sha."""
+    import subprocess
+
+    if not (source / ".git").exists():
+        raise GateRefused(
+            "the fresh demo clones the store's first commit, and %s is not a git "
+            "repository" % source)
+    shallow = subprocess.run(["git", "-C", str(source), "rev-parse", "--is-shallow-repository"],
+                             capture_output=True, text=True, check=False).stdout.strip()
+    if shallow == "true":
+        raise GateRefused(
+            "the store at %s is a shallow clone, so its first commit is not there to start "
+            "from. Clone it with full history, or in GitHub Actions set fetch-depth: 0"
+            % source)
+    first = subprocess.run(["git", "-C", str(source), "rev-list", "--max-parents=0", "HEAD"],
+                           capture_output=True, text=True, check=True).stdout.split()
+    if not first:
+        raise GateRefused("the store at %s has no commits to clone" % source)
+    scaffold = first[-1]
+    if dest.exists():
+        shutil.rmtree(dest)
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    subprocess.run(["git", "clone", "--quiet", "--no-hardlinks", str(source), str(dest)],
+                   check=True, capture_output=True, text=True)
+    subprocess.run(["git", "-C", str(dest), "checkout", "--quiet", "-B", "demo", scaffold],
+                   check=True, capture_output=True, text=True)
+    # Drop the remote. Nothing this demo does can then reach the real store even by
+    # accident, which matters because the real store is the published record.
+    subprocess.run(["git", "-C", str(dest), "remote", "remove", "origin"],
+                   check=False, capture_output=True, text=True)
+    return scaffold
 
 
 def _commit_count(store_path: Path) -> int | None:

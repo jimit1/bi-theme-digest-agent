@@ -5,7 +5,16 @@
 # This workflow runs in --mode replay against the corpus already committed to this
 # repository, so it is green with no secret configured. The store commit and push step is
 # skipped unless the STORE_TOKEN secret is present. In production this would run
-# --mode live with model credentials held in a secret store, never committed here.
+# --mode live with model credentials held in a secret store, never committed here, and it
+# would build the calendar week the schedule fired in.
+#
+# With no secret there is no week to build: the corpus ends at 2026-W39 and the store
+# already carries all three weekly builds. So the two steps below split what a scheduled
+# run would do. The first asks for a week that is already in the store and gets the no-op
+# the idempotence guard is there to give, which is what makes this workflow safe to run on
+# any date. The second replays the whole pipeline into a scratch clone of the store's first
+# commit, so the Actions log shows the builds actually executing and the golden set passing
+# against what they produced. The checked out store is only ever read.
 name: digest
 
 on:
@@ -28,6 +37,9 @@ jobs:
           repository: jimit1/bi-theme-digest-store
           path: store
           token: ${{ secrets.STORE_TOKEN || secrets.GITHUB_TOKEN }}
+          # Full history, because the demo's fresh mode starts from the store's FIRST
+          # commit and checkout would otherwise fetch only the tip.
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -37,8 +49,13 @@ jobs:
       - name: Install the package
         run: pip install -e .
 
-      - name: Run build in replay mode
-        run: python -m digest build --week $(date +%G-W%V) --mode replay --store store
+      - name: Build a week the store already carries, which must be a no-op
+        run: python -m digest build --week 2026-W39 --mode replay --store store
+
+      - name: Replay the whole pipeline from an empty store
+        run: >
+          python -m digest demo --mode replay --fresh --store store
+          --scratch ${{ runner.temp }}/bi-theme-digest-store-demo
 
       - name: Run the golden set eval
         run: python -m digest eval --store store

@@ -6,7 +6,7 @@
     python -m digest eval
     python -m digest ask     "why does the renewal credit issue matter"
     python -m digest approve --theme THEME-0003 --yes [--repo owner/name] [--dry-run]
-    python -m digest demo
+    python -m digest demo    [--fresh] [--scratch ../bi-theme-digest-store-demo]
     python -m digest swap    --models config/models.cheap.yaml --week 2026-W37
 
 Global flags are accepted before or after the verb, because typing `--mode record` after
@@ -97,6 +97,12 @@ def build_parser() -> argparse.ArgumentParser:
     _add_globals(approve, suppress=True)
 
     demo = verbs.add_parser("demo", help="every ingest day and every week, in order")
+    demo.add_argument("--fresh", action="store_true",
+                      help="replay the whole pipeline into a scratch clone of the store's "
+                           "first commit, then eval it; the real store is only read")
+    demo.add_argument("--scratch", default=None,
+                      help="where --fresh builds; wiped and recreated each run "
+                           "(default ../bi-theme-digest-store-demo)")
     _add_globals(demo, suppress=True)
 
     swap = verbs.add_parser("swap", help="rerun one week with an alternate tier map")
@@ -149,7 +155,10 @@ def _run(args: argparse.Namespace) -> int:
         return 0
 
     if args.verb == "demo":
-        pipeline.demo(context)
+        scratch = getattr(args, "scratch", None)
+        if scratch and not Path(scratch).is_absolute():
+            scratch = str(_REPO / scratch)
+        pipeline.demo(context, fresh=bool(getattr(args, "fresh", False)), scratch=scratch)
         return 0
 
     if args.verb == "eval":

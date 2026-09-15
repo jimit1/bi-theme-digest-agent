@@ -34,8 +34,8 @@ import generate_corpus as gc  # noqa: E402
 MOCK_DIR = REPO / "data" / "mock"
 SPEC_PATH = MOCK_DIR / "seed_spec.yaml"
 
-EM_DASH = "—"
-EN_DASH = "–"
+EM_DASH = chr(0x2014)  # built, never written, so the repository holds zero of them
+EN_DASH = chr(0x2013)
 
 # Rework 2 (B2 quality pass): the words a request, a problem or a piece of product praise
 # tends to use. Matched whole word (so "wanted"/"needed" narration does not trip it, only the

@@ -1,0 +1,126 @@
+{
+  "schema": "AssetManifest",
+  "schema_version": "1.0.0",
+  "generated_by": "deck/assets/render_panels.py",
+  "assets": [
+    {
+      "file": "deck/assets/01_pipeline_diagram.png",
+      "source_kind": "file",
+      "source": "README.md",
+      "sha256": "ae3c2fe806607561248e42c96c17a6a536c64f5e4a969e8a09eb88726ff30b5e",
+      "lines": "31-64"
+    },
+    {
+      "file": "deck/assets/02_connector_enforcement.png",
+      "source_kind": "file",
+      "source": "mcp/salesforce_server.py",
+      "sha256": "d65b0fd0c20f7b380272daf90fd0e873b867f4560971eb883fb0ccb49a9aeb61",
+      "lines": "115-143"
+    },
+    {
+      "file": "deck/assets/03_editor_prompt_append_vs_open.png",
+      "source_kind": "file",
+      "source": "src/digest/agents/editor/editor.prompt.md",
+      "sha256": "e4b5aeee3c53d15c9334cd2f8830468d39d1b747c6cc3d95fffcf01e5c1c6d71",
+      "lines": "43-59"
+    },
+    {
+      "file": "deck/assets/04_editor_tools_grep.png",
+      "source_kind": "command",
+      "source": "$ grep -n -e ^TOOL_NAMES -e ^    def  -e no write tool src/digest/agents/editor/tools.py",
+      "sha256": "7b66f332f15955693b20f6e412a5acefd62d68ec260d2aa27727756ca2b5e30e",
+      "command": "grep -n -e ^TOOL_NAMES -e ^    def  -e no write tool src/digest/agents/editor/tools.py"
+    },
+    {
+      "file": "deck/assets/05_store_git_log.png",
+      "source_kind": "command",
+      "source": "$ git -C ../bi-theme-digest-store log --oneline",
+      "sha256": "19d844b1816837ea539a9f57ad035a0b8b4cd592252a77ae8e0c2e64e9233011",
+      "command": "git -C ../bi-theme-digest-store log --oneline"
+    },
+    {
+      "file": "deck/assets/06_theme_index.png",
+      "source_kind": "file",
+      "source": "../bi-theme-digest-store/themes/_INDEX.md",
+      "sha256": "6712d75a64a9ff6cfdefedf42f68d7f1e8fe99ed2847d48e3332aa744d21bf2b",
+      "lines": "1-23, top 5 rows"
+    },
+    {
+      "file": "deck/assets/07_t1_pair_dedupe.png",
+      "source_kind": "file",
+      "source": "../bi-theme-digest-store/themes/THEME-0002.md",
+      "sha256": "10e5b2f34f7ae61290e3ae504ce769db8b7802c45108a1992e1bc4d6e8263094",
+      "lines": "evidence table + rationale"
+    },
+    {
+      "file": "deck/assets/08_t2_aliases.png",
+      "source_kind": "file",
+      "source": "../bi-theme-digest-store/themes/THEME-0006.md",
+      "sha256": "7a0615add756d108722f30e9e45f33dbb2a70159a71aaafb7e37ed93141a7d0f",
+      "lines": "8-14"
+    },
+    {
+      "file": "deck/assets/09_withheld_comment_audit_line.png",
+      "source_kind": "command",
+      "source": "$ grep withhold runs/2026-09-10T06:00Z/run.log.jsonl | python -m json.tool",
+      "sha256": "092f7075d3a560d3ede3dd3c314904c4a8db2c52962838fce4b34a931dd2ba55",
+      "command": "grep '\"target\": \"5008W00002aQpLrQAK\"' ../bi-theme-digest-store/runs/2026-09-10T06:00Z/run.log.jsonl"
+    },
+    {
+      "file": "deck/assets/10_scrubber_redaction_count.png",
+      "source_kind": "command",
+      "source": "$ grep scrub runs/2026-09-09T06:00Z/run.log.jsonl | python -m json.tool",
+      "sha256": "d77f219d4d009f9a84e3fcad0aa8879b947397f55585a84256f2d438aa3b29a9",
+      "command": "grep '\"target\": \"7782934451404\"' ../bi-theme-digest-store/runs/2026-09-09T06:00Z/run.log.jsonl"
+    },
+    {
+      "file": "deck/assets/11_score_explain_top_theme.png",
+      "source_kind": "file",
+      "source": "../bi-theme-digest-store/digests/2026-W37.md",
+      "sha256": "a53f5cbba53c88956efab73becd6cc8cf558448f6ecac1b45335f49f84368480",
+      "lines": "theme 1 heading + score explain"
+    },
+    {
+      "file": "deck/assets/12_w37_digest_first_screen.png",
+      "source_kind": "file",
+      "source": "../bi-theme-digest-store/digests/2026-W37.md",
+      "sha256": "cdcdf6092c70c8d84d1cc2ce841a10da468c830092337c614623dd25460866b0",
+      "lines": "8-14, first screen"
+    },
+    {
+      "file": "deck/assets/13_eval_results_table.png",
+      "source_kind": "file",
+      "source": "evals/results.md",
+      "sha256": "7abf5399602631a2938111e5704d19acd6336de2e86545b8811a26bf23602d43",
+      "lines": "T1a,T1b,T2a,T2b,T3,T4a,T4c + result line"
+    },
+    {
+      "file": "deck/assets/14_cost_table.png",
+      "source_kind": "file",
+      "source": "docs/metrics/cost_table.md",
+      "sha256": "2f52116ebc687fd841b09d9c27f9df325f2db3da1daefc7a69e8cb319553bbc5",
+      "lines": "16-19"
+    },
+    {
+      "file": "deck/assets/15_swap_models_output.png",
+      "source_kind": "command",
+      "source": "$ make swap-models   # python -m digest swap --models config/models.cheap.yaml --week 2026-W37",
+      "sha256": "876af5c3b5141634c1f901a86d481536d99ed69f991859ab48de6578cb3b6225",
+      "command": "make swap-models (config/models.cheap.yaml, week 2026-W37, mode replay, run against a temporary clone of the store, never the committed one)"
+    },
+    {
+      "file": "deck/assets/16_ingest_cron_lines.png",
+      "source_kind": "file",
+      "source": ".github/workflows/ingest.yml",
+      "sha256": "2b3161caed8444a8f8d3d1f034278b2f24140541d8910b25cb51741221ab9c0d",
+      "lines": "16-20"
+    },
+    {
+      "file": "deck/assets/17_approve_dry_run_output.png",
+      "source_kind": "command",
+      "source": "$ python -m digest approve --theme THEME-0002 --dry-run --mode replay --repo OWNER/product-feedback",
+      "sha256": "80f37aa9ebb67ae2317ad274ba541622ef80361255d46ae0699b9d314e79cff7",
+      "command": "python -m digest approve --theme THEME-0002 --dry-run --mode replay --repo OWNER/product-feedback (run against a temporary clone of the store, never the committed one)"
+    }
+  ]
+}

@@ -137,8 +137,10 @@ def test_markdown_has_reconciliations_quiet_and_proposals(markdown_text: str) ->
 
 
 def test_markdown_no_dashes(markdown_text: str) -> None:
-    assert "—" not in markdown_text
-    assert "–" not in markdown_text
+    # Built with chr() so the guard keeps working and the repository itself holds
+    # zero em dashes and zero en dashes.
+    assert chr(0x2014) not in markdown_text
+    assert chr(0x2013) not in markdown_text
 
 
 def test_html_no_url_shaped_text(html_text: str) -> None:
