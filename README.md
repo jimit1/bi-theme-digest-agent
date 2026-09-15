@@ -10,7 +10,7 @@ Clone two repositories side by side into one parent directory: the code, the bi-
 make demo
 ```
 
-That is a full replay of three weeks from an empty store: about twenty seconds, no network, no API key. It clones the store's first commit, the empty scaffold, into `../bi-theme-digest-store-demo`, puts the recorded model responses back, runs the fifteen nightly ingests and the three weekly builds into that scratch store, then runs the golden set against what came out. It prints the three digest paths, the nineteen commits the pipeline made one per run, and `18 of 18 assertions passed`. The committed store beside it is only read, never written, and it already holds the same digests, themes and evidence byte for byte.
+That is a full replay of three weeks from an empty store: about twenty seconds, no network, no API key. It clones the store's first commit, the empty scaffold, into `../bi-theme-digest-store-demo`, puts the recorded model responses back, runs the fifteen nightly ingests and the three weekly builds into that scratch store, then runs the golden set against what came out. It prints the three digest paths, the nineteen commits the pipeline made one per run, and `18 of 18 assertions passed`. The committed store beside it is only read, never written, and it already holds the same digests, themes and evidence byte for byte. The HTML digest is a plain file: `open ../bi-theme-digest-store-demo/digests/2026-W37.html` on macOS opens it straight from the filesystem in your default browser, no server involved.
 
 `make demo-inplace` runs the same pipeline against the committed store at `../bi-theme-digest-store` instead, where every ingest day is behind the watermark and every week is already built, so every step reports itself as already done and nothing is rewritten, which is what a store that persists between runs is for. `make clean-store` puts that store back if anything ever does write to it.
 
@@ -92,6 +92,7 @@ Three more, one line each. The store is a separate repository with no code in it
 - `docs/FUTURE_BUILDS.md`: nine items, ordered, each with what it needs to be safe. None of it is built.
 - `evals/results.md`: the golden set run, per assertion, with the grep commands and their output.
 - `walkthrough.md`: the four beats of the recording, with the command for each.
+- `docs/VERIFY.md`: the independent verification guide, from an empty clone to every number above, with the exact expected output for each step.
 
 ## The numbers
 
