@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0.0",
+  "key": "039072649972b48b",
+  "recorded_at": "2026-09-15T00:26:49.542Z",
+  "request": {
+    "tier": "extraction",
+    "agent": "gong_reader",
+    "schema_name": "ReaderOutput",
+    "system": "You read one recorded customer call for Momentive Software and return every claim the client made. You return one JSON object matching the ReaderOutput schema and nothing else.\n\nA claim is a client-side statement that is one of these six things: a feature request, a support issue, a churn risk, a pricing remark, an integration need, or praise.\n\nOnly the client side counts. Every turn header says `client` or `momentive`. Quote client turns only. A Momentive Software employee's statement is never a claim, not even when the employee reports what customers want. \"A lot of our customers ask for this\" spoken on a `momentive` turn is an employee summarising, not a client claim, and a claim quoting it is thrown away.\n\nThe verbatim decides whether a claim survives. A citation verifier checks that your verbatim is an exact substring of the turn text, character for character. A rejected claim is worse than a missed one, so quote less and quote exactly.\n\n- Copy the words from ONE turn, contiguous, exactly as they appear.\n- Between 8 and 60 words.\n- Never span two turns and never span two speakers.\n- No ellipsis, no paraphrase, no tidying, no changed punctuation, spelling or capitalisation, no added or removed spaces.\n- Each sentence of a turn is preceded by a timing marker such as `(418000-430500)`. The markers are not words anyone said. Leave every marker out of verbatim. If your quote runs across a sentence boundary, drop the marker that sits between the two sentences and join them with exactly one space, which is how the turn reads without markers.\n- `[EMAIL]`, `[PHONE]`, `[ADDRESS]` and `[NAME]` are redaction placeholders standing in for personal data that was removed before you saw the call. Treat each as one ordinary opaque word. You may quote across one. Never guess what it hid and never write a real name, address, phone number or email address of your own.\n\n`source_ref` has exactly four fields: `call_id`, `speaker_id`, `start_ms` and `end_ms`. Copy all four from the header of the turn you quoted, exactly as shown. Do not compute them, do not copy a sentence marker into them, do not round. The sentence markers exist so you can pick a contiguous span to quote, not to be copied into `source_ref`.\n\nFor each claim also give:\n\n- `claim_type`, one of `feature_request`, `support_issue`, `churn_risk`, `pricing`, `integration`, `praise`.\n- `product_area`, one of `membership`, `events`, `fundraising`, `lms`, `jobs`, `accounting`, `integrations`, `reporting`.\n- `topic`, a short noun phrase, not a sentence.\n- `paraphrase`, one plain sentence a product manager can read on its own.\n- `importance`, one of `high`, `medium`, `low`, and `importance_reason`, one sentence saying why.\n\nOne claim per distinct point. If the same client makes the same point twice, quote it once. If the call contains no client claim, for example a discovery call where only the Momentive Software side asks questions, return `\"claims\": []` and one sentence in `no_claims_reason`. When `claims` is not empty, `no_claims_reason` must be null.\n\n`source` is `\"gong\"` on the output and on every claim. `source_id` is the call id you were given. `schema_version` is `\"1.0.0\"`.",
+    "user": "Call 7782934451901, account Copper Ridge Youth Foundation, call on 2026-09-09T16:00:00Z.\nTitle: Copper Ridge Youth Foundation reporting review\n\nParticipants:\n- Denise Kohler (client), Director of Programs\n- Arturo Vance (client), Finance Manager\n- Priya Natarajan (momentive), Account Executive\n\nTurns. Each header reads `[turn N | speaker_id S | name | side | start_ms-end_ms]`. The `speaker_id` value and the `start_ms-end_ms` pair, together with call id 7782934451901, are the locator to copy into `source_ref` for any claim quoting that turn.\n\n[turn 1 | speaker_id 8801 | Denise Kohler | client | 300000-321000]\n(300000-312500) Every export from the reporting module stops at five thousand rows and there is no warning, so we only find out when the finance committee asks why the numbers are short. (312500-321000) We run the same report four times with different date filters to get one quarter out.\n\n[turn 2 | speaker_id 3310 | Priya Natarajan | momentive | 321000-333000]\n(321000-326000) A lot of our customers ask for this. (326000-333000) I can take the row limit back to the reporting team this week.\n\n[turn 3 | speaker_id 8802 | Arturo Vance | client | 333000-347000]\n(333000-347000) The accounting export will not line up with our general ledger, so [NAME] on my team rebuilds it by hand every month and sends it to [EMAIL] before we close the books.\n\nReturn the ReaderOutput JSON for call 7782934451901.",
+    "attempt": 1
+  },
+  "result": {
+    "data": {
+      "schema_version": "1.0.0",
+      "source": "gong",
+      "source_id": "7782934451901",
+      "claims": [
+        {
+          "source": "gong",
+          "source_ref": {
+            "call_id": "7782934451901",
+            "speaker_id": "8801",
+            "start_ms": 300000,
+            "end_ms": 321000
+          },
+          "verbatim": "Every export from the reporting module stops at five thousand rows and there is no warning, so we only find out when the finance committee asks why the numbers are short. We run the same report four times with different date filters to get one quarter out.",
+          "paraphrase": "The reporting module exports stop at 5,000 rows without warning, requiring multiple filtered exports to retrieve full quarter data.",
+          "topic": "Export row limit",
+          "product_area": "reporting",
+          "claim_type": "support_issue",
+          "importance": "high",
+          "importance_reason": "It causes reporting errors discovered late and requires running reports multiple times, delaying financial close."
+        },
+        {
+          "source": "gong",
+          "source_ref": {
+            "call_id": "7782934451901",
+            "speaker_id": "8802",
+            "start_ms": 333000,
+            "end_ms": 347000
+          },
+          "verbatim": "The accounting export will not line up with our general ledger, so [NAME] on my team rebuilds it by hand every month and sends it to [EMAIL] before we close the books.",
+          "paraphrase": "The accounting export does not reconcile with the general ledger, requiring manual rebuild every month before closing books.",
+          "topic": "Accounting export reconciliation",
+          "product_area": "accounting",
+          "claim_type": "support_issue",
+          "importance": "high",
+          "importance_reason": "It requires manual reconciliation every month and delays the month-end financial close process."
+        }
+      ],
+      "no_claims_reason": null
+    },
+    "model_id": "claude-haiku-4-5",
+    "tier": "extraction",
+    "tokens_in": 10,
+    "tokens_out": 3011,
+    "cache_read": 0,
+    "cache_write": 29538,
+    "cost_usd": 0.0519875,
+    "prompt_hash": "abdab6844e8365eb",
+    "provider": "agent_sdk_seat",
+    "raw_text": "{\"schema_version\": \"1.0.0\", \"source\": \"gong\", \"source_id\": \"7782934451901\", \"claims\": [{\"source\": \"gong\", \"source_ref\": {\"call_id\": \"7782934451901\", \"speaker_id\": \"8801\", \"start_ms\": 300000, \"end_ms\": 321000}, \"verbatim\": \"Every export from the reporting module stops at five thousand rows and there is no warning, so we only find out when the finance committee asks why the numbers are short. We run the same report four times with different date filters to get one quarter out.\", \"paraphrase\": \"The reporting module exports stop at 5,000 rows without warning, requiring multiple filtered exports to retrieve full quarter data.\", \"topic\": \"Export row limit\", \"product_area\": \"reporting\", \"claim_type\": \"support_issue\", \"importance\": \"high\", \"importance_reason\": \"It causes reporting errors discovered late and requires running reports multiple times, delaying financial close.\"}, {\"source\": \"gong\", \"source_ref\": {\"call_id\": \"7782934451901\", \"speaker_id\": \"8802\", \"start_ms\": 333000, \"end_ms\": 347000}, \"verbatim\": \"The accounting export will not line up with our general ledger, so [NAME] on my team rebuilds it by hand every month and sends it to [EMAIL] before we close the books.\", \"paraphrase\": \"The accounting export does not reconcile with the general ledger, requiring manual rebuild every month before closing books.\", \"topic\": \"Accounting export reconciliation\", \"product_area\": \"accounting\", \"claim_type\": \"support_issue\", \"importance\": \"high\", \"importance_reason\": \"It requires manual reconciliation every month and delays the month-end financial close process.\"}], \"no_claims_reason\": null}",
+    "replayed": false
+  }
+}

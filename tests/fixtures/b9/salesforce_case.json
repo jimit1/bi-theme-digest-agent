@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0.0",
+  "source": "salesforce",
+  "source_id": "5008W00002bRtMzQAK",
+  "title": "Event check-in unusable when venue wifi drops",
+  "account_id": "ACC-0002",
+  "account_name": "Cascadia Nurses Association",
+  "occurred_at": "2026-09-09T13:04:11Z",
+  "doc_type": "case",
+  "ingest_run_id": "2026-09-10T06:00Z",
+  "scrubbed": true,
+  "pii_counts": {
+    "EMAIL": 0,
+    "PHONE": 0,
+    "ADDRESS": 0,
+    "NAME": 0
+  },
+  "participants": [
+    {
+      "id": "005B0000004aQxPIAU",
+      "name": "Halina Brzezinski",
+      "side": "client",
+      "title": null
+    },
+    {
+      "id": "005B0000004bRyQIAV",
+      "name": "Elena Kowalczyk",
+      "side": "momentive",
+      "title": null
+    }
+  ],
+  "turns": [
+    {
+      "ref": {
+        "case_id": "5008W00002bRtMzQAK",
+        "case_number": "00104821",
+        "comment_id": "00aB000001kLmNoIAO",
+        "author_id": "005B0000004aQxPIAU",
+        "author_name": "Halina Brzezinski",
+        "created_at": "2026-09-09T13:04:11Z"
+      },
+      "speaker_id": "005B0000004aQxPIAU",
+      "speaker_side": "client",
+      "text": "Event check-in went down at our regional conference when the venue wifi dropped and the volunteers wrote names on paper for forty minutes. We need check-in to keep working offline and sync once the connection comes back.",
+      "sentences": []
+    },
+    {
+      "ref": {
+        "case_id": "5008W00002bRtMzQAK",
+        "case_number": "00104821",
+        "comment_id": "00aB000001kLmNoIAP",
+        "author_id": "005B0000004bRyQIAV",
+        "author_name": "Elena Kowalczyk",
+        "created_at": "2026-09-09T15:40:02Z"
+      },
+      "speaker_id": "005B0000004bRyQIAV",
+      "speaker_side": "momentive",
+      "text": "Thanks for the detail. A lot of our customers ask for this, and I have logged it with the events team.",
+      "sentences": []
+    }
+  ],
+  "meta": {
+    "withheld_comment_count": 1,
+    "turn_count": 2,
+    "soql": "SELECT Id, CaseNumber, Subject, CreatedDate FROM Case WHERE Id = '5008W00002bRtMzQAK'"
+  }
+}

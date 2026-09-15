@@ -1,0 +1,115 @@
+{
+  "schema_version": "1.0.0",
+  "source": "gong",
+  "source_id": "7782934451901",
+  "title": "Copper Ridge Youth Foundation reporting review",
+  "account_id": "ACC-0006",
+  "account_name": "Copper Ridge Youth Foundation",
+  "occurred_at": "2026-09-09T16:00:00Z",
+  "doc_type": "call",
+  "ingest_run_id": "2026-09-10T06:00Z",
+  "scrubbed": true,
+  "pii_counts": {
+    "EMAIL": 1,
+    "PHONE": 0,
+    "ADDRESS": 0,
+    "NAME": 1
+  },
+  "participants": [
+    {
+      "id": "p-8801",
+      "name": "Denise Kohler",
+      "side": "client",
+      "title": "Director of Programs"
+    },
+    {
+      "id": "p-8802",
+      "name": "Arturo Vance",
+      "side": "client",
+      "title": "Finance Manager"
+    },
+    {
+      "id": "p-3310",
+      "name": "Priya Natarajan",
+      "side": "momentive",
+      "title": "Account Executive"
+    }
+  ],
+  "turns": [
+    {
+      "ref": {
+        "call_id": "7782934451901",
+        "speaker_id": "8801",
+        "speaker_name": "Denise Kohler",
+        "affiliation": "External",
+        "start_ms": 300000,
+        "end_ms": 321000
+      },
+      "speaker_id": "8801",
+      "speaker_side": "client",
+      "text": "Every export from the reporting module stops at five thousand rows and there is no warning, so we only find out when the finance committee asks why the numbers are short. We run the same report four times with different date filters to get one quarter out.",
+      "sentences": [
+        {
+          "start_ms": 300000,
+          "end_ms": 312500,
+          "text": "Every export from the reporting module stops at five thousand rows and there is no warning, so we only find out when the finance committee asks why the numbers are short."
+        },
+        {
+          "start_ms": 312500,
+          "end_ms": 321000,
+          "text": "We run the same report four times with different date filters to get one quarter out."
+        }
+      ]
+    },
+    {
+      "ref": {
+        "call_id": "7782934451901",
+        "speaker_id": "3310",
+        "speaker_name": "Priya Natarajan",
+        "affiliation": "Internal",
+        "start_ms": 321000,
+        "end_ms": 333000
+      },
+      "speaker_id": "3310",
+      "speaker_side": "momentive",
+      "text": "A lot of our customers ask for this. I can take the row limit back to the reporting team this week.",
+      "sentences": [
+        {
+          "start_ms": 321000,
+          "end_ms": 326000,
+          "text": "A lot of our customers ask for this."
+        },
+        {
+          "start_ms": 326000,
+          "end_ms": 333000,
+          "text": "I can take the row limit back to the reporting team this week."
+        }
+      ]
+    },
+    {
+      "ref": {
+        "call_id": "7782934451901",
+        "speaker_id": "8802",
+        "speaker_name": "Arturo Vance",
+        "affiliation": "External",
+        "start_ms": 333000,
+        "end_ms": 347000
+      },
+      "speaker_id": "8802",
+      "speaker_side": "client",
+      "text": "The accounting export will not line up with our general ledger, so [NAME] on my team rebuilds it by hand every month and sends it to [EMAIL] before we close the books.",
+      "sentences": [
+        {
+          "start_ms": 333000,
+          "end_ms": 347000,
+          "text": "The accounting export will not line up with our general ledger, so [NAME] on my team rebuilds it by hand every month and sends it to [EMAIL] before we close the books."
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "withheld_comment_count": 0,
+    "turn_count": 3,
+    "soql": null
+  }
+}

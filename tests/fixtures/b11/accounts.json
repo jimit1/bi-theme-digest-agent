@@ -1,0 +1,124 @@
+{
+  "schema_version": "1.0.0",
+  "accounts": [
+    {
+      "account_id": "ACC-0001",
+      "account_type": "customer",
+      "domain": "greatlakes.example.org",
+      "record": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v62.0/sobjects/Account/SFDC00000000000001"
+        },
+        "Id": "SFDC00000000000001",
+        "Name": "Great Lakes Museum Alliance",
+        "Tier__c": "Enterprise",
+        "ARR__c": 200000,
+        "Renewal_Date__c": "2026-12-31",
+        "Products__c": "membership;events"
+      }
+    },
+    {
+      "account_id": "ACC-0002",
+      "account_type": "customer",
+      "domain": "cascadia.example.org",
+      "record": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v62.0/sobjects/Account/SFDC00000000000002"
+        },
+        "Id": "SFDC00000000000002",
+        "Name": "Cascadia Nurses Association",
+        "Tier__c": "Enterprise",
+        "ARR__c": 300000,
+        "Renewal_Date__c": "2027-03-31",
+        "Products__c": "fundraising"
+      }
+    },
+    {
+      "account_id": "ACC-0003",
+      "account_type": "prospect",
+      "domain": "northwoods.example.org",
+      "record": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v62.0/sobjects/Account/SFDC00000000000003"
+        },
+        "Id": "SFDC00000000000003",
+        "Name": "Northwoods Arborists Society",
+        "Tier__c": "Prospect",
+        "ARR__c": 0,
+        "Renewal_Date__c": null,
+        "Products__c": ""
+      }
+    },
+    {
+      "account_id": "ACC-0004",
+      "account_type": "customer",
+      "domain": "prairie.example.org",
+      "record": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v62.0/sobjects/Account/SFDC00000000000004"
+        },
+        "Id": "SFDC00000000000004",
+        "Name": "Prairie Land Trust Council",
+        "Tier__c": "Professional",
+        "ARR__c": 100000,
+        "Renewal_Date__c": "2026-11-30",
+        "Products__c": "fundraising;accounting"
+      }
+    },
+    {
+      "account_id": "ACC-0005",
+      "account_type": "customer",
+      "domain": "riverside.example.org",
+      "record": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v62.0/sobjects/Account/SFDC00000000000005"
+        },
+        "Id": "SFDC00000000000005",
+        "Name": "Riverside Trade Guild",
+        "Tier__c": "Standard",
+        "ARR__c": 0,
+        "Renewal_Date__c": "2026-10-15",
+        "Products__c": "jobs"
+      }
+    },
+    {
+      "account_id": "ACC-0006",
+      "account_type": "customer",
+      "domain": "sunridge.example.org",
+      "record": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v62.0/sobjects/Account/SFDC00000000000006"
+        },
+        "Id": "SFDC00000000000006",
+        "Name": "Sunridge Farmers Cooperative",
+        "Tier__c": "Standard",
+        "ARR__c": 0,
+        "Renewal_Date__c": "2026-10-20",
+        "Products__c": "accounting"
+      }
+    },
+    {
+      "account_id": "ACC-0007",
+      "account_type": "customer",
+      "domain": "harborline.example.org",
+      "record": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v62.0/sobjects/Account/SFDC00000000000007"
+        },
+        "Id": "SFDC00000000000007",
+        "Name": "Harborline Guides Union",
+        "Tier__c": "Standard",
+        "ARR__c": 0,
+        "Renewal_Date__c": "2026-10-25",
+        "Products__c": "reporting"
+      }
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0.0",
+  "key": "689154f36d600d8a",
+  "recorded_at": "2026-09-15T00:35:05.352Z",
+  "request": {
+    "tier": "narrative",
+    "agent": "analyst",
+    "schema_name": "AnalystAnswer",
+    "system": "You are the analyst for a weekly business intelligence digest built for Momentive Software. A product manager asks you a question. You answer it using only the theme store excerpts given to you below, in this one prompt. You have no other access: no raw call transcripts, no support cases, no memory of any earlier question, no outside knowledge of Momentive Software or its customers.\n\nRules, always:\n\n- Answer only from the retrieved themes and evidence given to you below. Never bring in anything you were not shown.\n- Cite the theme id and the claim id for every factual sentence, using only the ids that appear in the context below. A sentence with a fact and no citation is not allowed.\n- Never name an account, a number or any fact that is not present in the context below.\n- If the question asks about something the context does not cover, decline: set `supported` to false, leave `citations` empty, and give one short, plain sentence in `decline_reason` saying the store has nothing on it. Do not guess and do not stretch a loosely related theme into an answer it does not support.\n- Write in plain language a product manager would use. No marketing language, no jargon.\n- Keep the answer under 150 words unless the question itself asks for more detail.\n- Return only a JSON object matching the AnalystAnswer schema, `schema_version` set to `\"1.0.0\"`, `question` set to the question you were asked. No prose outside the JSON, no markdown fence around it.",
+    "user": "Question: what have customers told us about a mobile app\n\nRetrieved context from the theme store, the only source of truth you have:\n\n(no theme in the store matched this question)\n\nAnswer the question above using only this context. If it does not support an answer, decline instead of guessing.",
+    "attempt": 1
+  },
+  "result": {
+    "data": {
+      "schema_version": "1.0.0",
+      "question": "what have customers told us about a mobile app",
+      "answer": "I can't answer this one. Nothing in the theme store covers customer feedback about a mobile app.",
+      "supported": false,
+      "citations": [],
+      "decline_reason": "No theme in the store matched this question, so there is no evidence on mobile app feedback."
+    },
+    "model_id": "claude-opus-5",
+    "tier": "narrative",
+    "tokens_in": 2,
+    "tokens_out": 115,
+    "cache_read": 55967,
+    "cache_write": 1275,
+    "cost_usd": 0.03883725,
+    "prompt_hash": "0f3ed88cbffc02bc",
+    "provider": "agent_sdk_seat",
+    "raw_text": "{\"schema_version\":\"1.0.0\",\"question\":\"what have customers told us about a mobile app\",\"answer\":\"I can't answer this one. Nothing in the theme store covers customer feedback about a mobile app.\",\"supported\":false,\"citations\":[],\"decline_reason\":\"No theme in the store matched this question, so there is no evidence on mobile app feedback.\"}",
+    "replayed": false
+  }
+}

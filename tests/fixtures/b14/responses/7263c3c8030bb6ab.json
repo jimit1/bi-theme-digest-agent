@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "key": "7263c3c8030bb6ab",
+  "recorded_at": "2026-09-15T00:35:15.424Z",
+  "request": {
+    "tier": "narrative",
+    "agent": "analyst",
+    "schema_name": "AnalystAnswer",
+    "system": "You are the analyst for a weekly business intelligence digest built for Momentive Software. A product manager asks you a question. You answer it using only the theme store excerpts given to you below, in this one prompt. You have no other access: no raw call transcripts, no support cases, no memory of any earlier question, no outside knowledge of Momentive Software or its customers.\n\nRules, always:\n\n- Answer only from the retrieved themes and evidence given to you below. Never bring in anything you were not shown.\n- Cite the theme id and the claim id for every factual sentence, using only the ids that appear in the context below. A sentence with a fact and no citation is not allowed.\n- Never name an account, a number or any fact that is not present in the context below.\n- If the question asks about something the context does not cover, decline: set `supported` to false, leave `citations` empty, and give one short, plain sentence in `decline_reason` saying the store has nothing on it. Do not guess and do not stretch a loosely related theme into an answer it does not support.\n- Write in plain language a product manager would use. No marketing language, no jargon.\n- Keep the answer under 150 words unless the question itself asks for more detail.\n- Return only a JSON object matching the AnalystAnswer schema, `schema_version` set to `\"1.0.0\"`, `question` set to the question you were asked. No prose outside the JSON, no markdown fence around it.",
+    "user": "Question: why are customers upset about renewal invoices and about the registration import timing out\n\nRetrieved context from the theme store, the only source of truth you have:\n\nTheme THEME-0003: Renewal invoices do not show prior dues credit\n## Why this matters\n\nOne customer reports that renewal invoices carry the full annual amount with no line for dues already paid, and finance corrects it by hand every time it happens.\n\n## Evidence\n\n| claim_id | account | source | moment | verbatim |\n| --- | --- | --- | --- | --- |\n| e7e3c117f5c5 | Great Lakes Museum Alliance | gong | call 7782934451002 at 06:58, Dana Ruiz | Our renewal invoice came through with the full annual amount and there is no line anywhere showing the dues we already paid in March. |\n\nTheme THEME-0007: Bulk registration imports time out above ten thousand rows\n## Why this matters\n\nOne customer's fall registration import repeatedly times out once the list passes ten thousand rows, so support splits the file and reruns it by hand.\n\n## Evidence\n\n| claim_id | account | source | moment | verbatim |\n| --- | --- | --- | --- | --- |\n| b30a2f7119ad | Foothill Youth Symphony | gong | call 7782934451099 at 02:02, Priya Nandan | Every time we try to import our fall registration list the upload just times out once we pass about ten thousand rows. |\n\nAnswer the question above using only this context. If it does not support an answer, decline instead of guessing.",
+    "attempt": 1
+  },
+  "result": {
+    "data": {
+      "schema_version": "1.0.0",
+      "question": "why are customers upset about renewal invoices and about the registration import timing out",
+      "answer": "Two separate issues, each from one customer. On invoices, a renewal invoice arrived with the full annual amount and no line showing dues already paid in March, so finance corrects it by hand each time (THEME-0003, claim e7e3c117f5c5). On imports, a fall registration list times out during upload once it passes about ten thousand rows, so support splits the file and reruns it manually (THEME-0007, claim b30a2f7119ad). The common thread is that both force manual rework, but the store shows no link between them beyond that.",
+      "supported": true,
+      "citations": [
+        {
+          "theme_id": "THEME-0003",
+          "claim_id": "e7e3c117f5c5"
+        },
+        {
+          "theme_id": "THEME-0007",
+          "claim_id": "b30a2f7119ad"
+        }
+      ],
+      "decline_reason": null
+    },
+    "model_id": "claude-opus-5",
+    "tier": "narrative",
+    "tokens_in": 2,
+    "tokens_out": 301,
+    "cache_read": 55967,
+    "cache_write": 1693,
+    "cost_usd": 0.04609975,
+    "prompt_hash": "c34dcdcaf5faa90e",
+    "provider": "agent_sdk_seat",
+    "raw_text": "{\"schema_version\":\"1.0.0\",\"question\":\"why are customers upset about renewal invoices and about the registration import timing out\",\"answer\":\"Two separate issues, each from one customer. On invoices, a renewal invoice arrived with the full annual amount and no line showing dues already paid in March, so finance corrects it by hand each time (THEME-0003, claim e7e3c117f5c5). On imports, a fall registration list times out during upload once it passes about ten thousand rows, so support splits the file and reruns it manually (THEME-0007, claim b30a2f7119ad). The common thread is that both force manual rework, but the store shows no link between them beyond that.\",\"supported\":true,\"citations\":[{\"theme_id\":\"THEME-0003\",\"claim_id\":\"e7e3c117f5c5\"},{\"theme_id\":\"THEME-0007\",\"claim_id\":\"b30a2f7119ad\"}],\"decline_reason\":null}",
+    "replayed": false
+  }
+}
