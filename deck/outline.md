@@ -9,7 +9,7 @@ the slide back to a manifest field. A number that is not in that list does not g
 
 Five manifests plus two audit envelopes. The short names used in every `numbers:` list below.
 A few figures come from a sibling field of an envelope's manifest rather than from inside it,
-and those are written out in full, as `B24.measured.store_commits`.
+and those are written out in full, as `B24.measured.store_commits_real`.
 
 | Short name | File | Root path |
 |---|---|---|
@@ -23,8 +23,9 @@ and those are written out in full, as `B24.measured.store_commits`.
 
 Two corrections are already folded in and both are named where they appear. The PII redaction
 total is five, not ten: `IntegrationManifest.corpus.pii_redactions` still carries the doubled
-count from before the scrubber fix, and the corrected value is
-`B16.consolidation.what_actually_differs.scrub_counts` and the W37 digest run line. The top
+count from before the scrubber fix, and the corrected value is in
+`B16.consolidation`, in the `docs_refreshed` entry for `docs/GOVERNANCE.md`, and in the
+W37 digest run line. The top
 three stability flag is true by claim set and false by allocated theme id:
 `IntegrationManifest.stability_w37_live.top3_stable` carries the old id comparison and
 `B16.consolidation.stability_result` carries both.
@@ -91,7 +92,7 @@ numbers:
 
 Sentences on the slide:
 
-- Nine stages. Code runs eight of them, and one model agent runs the ninth.
+- Nine stages. Three model agents run the two that need judgment, two readers at the extraction tier and the editor at the synthesis tier. Code runs six, and a person runs the ninth.
 - Nightly: the connectors pull the previous day, the scrubber removes PII before any model sees a document, two reader agents at the extraction tier pull claims, and code validates the schema and verifies every citation.
 - Weekly: code enriches accounts deterministically, the editor agent at the synthesis tier reads the theme index first and decides append or open new, code scores in arithmetic a reviewer can recompute, and code performs every write.
 - Then a human gate: nothing reaches a system of record until a person runs approve with an explicit confirmation.
@@ -109,8 +110,10 @@ controlled sequencing would make week over week stability a function of model sa
 is exactly the drift question I was asked. If somebody asks why the readers are a cheap tier,
 slide fifteen has the subtraction.
 
-numbers: none on this slide. Tier names and stage count are structural, from
-`docs/DECISIONS.md` decisions 12, 13 and 25.
+numbers: none on this slide. Tier names and the split of the nine numbered stages in the
+pipeline panel, two run by model agents, six run by code and the ninth a human gate, are
+structural, from `docs/DECISIONS.md` decisions 12, 13 and 25 and from the numbered diagram in
+`README.md` that the panel renders, and they are the split the four bullets on the slide describe.
 
 ---
 
@@ -186,7 +189,7 @@ numbers:
 Sentences on the slide:
 
 - The store is a separate repository with no code in it, and the pipeline's only write credential reaches it and nothing else.
-- Three layers, read in order, and the reader stops as soon as it has enough. Layer 0 is a router file under five kilobytes. Layer 1 is the theme index, one line per theme. Layer 2 is an individual theme file, opened only when the index says that theme is relevant.
+- Three layers, read in order, and the reader stops as soon as it has enough. Layer 0 is a router file of 4351 bytes. Layer 1 is the theme index, one line per theme. Layer 2 is an individual theme file, opened only when the index says that theme is relevant.
 - Progressive disclosure is also least privilege here, because layer 2 can be gated by role.
 - Every commit is made by pipeline code after that code validated a document against a schema, so git log is an audit trail rather than a changelog: 26 commits, and every one of them is a pipeline run.
 - The store is why the digest is not rebuilt from scratch. Week 37 opened 10 themes into an empty store. Week 38 appended 7 and opened exactly 1. Week 39 appended 8 and opened 0.
@@ -205,7 +208,8 @@ line are the store behaving as memory, and the cost consequence is on slide fift
 
 numbers:
 
-- 26 commits: `B24.measured.store_commits`, which is the current count. `IntegrationManifest.corpus.store_commits` reads 23, the count at the end of the integration run, and the three since are the consolidation regeneration commits
+- 26 commits: `B24.measured.store_commits_real`, which is the current count. `IntegrationManifest.corpus.store_commits` reads 23, the count at the end of the integration run, and the three since are the consolidation regeneration commits
+- router file 4351 bytes: `wc -c ../bi-theme-digest-store/ROUTER.md`
 - W37 appended 0, opened 10: `MetricsResult.three_week_totals` per week block, `2026-W37`
 - W38 appended 7, opened 1: `IntegrationManifest.builds[1].appended` and `.opened`
 - W39 appended 8, opened 0: `IntegrationManifest.builds[2].appended` and `.opened`
@@ -273,7 +277,7 @@ numbers:
 Sentences on the slide:
 
 - Three things the corpus plants that must not come out the other end, and one that must come out ranked honestly.
-- A private Salesforce case comment saying the account is a churn risk. It was never in the result set, because IsPublished equals true is in the SOQL itself rather than in a filter afterwards. Ten private comments were withheld across the sample run and the count is in the audit log.
+- A private Salesforce case comment saying the account is a churn risk. It was never in the result set, because IsPublished equals true is in the SOQL itself rather than in a filter afterwards. Ten private comments withheld across the three weeks, 4 of them in week 37, and the count is in the audit log.
 - Five PII values redacted before any model call: one email, one phone, one address and two personal names. The scrubber runs before the document is stored and before any model sees it, and the audit log records counts by kind and never the value.
 - A Momentive Software employee saying a lot of our customers ask for this. That is not a client claim. Speaker side is derived by code from the connector's participant record, so a staff quote is rejected at the verifier where it is a join, not in a prompt where it would be a hope.
 - Trap T3 is the opposite case: a prospect's request is surfaced, not suppressed, and ranked below every customer backed theme. THEME-0009 scores 6.
@@ -295,8 +299,8 @@ nicely.
 
 numbers:
 
-- 10 private comments withheld: `IntegrationManifest.corpus.comments_withheld`
-- 5 PII redactions, 1 email, 1 phone, 1 address, 2 name: `B16.consolidation.what_actually_differs.scrub_counts`, and the W37 digest run line
+- 10 private comments withheld across the three weeks, 4 in week 37: `IntegrationManifest.corpus.comments_withheld` and `.ingest_days_run` 15, and the W37 run line for the 4
+- 5 PII redactions, 1 email, 1 phone, 1 address, 2 name: `B16.consolidation.docs_refreshed`, the `docs/GOVERNANCE.md` entry, and the W37 digest run line
 - T4a and T4c pass: `EvalResult.per_assertion.T4a` and `.T4c`
 - four PII assertions pass, 0 hits: `EvalResult.pii_grep_hits_whole_repo`
 - S4 passes, THEME-0009 scores 10 on 3 prospect claims in the eval: `EvalResult.per_assertion.S4`
@@ -355,7 +359,7 @@ somebody on holiday.
 
 numbers:
 
-- the whole run line: `../bi-theme-digest-store/digests/2026-W37.md`, run line, which is the rendered form of `MetricsResult.three_week_totals` week `2026-W37` plus `B16.consolidation.what_actually_differs.scrub_counts` for the redaction count
+- the whole run line: `../bi-theme-digest-store/digests/2026-W37.md`, run line, which is the rendered form of `MetricsResult.three_week_totals` week `2026-W37` plus `B16.consolidation.docs_refreshed`, the `docs/GOVERNANCE.md` entry, for the redaction count
 - 2.27 US dollars for the week: `MetricsResult.three_week_totals.2026-W37`
 - 27 claims verified, 0 rejected: `MetricsResult.three_week_totals` week `2026-W37`
 
@@ -367,7 +371,7 @@ Sentences on the slide:
 
 - Seven controls, each with the command that demonstrates it, because a governance claim that cannot be run is a paragraph rather than a control.
 - 1. PII removed before the model. Grep the scrub events, grep for a planted value: 53 scrub events, no planted value anywhere in the store.
-- 2. Every action audited, reads included. 1118 events across the store, 561 of them reads and 218 writes, one validated line each.
+- 2. Every action audited, reads included. 1136 events across the store, 575 of them reads and 218 writes, one validated line each.
 - 3. Private case comments never in the result set. 10 withhold events across the 15 ingest runs.
 - 4. Structured output rejected, never patched. 55 accepted, the rejected directory empty, all five rejection reasons at zero.
 - 5. Every claim resolves to its source. The eval prints 55 citations resolved.
@@ -376,9 +380,12 @@ Sentences on the slide:
 - Failure behaviour is rejection over repair, with exit codes fixed so a red job is readable without opening the log.
 
 Assets: `deck/assets/04_editor_tools_grep.png`, caption
-`$ grep -n def src/digest/agents/editor/tools.py`, and
-`deck/assets/17_approve_dry_run_output.png`, caption
-`$ python -m digest approve --theme THEME-0002 --dry-run`. Those are controls 6 and 7, the
+`$ grep -n -e ^TOOL_NAMES -e "^    def " -e "no write tool" src/digest/agents/editor/tools.py`,
+and `deck/assets/17_approve_dry_run_output.png`, caption
+`$ python -m digest approve --theme THEME-0002 --mode replay --repo jimit1/bi-theme-digest-agent --dry-run`.
+Each caption is the command that produces the panel above it, taken from
+`deck/assets/manifest.json`, with the panel's `OWNER/product-feedback` placeholder written as
+the Makefile's real default repository so a reader can paste the line and get the panel. Those are controls 6 and 7, the
 two that are most convincing as captured output.
 
 Speaker notes: This is written for an IT and security reader who will not read the code. The
@@ -395,7 +402,7 @@ numbers:
 - 10 withhold events: `IntegrationManifest.corpus.comments_withheld`
 - 55 accepted, 0 rejected, five reasons at zero: `MetricsResult.three_week_totals.claims_verified`, `.claims_rejected`, `IntegrationManifest.rejected_by_reason`
 - 55 citations resolved: `EvalResult.per_assertion.S1`
-- 1118 audit events, 561 reads, 218 writes: `B24.measured.store_audit_events`, `.store_audit_reads`, `.store_audit_writes`
+- 1136 audit events, 575 reads, 218 writes: `B24.measured.audit_events_committed_store`, `.audit_reads`, `.audit_writes`, and `docs/metrics/metrics.json` `recomputed_from.log_lines` for the 1136
 - four read tools: `B24.measured.editor_tool_count` and `docs/GOVERNANCE.md` control 6
 - exit 4 on the refused approve: `docs/GOVERNANCE.md` control 7
 
@@ -477,7 +484,7 @@ Sentences on the slide:
 - The same week with every stage on the frontier model would be 6.480224, a 2.8535 times bill, for work the golden set says the cheap tier already does correctly. Routing saves 4.209252 US dollars a digest week.
 - At ten times the volume, extraction is 92.75 percent of the tokens and 46.3 percent of the cost, the week is 22.709720 and frontier everywhere is 64.802240, so the tier map saves 42.092520 a week and the saving grows with the column that grows.
 - Rerunning the same week with every tier on the small model costs 0.283140, which is 23.23 percent of the reference build, groups the claims identically at Jaccard 1.000, and passes the same assertions.
-- Two costs are reported everywhere and labelled: 4.687941 by the published rate table against 5.755600 by the provider's own accounting, a ratio of 1.2277, because the provider bills a one hour cache write higher than the table does.
+- Two costs are reported everywhere and labelled: 5.067601 by the published rate table against 5.755600 by the provider's own accounting, a ratio of 1.1358, because the provider bills a one hour cache write higher than the table does. The provider's figure predates the third analyst question and is carried forward as a declared constant rather than reinvented.
 
 Asset: `deck/assets/14_cost_table.png`, the by stage table. Caption:
 `docs/metrics/cost_table.md, section 1`.
@@ -500,7 +507,7 @@ numbers:
 - frontier everywhere 6.480224, delta 4.209252, multiple 2.8535: `MetricsResult.repriced_on_claude_opus_5`
 - 10x: 22.70972, 64.80224, saving 42.09252, token share 92.75, cost share 46.3: `MetricsResult.projection_at_ten_times`
 - swap 0.28314, 23.23 percent, Jaccard 1.0: `MetricsResult.swap_models_2026_W37`
-- 4.687941 against 5.7556, ratio 1.2277: `MetricsResult.cost_two_ways`
+- 5.067601 against 5.7556, ratio 1.1358: `docs/metrics/metrics.json` `cost_two_ways.router_table_usd_in_store`, `.cli_reported_usd_in_store`, `.cli_over_router_ratio_in_store`, and `docs/metrics/cost_table.md` section 5. `MetricsResult.cost_two_ways` in B18 still carries the pre-refresh 4.687941 and 1.2277, and 1.2238 is the total live ratio, which is a different number
 - 538 tokens in, 2452742 cache read: `MetricsResult.sample_run.by_stage`, summed, and `docs/metrics/cost_table.md` section 1 total row
 
 ---
@@ -511,7 +518,7 @@ Sentences on the slide:
 
 - Application code asks for a tier and never for a model. A model id under the source tree is a build failure, asserted by a test.
 - Three tiers: extraction, synthesis, narrative. One runtime file names a model, `config/models.yaml`, and swapping the map is that one file.
-- The swap is demonstrable rather than described: one command reruns a week against a different tier map and prints cost, eval pass rate and theme assignment overlap against the reference.
+- The swap is demonstrable rather than described: one command reruns a week against a different tier map and prints cost, eval pass rate and theme assignment overlap against the reference, and the comparison scores the 16 assertions that bind to week 37 alone, out of the 18 in the golden set.
 - Providers sit behind one adapter interface with capability negotiation. The router picks the strongest path a provider declares: native structured output first, then a strict tool call, then the schema in the prompt with validation and one retry in code. Same contract, three implementations, one call site, and the chosen path is in the audit log.
 - Sources sit behind a connector protocol with two methods. A new source is a new file and a config entry with no pipeline change.
 - The router already stepped down a path once in this build, when one contract shape was refused by one transport, and it logged which path ran rather than reshaping the contract.
@@ -530,7 +537,7 @@ budget in a config file would invite an error the config file cannot explain.
 numbers:
 
 - three tiers: `docs/DECISIONS.md` decision 13
-- swap cost 0.28314 at 23.23 percent, eval 16 of 16 both sides: `MetricsResult.swap_models_2026_W37`
+- swap cost 0.28314 at 23.23 percent, eval 16 of 16 both sides: `MetricsResult.swap_models_2026_W37`. The swap scores the 16 assertions that bind to week 37 alone, out of the 18 in the golden set on slide 13, and the slide says so
 
 ---
 
@@ -539,10 +546,10 @@ numbers:
 Sentences on the slide:
 
 - The thing being demonstrated is not only the product. This deliverable was built by a parallel fanout of single purpose agents under one orchestrator, which is the job being hired for.
-- Six waves, thirty worker tasks, one envelope returned per worker. The orchestrator holds the plan and reads envelopes. It does not read source files.
+- Seven waves numbered 0 to 6, thirty worker tasks, one envelope returned per worker. The orchestrator dispatched briefs and read envelopes, and opened product files only to triage QA findings.
 - Four model tiers ran the build and the roster is committed. The orchestrator on one model, the writer and reviewer tier on the frontier model, the cheap tier on a mid model.
 - The plan named a different cheap tier and the harness offered a different one, so the file records what actually ran rather than what was planned.
-- The product's own numbers are the proof the shape worked: 55 claims, 0 rejected, 18 of 18 assertions, byte identical replay.
+- The product's own numbers are the proof the shape worked: 55 claims, 0 rejected, 18 of 18 assertions, 531 tests, byte identical replay.
 
 Asset: none from the panel set. The wave shape and the build roster are set as two text cards,
 because neither is a file that renders usefully as a code panel.
@@ -556,11 +563,11 @@ envelopes disagree it is a visible conflict rather than a silent one.
 
 numbers:
 
-- six waves, thirty worker tasks: the build envelope set, `build/envelopes/B1.json` through `B30.json`, one per worker. This is a build side count rather than a product manifest field, and it is labelled as such.
+- seven waves numbered 0 to 6, thirty worker tasks: `build/BUILD_PLAN.md` for the wave numbering, and the build envelope set, `build/envelopes/B1.json` through `B30.json`, one per worker. This is a build side count rather than a product manifest field, and it is labelled as such.
 - four build model tiers: `docs/DECISIONS.md` decision 45, and `config/build_models.yaml`
 - 55 claims, 0 rejected: `MetricsResult.three_week_totals`
 - 18 of 18: `EvalResult.assertions_passed`
-- 527 tests: `B24.measured.tests`
+- 531 tests: `B24.measured.tests`
 
 ---
 
