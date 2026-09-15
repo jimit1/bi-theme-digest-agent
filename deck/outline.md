@@ -7,7 +7,9 @@ the slide back to a manifest field. A number that is not in that list does not g
 
 ## Where the numbers come from
 
-Five manifests plus two audit envelopes. The short names used in every `numbers:` list below:
+Five manifests plus two audit envelopes. The short names used in every `numbers:` list below.
+A few figures come from a sibling field of an envelope's manifest rather than from inside it,
+and those are written out in full, as `B24.measured.store_commits`.
 
 | Short name | File | Root path |
 |---|---|---|
@@ -95,9 +97,10 @@ Sentences on the slide:
 - Then a human gate: nothing reaches a system of record until a person runs approve with an explicit confirmation.
 - Tier, not model: application code asks for a tier and `config/models.yaml` is the only runtime file that names a model.
 
-Asset: `pipeline_diagram` from `deck/assets/manifest.json`, the annotated pipeline rendered
-from the README architecture block, each stage labelled with the tier that runs it. Caption:
-`README.md, architecture section`.
+Asset: `deck/assets/01_pipeline_diagram.png`, the pipeline rendered from the README
+architecture block. Caption: `README.md, architecture section`. The per stage tier labels sit
+in the text column beside it rather than on the image, because the image is a verbatim render
+of a committed file.
 
 Speaker notes: The shape of this is the argument. Code owns sequencing, validation, citation
 checking, scoring arithmetic and every write, because those have to give the same answer
@@ -122,8 +125,9 @@ Sentences on the slide:
 - The agent cannot ask for what it is not allowed to see, because the tool will not form the query.
 - The mock serves the real response shapes, cursor pagination included, so production is a base URL and a credential with no translation layer.
 
-Asset: `connector_tools_panel`, a rendered excerpt of the MCP tool definitions showing the
-seven tool names and the scoping arguments. Caption: `mcp/salesforce_server.py`.
+Asset: `deck/assets/02_connector_enforcement.png`, the Salesforce connector source showing
+the published-only query, the field allowlist, the row cap and the withheld count. Caption:
+`mcp/salesforce_server.py`.
 
 Speaker notes: This is the slide where an IT reader decides whether to keep listening. The
 line I want to land is the last but one. Least privilege written as a prompt instruction is a
@@ -152,9 +156,9 @@ Sentences on the slide:
 - The transcript turn at 681342 ms contains that sentence as an exact substring. 663288 ms is the 11:03 the digest printed.
 - All 55 claims and all 125 digest evidence lines resolve this way, and a claim whose citation does not resolve is rejected and logged rather than patched.
 
-Asset: `trace_four_panel`, four stacked panels on one slide: the digest paragraph, the
-evidence line, the claim JSON record, and the transcript turn with the quoted span
-highlighted. Captions, one per panel:
+Asset: none from the panel set. The four steps are set as four typographic panels on the
+slide itself, carrying the real values verbatim, because a single rendered image of four
+stacked files does not stay legible at slide width. Captions, one per panel:
 `../bi-theme-digest-store/digests/2026-W37.md`,
 `../bi-theme-digest-store/digests/2026-W37.md, evidence line`,
 `../bi-theme-digest-store/evidence/claims/2026-09-08T06:00Z.jsonl`,
@@ -184,11 +188,12 @@ Sentences on the slide:
 - The store is a separate repository with no code in it, and the pipeline's only write credential reaches it and nothing else.
 - Three layers, read in order, and the reader stops as soon as it has enough. Layer 0 is a router file under five kilobytes. Layer 1 is the theme index, one line per theme. Layer 2 is an individual theme file, opened only when the index says that theme is relevant.
 - Progressive disclosure is also least privilege here, because layer 2 can be gated by role.
-- Every commit is made by pipeline code after that code validated a document against a schema, so git log is an audit trail rather than a changelog: 23 commits, one per pipeline run.
+- Every commit is made by pipeline code after that code validated a document against a schema, so git log is an audit trail rather than a changelog: 26 commits, and every one of them is a pipeline run.
 - The store is why the digest is not rebuilt from scratch. Week 37 opened 10 themes into an empty store. Week 38 appended 7 and opened exactly 1. Week 39 appended 8 and opened 0.
 
-Asset: `store_git_log_panel`, real captured output of git log in the store repository showing
-ingest, build, stability, swap, ask and approve commits and nothing else. Caption:
+Assets: `deck/assets/06_theme_index.png`, caption `../bi-theme-digest-store/themes/_INDEX.md`,
+and `deck/assets/05_store_git_log.png`, real captured git log output showing ingest, build,
+stability, swap, ask and approve commits and nothing else, caption
 `$ git -C ../bi-theme-digest-store log --oneline`.
 
 Speaker notes: Two repositories is a decision I would defend in a design review. The audit
@@ -200,7 +205,7 @@ line are the store behaving as memory, and the cost consequence is on slide fift
 
 numbers:
 
-- 23 commits: `IntegrationManifest.corpus.store_commits`
+- 26 commits: `B24.measured.store_commits`, which is the current count. `IntegrationManifest.corpus.store_commits` reads 23, the count at the end of the integration run, and the three since are the consolidation regeneration commits
 - W37 appended 0, opened 10: `MetricsResult.three_week_totals` per week block, `2026-W37`
 - W38 appended 7, opened 1: `IntegrationManifest.builds[1].appended` and `.opened`
 - W39 appended 8, opened 0: `IntegrationManifest.builds[2].appended` and `.opened`
@@ -217,9 +222,10 @@ Sentences on the slide:
 - Both attached to THEME-0002, and the editor stated its reason: in all of these, what the member already paid or is owed never reaches the amount billed.
 - The assertion that checks it: the two T1 claims, worded completely differently, are attached to exactly one theme between them. It passes.
 
-Asset: `t1_side_by_side`, the two quoted claims rendered side by side above the theme title
-and the editor's merge sentence. Caption: `../bi-theme-digest-store/digests/2026-W37.md,
-theme 1` and `evals/golden_set.yaml, assertion S2`.
+Asset: `deck/assets/07_t1_pair_dedupe.png`, the theme file's evidence rows and the editor's
+stated rationale. Caption: `../bi-theme-digest-store/themes/THEME-0002.md, evidence and
+rationale`. The two quotes themselves are set as text on the slide, and the assertion is
+captioned `evals/golden_set.yaml, assertion S2`.
 
 Speaker notes: This is the judgment half of the system doing the thing I pay a frontier model
 for. A string match finds nothing here, and an embedding similarity finds it unreliably and
@@ -244,8 +250,9 @@ Sentences on the slide:
 - This is the post-acquisition vocabulary problem, named once: a company that grew by acquisition carries several names for the same capability, and the customers use whichever name their own product taught them.
 - The aliases field is the cheap, auditable answer. Next week's claim matches on either name, and a reviewer can see which names were merged and disagree.
 
-Asset: `t2_aliases_panel`, the theme file front matter showing the aliases list, above the two
-source quotes. Caption: `../bi-theme-digest-store/themes/THEME-0006.md`.
+Asset: `deck/assets/08_t2_aliases.png`, the theme file front matter showing the aliases list.
+Caption: `../bi-theme-digest-store/themes/THEME-0006.md`. The two source quotes are set as
+text beside it.
 
 Speaker notes: I name this once and do not labour it. Momentive Software is a group of
 products that arrived from different places, so a theme store that keys on exact feature
@@ -272,8 +279,11 @@ Sentences on the slide:
 - Trap T3 is the opposite case: a prospect's request is surfaced, not suppressed, and ranked below every customer backed theme. THEME-0009 scores 6.
 - Four greps, four zero-hit results, all four in the eval.
 
-Asset: `refusal_grep_panel`, captured terminal output of the must-not-appear greps and the
-PII greps with their exit codes. Caption: `evals/results.md, must not appear section`.
+Assets: `deck/assets/09_withheld_comment_audit_line.png`, caption
+`runs/2026-09-10T06:00Z/run.log.jsonl, withhold event`, and
+`deck/assets/10_scrubber_redaction_count.png`, caption
+`runs/2026-09-09T06:00Z/run.log.jsonl, scrub event`. Both are real audit log lines, which
+carry counts and never the redacted value.
 
 Speaker notes: The PII redaction count is five and it used to say ten. The scrubber was
 counting the turn text and the per sentence copies of it, so the redaction was correct and
@@ -305,9 +315,9 @@ Sentences on the slide:
 - Beside it, the editor's sentence: two customers are sending members numbers they then have to apologise for.
 - One of those two is checkable with a calculator. The other is the reason anybody reads the digest at all.
 
-Asset: `score_function_panel`, the score function source beside the rendered why this score
-line from the digest. Caption: `src/digest/score.py` and
-`../bi-theme-digest-store/digests/2026-W37.md, theme 1`.
+Asset: `deck/assets/11_score_explain_top_theme.png`, the rendered why this score line from
+the digest. Caption: `../bi-theme-digest-store/digests/2026-W37.md, theme 1 score line`. The
+function itself is set as text on the slide, captioned `src/digest/score.py`.
 
 Speaker notes: The rule I followed everywhere is that deterministic code does anything a
 join, a regex or arithmetic can do. A model asserting a priority score is a number nobody can
@@ -333,9 +343,8 @@ Sentences on the slide:
 - Each theme carries a paragraph in plain sentences, then the evidence, each quote tagged with the account, the call or case, the timestamp, the speaker and the claim id.
 - A thin week is visible on the page a product manager already reads, which is the failure mode I care most about: not an error, a digest that looks normal and is quietly missing a day.
 
-Asset: `digest_page_panel`, a real rendered page of the W37 digest with one theme's evidence
-block expanded and one claim id circled. Caption:
-`../bi-theme-digest-store/digests/2026-W37.md`.
+Asset: `deck/assets/12_w37_digest_first_screen.png`, the first screen of the real W37 digest,
+run line included. Caption: `../bi-theme-digest-store/digests/2026-W37.md`.
 
 Speaker notes: I spent real effort on the run line and I would defend it. The digest is the
 surface the team already opens, so the operational health of the pipeline belongs on it
@@ -358,7 +367,7 @@ Sentences on the slide:
 
 - Seven controls, each with the command that demonstrates it, because a governance claim that cannot be run is a paragraph rather than a control.
 - 1. PII removed before the model. Grep the scrub events, grep for a planted value: 53 scrub events, no planted value anywhere in the store.
-- 2. Every action audited, reads included. One validated event per line, and reads are logged so what did it touch is a query rather than a guess.
+- 2. Every action audited, reads included. 1118 events across the store, 561 of them reads and 218 writes, one validated line each.
 - 3. Private case comments never in the result set. 10 withhold events across the 15 ingest runs.
 - 4. Structured output rejected, never patched. 55 accepted, the rejected directory empty, all five rejection reasons at zero.
 - 5. Every claim resolves to its source. The eval prints 55 citations resolved.
@@ -366,8 +375,11 @@ Sentences on the slide:
 - 7. A human gate before any system of record. The dry run prints the issue and files nothing. The same command without the confirmation exits 4, refused.
 - Failure behaviour is rejection over repair, with exit codes fixed so a red job is readable without opening the log.
 
-Asset: `governance_commands_panel`, the seven control commands with their real captured
-output, rendered as a terminal panel. Caption: `docs/GOVERNANCE.md, the seven controls`.
+Assets: `deck/assets/04_editor_tools_grep.png`, caption
+`$ grep -n def src/digest/agents/editor/tools.py`, and
+`deck/assets/17_approve_dry_run_output.png`, caption
+`$ python -m digest approve --theme THEME-0002 --dry-run`. Those are controls 6 and 7, the
+two that are most convincing as captured output.
 
 Speaker notes: This is written for an IT and security reader who will not read the code. The
 sentence under it is that a control you can run beats a control you can describe, and every
@@ -383,7 +395,8 @@ numbers:
 - 10 withhold events: `IntegrationManifest.corpus.comments_withheld`
 - 55 accepted, 0 rejected, five reasons at zero: `MetricsResult.three_week_totals.claims_verified`, `.claims_rejected`, `IntegrationManifest.rejected_by_reason`
 - 55 citations resolved: `EvalResult.per_assertion.S1`
-- four read tools: `docs/GOVERNANCE.md` control 6
+- 1118 audit events, 561 reads, 218 writes: `B24.measured.store_audit_events`, `.store_audit_reads`, `.store_audit_writes`
+- four read tools: `B24.measured.editor_tool_count` and `docs/GOVERNANCE.md` control 6
 - exit 4 on the refused approve: `docs/GOVERNANCE.md` control 7
 
 ---
@@ -399,8 +412,8 @@ Sentences on the slide:
 - Seven structural assertions: every citation resolves, the two T1 claims land on one theme, the T2 theme carries both product names in its aliases, the prospect theme ranks below equal-sized customer themes while still appearing, no planted PII anywhere, a rebuild produces the same theme ids, and the stale flag fires on the one theme that received nothing for two weeks.
 - Result: 18 of 18 passed, exit code 0, in replay, with zero network calls and zero live model spend.
 
-Asset: `eval_run_panel`, captured output of the eval command with the per assertion lines and
-the exit code. Caption: `$ python -m digest eval --mode replay`.
+Asset: `deck/assets/13_eval_results_table.png`, the per assertion result lines and the result
+line. Caption: `evals/results.md, per assertion`.
 
 Speaker notes: The honest thing to say about this golden set is that I wrote all of it, which
 is its weakness, and I say so in the future builds document. What it is good for is
@@ -430,8 +443,9 @@ Sentences on the slide:
 - So the flag now compares the claim set each of the top three carries and reads true, and the old id comparison is reported beside it and still reads false.
 - Publishing both is the honest presentation. A metric that flips on a relabelling was worth finding. A metric that keeps flipping after you know why is noise.
 
-Asset: `drift_table_panel`, the two ranked lists side by side with scores and a same claims
-column. Caption: `docs/metrics/cost_table.md, section 7`.
+Asset: none from the panel set. The top three of both ranked lists is set as a typographic
+table on the slide, because the figure is five rows and reads better as type than as a render.
+Caption: `docs/metrics/cost_table.md, section 7`.
 
 Speaker notes: This is the slide where I would rather be believed than impressive. The first
 live run of the whole pipeline agreed with itself at 0.79 and I published that too. The fix
@@ -465,8 +479,8 @@ Sentences on the slide:
 - Rerunning the same week with every tier on the small model costs 0.283140, which is 23.23 percent of the reference build, groups the claims identically at Jaccard 1.000, and passes the same assertions.
 - Two costs are reported everywhere and labelled: 4.687941 by the published rate table against 5.755600 by the provider's own accounting, a ratio of 1.2277, because the provider bills a one hour cache write higher than the table does.
 
-Asset: `cost_tables_panel`, the by stage table and the ten times projection rendered as one
-figure. Caption: `docs/metrics/cost_table.md, sections 1 to 3`.
+Asset: `deck/assets/14_cost_table.png`, the by stage table. Caption:
+`docs/metrics/cost_table.md, section 1`.
 
 Speaker notes: The extract multiple is exactly 5.0000 and that is not a coincidence: every
 frontier rate here is exactly five times the cheap rate, so moving any stage between those two
@@ -502,8 +516,8 @@ Sentences on the slide:
 - Sources sit behind a connector protocol with two methods. A new source is a new file and a config entry with no pipeline change.
 - The router already stepped down a path once in this build, when one contract shape was refused by one transport, and it logged which path ran rather than reshaping the contract.
 
-Asset: `models_yaml_panel`, the tier map beside the provider capability declaration. Caption:
-`config/models.yaml` and `src/digest/providers/base.py`.
+Asset: `deck/assets/15_swap_models_output.png`, the real output of the model swap comparing
+cost, eval and overlap against the reference run. Caption: `$ make swap-models`.
 
 Speaker notes: The question behind this slide is the one about cheaper models arriving through
 gateways and routers, and a tier abstraction with a one file swap is my answer to it. The part
@@ -530,8 +544,8 @@ Sentences on the slide:
 - The plan named a different cheap tier and the harness offered a different one, so the file records what actually ran rather than what was planned.
 - The product's own numbers are the proof the shape worked: 55 claims, 0 rejected, 18 of 18 assertions, byte identical replay.
 
-Asset: `wave_plan_panel`, the wave plan rendered as a simple ASCII flow with worker counts per
-wave. Caption: `build/envelopes, one per worker`.
+Asset: none from the panel set. The wave shape and the build roster are set as two text cards,
+because neither is a file that renders usefully as a code panel.
 
 Speaker notes: I include this because the seat is an AI operations job and how the thing was
 built is at least as interesting as what it does. The orchestrator never reading source files
@@ -546,6 +560,7 @@ numbers:
 - four build model tiers: `docs/DECISIONS.md` decision 45, and `config/build_models.yaml`
 - 55 claims, 0 rejected: `MetricsResult.three_week_totals`
 - 18 of 18: `EvalResult.assertions_passed`
+- 527 tests: `B24.measured.tests`
 
 ---
 
@@ -560,8 +575,8 @@ Sentences on the slide:
 - Structured envelopes with an assumptions array. Anything a worker inferred rather than being told goes in a named array rather than buried in code, which is how the decision log on the next repository page came to exist at all.
 - The same rule runs inside the product: no agent returns prose to another agent, every call returns a named versioned schema, validated in code, retried once with the error appended, then rejected and logged.
 
-Asset: `envelope_panel`, a real envelope rendered with its assumptions array highlighted.
-Caption: `build/envelopes/B18.json`.
+Asset: none from the panel set. The four rules are set as four cards; the envelope itself is
+named rather than shown, because a screenshot of JSON adds nothing the sentence does not say.
 
 Speaker notes: The assumptions array is the rule I would carry to any team. Every agent infers
 something, and the difference between a build you can audit and one you cannot is whether
@@ -586,8 +601,8 @@ Sentences on the slide:
 - A compliance sweep over both repositories: 0 real findings on dash characters, non-ASCII, secrets, stray real email addresses, URL-shaped text, lowercase company name and voice drift, and 0 model ids under the source, MCP and tools trees.
 - A portability agent cloned the repository as a stranger and found a real defect: the weekly build was not idempotent, so a clone of the published store rebuilt weeks it already had. Fixed at the root, with a test.
 
-Asset: `citation_audit_panel`, the audit's own summary table. Caption:
-`build/envelopes/B25.json, measured.CitationAudit`.
+Asset: none from the panel set. The audit's counts are set as two rows of stat tiles, sourced
+to `build/envelopes/B25.json, measured.CitationAudit`.
 
 Speaker notes: The sentence I want to land is the one about a verifier wrong in the same
 direction as the extractor. Checking a citation with the same code that produced it proves the
@@ -604,7 +619,7 @@ numbers:
 - 55 of 55 full sweep, 125 evidence lines, 0 bad: `CitationAudit.full_sweep_claims_total`, `.full_sweep_claims_resolved`, `.digest_evidence_lines_checked`, `.digest_evidence_lines_bad`
 - 0 must-not-appear hits, 0 PII hits: `CitationAudit.must_not_appear_hits`, `.pii_hits`
 - compliance real findings by category: `ComplianceReport.category_counts`, and 0 model ids under src, mcp and tools at `ComplianceReport.category_counts.6_model_ids_in_code_dirs.src_mcp_tools_hits`
-- acceptance re-audit after the portability fix: `AcceptanceReport.rerun_after_portability_fix`. If that key is absent at build time this line reads that the acceptance re-audit was still running when the deck was built, and no acceptance figure is printed.
+- acceptance re-audit after the portability fix, 21 of 24 pass, 0 fail, 3 not testable on this machine, against 17 pass and 3 fail on lines A1, A7 and A15 before the fix: `AcceptanceReport.rerun_after_portability_fix` is the flag that says the re-audit happened, and `AcceptanceReport.PASS`, `.FAIL`, `.UNTESTABLE-HERE`, `.previous_audit.PASS`, `.previous_audit.FAIL` and `.previous_audit.fail_ids` are the figures. If that flag is ever absent, the generator falls back to a line saying the re-audit was pending at build time and prints no acceptance figure.
 
 ---
 
@@ -618,8 +633,8 @@ Sentences on the slide:
 - The approval gate stays in front of any system of record. The agent proposes, a person files, and the agent only earns more room against a measured acceptance rate rather than against time served.
 - On Bedrock: I would run this on the Claude platform or the API directly, because the constraint here is speed of adoption and the platform's own identity and audit already satisfy the requirement. I would reach for Bedrock when the constraint is data residency in a named region, IAM native identity, private networking, or consolidated AWS billing. The router exists so that is a one file change.
 
-Asset: `watermark_panel`, the sources index watermark lines beside the ingest entry point.
-Caption: `../bi-theme-digest-store/sources/_INDEX.md`.
+Asset: `deck/assets/16_ingest_cron_lines.png`, the committed nightly schedule. Caption:
+`.github/workflows/ingest.yml`.
 
 Speaker notes: The Bedrock answer is two sentences and I keep it to two, because a long answer
 reads like a preference and a short one reads like a decision. The thing that actually differs
@@ -686,11 +701,37 @@ numbers: none on this slide. All six items are from `README.md`, what I cut and 
 
 ## Assets index
 
-Every asset named above resolves to an entry in `deck/assets/manifest.json`, produced by the
-asset worker. Each one is placed at legible size with its caption underneath in the muted grey,
-naming the file or the command it came from. If an asset is missing from the manifest at build
-time, its slide carries the sentences and a one line note saying which panel is missing, rather
-than a placeholder box.
+`deck/assets/manifest.json` carries 17 rendered panels. The deck places 16 of them, each fitted
+to its box at its own aspect ratio so nothing is stretched, with the caption underneath in the
+muted grey naming the file or the command it came from.
+
+| Panel | Slide |
+|---|---|
+| `01_pipeline_diagram.png` | 3 |
+| `02_connector_enforcement.png` | 4 |
+| `04_editor_tools_grep.png` | 12 |
+| `05_store_git_log.png` | 6 |
+| `06_theme_index.png` | 6 |
+| `07_t1_pair_dedupe.png` | 7 |
+| `08_t2_aliases.png` | 8 |
+| `09_withheld_comment_audit_line.png` | 9 |
+| `10_scrubber_redaction_count.png` | 9 |
+| `11_score_explain_top_theme.png` | 10 |
+| `12_w37_digest_first_screen.png` | 11 |
+| `13_eval_results_table.png` | 13 |
+| `14_cost_table.png` | 15 |
+| `15_swap_models_output.png` | 16 |
+| `16_ingest_cron_lines.png` | 20 |
+| `17_approve_dry_run_output.png` | 12 |
+
+`03_editor_prompt_append_vs_open.png` is not placed. It is seventeen lines of prompt text, and
+at every box left on the slides it belongs to it renders too small to read. Its content is on
+slide 8 as a sentence instead. A panel nobody can read is worse than no panel, so it is left
+out rather than shrunk.
+
+If an asset is ever missing from the manifest at build time, the generator draws a note saying
+which panel is missing and keeps the caption, rather than a placeholder box. Nothing on the
+built deck is in that state.
 
 ## Rules this outline was written under
 

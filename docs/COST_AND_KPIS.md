@@ -31,7 +31,7 @@ Non cached input for the whole week is 538 tokens against 2.45 million cache rea
 
 ## Router table cost against CLI reported cost
 
-Across the whole three week store, router table USD totals $4.687941 and CLI reported USD totals $5.7556, a ratio of 1.2277. Including the stability second opinion and the model swap, which run into scratch copies outside the store, the live run spent $5.4664 by the table and $6.69 by the CLI, a ratio of 1.2238. Source: `docs/metrics/cost_table.md`, section 5, and `docs/metrics/metrics.json`, `cost_two_ways`.
+Across the whole three week store, router table USD totals $5.067601, which includes a third analyst question recorded live after the sample run, and CLI reported USD totals $5.7556, a figure measured before that third question and carried forward as a declared constant, a ratio of 1.1358. Including the stability second opinion and the model swap, which run into scratch copies outside the store, the live run spent $5.4664 by the table and $6.69 by the CLI, a ratio of 1.2238. Source: `docs/metrics/cost_table.md`, section 5, and `docs/metrics/metrics.json`, `cost_two_ways`.
 
 ## KPIs
 

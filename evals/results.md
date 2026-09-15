@@ -7,7 +7,7 @@ Command: `python -m digest eval --mode replay`, run from the code repo with the 
 `.venv/bin/python`. Replay mode, zero network calls,
 zero live model spend.
 
-Store commit sha (HEAD at run time): 65b7b0a25f3c2af17b78253337435f6818978d5f
+Store commit sha (HEAD at run time): 765acc5f494ee009af38418f32d67bec043fcb29
 ("run 2026-09-28T08:00Z: ask, declined"). This is the consolidation regeneration: the same
 replay from the scaffold commit and the run 3 recordings that B16's polish pass did, redone
 on the scrubber fix in OD27, so the redaction counts in the run logs, the manifests, the

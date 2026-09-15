@@ -95,7 +95,7 @@ Three more, one line each. The store is a separate repository with no code in it
 
 ## The numbers
 
-- Cost of the sample run: $2.27 for week 2026-W37, of which $1.22 is the build and the rest five nightly ingests. Three weeks plus the analyst runs come to $4.69 by the rate table, and the whole live build cost $5.47 by the table, $6.69 by the CLI's own accounting, which bills a cache write higher. Source: `docs/metrics/cost_table.md`, sections 1 and 5.
+- Cost of the sample run: $2.27 for week 2026-W37, of which $1.22 is the build and the rest five nightly ingests. Three weeks plus the analyst runs, now three of them, come to $5.07 by the rate table, and the whole live build cost $5.47 by the table, $6.69 by the CLI's own accounting, which bills a cache write higher. Source: `docs/metrics/cost_table.md`, sections 1 and 5.
 - Claims: 55 verified, 0 rejected, from 53 source documents, all five rejection reasons at zero. 10 private case comments withheld at the query, 5 PII values redacted before any model saw them. Source: `docs/metrics/cost_table.md` section 5 and each digest's run line.
 - Themes: 11 by week 2026-W39. Ten opened in W37, exactly one in W38, none in W39, three quiet and three stale. Source: `../bi-theme-digest-store/themes/_INDEX.md`.
 - Eval: 18 of 18 assertions pass, exit 0, in replay. Source: `evals/results.md`.

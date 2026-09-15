@@ -6,7 +6,7 @@ The sample is week 2026-W37: five ingest runs and one build run, six run directo
 
 Two costs are reported throughout, and they are not the same number:
 
-- **Router table cost.** Every call priced from the rate table in `config/models.yaml`, which is the published rate: `claude-haiku-4-5` at $1.00 per million input and $5.00 per million output, `claude-opus-5` at $5.00 and $25.00, cache read at a tenth of input and cache write at 1.25 times it. This is what `cost_usd` on each `call_model` line holds, and `recompute.py` re-prices all 61 calls in the store from the table and confirms it matches the log to ten decimal places.
+- **Router table cost.** Every call priced from the rate table in `config/models.yaml`, which is the published rate: `claude-haiku-4-5` at $1.00 per million input and $5.00 per million output, `claude-opus-5` at $5.00 and $25.00, cache read at a tenth of input and cache write at 1.25 times it. This is what `cost_usd` on each `call_model` line holds, and `recompute.py` re-prices all 63 calls in the store from the table and confirms it matches the log to ten decimal places.
 - **CLI reported cost.** What the `claude` CLI billed itself, from `total_cost_usd` on the result. It is higher, because the CLI charges a one hour cache write at 2.0x input where the table says 1.25x. The committed store was regenerated in replay and a replayed call has no bill, so the CLI figures are carried into the script as declared constants measured during the live run. They are labelled as such everywhere they appear.
 
 ## 1. The sample digest run, by stage and by tier
@@ -36,7 +36,7 @@ Per run, with the log line count each figure is traceable to:
 
 One number deserves an explanation before anyone reads the cache column as a mistake. Non cached input is 538 tokens for the whole week, and cache read is 2.45 million. Passing a contract schema to the CLI adds a preamble of 27K to 42K tokens; the CLI writes it to a one hour cache on the first call of a run and reads it back at ten percent of input for every call after. So almost all input in this pipeline is cached input, by design, and the cheap rate on that column is most of why the week costs two dollars and not twenty.
 
-Cost the other way, for the same week: I do not have a per week CLI figure broken out, only the phase totals from the live run. Across the whole store the CLI billed 5.7556 against the table's 4.687941, a ratio of 1.2277, and the section 5 table gives the split.
+Cost the other way, for the same week: I do not have a per week CLI figure broken out, only the phase totals from the live run. Across the whole store the CLI billed 5.7556, a figure measured before the third analyst question and carried forward as a declared constant, against the table's 5.067601, a ratio of 1.1358, and the section 5 table gives the split.
 
 ## 2. The same run with every stage on the frontier model
 
@@ -81,7 +81,7 @@ The editor writes more tokens per call than every reader in the week put togethe
 
 ## 5. Three weeks
 
-Fifteen ingest runs, three builds, 1,079 committed audit log lines, 61 model calls. The store also carries two run directories whose manifest was never committed, the analyst ask run and the approve dry run, so the raw line count over `runs/` reads higher than 1,079 and grows every time somebody runs the dry run again. `recompute.py` reports both counts and every cost figure on this page is taken from the eighteen runs that carry a manifest, except the ask line below.
+Fifteen ingest runs, three builds, 1,079 committed audit log lines, 63 model calls store-wide. The store also carries two run directories whose manifest was never committed, the analyst ask run and the approve dry run, so the raw line count over `runs/` reads higher than 1,079, now 1,136 lines, and grows every time somebody runs the dry run again. A third analyst question was recorded live after the sample run, as a paraphrase reproduced during QA, and its calls landed in the same unmanifested ask run directory, so it is included in the store total below without adding a new run directory or changing the manifested-run figures. `recompute.py` reports both counts and every cost figure on this page is taken from the eighteen runs that carry a manifest, except the ask line below.
 
 | week | ingest runs | sources read | claims verified | rejected | themes appended | themes opened | proposal files | ingest USD | build USD | week USD |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -92,14 +92,16 @@ Fifteen ingest runs, three builds, 1,079 committed audit log lines, 61 model cal
 
 These totals are summed from the raw log lines. The pipeline's own `week_summary.json` sums each run's already rounded manifest instead, so week 38 reads 1.031882 there against 1.031884 here, two millionths of a dollar apart. The other two weeks agree exactly. `recompute.py` prints the difference rather than hiding it.
 
-The two analyst questions ran outside a digest week and cost 0.432341 over 2 calls at the narrative tier, which brings the whole store to 4.687941 by the table. Both costs, by phase:
+The three analyst questions ran outside a digest week and cost 0.812001 over 4 calls at the narrative tier, which brings the whole store to 5.067601 by the table. Both costs, by phase:
 
 | phase | router table USD | CLI reported USD | ratio |
 |---|---|---|---|
 | ingest | 2.140030 | 2.3666 | 1.1059 |
 | builds | 2.115571 | 2.7244 | 1.2878 |
-| ask | 0.432341 | 0.6646 | 1.5373 |
-| **store total** | **4.687941** | **5.7556** | **1.2277** |
+| ask | 0.812001 | 0.6646* | * |
+| **store total** | **5.067601** | **5.7556*** | **1.1358** |
+
+\* The CLI reported figure for the ask phase, and the store total CLI figure, were measured on the live run before the third analyst question and are carried forward as declared constants rather than invented for the new call; no per-phase ratio is given for the ask row because it would mix a pre-third-question CLI number against a post-third-question router number. `recompute.py` does print the store total ratio, 1.1358, so that cell is recomputed.
 
 Including the stability second opinion and the model swap, which run into scratch copies rather than into the store, the live run spent 5.4664 by the table and 6.69 by the CLI, a ratio of 1.2238, against a ceiling of about twenty dollars.
 
@@ -240,4 +242,4 @@ print("router table USD, from the log   %.6f" % logged)
 print("router table USD, repriced here  %.6f" % repriced)
 ```
 
-On the committed store that prints 4.687941 twice, over 61 model calls.
+On the committed store that prints 5.067601 twice, over 63 model calls.

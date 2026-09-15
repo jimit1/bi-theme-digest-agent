@@ -2,7 +2,7 @@ PY ?= .venv/bin/python
 MODELS ?= config/models.cheap.yaml
 REPO ?= jimit1/bi-theme-digest-agent
 
-.PHONY: setup data demo demo-inplace demo-live eval swap-models test ask approve clean-store
+.PHONY: approve-dry setup data demo demo-inplace demo-live eval swap-models test ask approve clean-store
 
 setup:
 	@test -x .venv/bin/python || python3 -m venv .venv
@@ -32,6 +32,9 @@ test:
 
 ask:
 	$(PY) -m digest ask "$(Q)"
+
+approve-dry:
+	$(PY) -m digest approve --theme $(THEME) --repo $(REPO) --dry-run
 
 approve:
 	$(PY) -m digest approve --theme $(THEME) --yes --repo $(REPO)

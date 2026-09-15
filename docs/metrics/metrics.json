@@ -2,9 +2,9 @@
   "recomputed_from": {
     "store": "bi-theme-digest-store",
     "run_directories": 20,
-    "log_lines": 1118,
+    "log_lines": 1136,
     "log_lines_in_runs_with_a_manifest": 1079,
-    "model_call_lines": 61,
+    "model_call_lines": 63,
     "manifests": 18,
     "week_summaries": 3,
     "pricing_matches_the_log": true,
@@ -297,26 +297,26 @@
         "2026-09-28T08:00Z",
         "2026-09-28T09:00Z"
       ],
-      "model_calls": 2,
-      "cost_usd": 0.432341
+      "model_calls": 4,
+      "cost_usd": 0.812001
     },
-    "store_total_usd": 4.687941,
-    "store_total_tokens": 6170846
+    "store_total_usd": 5.067601,
+    "store_total_tokens": 6230014
   },
   "cost_two_ways": {
     "router_table_usd_by_phase": {
       "ingest": 2.14003,
       "builds": 2.115571,
-      "ask": 0.432341
+      "ask": 0.812001
     },
-    "router_table_usd_in_store": 4.687941,
+    "router_table_usd_in_store": 5.067601,
     "cli_reported_usd_by_phase": {
       "ingest": 2.3666,
       "builds": 2.7244,
       "ask": 0.6646
     },
     "cli_reported_usd_in_store": 5.7556,
-    "cli_over_router_ratio_in_store": 1.2277,
+    "cli_over_router_ratio_in_store": 1.1358,
     "router_table_usd_total_live": 5.4664,
     "cli_reported_usd_total_live": 6.69,
     "cli_over_router_ratio_total_live": 1.2238
