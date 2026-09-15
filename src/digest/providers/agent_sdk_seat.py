@@ -106,8 +106,16 @@ class AgentSdkSeatProvider:
             "-p", user,
             "--model", model_id,
             "--output-format", "json",
-            "--json-schema", json.dumps(transport_schema(schema), sort_keys=True,
-                                        separators=(",", ":")),
+        ]
+        # An empty schema means the caller is not using native structured output on this
+        # call: `--json-schema` is what makes the CLI send the schema as a tool input schema,
+        # and the API refuses a top level oneOf, allOf or anyOf there. Leaving the flag off
+        # is what the router's schema_in_prompt path needs the transport to do; the schema is
+        # in the prompt text instead and the router still validates against the contract.
+        if schema:
+            argv += ["--json-schema", json.dumps(transport_schema(schema), sort_keys=True,
+                                                 separators=(",", ":"))]
+        argv += [
             "--system-prompt", system,
             "--tools", "",
             "--no-session-persistence",
@@ -171,7 +179,6 @@ class AgentSdkSeatProvider:
             stop_reason=str(payload.get("stop_reason") or "end_turn"),
             dropped_params=dropped,
             provider_reported_cost_usd=_as_float(payload.get("total_cost_usd")),
-            path="native_structured",
         )
 
 

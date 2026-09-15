@@ -153,6 +153,19 @@ def _now() -> str:
     return _dt.datetime.now(_dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3] + "Z"
 
 
+def _is_schema_shape_rejection(exc: BaseException) -> bool:
+    """True when the provider refused the SHAPE of the schema, not the request.
+
+    Narrow on purpose. The observed refusal is a 400 reading `tools.0.custom.input_schema:
+    input_schema does not support oneOf, allOf, or anyOf at the top level`, which is a
+    transport limit on a tool input schema and nothing to do with the prompt or the model.
+    Anything wider here would quietly hide a real failure behind a second call.
+    """
+    message = str(exc)
+    return "input_schema" in message and any(
+        keyword in message for keyword in ("oneOf", "allOf", "anyOf"))
+
+
 class Router:
     """Resolve a tier to a model, call it, validate the answer, and account for the cost."""
 
@@ -389,17 +402,43 @@ class Router:
 
         params = self.params_for(tier)
         translated = provider.translate_model_id(model_id)
+
+        def _call(current_path: str, text: str, sent_schema: dict):
+            try:
+                return provider.complete(translated, system, text, sent_schema, params)
+            except Exception as exc:  # noqa: BLE001 - logged, then raised on to the caller
+                audit.log(agent=agent, action="call_model", stage=stage, target=schema_name,
+                          model_tier=tier, model_id=model_id, prompt_hash=prompt_hash_value,
+                          outcome="error",
+                          detail={"attempt": attempt, "key": key, "path": current_path,
+                                  "provider": provider.name, "exception": type(exc).__name__})
+                if isinstance(exc, DigestError):
+                    raise
+                raise DigestError("%s: %s" % (provider.name, exc)) from exc
+
         try:
-            raw = provider.complete(translated, system, sent_user, schema, params)
-        except Exception as exc:  # noqa: BLE001 - logged, then raised on to the caller
-            audit.log(agent=agent, action="call_model", stage=stage, target=schema_name,
-                      model_tier=tier, model_id=model_id, prompt_hash=prompt_hash_value,
-                      outcome="error",
-                      detail={"attempt": attempt, "key": key, "path": path,
-                              "provider": provider.name, "exception": type(exc).__name__})
-            if isinstance(exc, DigestError):
+            raw = _call(path, sent_user, schema)
+        except DigestError as exc:
+            # Negotiation is a claim about the transport, not about the schema, and one
+            # contract schema in the pack (AnalystAnswer) uses a top level allOf that the
+            # native path serialises into a tool input schema the API refuses. Rather than
+            # reshape a contract to suit one transport, step down to the next path the
+            # negotiation order already defines and record that it happened. The result is
+            # validated against the same contract either way, so the guarantee is unchanged.
+            if path != "native_structured" or not _is_schema_shape_rejection(exc):
                 raise
-            raise DigestError("%s: %s" % (provider.name, exc)) from exc
+            audit.log(agent=agent, action="reject", stage=stage, target=schema_name,
+                      model_tier=tier, model_id=model_id, prompt_hash=prompt_hash_value,
+                      outcome="rejected",
+                      detail={"attempt": attempt, "key": key, "path": path, "count": 0,
+                              "negotiated_down_to": "schema_in_prompt",
+                              "detail": str(exc)[:300]})
+            path = "schema_in_prompt"
+            sent_user = schema_in_prompt_text(user, schema_name, schema)
+            # An empty schema is how a caller says "do not assert this natively". The schema
+            # is in the prompt text now, and the router validates the answer against the real
+            # contract afterwards exactly as it does on every other path.
+            raw = _call(path, sent_user, {})
 
         result = StructuredResult(
             data={},
