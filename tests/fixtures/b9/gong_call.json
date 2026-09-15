@@ -23,12 +23,6 @@
       "title": "Director of Programs"
     },
     {
-      "id": "p-8802",
-      "name": "Arturo Vance",
-      "side": "client",
-      "title": "Finance Manager"
-    },
-    {
       "id": "p-3310",
       "name": "Priya Natarajan",
       "side": "momentive",
@@ -47,17 +41,12 @@
       },
       "speaker_id": "8801",
       "speaker_side": "client",
-      "text": "Every export from the reporting module stops at five thousand rows and there is no warning, so we only find out when the finance committee asks why the numbers are short. We run the same report four times with different date filters to get one quarter out.",
+      "text": "Every export from the reporting module stops at five thousand rows with no warning, so [NAME] on my team rebuilds the quarter by hand and mails it to [EMAIL], and what we need is an export that carries a whole quarter in one pass.",
       "sentences": [
         {
           "start_ms": 300000,
-          "end_ms": 312500,
-          "text": "Every export from the reporting module stops at five thousand rows and there is no warning, so we only find out when the finance committee asks why the numbers are short."
-        },
-        {
-          "start_ms": 312500,
           "end_ms": 321000,
-          "text": "We run the same report four times with different date filters to get one quarter out."
+          "text": "Every export from the reporting module stops at five thousand rows with no warning, so [NAME] on my team rebuilds the quarter by hand and mails it to [EMAIL], and what we need is an export that carries a whole quarter in one pass."
         }
       ]
     },
@@ -89,20 +78,25 @@
     {
       "ref": {
         "call_id": "7782934451901",
-        "speaker_id": "8802",
-        "speaker_name": "Arturo Vance",
+        "speaker_id": "8801",
+        "speaker_name": "Denise Kohler",
         "affiliation": "External",
         "start_ms": 333000,
-        "end_ms": 347000
+        "end_ms": 352000
       },
-      "speaker_id": "8802",
+      "speaker_id": "8801",
       "speaker_side": "client",
-      "text": "The accounting export will not line up with our general ledger, so [NAME] on my team rebuilds it by hand every month and sends it to [EMAIL] before we close the books.",
+      "text": "Back to the export, the five thousand row cap is the thing that costs us the most. We are also two people short on the events team this quarter, and I still need to book the refresher training for the new hires before the board meets in November.",
       "sentences": [
         {
           "start_ms": 333000,
-          "end_ms": 347000,
-          "text": "The accounting export will not line up with our general ledger, so [NAME] on my team rebuilds it by hand every month and sends it to [EMAIL] before we close the books."
+          "end_ms": 341000,
+          "text": "Back to the export, the five thousand row cap is the thing that costs us the most."
+        },
+        {
+          "start_ms": 341000,
+          "end_ms": 352000,
+          "text": "We are also two people short on the events team this quarter, and I still need to book the refresher training for the new hires before the board meets in November."
         }
       ]
     }

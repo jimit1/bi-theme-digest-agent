@@ -140,8 +140,8 @@ def test_trap_files_are_the_seven_the_contract_names():
 def test_no_dashes_and_plain_ascii():
     for path in sorted(TRAPS.rglob("*.json")) + [GOLDEN_PATH]:
         raw = path.read_text(encoding="utf-8")
-        assert "—" not in raw, f"em dash in {path}"
-        assert "–" not in raw, f"en dash in {path}"
+        assert "\u2014" not in raw, f"em dash in {path}"
+        assert "\u2013" not in raw, f"en dash in {path}"
         raw.encode("ascii")
 
 
@@ -249,6 +249,58 @@ def test_t2_names_are_spoken_by_the_client_not_by_us(calls, call_id, phrase):
         for sentence in block["sentences"]:
             if phrase in sentence["text"]:
                 assert affiliation_of(call, block["speakerId"]) == "External"
+
+
+# ------------------------------------------------------- one planted point per call
+
+# Every trap call carries exactly ONE actionable client point. Everything else the client
+# says is logistics, background about their own organisation, or a question to us. This is
+# the mechanical guard on that: an External sentence may only use asking or complaining
+# vocabulary if it is one of the planted sentences named below.
+ASK_VOCABULARY = re.compile(
+    r"\b(need|needs|needed|want|wants|wanted|should|must|problem|problems|issue|issues"
+    r"|broken|breaking|frustrated|frustrating|wish|wishes)\b",
+    re.IGNORECASE,
+)
+
+PLANTED_SENTENCES = {
+    (T1A_CALL, 663288),   # T1a, the lead in to the renewal statement point
+    (T1A_CALL, 681342),   # T1a, the planted claim
+    (T2A_CALL, 766534),   # T2a, the planted claim
+    (T2B_CALL, 458202),   # T2b, the planted claim
+    (T2B_CALL, 486900),   # T2b, the insurance half of the same single point
+    (T3_CALL, 629690),    # T3, the lead in to the SCORM ask
+    (T3_CALL, 643260),    # T3, the planted claim
+    (T4B_CALL, 456786),   # T4b, the pledge reminder claim
+    (T4C_CALL, 424976),   # T4c, the export row limit claim
+}
+
+
+@pytest.mark.parametrize("call_id", GONG_TRAPS)
+def test_only_the_planted_client_sentences_ask_for_anything(calls, call_id):
+    call = calls[call_id]
+    offenders = [
+        (block["speakerId"], sentence["start"], sentence["text"])
+        for block in call["transcript"]["transcript"]
+        if affiliation_of(call, block["speakerId"]) == "External"
+        for sentence in block["sentences"]
+        if ASK_VOCABULARY.search(sentence["text"])
+        and (call_id, sentence["start"]) not in PLANTED_SENTENCES
+    ]
+    assert not offenders, offenders
+
+
+@pytest.mark.parametrize("call_id", GONG_TRAPS)
+def test_each_call_plants_client_sentences_in_one_place_only(calls, call_id):
+    """The planted point is stated once, in one monologue, not restated later on."""
+    call = calls[call_id]
+    blocks = {
+        index
+        for index, block in enumerate(call["transcript"]["transcript"])
+        for sentence in block["sentences"]
+        if (call_id, sentence["start"]) in PLANTED_SENTENCES
+    }
+    assert len(blocks) == 1, f"{call_id} spreads its planted point across {sorted(blocks)}"
 
 
 # --------------------------------------------------------------------------- T4

@@ -136,7 +136,7 @@
           {
             "start": 136678,
             "end": 150720,
-            "text": "Mostly between seven thirty and nine, because the first demonstration starts at nine sharp and nobody wants to miss it."
+            "text": "Mostly between seven thirty and nine, because the first demonstration starts at nine sharp and nobody misses it."
           },
           {
             "start": 150720,
@@ -242,7 +242,7 @@
           {
             "start": 326350,
             "end": 338150,
-            "text": "My own job is mostly making sure the volunteers have what they need and then getting out of the way."
+            "text": "My own job is mostly making sure the volunteers are equipped and then getting out of the way."
           }
         ]
       },
@@ -332,8 +332,13 @@
           },
           {
             "start": 473188,
-            "end": 487584,
+            "end": 486900,
             "text": "That morning it went out at eight ten and came back at eight fifty, which is the worst forty minutes it could have picked."
+          },
+          {
+            "start": 486900,
+            "end": 506400,
+            "text": "Our insurance requires us to show who was on site and roughly when, so the attendee kiosk staying up through an outage and reconciling afterwards is the difference between a compliant record and a gap."
           }
         ]
       },
@@ -342,8 +347,8 @@
         "topic": "Onsite",
         "sentences": [
           {
-            "start": 491584,
-            "end": 499372,
+            "start": 508900,
+            "end": 519600,
             "text": "What did the two people on the laptops do for those forty minutes?"
           }
         ]
@@ -353,19 +358,19 @@
         "topic": "Onsite",
         "sentences": [
           {
-            "start": 503372,
-            "end": 520600,
+            "start": 521800,
+            "end": 539000,
             "text": "One of them drove to the top of the lane and stood on a wall with a phone hotspot, which worked for about ten minutes before the battery gave out."
           },
           {
-            "start": 520600,
-            "end": 525438,
+            "start": 539000,
+            "end": 543800,
             "text": "The other one wrote names on a clipboard."
           },
           {
-            "start": 525438,
-            "end": 537592,
-            "text": "Neither of those is a plan, they are just what people do when the thing in front of them stops working."
+            "start": 543800,
+            "end": 556000,
+            "text": "Neither of those was planned, it is simply what people improvise at the gate."
           }
         ]
       },
@@ -374,8 +379,8 @@
         "topic": "Onsite",
         "sentences": [
           {
-            "start": 541592,
-            "end": 549734,
+            "start": 558000,
+            "end": 570000,
             "text": "And afterwards, how did the clipboard names get back into the system?"
           }
         ]
@@ -385,19 +390,14 @@
         "topic": "Onsite",
         "sentences": [
           {
-            "start": 553734,
-            "end": 559988,
-            "text": "Two volunteers typed them in over the following week."
+            "start": 572000,
+            "end": 586000,
+            "text": "Two volunteers typed them in over the following week, twenty six names between them."
           },
           {
-            "start": 559988,
-            "end": 575446,
-            "text": "We lost the arrival times entirely, which matters to us because the insurance requires us to show who was on site and roughly when."
-          },
-          {
-            "start": 575446,
-            "end": 595152,
-            "text": "So the attendee kiosk carrying on through an outage and reconciling afterwards is not a nice to have for us, it is the difference between a compliant record and a gap."
+            "start": 586000,
+            "end": 597000,
+            "text": "They worked from the clipboard and from a photograph somebody took of it, which was legible enough."
           }
         ]
       },
@@ -665,7 +665,7 @@
           {
             "start": 1012116,
             "end": 1026276,
-            "text": "Nineteen of the first cohort of twenty two are still in the trade four years on, which is far better than we dared hope."
+            "text": "Nineteen of the first cohort of twenty two are still in the trade four years on, which is well ahead of our own forecast."
           },
           {
             "start": 1026276,
@@ -788,7 +788,7 @@
           {
             "start": 1207006,
             "end": 1215384,
-            "text": "No. The deposit handling has been solid since you changed it last year."
+            "text": "No. Deposits ran the same way as last term."
           },
           {
             "start": 1215384,
@@ -820,7 +820,7 @@
           {
             "start": 1264094,
             "end": 1272000,
-            "text": "If you could send me the instructions again I will do it this week."
+            "text": "I have the instructions from last time and I will do it this week."
           }
         ]
       },
@@ -971,12 +971,12 @@
           {
             "start": 1499726,
             "end": 1521084,
-            "text": "Then to summarise: I am writing up the offline request with your insurance point attached, sending the coordinator instructions today, and offering a session to the new coordinator."
+            "text": "Then to summarise: I am writing up the offline request with your insurance point attached, and offering a session to the new coordinator."
           },
           {
             "start": 1521084,
             "end": 1528872,
-            "text": "I will update the ticket with all three so you have it in writing."
+            "text": "I will update the ticket with both so you have it in writing."
           }
         ]
       },

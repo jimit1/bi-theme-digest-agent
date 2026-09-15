@@ -6,7 +6,11 @@ and gives the same answer twice. Re-record only when a prompt file changes, beca
 replay key covers the system and user text.
 
 What is actually being asserted is the reader's one promise: every verbatim it returns is an
-exact substring of a turn it was shown, and that turn belongs to the client.
+exact substring of a turn it was shown, and that turn belongs to the client. From prompt
+version 1.1.0 the fixtures also pin the three rules the first live run got wrong: one claim
+per underlying point (a problem and the fix asked for are one point), the quote comes from
+the FIRST and fullest statement rather than a later restatement, and staffing, scheduling
+and thanks are never claims at all.
 """
 from __future__ import annotations
 
@@ -41,6 +45,28 @@ DOCS = ("gong_call", "salesforce_case")
 
 # The sentence timing marker the Gong template puts in front of each sentence.
 MARKER = re.compile(r"\(\d+-\d+\) ")
+
+# The one product point each fixture plants, and the turn that carries its first and fullest
+# statement. Anything else a reader returns from these two documents is a mistake.
+PLANTED = {
+    "gong_call": {"start_ms": 300000, "speaker_id": "8801"},
+    "salesforce_case": {"comment_id": "00aB000001kLmNoIAO"},
+}
+
+# Client sentences that are not about the product. A later restatement of the planted point,
+# and the staffing, scheduling and thanks material around it. None of it may reach a verbatim.
+NEVER_QUOTE = {
+    "gong_call": (
+        "Back to the export, the five thousand row cap is the thing that costs us the most.",
+        "two people short on the events team",
+        "book the refresher training for the new hires",
+    ),
+    "salesforce_case": (
+        "Thanks for the quick turnaround.",
+        "Our operations lead is out until the fifth",
+        "signed up for training in the meantime",
+    ),
+}
 
 # Fields the pipeline owns. A reader that returned one of these would be filling in work it
 # has no evidence for, so the test looks for them anywhere in the output.
@@ -101,6 +127,10 @@ def test_prompt_file_frontmatter(source):
     assert meta["schema"] == SCHEMA_NAME
     assert meta["tier"] == TIER
     assert re.fullmatch(r"\d+\.\d+\.\d+", meta["prompt_version"])
+    # Both prompts carry the same rules, so they are versioned together. A prompt edit that
+    # leaves the version behind would replay a recording made against different words.
+    assert meta["prompt_version"] == prompt_meta("gong")["prompt_version"]
+    assert meta["prompt_version"] != "1.0.0", "the 1.1.0 rules are in both files"
     system, template = prompt_for(source)
     assert system and template
     assert "{{turns}}" in template
@@ -120,6 +150,20 @@ def test_prompt_names_the_non_claim_example():
         system, _ = prompt_for(source)
         assert "A lot of our customers ask for this" in system
         assert "[EMAIL]" in system and "[NAME]" in system
+
+
+def test_prompt_states_the_three_rules_the_first_run_got_wrong():
+    # The live run split one point into a support_issue plus a feature_request, quoted a
+    # later restatement over the first statement, and returned training and board cadence
+    # remarks as claims. Each rule has to be written down, not left to be inferred.
+    for source in ("gong", "salesforce"):
+        system, _ = prompt_for(source)
+        assert "One claim per distinct underlying point per document." in system
+        assert "the fix the client asks for are ONE point" in system
+        assert "Quote the FIRST and fullest statement of a point." in system
+        assert "Nothing else is a claim." in system
+        assert "staffing" in system and "scheduling" in system
+        assert "When in doubt, return fewer claims." in system
 
 
 def test_agent_for_rejects_an_unknown_source():
@@ -173,7 +217,7 @@ def test_salesforce_prompt_never_shows_a_private_comment():
     doc = load("salesforce_case")
     user = render_user(doc)
     assert "churn risk if the invoice thing drags on" not in user
-    assert len([line for line in user.splitlines() if line.startswith("[turn ")]) == 2
+    assert len([line for line in user.splitlines() if line.startswith("[turn ")]) == 3
 
 
 # -- the replayed calls ----------------------------------------------------------
@@ -214,6 +258,41 @@ def test_no_claim_is_attributed_to_a_momentive_speaker(name, tmp_path):
         turn = resolve(claim, doc)
         assert turn["speaker_side"] == "client"
         assert "A lot of our customers ask for this" not in claim["verbatim"]
+
+
+@pytest.mark.parametrize("name", DOCS)
+def test_one_claim_for_the_one_planted_point(name, tmp_path):
+    # Each fixture states a problem and, in the same breath, the fix that would settle it.
+    # That is one point, so it is one claim, not a support_issue plus a feature_request.
+    doc = load(name)
+    out, _ = replay(doc, tmp_path)
+    assert len(out["claims"]) == 1, [c["topic"] for c in out["claims"]]
+    ref = out["claims"][0]["source_ref"]
+    for field, value in PLANTED[name].items():
+        assert ref[field] == value
+
+
+@pytest.mark.parametrize("name", DOCS)
+def test_the_quote_is_the_first_and_fullest_statement(name, tmp_path):
+    # The cited turn is the earliest client turn in the document, not the shorter one the
+    # client came back with later.
+    doc = load(name)
+    out, _ = replay(doc, tmp_path)
+    first_client = next(i for i, turn in enumerate(doc["turns"])
+                        if turn["speaker_side"] == "client")
+    for claim in out["claims"]:
+        assert doc["turns"].index(resolve(claim, doc)) == first_client
+
+
+@pytest.mark.parametrize("name", DOCS)
+def test_staffing_scheduling_and_thanks_are_never_quoted(name, tmp_path):
+    # The staff sentence, the training wish, the board cadence and the thanks are all client
+    # side and all off topic. A claim is about the product or it is not a claim.
+    doc = load(name)
+    out, _ = replay(doc, tmp_path)
+    quoted = " ".join(claim["verbatim"] for claim in out["claims"])
+    for sentence in NEVER_QUOTE[name]:
+        assert sentence not in quoted
 
 
 def test_a_redaction_placeholder_survives_as_written(tmp_path):

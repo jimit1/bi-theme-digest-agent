@@ -5,14 +5,14 @@
       "id": "7782934452023",
       "url": "https://gong.invalid/call?id=7782934452023",
       "title": "Cascadia Nurses Association - integrations check-in",
-      "scheduled": "2026-09-16T11:15:00Z",
-      "started": "2026-09-16T11:16:23Z",
-      "duration": 2100,
+      "scheduled": "2026-09-16T15:30:00Z",
+      "started": "2026-09-16T15:31:16Z",
+      "duration": 1440,
       "primaryUserId": "2002",
       "direction": "Conference",
       "system": "Gong",
       "scope": "External",
-      "media": "Audio",
+      "media": "Video",
       "language": "eng",
       "workspaceId": "9911",
       "sdrDisposition": null,
@@ -50,29 +50,18 @@
     "callId": "7782934452023",
     "transcript": [
       {
-        "speakerId": "c-02",
+        "speakerId": "2002",
         "topic": null,
         "sentences": [
           {
             "start": 0,
-            "end": 36364,
-            "text": "Hi, thanks for having us, ready when you are."
-          }
-        ]
-      },
-      {
-        "speakerId": "2002",
-        "topic": null,
-        "sentences": [
-          {
-            "start": 50000,
-            "end": 86364,
-            "text": "Hi there, appreciate you carving out a few minutes."
+            "end": 49278,
+            "text": "Good morning, appreciate you joining on short notice."
           },
           {
-            "start": 86365,
-            "end": 109091,
-            "text": "Hi, thanks for making room for this on your calendar."
+            "start": 49279,
+            "end": 104030,
+            "text": "Hi, thanks for joining, good to see you."
           }
         ]
       },
@@ -81,9 +70,9 @@
         "topic": null,
         "sentences": [
           {
-            "start": 118182,
-            "end": 127273,
-            "text": "Before we get into it, things have been steady on our end overall."
+            "start": 109506,
+            "end": 142357,
+            "text": "Hi, glad we could find a slot this week."
           }
         ]
       },
@@ -92,14 +81,14 @@
         "topic": null,
         "sentences": [
           {
-            "start": 136364,
-            "end": 163636,
-            "text": "That works, I will follow along and flag anything I need to check on."
+            "start": 153308,
+            "end": 180684,
+            "text": "Sounds good, I am ready to take notes as we go."
           },
           {
-            "start": 163637,
-            "end": 204545,
-            "text": "Let's start wherever is most useful for you."
+            "start": 180685,
+            "end": 202586,
+            "text": "Sounds good, I have some time blocked so we can cover everything."
           }
         ]
       },
@@ -108,8 +97,30 @@
         "topic": null,
         "sentences": [
           {
-            "start": 218182,
-            "end": 222727,
+            "start": 213536,
+            "end": 240913,
+            "text": "Nothing major on our end generally, just a couple of specific items."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 257338,
+            "end": 268289,
+            "text": "Sounds good, let's get started."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-02",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 284715,
+            "end": 295665,
             "text": "Staff who move departments still show up with their prior access weeks later because the provisioning sync does not pick up the role change."
           }
         ]
@@ -119,8 +130,8 @@
         "topic": null,
         "sentences": [
           {
-            "start": 227273,
-            "end": 259091,
+            "start": 306616,
+            "end": 328517,
             "text": "One of our regional coordinators moved roles in July and kept her prior permissions for almost six weeks before IT caught it."
           }
         ]
@@ -130,13 +141,13 @@
         "topic": null,
         "sentences": [
           {
-            "start": 263636,
-            "end": 281818,
-            "text": "That is useful, I just want to nail down one detail."
+            "start": 344943,
+            "end": 383270,
+            "text": "Appreciate that, let me confirm one thing before we continue."
           },
           {
-            "start": 281819,
-            "end": 290909,
+            "start": 383271,
+            "end": 427072,
             "text": "How long did it take before anyone noticed the access had not updated?"
           }
         ]
@@ -146,8 +157,8 @@
         "topic": null,
         "sentences": [
           {
-            "start": 295455,
-            "end": 340909,
+            "start": 443498,
+            "end": 465399,
             "text": "Close to six weeks, until she tried to approve something she should not have had access to."
           }
         ]
@@ -157,9 +168,9 @@
         "topic": null,
         "sentences": [
           {
-            "start": 350000,
-            "end": 359091,
-            "text": "Good, let's shift gears for a minute, anything else worth mentioning?"
+            "start": 476350,
+            "end": 503726,
+            "text": "Thanks for that, let's talk about something else for a minute, how has the rest of the season been?"
           }
         ]
       },
@@ -168,9 +179,9 @@
         "topic": null,
         "sentences": [
           {
-            "start": 372727,
-            "end": 413636,
-            "text": "It has been a season of change with a few new faces around."
+            "start": 514677,
+            "end": 536578,
+            "text": "Our executive committee meets in between the full board sessions."
           }
         ]
       },
@@ -179,9 +190,9 @@
         "topic": null,
         "sentences": [
           {
-            "start": 427273,
-            "end": 436364,
-            "text": "Nice that you were able to promote from within."
+            "start": 542053,
+            "end": 574905,
+            "text": "Hope the next meeting goes smoothly."
           }
         ]
       },
@@ -190,9 +201,9 @@
         "topic": null,
         "sentences": [
           {
-            "start": 440909,
-            "end": 463636,
-            "text": "Our renewal reminders go out about six weeks before the anniversary date."
+            "start": 591331,
+            "end": 640608,
+            "text": "We are still backfilling a role that opened up over the summer."
           }
         ]
       },
@@ -201,9 +212,9 @@
         "topic": null,
         "sentences": [
           {
-            "start": 472727,
-            "end": 509091,
-            "text": "Nice to hear the numbers are holding steady."
+            "start": 651559,
+            "end": 673460,
+            "text": "Congrats to the new hire, glad you found someone."
           }
         ]
       },
@@ -212,9 +223,9 @@
         "topic": null,
         "sentences": [
           {
-            "start": 522727,
-            "end": 563636,
-            "text": "Our new hires go through a couple weeks of training before they are on their own."
+            "start": 678935,
+            "end": 695361,
+            "text": "Our board added two new members this year."
           }
         ]
       },
@@ -223,9 +234,9 @@
         "topic": null,
         "sentences": [
           {
-            "start": 577273,
-            "end": 618182,
-            "text": "Sounds like a solid onboarding process."
+            "start": 706312,
+            "end": 717262,
+            "text": "That is good to hear, budgets can be tricky to get through."
           }
         ]
       },
@@ -234,9 +245,9 @@
         "topic": null,
         "sentences": [
           {
-            "start": 627273,
-            "end": 668182,
-            "text": "Our development director left for another organization last month."
+            "start": 722738,
+            "end": 733688,
+            "text": "Our new hire starts full time next week."
           }
         ]
       },
@@ -245,9 +256,9 @@
         "topic": null,
         "sentences": [
           {
-            "start": 677273,
-            "end": 718182,
-            "text": "Appreciate you letting us know, we can adjust support as needed."
+            "start": 739163,
+            "end": 761065,
+            "text": "That is a lot of change at once, hope it goes well."
           }
         ]
       },
@@ -256,9 +267,9 @@
         "topic": null,
         "sentences": [
           {
-            "start": 722727,
-            "end": 731818,
-            "text": "We send a short renewal survey out once the cycle wraps up."
+            "start": 777490,
+            "end": 821293,
+            "text": "We circulate a membership update to the board ahead of each meeting."
           }
         ]
       },
@@ -267,9 +278,9 @@
         "topic": null,
         "sentences": [
           {
-            "start": 745455,
-            "end": 750000,
-            "text": "Renewal season can be a lot, glad the team is staying on top of it."
+            "start": 837719,
+            "end": 876046,
+            "text": "Let us know if there is anything to pull together for next week."
           }
         ]
       },
@@ -278,9 +289,9 @@
         "topic": null,
         "sentences": [
           {
-            "start": 763636,
-            "end": 809091,
-            "text": "Our volunteer coordinator handles most of the training these days."
+            "start": 886996,
+            "end": 914373,
+            "text": "We have had a bit of turnover on our team this quarter."
           }
         ]
       },
@@ -289,9 +300,9 @@
         "topic": null,
         "sentences": [
           {
-            "start": 818182,
-            "end": 827273,
-            "text": "Happy to help put together some training resources if that would be useful."
+            "start": 930798,
+            "end": 969125,
+            "text": "That is a big shift, let us know if training support would help."
           }
         ]
       },
@@ -300,9 +311,9 @@
         "topic": null,
         "sentences": [
           {
-            "start": 840909,
-            "end": 854545,
-            "text": "We added two people to the team this year."
+            "start": 974601,
+            "end": 1001977,
+            "text": "Our board has been pretty engaged with the strategic plan lately."
           }
         ]
       },
@@ -311,9 +322,9 @@
         "topic": null,
         "sentences": [
           {
-            "start": 863636,
-            "end": 909091,
-            "text": "Good to hear you found someone for the new hire."
+            "start": 1018403,
+            "end": 1051255,
+            "text": "Happy to provide any data that would help with the board report."
           }
         ]
       },
@@ -322,316 +333,8 @@
         "topic": null,
         "sentences": [
           {
-            "start": 918182,
-            "end": 963636,
-            "text": "The team has been tracking renewal numbers pretty closely this quarter."
-          }
-        ]
-      },
-      {
-        "speakerId": "2002",
-        "topic": null,
-        "sentences": [
-          {
-            "start": 977273,
-            "end": 1004545,
-            "text": "Appreciate the update, sounds like a solid cycle so far."
-          }
-        ]
-      },
-      {
-        "speakerId": "c-02",
-        "topic": null,
-        "sentences": [
-          {
-            "start": 1018182,
-            "end": 1063636,
-            "text": "We are putting together some internal documentation to help with training."
-          }
-        ]
-      },
-      {
-        "speakerId": "2002",
-        "topic": null,
-        "sentences": [
-          {
-            "start": 1077273,
-            "end": 1090909,
-            "text": "We are happy to support however makes sense for your team."
-          }
-        ]
-      },
-      {
-        "speakerId": "c-02",
-        "topic": null,
-        "sentences": [
-          {
-            "start": 1104545,
-            "end": 1127273,
-            "text": "We are training a new hire on our systems this week."
-          }
-        ]
-      },
-      {
-        "speakerId": "2002",
-        "topic": null,
-        "sentences": [
-          {
-            "start": 1131818,
-            "end": 1168182,
-            "text": "Let us know if we can help get anyone up to speed."
-          }
-        ]
-      },
-      {
-        "speakerId": "c-02",
-        "topic": null,
-        "sentences": [
-          {
-            "start": 1172727,
-            "end": 1200000,
-            "text": "Our renewal cycle is in full swing right now, keeps the team busy."
-          }
-        ]
-      },
-      {
-        "speakerId": "2002",
-        "topic": null,
-        "sentences": [
-          {
-            "start": 1209091,
-            "end": 1240909,
-            "text": "Makes sense, we see that pattern with a lot of accounts your size."
-          }
-        ]
-      },
-      {
-        "speakerId": "c-02",
-        "topic": null,
-        "sentences": [
-          {
-            "start": 1254545,
-            "end": 1259091,
-            "text": "We are running a training session for new staff next week."
-          }
-        ]
-      },
-      {
-        "speakerId": "2002",
-        "topic": null,
-        "sentences": [
-          {
-            "start": 1272727,
-            "end": 1281818,
-            "text": "Glad to hear you are investing in training, that usually pays off."
-          }
-        ]
-      },
-      {
-        "speakerId": "c-02",
-        "topic": null,
-        "sentences": [
-          {
-            "start": 1286364,
-            "end": 1295455,
-            "text": "We just brought on a new coordinator last month."
-          }
-        ]
-      },
-      {
-        "speakerId": "2002",
-        "topic": null,
-        "sentences": [
-          {
-            "start": 1304545,
-            "end": 1309091,
-            "text": "Hope being short staffed does not last too much longer."
-          }
-        ]
-      },
-      {
-        "speakerId": "c-02",
-        "topic": null,
-        "sentences": [
-          {
-            "start": 1313636,
-            "end": 1359091,
-            "text": "We are keeping an eye on a handful of accounts that have not renewed yet."
-          }
-        ]
-      },
-      {
-        "speakerId": "2002",
-        "topic": null,
-        "sentences": [
-          {
-            "start": 1368182,
-            "end": 1390909,
-            "text": "That survey data sounds useful, happy to hear more about it sometime."
-          }
-        ]
-      },
-      {
-        "speakerId": "c-02",
-        "topic": null,
-        "sentences": [
-          {
-            "start": 1400000,
-            "end": 1409091,
-            "text": "We would like more structured training for our newer staff."
-          }
-        ]
-      },
-      {
-        "speakerId": "2002",
-        "topic": null,
-        "sentences": [
-          {
-            "start": 1413636,
-            "end": 1459091,
-            "text": "That is great, glad the new staff are getting up to speed."
-          }
-        ]
-      },
-      {
-        "speakerId": "c-02",
-        "topic": null,
-        "sentences": [
-          {
-            "start": 1472727,
-            "end": 1513636,
-            "text": "One of our longtime staff members retired recently."
-          }
-        ]
-      },
-      {
-        "speakerId": "2002",
-        "topic": null,
-        "sentences": [
-          {
-            "start": 1518182,
-            "end": 1554545,
-            "text": "Congrats on the internal move, that is great to hear."
-          }
-        ]
-      },
-      {
-        "speakerId": "c-02",
-        "topic": null,
-        "sentences": [
-          {
-            "start": 1563636,
-            "end": 1590909,
-            "text": "This year's renewal push started a little earlier than usual."
-          }
-        ]
-      },
-      {
-        "speakerId": "2002",
-        "topic": null,
-        "sentences": [
-          {
-            "start": 1595455,
-            "end": 1600000,
-            "text": "Glad it is going smoothly, let us know if anything changes."
-          }
-        ]
-      },
-      {
-        "speakerId": "c-02",
-        "topic": null,
-        "sentences": [
-          {
-            "start": 1613636,
-            "end": 1627273,
-            "text": "We have a training day scheduled for later this month."
-          }
-        ]
-      },
-      {
-        "speakerId": "2002",
-        "topic": null,
-        "sentences": [
-          {
-            "start": 1631818,
-            "end": 1650000,
-            "text": "Happy to help however is useful for the newer staff."
-          }
-        ]
-      },
-      {
-        "speakerId": "c-02",
-        "topic": null,
-        "sentences": [
-          {
-            "start": 1654545,
-            "end": 1700000,
-            "text": "We promoted someone from within to lead a team."
-          }
-        ]
-      },
-      {
-        "speakerId": "2002",
-        "topic": null,
-        "sentences": [
-          {
-            "start": 1704545,
-            "end": 1750000,
-            "text": "Hope the reorg settles in without too much disruption."
-          }
-        ]
-      },
-      {
-        "speakerId": "c-02",
-        "topic": null,
-        "sentences": [
-          {
-            "start": 1754545,
-            "end": 1772727,
-            "text": "Most of our members renew online now instead of mailing anything in."
-          }
-        ]
-      },
-      {
-        "speakerId": "2002",
-        "topic": null,
-        "sentences": [
-          {
-            "start": 1777273,
-            "end": 1822727,
-            "text": "Sounds like a productive stretch, let us know if you need anything on our end."
-          }
-        ]
-      },
-      {
-        "speakerId": "c-02",
-        "topic": null,
-        "sentences": [
-          {
-            "start": 1831818,
-            "end": 1863636,
-            "text": "A few of our staff are still getting up to speed on the system."
-          }
-        ]
-      },
-      {
-        "speakerId": "2002",
-        "topic": null,
-        "sentences": [
-          {
-            "start": 1872727,
-            "end": 1913636,
-            "text": "Let us know if the schedule shifts and we can adjust."
-          }
-        ]
-      },
-      {
-        "speakerId": "c-02",
-        "topic": null,
-        "sentences": [
-          {
-            "start": 1922727,
-            "end": 1968182,
+            "start": 1062205,
+            "end": 1084106,
             "text": "Our operations lead moved into a new position internally."
           }
         ]
@@ -641,14 +344,9 @@
         "topic": null,
         "sentences": [
           {
-            "start": 1972727,
-            "end": 1977273,
-            "text": "Appreciate the detail, I will get this in front of the right people."
-          },
-          {
-            "start": 1977274,
-            "end": 2022727,
-            "text": "Thanks for the thorough rundown, I will take it from here."
+            "start": 1100532,
+            "end": 1111483,
+            "text": "Good to hear you found someone for the new hire."
           }
         ]
       },
@@ -657,14 +355,80 @@
         "topic": null,
         "sentences": [
           {
-            "start": 2031818,
-            "end": 2077273,
-            "text": "Appreciate the time, we will keep an eye out for the follow up."
+            "start": 1116958,
+            "end": 1144335,
+            "text": "We have a board retreat coming up in a few weeks."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1149810,
+            "end": 1199087,
+            "text": "That is a healthy habit, reviewing finances regularly."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-02",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1204563,
+            "end": 1210038,
+            "text": "We are training a new hire on our systems this week."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1226464,
+            "end": 1259316,
+            "text": "Hope the reorg settles in without too much disruption."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-02",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1275741,
+            "end": 1330494,
+            "text": "Our board chair has been asking about a couple of ongoing projects."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1335970,
+            "end": 1385247,
+            "text": "This was really helpful, I will circle back once I have an update."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-02",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1390722,
+            "end": 1423574,
+            "text": "This was helpful, thanks for making space for it."
           },
           {
-            "start": 2077274,
-            "end": 2095455,
-            "text": "This was helpful, thanks for making space for it."
+            "start": 1423575,
+            "end": 1429049,
+            "text": "This was a good use of the time, thanks again."
           }
         ]
       }

@@ -299,3 +299,12 @@ pii_plant:
   phones: 3
   addresses: 1
   names: 3
+
+# praise_slot (rework_2, B2 quality pass): exactly one praise claim about the platform exists
+# in the whole corpus, planted in ACC-0002's W37 fundraising_pledge_reminders filler call, in
+# its off topic section, never in the planted theme block. This is a comment, not a data
+# field: CorpusSeedSpec.schema.json sets additionalProperties false on every object in this
+# document, so a real praise_slot field here would be a contract violation. The actual source
+# of truth is the PRAISE_SLOT constant in tools/generate_corpus.py, which this comment mirrors
+# so the two cannot silently drift.
+# praise_slot: { account_id: ACC-0002, week: 2026-W37, theme_key: fundraising_pledge_reminders }

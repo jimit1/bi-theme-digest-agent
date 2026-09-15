@@ -53,6 +53,15 @@ def recorded_proposal() -> dict:
     raise AssertionError("no EditorProposal recording in %s" % RESPONSES)
 
 
+def recorded_theme_request() -> dict:
+    """The EditorThemeRequest from the committed recording: what call one asked to open."""
+    for path in sorted(RESPONSES.glob("*.json")):
+        doc = json.loads(path.read_text(encoding="utf-8"))
+        if doc["request"]["schema_name"] == "EditorThemeRequest":
+            return copy.deepcopy(doc["result"]["data"])
+    raise AssertionError("no EditorThemeRequest recording in %s" % RESPONSES)
+
+
 def configured_model_ids() -> set[str]:
     """The model ids config/models.yaml names. The only runtime file allowed to name one."""
     import yaml
@@ -103,14 +112,15 @@ def decision_for(proposal: dict, claim_id: str) -> dict:
 
 
 @pytest.mark.parametrize(
-    "name, schema_name",
-    [(ed.THEME_REQUEST_PROMPT, "EditorThemeRequest"), (ed.EDITOR_PROMPT, "EditorProposal")],
+    "name, schema_name, version",
+    [(ed.THEME_REQUEST_PROMPT, "EditorThemeRequest", "1.0.0"),
+     (ed.EDITOR_PROMPT, "EditorProposal", "1.1.0")],
 )
-def test_prompt_file_is_versioned_and_asks_for_the_synthesis_tier(name, schema_name):
+def test_prompt_file_is_versioned_and_asks_for_the_synthesis_tier(name, schema_name, version):
     prompt = ed.load_prompt(name)
     assert prompt.tier == "synthesis"
     assert prompt.schema == schema_name
-    assert prompt.version == "1.0.0"
+    assert prompt.version == version
     assert len(prompt.sha256) == 64
     assert prompt.system and prompt.user_template
     # A model id never appears in a prompt. Application code asks for a tier, and the ids
@@ -129,6 +139,28 @@ def test_editor_prompt_carries_the_two_judgment_cases_it_has_to_survive():
     assert "subject line" in system
     # No write tool, and the reader is a human.
     assert "no write tool" in system.lower()
+
+
+def test_editor_prompt_states_the_merge_rule_that_stops_over_splitting():
+    """1.1.0. A theme is the underlying problem, and append beats open when it is close."""
+    system = ed.load_prompt(ed.EDITOR_PROMPT).system
+    # Collapsed, because the prompt is hard wrapped and a rule can straddle two lines.
+    lower = " ".join(system.lower().split())
+    # A theme is the problem a product manager would name, not a facet or a wording.
+    assert "underlying problem" in lower
+    assert "not a facet" in lower
+    # The two merge tests.
+    assert "fixing one would fix the other" in lower
+    assert "same product behaviour is behind both" in lower
+    # Cold start: group first, then one theme per group.
+    assert "cold start" in lower
+    assert "one theme per group" in lower
+    # Open is the exception and carries the difference; append is the default.
+    assert "prefer append" in lower
+    assert "say in the reason what makes it a different problem" in lower
+    # The worked contrast: one pair that merges, one pair that shares a word and splits.
+    assert "worked contrast" in lower
+    assert "one shared word" in lower
 
 
 def test_user_templates_carry_only_volatile_content():
@@ -251,6 +283,15 @@ def test_run_editor_replays_two_recorded_synthesis_calls(store, audit, replay_ro
     names = " ; ".join(reconciliations[0]["names"]).lower()
     assert "event check-in" in names and "attendee kiosk" in names
 
+    # The over-splitting pair: one behaviour, two facets. A frequency the donor did not ask
+    # for and a channel the donor opted out of are both the platform ignoring the donor's
+    # communication preference on pledge reminders, so they are ONE theme and not two.
+    frequency = decision_for(proposal, ids["pledge_frequency"])
+    channel = decision_for(proposal, ids["pledge_channel"])
+    assert frequency["theme_id"] == channel["theme_id"], (
+        "pledge frequency and pledge channel were split across %s and %s"
+        % (frequency["theme_id"], channel["theme_id"]))
+
     # The claim that plainly belongs to a theme already in the store is an append.
     existing = decision_for(proposal, ids["export_row_cap"])
     assert existing["action"] == "append"
@@ -281,10 +322,12 @@ def test_the_recorded_run_reads_only_the_themes_it_asked_for(store, audit, repla
     opened = [e["target"] for e in events
               if e["agent"] == "editor" and e["action"] == "read"
               and str(e["target"]).startswith("THEME-")]
-    assert opened == ["THEME-0001"]
+    # Exactly the ids call one asked for, in the order it asked for them, and nothing else.
+    assert opened == recorded_theme_request()["needs_themes"]
+    assert opened, "call one asked for no theme at all"
     proposed = [e for e in events if e["action"] == "propose"]
     assert len(proposed) == 1
-    assert proposed[0]["detail"]["themes_opened"] == 1
+    assert proposed[0]["detail"]["themes_opened"] == len(opened)
     # Not one write event from the editor. Code performs every write.
     assert not [e for e in events if e["agent"] == "editor" and e["action"] == "write"]
 
@@ -328,7 +371,11 @@ def _unknown_theme(proposal):
 
 
 def _undefined_placeholder(proposal):
-    proposal["new_themes"] = [t for t in proposal["new_themes"] if t["placeholder"] != "NEW-3"]
+    # Drop the definition of a placeholder the decisions still point at, whichever it is,
+    # so the mutation survives a re-recording that opens a different number of themes.
+    orphan = next(d["theme_id"] for d in proposal["decisions"] if d["action"] == "open")
+    proposal["new_themes"] = [t for t in proposal["new_themes"]
+                              if t["placeholder"] != orphan]
 
 
 def _claim_decided_twice(proposal):

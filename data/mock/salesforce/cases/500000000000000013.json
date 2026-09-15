@@ -9,47 +9,23 @@
     "CaseNumber": "00005019",
     "AccountId": "0018W00002HkLmOQAV",
     "Subject": "Pledge reminders keep going out on the standard schedule",
-    "Status": "Closed",
+    "Status": "New",
     "Priority": "Medium",
-    "CreatedDate": "2026-09-14T09:10:42Z",
-    "ClosedDate": "2026-09-14T14:10:00Z"
+    "CreatedDate": "2026-09-14T15:00:06Z",
+    "ClosedDate": null
   },
   "comments": [
     {
       "attributes": {
         "type": "CaseComment",
-        "url": "/services/data/v62.0/sobjects/CaseComment/00a00000000000004c"
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a00000000000004a"
       },
-      "Id": "00a00000000000004c",
+      "Id": "00a00000000000004a",
       "ParentId": "500000000000000013",
       "CommentBody": "Pledge reminders keep going out on the standard schedule even for donors who told us they only want a single reminder before the campaign closes. We have around 140 donors who asked for a single reminder only, and the system sent all of them the full three part schedule anyway during our spring campaign.",
       "IsPublished": true,
       "CreatedById": "005000000000000066",
-      "CreatedDate": "2026-09-14T09:15:46Z"
-    },
-    {
-      "attributes": {
-        "type": "CaseComment",
-        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000050"
-      },
-      "Id": "00a000000000000050",
-      "ParentId": "500000000000000013",
-      "CommentBody": "Created MOMENT-4477 to track this on the engineering backlog.",
-      "IsPublished": false,
-      "CreatedById": "005000000000000003",
-      "CreatedDate": "2026-09-14T09:22:05Z"
-    },
-    {
-      "attributes": {
-        "type": "CaseComment",
-        "url": "/services/data/v62.0/sobjects/CaseComment/00a00000000000004d"
-      },
-      "Id": "00a00000000000004d",
-      "ParentId": "500000000000000013",
-      "CommentBody": "Thanks for laying that out, I want to make sure I understand it fully. How many donors does that affect roughly, and was this during a specific campaign?",
-      "IsPublished": true,
-      "CreatedById": "005000000000000003",
-      "CreatedDate": "2026-09-14T09:30:26Z"
+      "CreatedDate": "2026-09-14T15:05:17Z"
     },
     {
       "attributes": {
@@ -58,34 +34,46 @@
       },
       "Id": "00a00000000000004e",
       "ParentId": "500000000000000013",
+      "CommentBody": "Pulled in Tom for a second opinion on the technical side.",
+      "IsPublished": false,
+      "CreatedById": "005000000000000003",
+      "CreatedDate": "2026-09-14T15:12:42Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a00000000000004b"
+      },
+      "Id": "00a00000000000004b",
+      "ParentId": "500000000000000013",
+      "CommentBody": "Appreciate you walking through that, quick question on my end. How many donors does that affect roughly, and was this during a specific campaign?",
+      "IsPublished": true,
+      "CreatedById": "005000000000000003",
+      "CreatedDate": "2026-09-14T15:20:46Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a00000000000004c"
+      },
+      "Id": "00a00000000000004c",
+      "ParentId": "500000000000000013",
       "CommentBody": "It was about 140 donors, all during the spring campaign that closed in May.",
       "IsPublished": true,
       "CreatedById": "005000000000000066",
-      "CreatedDate": "2026-09-14T09:55:52Z"
+      "CreatedDate": "2026-09-14T15:45:19Z"
     },
     {
       "attributes": {
         "type": "CaseComment",
-        "url": "/services/data/v62.0/sobjects/CaseComment/00a00000000000004f"
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a00000000000004d"
       },
-      "Id": "00a00000000000004f",
+      "Id": "00a00000000000004d",
       "ParentId": "500000000000000013",
-      "CommentBody": "I have looped in a specialist on our team to take a closer look.",
+      "CommentBody": "Just wanted to keep this on your radar.",
       "IsPublished": true,
-      "CreatedById": "005000000000000003",
-      "CreatedDate": "2026-09-14T10:20:57Z"
-    },
-    {
-      "attributes": {
-        "type": "CaseComment",
-        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000051"
-      },
-      "Id": "00a000000000000051",
-      "ParentId": "500000000000000013",
-      "CommentBody": "Checked with Marcus before responding, matches what he saw on the renewal call.",
-      "IsPublished": false,
-      "CreatedById": "005000000000000003",
-      "CreatedDate": "2026-09-14T13:49:37Z"
+      "CreatedById": "005000000000000066",
+      "CreatedDate": "2026-09-14T16:10:22Z"
     }
   ]
 }

@@ -26,17 +26,6 @@
       "trap": false
     },
     {
-      "path": "gong/calls/7782934452019.json",
-      "kind": "gong_call",
-      "id": "7782934452019",
-      "account_id": "ACC-0002",
-      "occurred_at": "2026-09-08T09:16:01Z",
-      "day": "2026-09-08",
-      "week": "2026-W37",
-      "theme_key": "fundraising_pledge_reminders",
-      "trap": false
-    },
-    {
       "path": "salesforce/cases/500000000000000002.json",
       "kind": "sfdc_case",
       "id": "500000000000000002",
@@ -45,6 +34,17 @@
       "day": "2026-09-08",
       "week": "2026-W37",
       "theme_key": "event_checkin_kiosk",
+      "trap": false
+    },
+    {
+      "path": "gong/calls/7782934452019.json",
+      "kind": "gong_call",
+      "id": "7782934452019",
+      "account_id": "ACC-0002",
+      "occurred_at": "2026-09-08T12:01:08Z",
+      "day": "2026-09-08",
+      "week": "2026-W37",
+      "theme_key": "fundraising_pledge_reminders",
       "trap": false
     },
     {
@@ -107,7 +107,7 @@
       "kind": "sfdc_case",
       "id": "500000000000000011",
       "account_id": "ACC-0005",
-      "occurred_at": "2026-09-09T10:20:11Z",
+      "occurred_at": "2026-09-09T09:40:39Z",
       "day": "2026-09-09",
       "week": "2026-W37",
       "theme_key": "fundraising_pledge_reminders",
@@ -184,7 +184,7 @@
       "kind": "sfdc_case",
       "id": "500000000000000012",
       "account_id": "ACC-0002",
-      "occurred_at": "2026-09-10T10:40:38Z",
+      "occurred_at": "2026-09-10T12:00:49Z",
       "day": "2026-09-10",
       "week": "2026-W37",
       "theme_key": "fundraising_pledge_reminders",
@@ -279,17 +279,6 @@
       "trap": false
     },
     {
-      "path": "salesforce/cases/500000000000000013.json",
-      "kind": "sfdc_case",
-      "id": "500000000000000013",
-      "account_id": "ACC-0002",
-      "occurred_at": "2026-09-14T09:10:42Z",
-      "day": "2026-09-14",
-      "week": "2026-W38",
-      "theme_key": "fundraising_pledge_reminders",
-      "trap": false
-    },
-    {
       "path": "gong/calls/7782934452012.json",
       "kind": "gong_call",
       "id": "7782934452012",
@@ -298,6 +287,17 @@
       "day": "2026-09-14",
       "week": "2026-W38",
       "theme_key": "reporting_export_limits",
+      "trap": false
+    },
+    {
+      "path": "salesforce/cases/500000000000000013.json",
+      "kind": "sfdc_case",
+      "id": "500000000000000013",
+      "account_id": "ACC-0002",
+      "occurred_at": "2026-09-14T15:00:06Z",
+      "day": "2026-09-14",
+      "week": "2026-W38",
+      "theme_key": "fundraising_pledge_reminders",
       "trap": false
     },
     {
@@ -312,6 +312,17 @@
       "trap": false
     },
     {
+      "path": "gong/calls/7782934452022.json",
+      "kind": "gong_call",
+      "id": "7782934452022",
+      "account_id": "ACC-0001",
+      "occurred_at": "2026-09-15T09:32:41Z",
+      "day": "2026-09-15",
+      "week": "2026-W38",
+      "theme_key": "sso_provisioning_gaps",
+      "trap": false
+    },
+    {
       "path": "gong/calls/7782934452006.json",
       "kind": "gong_call",
       "id": "7782934452006",
@@ -320,17 +331,6 @@
       "day": "2026-09-15",
       "week": "2026-W38",
       "theme_key": "lms_scorm_support",
-      "trap": false
-    },
-    {
-      "path": "gong/calls/7782934452022.json",
-      "kind": "gong_call",
-      "id": "7782934452022",
-      "account_id": "ACC-0001",
-      "occurred_at": "2026-09-15T14:16:20Z",
-      "day": "2026-09-15",
-      "week": "2026-W38",
-      "theme_key": "sso_provisioning_gaps",
       "trap": false
     },
     {
@@ -356,17 +356,6 @@
       "trap": false
     },
     {
-      "path": "gong/calls/7782934452023.json",
-      "kind": "gong_call",
-      "id": "7782934452023",
-      "account_id": "ACC-0002",
-      "occurred_at": "2026-09-16T11:16:23Z",
-      "day": "2026-09-16",
-      "week": "2026-W38",
-      "theme_key": "sso_provisioning_gaps",
-      "trap": false
-    },
-    {
       "path": "gong/calls/7782934452004.json",
       "kind": "gong_call",
       "id": "7782934452004",
@@ -389,6 +378,17 @@
       "trap": false
     },
     {
+      "path": "gong/calls/7782934452023.json",
+      "kind": "gong_call",
+      "id": "7782934452023",
+      "account_id": "ACC-0002",
+      "occurred_at": "2026-09-16T15:31:16Z",
+      "day": "2026-09-16",
+      "week": "2026-W38",
+      "theme_key": "sso_provisioning_gaps",
+      "trap": false
+    },
+    {
       "path": "salesforce/cases/50000000000000000f.json",
       "kind": "sfdc_case",
       "id": "50000000000000000f",
@@ -397,17 +397,6 @@
       "day": "2026-09-17",
       "week": "2026-W38",
       "theme_key": "job_board_posting_expiry",
-      "trap": false
-    },
-    {
-      "path": "salesforce/cases/500000000000000015.json",
-      "kind": "sfdc_case",
-      "id": "500000000000000015",
-      "account_id": "ACC-0001",
-      "occurred_at": "2026-09-17T12:40:27Z",
-      "day": "2026-09-17",
-      "week": "2026-W38",
-      "theme_key": "sso_provisioning_gaps",
       "trap": false
     },
     {
@@ -433,11 +422,22 @@
       "trap": false
     },
     {
+      "path": "salesforce/cases/500000000000000015.json",
+      "kind": "sfdc_case",
+      "id": "500000000000000015",
+      "account_id": "ACC-0001",
+      "occurred_at": "2026-09-17T16:40:05Z",
+      "day": "2026-09-17",
+      "week": "2026-W38",
+      "theme_key": "sso_provisioning_gaps",
+      "trap": false
+    },
+    {
       "path": "gong/calls/7782934452020.json",
       "kind": "gong_call",
       "id": "7782934452020",
       "account_id": "ACC-0005",
-      "occurred_at": "2026-09-18T12:32:40Z",
+      "occurred_at": "2026-09-18T12:02:20Z",
       "day": "2026-09-18",
       "week": "2026-W38",
       "theme_key": "fundraising_pledge_reminders",
@@ -459,7 +459,7 @@
       "kind": "sfdc_case",
       "id": "500000000000000016",
       "account_id": "ACC-0001",
-      "occurred_at": "2026-09-21T13:00:07Z",
+      "occurred_at": "2026-09-21T15:20:15Z",
       "day": "2026-09-21",
       "week": "2026-W39",
       "theme_key": "sso_provisioning_gaps",
@@ -470,7 +470,7 @@
       "kind": "gong_call",
       "id": "7782934452021",
       "account_id": "ACC-0005",
-      "occurred_at": "2026-09-22T10:02:10Z",
+      "occurred_at": "2026-09-22T10:46:29Z",
       "day": "2026-09-22",
       "week": "2026-W39",
       "theme_key": "fundraising_pledge_reminders",
@@ -514,7 +514,7 @@
       "kind": "sfdc_case",
       "id": "500000000000000014",
       "account_id": "ACC-0002",
-      "occurred_at": "2026-09-23T10:30:45Z",
+      "occurred_at": "2026-09-23T16:40:43Z",
       "day": "2026-09-23",
       "week": "2026-W39",
       "theme_key": "fundraising_pledge_reminders",
@@ -554,17 +554,6 @@
       "trap": false
     },
     {
-      "path": "gong/calls/7782934452024.json",
-      "kind": "gong_call",
-      "id": "7782934452024",
-      "account_id": "ACC-0002",
-      "occurred_at": "2026-09-25T12:47:22Z",
-      "day": "2026-09-25",
-      "week": "2026-W39",
-      "theme_key": "sso_provisioning_gaps",
-      "trap": false
-    },
-    {
       "path": "salesforce/cases/500000000000000010.json",
       "kind": "sfdc_case",
       "id": "500000000000000010",
@@ -584,6 +573,17 @@
       "day": "2026-09-25",
       "week": "2026-W39",
       "theme_key": "reporting_export_limits",
+      "trap": false
+    },
+    {
+      "path": "gong/calls/7782934452024.json",
+      "kind": "gong_call",
+      "id": "7782934452024",
+      "account_id": "ACC-0002",
+      "occurred_at": "2026-09-25T16:01:22Z",
+      "day": "2026-09-25",
+      "week": "2026-W39",
+      "theme_key": "sso_provisioning_gaps",
       "trap": false
     }
   ]

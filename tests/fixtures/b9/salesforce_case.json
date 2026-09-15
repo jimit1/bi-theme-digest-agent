@@ -57,11 +57,25 @@
       "speaker_side": "momentive",
       "text": "Thanks for the detail. A lot of our customers ask for this, and I have logged it with the events team.",
       "sentences": []
+    },
+    {
+      "ref": {
+        "case_id": "5008W00002bRtMzQAK",
+        "case_number": "00104821",
+        "comment_id": "00aB000001kLmNoIAQ",
+        "author_id": "005B0000004aQxPIAU",
+        "author_name": "Halina Brzezinski",
+        "created_at": "2026-09-09T16:12:44Z"
+      },
+      "speaker_id": "005B0000004aQxPIAU",
+      "speaker_side": "client",
+      "text": "Thanks for the quick turnaround. Our operations lead is out until the fifth, so please put any follow up call after that, and I will get the new volunteers signed up for training in the meantime.",
+      "sentences": []
     }
   ],
   "meta": {
     "withheld_comment_count": 1,
-    "turn_count": 2,
+    "turn_count": 3,
     "soql": "SELECT Id, CaseNumber, Subject, CreatedDate FROM Case WHERE Id = '5008W00002bRtMzQAK'"
   }
 }

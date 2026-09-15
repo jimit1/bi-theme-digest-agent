@@ -1,15 +1,18 @@
-"""The B12 editor fixture: one week, two existing themes, six verified claims.
+"""The B12 editor fixture: one week, two existing themes, eight verified claims.
 
 Built in code rather than checked in as markdown so that every claim id is the real
 sha256 the contract defines, and so the store on disk is produced by the store's own
 writer. A hand written fixture drifts from the format the moment the format changes.
 
-The six claims are chosen to exercise the judgment the editor exists for:
+The eight claims are chosen to exercise the judgment the editor exists for:
 
   - two renewal billing claims from two different accounts with no shared vocabulary
     beyond the word invoice, which must land on one theme
   - two offline event claims, one saying "event check-in" and one saying "the attendee
     kiosk", which must land on one theme carrying both names
+  - two pledge reminder claims from two different accounts, one about a frequency the
+    donor did not ask for and one about a channel the donor opted out of, which are two
+    facets of one behaviour and must land on one theme
   - one claim from a prospect, which must be decided and must not be dressed up as
     customer evidence
   - one claim that plainly belongs to a theme the store already has, which must be an
@@ -182,6 +185,34 @@ RUN_CLAIMS: list[dict[str, Any]] = [
         claim_type="feature_request", importance="medium",
         importance_reason="Named as a requirement in an active evaluation.",
         captured_at="2026-09-10T13:40:19Z"),
+    # The over-splitting pair: one behaviour, two facets of it. The platform ignores the
+    # communication preference a donor set on pledge reminders. One account meets it as a
+    # frequency it did not ask for, the other as a channel it opted out of. A fix to the
+    # preference check fixes both, so this is ONE theme and not two.
+    _claim(
+        source="gong",
+        source_ref=_gong_ref("7782934451402", "6703", "Philippa Mbeki", 645000),
+        account_id="ACC-0005", account_name="Sunbelt Literacy Network",
+        account_type="customer",
+        verbatim="We set this donor down for one pledge reminder a year and the system sent her four of them anyway.",
+        paraphrase="Pledge reminders go out more often than the donor asked for.",
+        topic="pledge reminder frequency", product_area="fundraising",
+        claim_type="support_issue", importance="high",
+        importance_reason="Donors are complaining directly to the development office.",
+        captured_at="2026-09-10T15:18:27Z"),
+    _claim(
+        source="salesforce",
+        source_ref=_case_ref("5008W00002aQpMvQAK", "00010451", "00a8W00001bQmUxQAK",
+                             "0058W00000jLpStQAK", "Caspian Rowntree",
+                             "2026-09-11T10:02:14Z"),
+        account_id="ACC-0001", account_name="Great Lakes Museum Alliance",
+        account_type="customer",
+        verbatim="Donors who chose paper only are still getting the pledge reminder emails, which is exactly what they told us they did not want.",
+        paraphrase="Pledge reminder emails reach donors who opted for paper only.",
+        topic="pledge reminder channel preference", product_area="fundraising",
+        claim_type="support_issue", importance="high",
+        importance_reason="Donors who opted out are receiving mail they asked not to get.",
+        captured_at="2026-09-11T10:02:14Z"),
     # Plainly the existing reporting theme.
     _claim(
         source="gong",
@@ -322,12 +353,14 @@ def build_store(path: Any) -> Any:
 
 
 def claims_by_topic() -> dict[str, str]:
-    """Short names for the six claims, so an assertion reads as prose."""
+    """Short names for the eight claims, so an assertion reads as prose."""
     return {
         "renewal_statement": RUN_CLAIMS[0]["claim_id"],
         "mid_year_upgrade": RUN_CLAIMS[1]["claim_id"],
         "event_checkin": RUN_CLAIMS[2]["claim_id"],
         "attendee_kiosk": RUN_CLAIMS[3]["claim_id"],
         "prospect_scorm": RUN_CLAIMS[4]["claim_id"],
-        "export_row_cap": RUN_CLAIMS[5]["claim_id"],
+        "pledge_frequency": RUN_CLAIMS[5]["claim_id"],
+        "pledge_channel": RUN_CLAIMS[6]["claim_id"],
+        "export_row_cap": RUN_CLAIMS[7]["claim_id"],
     }

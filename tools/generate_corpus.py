@@ -186,7 +186,7 @@ AGENDA_EXTERNAL = [
     "Overall things are going fine, just a few things we wanted to flag.",
     "We have a short list today, nothing too complicated.",
     "It has been a fairly normal month for us, a couple of things came up though.",
-    "We are mostly in a good spot, just want to run a few things by you.",
+    "We are mostly in a good spot, just have a few things to run by you.",
     "Nothing major on our end generally, just a couple of specific items.",
     "We wanted to use this time to walk through what has been coming up lately.",
     "Things have been busy but manageable, a few things worth mentioning.",
@@ -203,7 +203,7 @@ AGENDA_INTERNAL = [
     "Let me know what is top of mind and we will work through it.",
     "Glad to hear things are generally steady, let's dig into the specifics.",
     "That sounds manageable, let's take these one at a time.",
-    "I pulled up your account beforehand, so we should be able to move through this.",
+    "I pulled up your account beforehand, so we can move through this today.",
     "Happy to take these in whatever order makes sense to you.",
     "Let's start wherever is most useful for you.",
     "Sounds good, I am ready to take notes as we go.",
@@ -253,44 +253,44 @@ OFFTOPIC_BRIDGE_INTERNAL = [
 # reads as a second extractable claim. Chosen per call from OFFTOPIC_TOPICS so the same call
 # never repeats a topic, and each topic pool is large enough that a long call never repeats a
 # sentence drawing from it.
-OFFTOPIC_TOPICS = ["renewal_timing", "event_season", "board_meeting", "staff_changes", "training"]
+OFFTOPIC_TOPICS = ["weather", "event_season", "board_meeting", "staff_changes", "conference_next_month"]
 
 OFFTOPIC_EXTERNAL = {
-    "renewal_timing": [
-        "Renewal season for us always ramps up around this time of year.",
-        "Our renewal cycle is in full swing right now, keeps the team busy.",
-        "We are getting the renewal notices ready to go out in the next couple of weeks.",
-        "This year's renewal push started a little earlier than usual.",
-        "We have been fielding a steady stream of renewal questions lately.",
-        "Most of our members renew online now instead of mailing anything in.",
-        "Our renewal reminders go out about six weeks before the anniversary date.",
-        "The team has been tracking renewal numbers pretty closely this quarter.",
-        "We are a little ahead of where we were on renewals last year.",
-        "Our board likes to see a renewal update every month during this stretch.",
-        "We just wrapped a round of renewal follow up calls last week.",
-        "Renewal season always brings a few last minute surprises.",
-        "We are keeping an eye on a handful of accounts that have not renewed yet.",
-        "Our renewal rate has held pretty steady compared to last cycle.",
-        "We send a short renewal survey out once the cycle wraps up.",
-        "The renewal numbers are looking solid so far this year.",
+    "weather": [
+        "It has been unusually warm here the last couple of weeks.",
+        "We got an early frost last week that caught everyone off guard.",
+        "The weather has been all over the place lately, hot one day and cold the next.",
+        "We had a big storm roll through over the weekend.",
+        "It has been raining here for what feels like a week straight.",
+        "The forecast is calling for snow later this week.",
+        "We are enjoying a nice stretch of mild weather right now.",
+        "It has been pretty humid here the last little while.",
+        "We had a bit of flooding downtown after last week's storm.",
+        "The office was closed for a day because of the ice.",
+        "It has cooled off quite a bit compared to last month.",
+        "We are hoping for clearer skies for the weekend.",
+        "It has been windy enough here to notice it on the drive in.",
+        "The heat wave finally broke earlier this week.",
+        "We had our first snow of the season a few days ago.",
+        "It has been a mild fall so far compared to last year.",
     ],
     "event_season": [
         "We are deep into planning for our fall conference right now.",
-        "Registration for our next event opened last week.",
-        "We added a couple of new session tracks this year.",
-        "Our event committee has been meeting weekly to finalize the agenda.",
+        "Registration for our next event opens next week.",
+        "We added a session track this year to the agenda.",
+        "Our event committee has been meeting weekly to finalize the schedule.",
         "We are still finalizing the venue for next spring's gathering.",
-        "Attendance has been trending up for our last few events.",
-        "We just locked in our keynote speaker for the fall event.",
-        "The events team has been swamped getting everything ready.",
+        "We just locked in the venue for the fall event.",
+        "The events team has been busy getting everything ready.",
         "We are trying a new registration platform for the upcoming conference.",
         "Our annual meeting is coming up in a few weeks.",
-        "We are expecting a bigger crowd than usual this year.",
-        "The event budget got approved a little later than we hoped.",
+        "The event budget got approved a little later than usual this year.",
         "We have a few sponsors lined up for the fall conference.",
         "Planning for next year's event calendar starts right after this one wraps.",
         "We moved the date up a few weeks from last year.",
         "The events team is finalizing the printed materials this week.",
+        "We are finalizing the catering order for the fall event this week.",
+        "The keynote speaker for the fall event confirmed their travel dates.",
     ],
     "board_meeting": [
         "We just wrapped our quarterly board meeting.",
@@ -301,7 +301,7 @@ OFFTOPIC_EXTERNAL = {
         "The board meeting ran a little long this time.",
         "We are preparing materials for the next board session.",
         "Our board added two new members this year.",
-        "The board wants a report on member growth at the next meeting.",
+        "We circulate a membership update to the board ahead of each meeting.",
         "We spent most of the last board meeting on strategic planning.",
         "Our executive committee meets in between the full board sessions.",
         "The board signed off on a new initiative last month.",
@@ -328,61 +328,61 @@ OFFTOPIC_EXTERNAL = {
         "We restructured a bit after a few departures this year.",
         "Our team is smaller than usual right now while we backfill a role.",
     ],
-    "training": [
-        "We are running a training session for new staff next week.",
-        "Our team could use a refresher on some of the newer features.",
-        "We just finished onboarding a new batch of volunteers.",
-        "A few of our staff are still getting up to speed on the system.",
-        "We have a training day scheduled for later this month.",
-        "Our new hires go through a couple weeks of training before they are on their own.",
-        "We are putting together some internal documentation to help with training.",
-        "A couple of staff asked for more hands on training recently.",
-        "We try to run a refresher training every few months.",
-        "Our volunteer coordinator handles most of the training these days.",
-        "We are training a backup person in case someone is out.",
-        "We recorded a few training sessions so new staff can watch them later.",
-        "Our training schedule got pushed back a bit this quarter.",
-        "We would like more structured training for our newer staff.",
-        "A few of our board members asked to sit in on training too.",
-        "We are still working out the best way to train remote staff.",
+    "conference_next_month": [
+        "A few of us are heading to the regional conference next month.",
+        "We are finalizing our travel dates for next month's conference.",
+        "Our team booked a booth at the conference happening next month.",
+        "We are sharing a hotel block with a couple of other member organizations for the conference.",
+        "The conference agenda for next month just came out.",
+        "We are sending three people to the conference next month.",
+        "Our executive director is speaking on a panel at next month's conference.",
+        "We are finalizing our flights for the conference next month.",
+        "A couple of board members are joining us at next month's conference.",
+        "We are putting together handouts to bring to the conference.",
+        "The conference is in a different city than last year, so travel takes a bit longer.",
+        "We are coordinating carpools for a few of us heading to the conference.",
+        "Our registration for next month's conference is already confirmed.",
+        "We are looking forward to catching up with a few peers at the conference next month.",
+        "The conference dates overlap with our own event a little this year, so we are juggling the calendar.",
+        "We are printing name badges for our group ahead of the conference next month.",
     ],
 }
 OFFTOPIC_INTERNAL = {
-    "renewal_timing": [
-        "Glad to hear the renewal cycle is moving along smoothly.",
-        "That timing lines up with what we typically see this time of year.",
-        "Good to know, I will keep that in mind for the account review.",
-        "Sounds like a productive stretch, let us know if you need anything on our end.",
-        "That is a healthy renewal rate, nice work on the follow up calls.",
-        "Appreciate you sharing that, it helps us plan around your calendar.",
-        "Good to hear things are tracking ahead of last year.",
-        "That survey data sounds useful, happy to hear more about it sometime.",
-        "Renewal season can be a lot, glad the team is staying on top of it.",
-        "Makes sense, we see that pattern with a lot of accounts your size.",
-        "Good to know which accounts you are watching, flag if we can help.",
-        "That is great context, I will note it for the account file.",
-        "Nice to hear the numbers are holding steady.",
-        "Appreciate the update, sounds like a solid cycle so far.",
-        "Good timing on the reminders, that usually helps with response rates.",
-        "Glad it is going smoothly, let us know if anything changes.",
+    "weather": [
+        "Sounds like quite a stretch of weather, hope it settles down soon.",
+        "Good to know, glad everyone is doing okay after the frost.",
+        "That sounds like a lot of back and forth, hope it evens out.",
+        "Hope the storm did not cause too much trouble on your end.",
+        "That is a lot of rain, hope it clears up before too long.",
+        "Good to know, we will keep that in mind in case anything shifts.",
+        "Glad to hear the weather is cooperating for a change.",
+        "Hope the humidity breaks soon on your end.",
+        "Hope the flooding did not cause any lasting trouble.",
+        "Glad everyone stayed safe with the office closed for the ice.",
+        "Sounds like a welcome change from last month.",
+        "Hope the weekend clears up for you.",
+        "Sounds like a windy stretch, hope the drive is manageable.",
+        "Glad to hear the heat wave finally broke.",
+        "Hope the first snow was not too disruptive.",
+        "Sounds like a mild fall so far, hope it stays that way.",
     ],
     "event_season": [
-        "Sounds like a busy season, hope the planning is going smoothly.",
-        "That is exciting, curious how the new tracks land with attendees.",
-        "Glad to hear registration is picking up already.",
-        "Let us know if there is anything we can do to support the event.",
-        "Nice, a strong keynote usually helps with turnout.",
-        "Sounds like a lot of moving pieces, glad the team has it handled.",
-        "Good luck locking down the venue, hope it comes together soon.",
-        "That is a good sign if attendance keeps trending up.",
-        "Interesting, let us know how the new platform works out.",
-        "Hope the annual meeting goes well, sounds like a big one.",
-        "Glad the budget came through, even if it was later than planned.",
-        "Nice to have sponsors lined up early.",
+        "Sounds like a lot of planning, hope it comes together smoothly.",
+        "Good to know, let us know if the registration numbers change our timeline for anything.",
+        "Noted, glad the agenda is coming together.",
+        "Sounds like a lot of moving pieces, hope the committee has it covered.",
+        "Good luck locking down the venue, let us know once it is confirmed.",
+        "Noted, thanks for the update on the venue.",
+        "Sounds like a busy stretch for the team.",
+        "Interesting, let us know how the new platform works out logistically.",
+        "Hope the annual meeting goes smoothly.",
+        "Glad the budget came through, even if later than planned.",
+        "Good to have sponsors lined up early.",
         "Sounds like the calendar planning never really stops for you all.",
-        "Good to know, hope the earlier date works out well.",
-        "That is a lot of logistics, glad it is coming together.",
-        "Hope the event goes smoothly, let us know how it turns out.",
+        "Good to know, hope the earlier date works out for everyone.",
+        "That is a lot of logistics, hope it comes together in time.",
+        "Good to know, let us know if the catering plans change.",
+        "Glad the keynote's travel is locked in.",
     ],
     "board_meeting": [
         "Sounds like a productive session, glad the board is engaged.",
@@ -391,11 +391,11 @@ OFFTOPIC_INTERNAL = {
         "Let us know if we can help with anything for the board packet.",
         "Nice to have new voices on the board this year.",
         "Sounds like a full agenda, glad it all got covered.",
-        "That is great, strategic planning sessions tend to pay off.",
+        "Sounds like a productive session, strategic planning always takes a while.",
         "Happy to provide any data that would help with the board report.",
         "Good to know the executive committee stays active between meetings.",
         "Nice, sounds like the board is aligned on the new initiative.",
-        "Let us know if you need anything pulled together for next week.",
+        "Let us know if there is anything to pull together for next week.",
         "That is a healthy habit, reviewing finances regularly.",
         "Hope the next meeting goes smoothly.",
         "Sounds like a lot of board engagement lately, that is a good sign.",
@@ -410,7 +410,7 @@ OFFTOPIC_INTERNAL = {
         "Nice that you were able to promote from within.",
         "Turnover can be tough, glad the team is adapting.",
         "Good to know, we can point any new folks to our onboarding resources.",
-        "Congrats on the internal move, that is great to hear.",
+        "Congrats on the internal move, glad it worked out.",
         "Hope the reorg settles in without too much disruption.",
         "Glad to hear reinforcements are coming for the team.",
         "That is a lot of change at once, hope it goes well.",
@@ -420,23 +420,23 @@ OFFTOPIC_INTERNAL = {
         "Hope being short staffed does not last too much longer.",
         "Appreciate you letting us know, we can adjust support as needed.",
     ],
-    "training": [
-        "Happy to help put together some training resources if that would be useful.",
-        "That is great, glad the new staff are getting up to speed.",
-        "Let us know if you would like us to walk through anything live.",
-        "We have some documentation that might help with that.",
-        "Sounds like a solid onboarding process.",
-        "Happy to record something if that would help with training.",
-        "Good idea, refresher sessions usually help retention.",
-        "Let us know if a live walkthrough for the board would be helpful.",
-        "We can put together something tailored for remote staff if useful.",
-        "Glad to hear you are investing in training, that usually pays off.",
-        "We are happy to support however makes sense for your team.",
-        "Sounds like a good plan for backup coverage.",
-        "Let us know if the schedule shifts and we can adjust.",
-        "Happy to help however is useful for the newer staff.",
-        "Good on you for prioritizing training even when things are busy.",
-        "We can send over some materials that might help.",
+    "conference_next_month": [
+        "Sounds like a good lineup, hope the travel goes smoothly.",
+        "Good to know, let us know if the dates shift.",
+        "Nice, hope the booth setup goes well.",
+        "Good to know, that sounds like an efficient way to handle the hotel.",
+        "Thanks for the heads up, let us know if the agenda affects our schedule.",
+        "Good to know how many are attending, that helps with planning on our end.",
+        "That sounds like a good opportunity, hope the panel goes well.",
+        "Good to know, safe travels once the flights are booked.",
+        "Nice that the board is joining, hope it is a good trip.",
+        "Let us know if we can help with anything for the handouts.",
+        "Good to know, hope the extra travel time is not too much of a hassle.",
+        "Sounds like a good plan for the carpool.",
+        "Good to know the registration is set.",
+        "Hope you get some good time to catch up with everyone there.",
+        "Good to know, let us know if the overlap causes any scheduling headaches.",
+        "Let us know if there is anything on our end for the badges.",
     ],
 }
 
@@ -662,6 +662,40 @@ THEME_DETAIL = {
     ],
 }
 
+
+def planted_theme_texts() -> set[str]:
+    """Every sentence that belongs to a planted theme discussion: the client's claim and
+    concrete detail sentences, and the client's answer sentence, across every theme and every
+    account variant. Used both by build_sfdc_case (to combine comment 1) and by
+    tests/test_corpus.py (to exclude the planted block from the off topic trigger word scan),
+    so the two never drift apart.
+    """
+    texts: set[str] = set()
+    for variants in THEME_CLAIM_VARIANTS.values():
+        texts.update(variants)
+    for entries in THEME_DETAIL.values():
+        for entry in entries:
+            texts.add(entry["detail"])
+            texts.add(entry["answer"])
+    return texts
+
+
+def planted_case_comment_bodies() -> set[str]:
+    """The exact comment 1 body build_sfdc_case writes for every theme and account variant:
+    the claim sentence and the concrete detail sentence joined with a space, the same way
+    add_comment(claim_text + " " + detail_entry["detail"], ...) builds it there. A plain text
+    match on `planted_theme_texts()` alone would miss this one because it is two sentences
+    joined into a single CommentBody, not two separate sentences.
+    """
+    bodies: set[str] = set()
+    for theme_key, variants in THEME_CLAIM_VARIANTS.items():
+        details = THEME_DETAIL[theme_key]
+        for i, claim_text in enumerate(variants):
+            detail_entry = details[i % len(details)]
+            bodies.add(claim_text + " " + detail_entry["detail"])
+    return bodies
+
+
 # The one filler sentence per category that also plants a low importance member or donor
 # name, used exactly once each across the whole corpus so pii_plant.names totals 3 with
 # Harold Pemberton-Vance (planted by the trap author, not here).
@@ -669,6 +703,21 @@ NAME_MENTION_FILLER = {
     "fundraising": "We actually had one of our long time donors, %s, ask about this at the gala last month." % PLANTED_MEMBER_NAMES[0],
     "dues": "%s, one of our board members, brought this up too, more out of curiosity than anything." % PLANTED_MEMBER_NAMES[1],
 }
+
+# Rework 2 (B2 quality pass): exactly one praise claim exists in the whole corpus. It is
+# planted in one filler call's off topic section, never in the planted theme block, so a
+# reader still finds exactly ONE theme's worth of extractable content in this call. The
+# account and week are marked in data/mock/seed_spec.yaml as a comment next to praise_slot
+# (the schema for CorpusSeedSpec has additionalProperties false everywhere, so a real data
+# field there would be a contract violation; this constant is the actual source of truth).
+# The sentence itself avoids every trigger word tests/test_corpus.py scans for, on purpose:
+# a single planted praise line should read as praise without leaning on generic adjectives,
+# and it means the trigger word test does not need a special case carved out for it.
+PRAISE_SLOT = {"account_id": "ACC-0002", "week": "2026-W37", "theme_key": "fundraising_pledge_reminders"}
+PRAISE_TEXT = (
+    "I have to say, the fundraising platform has been smooth to use with our team all "
+    "season, genuinely impressed with how it holds up during a campaign push."
+)
 
 # Salesforce case thread pools (rework, B2 quality pass). Comment 1 is always the claim plus
 # the theme's concrete detail sentence (built in build_sfdc_case, not drawn from a pool).
@@ -694,7 +743,7 @@ CASE_FILLER_CLIENT = [
     "Just checking in, is there any update on this?",
     "Wanted to bump this back up, any movement here?",
     "No rush, just following up before our next renewal conversation.",
-    "Let me know if you need anything else from our side.",
+    "Let us know if anything changes on our side before the next update.",
     "Following up once more in case this slipped through.",
     "Circling back on this, appreciate any update when you have one.",
     "Just wanted to keep this on your radar.",
@@ -886,6 +935,7 @@ def build_call_plan(
     detail_entry: dict,
     category: str,
     name_mentions_used: set[str],
+    is_praise_slot: bool = False,
 ) -> list[tuple[str, list[str]]]:
     """Returns the ordered monologue plan for one call: a list of (side, sentences) pairs,
     side is 'client' or 'staff'. Sides strictly alternate except for exactly one deliberate
@@ -965,13 +1015,27 @@ def build_call_plan(
 
     remaining = n_offtopic - 1
     name_mention_at = rng.randrange(remaining) if use_name_mention else None
+    # The one praise slot for the whole corpus (see PRAISE_SLOT): pick uniformly among the
+    # positions that land on the client side in this call, so the praise line always lands
+    # as something the client says, never something the rep says back to them.
+    praise_at = None
+    if is_praise_slot:
+        client_positions = [
+            i for i in range(remaining)
+            if (off_side if i % 2 == 0 else opposite(off_side)) == "client"
+        ]
+        if client_positions:
+            praise_at = rng.choice(client_positions)
     for i in range(remaining):
         # Group into pairs so every topic gets pulled from both its pools roughly evenly:
         # side flips every monologue regardless of topic, so cycling the topic once per pair
         # (rather than once per monologue) keeps that from correlating with the side flip and
         # starving one side's pool when there are exactly two topics.
         topic = topics[(i // 2) % len(topics)]
-        if i == name_mention_at and off_side == "client":
+        if i == praise_at:
+            used.add(PRAISE_TEXT)
+            plan.append(("client", [PRAISE_TEXT]))
+        elif i == name_mention_at and off_side == "client":
             text = NAME_MENTION_FILLER[name_mention_key]
             used.add(text)
             plan.append(("client", [text]))
@@ -1057,6 +1121,11 @@ def build_gong_call(
     detail_source = THEME_DETAIL[theme_key][variant_index % len(THEME_DETAIL[theme_key])]
     detail_entry = dict(detail_source, claim=claim_text)
     category = CATEGORY[theme_key]
+    is_praise_slot = (
+        account_id == PRAISE_SLOT["account_id"]
+        and job["week"] == PRAISE_SLOT["week"]
+        and theme_key == PRAISE_SLOT["theme_key"]
+    )
 
     is_prospect = account["account_type"] == "prospect"
     contact = CONTACTS[account_id]
@@ -1095,7 +1164,9 @@ def build_gong_call(
         })
         internal_speaker_ids.append(staff["gong_id"])
 
-    plan = build_call_plan(rng, theme_key, detail_entry, category, name_mentions_used)
+    plan = build_call_plan(
+        rng, theme_key, detail_entry, category, name_mentions_used, is_praise_slot
+    )
     sentence_counts = [len(texts) for _side, texts in plan]
     rng2 = random.Random(rng.random())  # keep the outer stream advancing exactly once
     timeline, target_ms = build_timeline(rng2, sentence_counts)

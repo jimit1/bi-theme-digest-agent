@@ -11,6 +11,7 @@ committed corpus and a scratch temp directory.
 from __future__ import annotations
 
 import json
+import re
 import sys
 from collections import Counter
 from pathlib import Path
@@ -35,6 +36,24 @@ SPEC_PATH = MOCK_DIR / "seed_spec.yaml"
 
 EM_DASH = "—"
 EN_DASH = "–"
+
+# Rework 2 (B2 quality pass): the words a request, a problem or a piece of product praise
+# tends to use. Matched whole word (so "wanted"/"needed" narration does not trip it, only the
+# live "want"/"need" form does) except "frustrat", which is a stem so it also catches
+# "frustrated"/"frustrating". Every generated External call turn and every published client
+# case comment outside the planted theme block must have zero hits against this.
+TRIGGER_WORDS = [
+    "need", "needs", "want", "wants", "should", "must", "request", "problem", "issue",
+    "broken", "fails", "cannot", "can't", "would be great", "wish", "love", "reliable",
+    "improved", "great", "excellent", "frustrat",
+]
+TRIGGER_RE = re.compile(
+    "|".join(
+        r"\b%s\w*\b" % re.escape(w) if w == "frustrat" else r"\b%s\b" % re.escape(w)
+        for w in TRIGGER_WORDS
+    ),
+    re.IGNORECASE,
+)
 
 
 @pytest.fixture(scope="module")
@@ -248,3 +267,83 @@ def test_cli_entry_point_runs(tmp_path):
     )
     assert result.returncode == 0, result.stderr
     assert (out_dir / "index.json").exists()
+
+
+# ---------------------------------------------------------------------------
+# Rework 2 (B2 quality pass): the off topic filler must never read as a second extractable
+# claim. See tools/generate_corpus.py's rework_2 comments next to OFFTOPIC_EXTERNAL/INTERNAL,
+# PRAISE_SLOT and planted_theme_texts()/planted_case_comment_bodies() for the fix itself.
+# ---------------------------------------------------------------------------
+
+def test_no_trigger_words_outside_the_planted_theme_block(spec):
+    """Every generated External (client) transcript turn, and every published client case
+    comment, must carry none of TRIGGER_WORDS unless it is part of the one planted theme
+    discussion for that call or case (the claim, its concrete detail, and the client's
+    answer). The planted block is allowed to contain them: that block is the ONE claim per
+    document a reader is supposed to extract. Everything else is filler and must read as
+    pure logistics or small talk, never a second request, problem or piece of praise.
+    """
+    planted_sentences = gc.planted_theme_texts()
+    planted_case_bodies = gc.planted_case_comment_bodies()
+    _, _, contact_ids = gc.build_users_file(spec)
+    client_user_ids = set(contact_ids.values())
+
+    hits = []
+
+    for path in MOCK_DIR.glob("gong/calls/*.json"):
+        doc = json.loads(path.read_text())
+        affiliation_by_speaker = {
+            p["speakerId"]: p["affiliation"] for p in doc["call"]["parties"]
+        }
+        for block in doc["transcript"]["transcript"]:
+            if affiliation_by_speaker.get(block["speakerId"]) != "External":
+                continue
+            for sentence in block["sentences"]:
+                text = sentence["text"]
+                if text in planted_sentences:
+                    continue
+                if TRIGGER_RE.search(text):
+                    hits.append((path.name, "gong", text))
+
+    for path in MOCK_DIR.glob("salesforce/cases/*.json"):
+        doc = json.loads(path.read_text())
+        for comment in doc["comments"]:
+            if not comment["IsPublished"]:
+                continue
+            if comment["CreatedById"] not in client_user_ids:
+                continue
+            body = comment["CommentBody"]
+            if body in planted_case_bodies or body in planted_sentences:
+                continue
+            if TRIGGER_RE.search(body):
+                hits.append((path.name, "sfdc", body))
+
+    assert not hits, hits
+
+
+def test_exactly_one_praise_claim_in_the_whole_corpus(spec):
+    """PRAISE_TEXT is the one designated praise line about the platform (see PRAISE_SLOT in
+    tools/generate_corpus.py): it must appear exactly once across every generated call and
+    case, and it must land in the account and week PRAISE_SLOT names.
+    """
+    hits = []
+    for path in MOCK_DIR.glob("gong/calls/*.json"):
+        doc = json.loads(path.read_text())
+        for block in doc["transcript"]["transcript"]:
+            for sentence in block["sentences"]:
+                if sentence["text"] == gc.PRAISE_TEXT:
+                    hits.append(path)
+    for path in MOCK_DIR.glob("salesforce/cases/*.json"):
+        doc = json.loads(path.read_text())
+        for comment in doc["comments"]:
+            if gc.PRAISE_TEXT in comment["CommentBody"]:
+                hits.append(path)
+
+    assert len(hits) == 1, hits
+
+    index_doc = json.loads((MOCK_DIR / "index.json").read_text())
+    target_path = "gong/calls/%s" % hits[0].name
+    entry = next(e for e in index_doc["entries"] if e["path"] == target_path)
+    assert entry["account_id"] == gc.PRAISE_SLOT["account_id"]
+    assert entry["week"] == gc.PRAISE_SLOT["week"]
+    assert entry["theme_key"] == gc.PRAISE_SLOT["theme_key"]
