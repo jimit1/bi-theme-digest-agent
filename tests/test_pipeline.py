@@ -199,6 +199,33 @@ def test_extra_counts_reach_the_manifest(tmp_path):
     assert manifest["counts"]["themes_opened"] == 8
 
 
+def test_a_week_already_in_the_store_is_not_built_again(tmp_path, capsys):
+    """The portability defect B27 found: `make demo` on a clone that already carries the run.
+
+    Without the guard the build rescores every theme against this week's build date and
+    hands the editor a theme index that did not exist when the week was recorded, so the
+    replay key misses and the store is left rewritten. With it, a built week is a no-op,
+    exactly as an ingest day at or behind the watermark is.
+    """
+    run_id = pipeline.run_id_for_week("2026-W37")
+    audit = Audit(run_id, tmp_path)
+    manifest = pipeline._manifest(run_id, "build", "2026-W37", "replay",
+                                  "2026-09-14T07:00:00.000Z", audit,
+                                  extra_counts={"themes_opened": 10})
+    run_dir = tmp_path / "runs" / run_id
+    run_dir.mkdir(parents=True)
+    (run_dir / "manifest.json").write_text(json.dumps(manifest), encoding="utf-8")
+
+    code = main(["build", "--week", "2026-W37", "--mode", "replay", "--store", str(tmp_path)])
+
+    assert code == 0
+    assert "already built" in capsys.readouterr().out
+    # Nothing was rewritten: no themes, no digests, no second manifest.
+    assert not (tmp_path / "themes").exists()
+    assert not (tmp_path / "digests").exists()
+    assert json.loads((run_dir / "manifest.json").read_text(encoding="utf-8")) == manifest
+
+
 # ------------------------------------------------------------------ the week's own numbers
 
 

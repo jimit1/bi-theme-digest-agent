@@ -10,7 +10,9 @@ Clone two repositories side by side into one parent directory: the code, the bi-
 make demo
 ```
 
-That replays the whole sample run from recorded model responses: fifteen nightly ingests and three weekly builds, no network, no API key, about sixteen seconds, byte identical to what is committed. The digests land in `../bi-theme-digest-store/digests/` as `2026-W37.md`, `2026-W38.md`, `2026-W39.md` and an HTML page for each. `make clean-store` puts the store back.
+That runs the whole sample from recorded model responses: fifteen nightly ingests and three weekly builds, no network, no API key. The digests are in `../bi-theme-digest-store/digests/` as `2026-W37.md`, `2026-W38.md`, `2026-W39.md` and an HTML page for each. `make clean-store` puts the store back.
+
+On a clone the store already carries that run, so every step reports itself as already done and nothing is rewritten: an ingest day at or behind the watermark is a no-op and so is a week whose build run is already in the store. That is the point of a store that persists between runs, and it is why the command is safe to run twice. To watch it replay for real, byte identical to what is committed, put the store back to its first commit while keeping `runs/*/responses*`, then run `make demo` again: about seventeen seconds, fifteen ingests, three builds, nineteen commits, and the digests, themes and evidence come out identical to the committed ones.
 
 ```
 make demo-live     # the same run live: about 54 minutes, $4.26 by the rate table

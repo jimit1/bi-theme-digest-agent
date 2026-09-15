@@ -4,7 +4,7 @@ Date run: 2026-09-14.
 
 Command: `python -m digest eval --mode replay`, run from the code repo with the store at
 `../bi-theme-digest-store`, using the venv interpreter
-`/Users/jimabmatic.ai/momentive-bi-digest/.venv/bin/python`. Replay mode, zero network calls,
+`.venv/bin/python`. Replay mode, zero network calls,
 zero live model spend.
 
 Store commit sha (HEAD at run time): 65b7b0a25f3c2af17b78253337435f6818978d5f

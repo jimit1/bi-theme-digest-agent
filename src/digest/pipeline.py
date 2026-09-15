@@ -731,13 +731,22 @@ def build_week(week: str, context: Context, stability: bool = False) -> dict[str
     run_id = run_id_for_week(week)
     as_of = build_date_for_week(week)
     store = context.store()
-    if stability and (store.path / "runs" / run_id / "manifest.json").is_file():
-        # The week is already built. Building it again would append this week's claims to
-        # the themes they already opened and write a history that never happened, so the
-        # second opinion is taken in a scratch copy instead. See measure_stability.
-        measure_stability(week, context)
-        return json.loads((store.path / "runs" / run_id / "manifest.json")
-                          .read_text(encoding="utf-8"))
+    manifest_path = store.path / "runs" / run_id / "manifest.json"
+    if manifest_path.is_file():
+        # The week is already built and its output is committed. Building it again would
+        # append this week's claims to the themes they already opened, rescore every theme
+        # against THIS week's build date, and hand the editor a theme index that did not
+        # exist when the week was recorded, so the replay key misses. That is a history
+        # that never happened. So a built week is a no-op here, exactly as an ingest day at
+        # or behind the watermark is a no-op: the store is the record of what ran, and both
+        # halves of the pipeline read it the same way. A second opinion on a built week is
+        # taken in a scratch copy instead, see measure_stability. To build a week for real,
+        # start from a store that does not already carry it.
+        if stability:
+            measure_stability(week, context)
+        else:
+            context.say("build %s: already built (run %s), nothing to do" % (week, run_id))
+        return json.loads(manifest_path.read_text(encoding="utf-8"))
     audit = Audit(run_id, store.path)
     store.attach_audit(audit)
     router = context.router()
