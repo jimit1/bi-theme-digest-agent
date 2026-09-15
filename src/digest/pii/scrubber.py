@@ -182,13 +182,13 @@ def scrub_document(doc: dict, names: "list[str] | None" = None) -> tuple[dict, d
             turn["text"] = clean
             for key in total:
                 total[key] += counts[key]
+        # Sentences carry the same text as the turn, split by timing. Scrub them so no
+        # copy survives, but count only the turn, or every redaction is reported twice.
         for sentence in turn.get("sentences", None) or []:
             s_text = sentence.get("text", "")
             if s_text:
-                clean, counts = scrub(s_text, names)
+                clean, _sentence_counts = scrub(s_text, names)
                 sentence["text"] = clean
-                for key in total:
-                    total[key] += counts[key]
 
     _scrub_field(doc, "title", names, total)
     _scrub_field(doc, "subject", names, total)

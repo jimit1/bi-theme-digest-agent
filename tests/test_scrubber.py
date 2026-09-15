@@ -295,7 +295,8 @@ def test_scrub_document_redacts_turns_sentences_and_title():
         assert PLANTED_ADDRESS not in sentence["text"]
         assert PLANTED_NAME not in sentence["text"]
 
-    assert counts == {"EMAIL": 2, "PHONE": 2, "ADDRESS": 2, "NAME": 3}
+    # One occurrence per turn: sentences are scrubbed too but not counted twice.
+    assert counts == {"EMAIL": 1, "PHONE": 1, "ADDRESS": 1, "NAME": 2}
 
 
 def test_scrub_document_never_touches_ids_or_participants():
