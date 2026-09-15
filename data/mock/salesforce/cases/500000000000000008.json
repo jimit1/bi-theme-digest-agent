@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0.0",
+  "case": {
+    "attributes": {
+      "type": "Case",
+      "url": "/services/data/v62.0/sobjects/Case/500000000000000008"
+    },
+    "Id": "500000000000000008",
+    "CaseNumber": "00005008",
+    "AccountId": "0018W00002HkLmNQAV",
+    "Subject": "Any report we try to export once membership crosses",
+    "Status": "Working",
+    "Priority": "Medium",
+    "CreatedDate": "2026-09-16T12:40:56Z",
+    "ClosedDate": null
+  },
+  "comments": [
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a00000000000001e"
+      },
+      "Id": "00a00000000000001e",
+      "ParentId": "500000000000000008",
+      "CommentBody": "Any report we try to export once membership crosses about ten thousand rows just cuts off partway through instead of finishing the file. Our membership export cuts off right around 10,500 rows, and the full roster runs closer to 14,000.",
+      "IsPublished": true,
+      "CreatedById": "005000000000000065",
+      "CreatedDate": "2026-09-16T12:45:00Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000021"
+      },
+      "Id": "00a000000000000021",
+      "ParentId": "500000000000000008",
+      "CommentBody": "Double checked with the account team, nothing else pending here.",
+      "IsPublished": false,
+      "CreatedById": "005000000000000003",
+      "CreatedDate": "2026-09-16T12:52:30Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a00000000000001f"
+      },
+      "Id": "00a00000000000001f",
+      "ParentId": "500000000000000008",
+      "CommentBody": "That helps a lot, I have one clarifying question. Which specific report is that, and do you know roughly what row count it stops at?",
+      "IsPublished": true,
+      "CreatedById": "005000000000000003",
+      "CreatedDate": "2026-09-16T13:00:37Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000020"
+      },
+      "Id": "00a000000000000020",
+      "ParentId": "500000000000000008",
+      "CommentBody": "It is the full membership roster export, and it stops right around 10,500 rows every time.",
+      "IsPublished": true,
+      "CreatedById": "005000000000000065",
+      "CreatedDate": "2026-09-16T13:25:34Z"
+    }
+  ]
+}

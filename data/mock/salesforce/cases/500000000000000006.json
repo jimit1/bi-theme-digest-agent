@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "case": {
+    "attributes": {
+      "type": "Case",
+      "url": "/services/data/v62.0/sobjects/Case/500000000000000006"
+    },
+    "Id": "500000000000000006",
+    "CaseNumber": "00005006",
+    "AccountId": "0018W00002HkLmNQAV",
+    "Subject": "Any report we try to export once membership crosses",
+    "Status": "Working",
+    "Priority": "Medium",
+    "CreatedDate": "2026-09-10T16:30:15Z",
+    "ClosedDate": null
+  },
+  "comments": [
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000017"
+      },
+      "Id": "00a000000000000017",
+      "ParentId": "500000000000000006",
+      "CommentBody": "Any report we try to export once membership crosses about ten thousand rows just cuts off partway through instead of finishing the file. Our membership export cuts off right around 10,500 rows, and the full roster runs closer to 14,000.",
+      "IsPublished": true,
+      "CreatedById": "005000000000000065",
+      "CreatedDate": "2026-09-10T16:35:02Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000018"
+      },
+      "Id": "00a000000000000018",
+      "ParentId": "500000000000000006",
+      "CommentBody": "That is really helpful context, thank you for walking me through it. Which specific report is that, and do you know roughly what row count it stops at?",
+      "IsPublished": true,
+      "CreatedById": "005000000000000002",
+      "CreatedDate": "2026-09-10T16:50:27Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000019"
+      },
+      "Id": "00a000000000000019",
+      "ParentId": "500000000000000006",
+      "CommentBody": "It is the full membership roster export, and it stops right around 10,500 rows every time.",
+      "IsPublished": true,
+      "CreatedById": "005000000000000065",
+      "CreatedDate": "2026-09-10T17:15:23Z"
+    }
+  ]
+}

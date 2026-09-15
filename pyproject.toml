@@ -1,0 +1,31 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "bi-theme-digest-agent"
+version = "0.1.0"
+description = "BI theme digest agent: reads Gong calls and Salesforce cases, verifies every claim against its source, and writes a weekly digest with citations that resolve."
+requires-python = ">=3.12"
+license = "MIT"
+authors = [
+    { name = "Jim Mehta", email = "jimit1@gmail.com" },
+]
+dependencies = [
+    "anthropic>=1.5",
+    "claude-agent-sdk>=0.2",
+    "mcp",
+    "jsonschema",
+    "pyyaml",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+]
+
+[project.scripts]
+digest = "digest.__main__:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/digest"]

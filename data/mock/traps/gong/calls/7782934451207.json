@@ -1,0 +1,996 @@
+{
+  "schema_version": "1.0.0",
+  "call": {
+    "metaData": {
+      "id": "7782934451207",
+      "url": "https://gong.invalid/call?id=7782934451207",
+      "title": "Atlantic Shipwrights Guild support follow up",
+      "scheduled": "2026-09-11T13:00:00Z",
+      "started": "2026-09-11T13:02:05Z",
+      "duration": 1558,
+      "primaryUserId": "1233",
+      "direction": "Conference",
+      "system": "Gong",
+      "scope": "External",
+      "media": "Video",
+      "language": "eng",
+      "workspaceId": "9911",
+      "sdrDisposition": null,
+      "clientUniqueId": null,
+      "customData": null,
+      "purpose": "Support follow up",
+      "meetingUrl": null,
+      "isPrivate": false,
+      "calendarEventId": "cal-88402"
+    },
+    "parties": [
+      {
+        "id": "p-1233",
+        "emailAddress": "elena.kowalczyk@momentivesoftware.example.org",
+        "name": "Elena Kowalczyk",
+        "title": "Support Engineer",
+        "userId": "1233",
+        "speakerId": "1233",
+        "context": [],
+        "affiliation": "Internal"
+      },
+      {
+        "id": "p-4744",
+        "emailAddress": "garrett.thibodeaux@atlanticshipwrights.example.org",
+        "name": "Garrett Thibodeaux",
+        "title": "Programs Manager",
+        "userId": null,
+        "speakerId": "4744",
+        "context": [],
+        "affiliation": "External"
+      }
+    ]
+  },
+  "transcript": {
+    "callId": "7782934451207",
+    "transcript": [
+      {
+        "speakerId": "1233",
+        "topic": "Opening",
+        "sentences": [
+          {
+            "start": 8000,
+            "end": 12602,
+            "text": "Hi Garrett, thanks for taking the call."
+          },
+          {
+            "start": 12602,
+            "end": 23930,
+            "text": "This is the follow up I promised after the tickets you raised around the summer festival series."
+          },
+          {
+            "start": 23930,
+            "end": 39978,
+            "text": "I would like to understand what actually happened on the ground rather than what the tickets say, because the two are usually different."
+          }
+        ]
+      },
+      {
+        "speakerId": "4744",
+        "topic": "Opening",
+        "sentences": [
+          {
+            "start": 43978,
+            "end": 49288,
+            "text": "Hello Elena. Happy to go through it properly."
+          },
+          {
+            "start": 49288,
+            "end": 66398,
+            "text": "The tickets were written at half past six in the morning by someone who had been awake since four, so I would not read too much into the wording."
+          }
+        ]
+      },
+      {
+        "speakerId": "1233",
+        "topic": "Programmes",
+        "sentences": [
+          {
+            "start": 70398,
+            "end": 80664,
+            "text": "Understood. Start me at the beginning. What does the autumn series actually consist of?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4744",
+        "topic": "Programmes",
+        "sentences": [
+          {
+            "start": 84664,
+            "end": 95520,
+            "text": "We run four regional gatherings between September and November, one in each of our chapters."
+          },
+          {
+            "start": 95520,
+            "end": 111214,
+            "text": "Each one is a day and a half, usually at a working boatyard, with demonstrations in the morning and member sessions in the afternoon."
+          },
+          {
+            "start": 111214,
+            "end": 121480,
+            "text": "They are small by most standards. Between three hundred and six hundred people at each."
+          }
+        ]
+      },
+      {
+        "speakerId": "1233",
+        "topic": "Programmes",
+        "sentences": [
+          {
+            "start": 125480,
+            "end": 132678,
+            "text": "And people arrive across the morning rather than all at once?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4744",
+        "topic": "Programmes",
+        "sentences": [
+          {
+            "start": 136678,
+            "end": 150720,
+            "text": "Mostly between seven thirty and nine, because the first demonstration starts at nine sharp and nobody wants to miss it."
+          },
+          {
+            "start": 150720,
+            "end": 158862,
+            "text": "So it is a concentrated hour and a half rather than a steady trickle."
+          }
+        ]
+      },
+      {
+        "speakerId": "1233",
+        "topic": "Background",
+        "sentences": [
+          {
+            "start": 162862,
+            "end": 175134,
+            "text": "Give me a bit of background while we are here, because I have read your account notes and they are thin."
+          },
+          {
+            "start": 175134,
+            "end": 180444,
+            "text": "How big is the guild and how is it organised?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4744",
+        "topic": "Background",
+        "sentences": [
+          {
+            "start": 184444,
+            "end": 197660,
+            "text": "Just over four thousand members across four chapters on the eastern seaboard, from Maine down to the Chesapeake."
+          },
+          {
+            "start": 197660,
+            "end": 215242,
+            "text": "About two thirds are working boatbuilders and shipwrights, and the rest are what we politely call enthusiasts, who are often the ones with the money."
+          },
+          {
+            "start": 215242,
+            "end": 231054,
+            "text": "The guild is a hundred and nine years old and there are people who will tell you, at length, what it was like in the nineteen sixties."
+          }
+        ]
+      },
+      {
+        "speakerId": "1233",
+        "topic": "Background",
+        "sentences": [
+          {
+            "start": 235054,
+            "end": 245202,
+            "text": "A hundred and nine years of institutional memory is a mixed blessing in my experience."
+          }
+        ]
+      },
+      {
+        "speakerId": "4744",
+        "topic": "Background",
+        "sentences": [
+          {
+            "start": 249202,
+            "end": 263834,
+            "text": "It is exactly that. It gives us an archive nobody else has and a standards body that genuinely means something in the trade."
+          },
+          {
+            "start": 263834,
+            "end": 279056,
+            "text": "It also gives us four chapters who each believe their way of running a gathering is the correct one, and three of them are wrong."
+          },
+          {
+            "start": 279056,
+            "end": 289086,
+            "text": "I will not tell you which three because two of the chairs listen to these recordings."
+          }
+        ]
+      },
+      {
+        "speakerId": "1233",
+        "topic": "Background",
+        "sentences": [
+          {
+            "start": 293086,
+            "end": 298160,
+            "text": "I will not ask. How many staff do you have?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4744",
+        "topic": "Background",
+        "sentences": [
+          {
+            "start": 302160,
+            "end": 312308,
+            "text": "Six full time and two part time, which for four thousand members is lean but workable."
+          },
+          {
+            "start": 312308,
+            "end": 326350,
+            "text": "Almost everything at a gathering is run by volunteers, and we have about four hundred who do something in a given year."
+          },
+          {
+            "start": 326350,
+            "end": 338150,
+            "text": "My own job is mostly making sure the volunteers have what they need and then getting out of the way."
+          }
+        ]
+      },
+      {
+        "speakerId": "1233",
+        "topic": "Background",
+        "sentences": [
+          {
+            "start": 342150,
+            "end": 349348,
+            "text": "That is a good description of programme management generally."
+          }
+        ]
+      },
+      {
+        "speakerId": "4744",
+        "topic": "Background",
+        "sentences": [
+          {
+            "start": 353348,
+            "end": 368334,
+            "text": "It took me four years to learn it. My first two gatherings I tried to run everything myself and both of them were worse for it."
+          }
+        ]
+      },
+      {
+        "speakerId": "1233",
+        "topic": "Onsite",
+        "sentences": [
+          {
+            "start": 372334,
+            "end": 377526,
+            "text": "Walk me through how you handle the arrivals."
+          }
+        ]
+      },
+      {
+        "speakerId": "4744",
+        "topic": "Onsite",
+        "sentences": [
+          {
+            "start": 381526,
+            "end": 391792,
+            "text": "We set up the attendee kiosk on two laptops at the yard gate with a printer for badges."
+          },
+          {
+            "start": 391792,
+            "end": 409374,
+            "text": "That is the name we have always used for it, from the platform we were on before you acquired them, and honestly the whole guild still calls it that."
+          },
+          {
+            "start": 409374,
+            "end": 422354,
+            "text": "I know your documentation uses a different word but I have given up trying to retrain four hundred volunteers."
+          }
+        ]
+      },
+      {
+        "speakerId": "1233",
+        "topic": "Onsite",
+        "sentences": [
+          {
+            "start": 426354,
+            "end": 434614,
+            "text": "You do not need to retrain anyone on my account. I will use your word."
+          },
+          {
+            "start": 434614,
+            "end": 440042,
+            "text": "So what went wrong at the September gathering?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4744",
+        "topic": "Onsite",
+        "sentences": [
+          {
+            "start": 444042,
+            "end": 458202,
+            "text": "The yard has one connection and it goes through a single radio link to the road, which is fine right up until it is not."
+          },
+          {
+            "start": 458202,
+            "end": 473188,
+            "text": "If the hall wifi cuts out halfway through the morning, the attendee kiosk has to carry on signing people in and catch up later."
+          },
+          {
+            "start": 473188,
+            "end": 487584,
+            "text": "That morning it went out at eight ten and came back at eight fifty, which is the worst forty minutes it could have picked."
+          }
+        ]
+      },
+      {
+        "speakerId": "1233",
+        "topic": "Onsite",
+        "sentences": [
+          {
+            "start": 491584,
+            "end": 499372,
+            "text": "What did the two people on the laptops do for those forty minutes?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4744",
+        "topic": "Onsite",
+        "sentences": [
+          {
+            "start": 503372,
+            "end": 520600,
+            "text": "One of them drove to the top of the lane and stood on a wall with a phone hotspot, which worked for about ten minutes before the battery gave out."
+          },
+          {
+            "start": 520600,
+            "end": 525438,
+            "text": "The other one wrote names on a clipboard."
+          },
+          {
+            "start": 525438,
+            "end": 537592,
+            "text": "Neither of those is a plan, they are just what people do when the thing in front of them stops working."
+          }
+        ]
+      },
+      {
+        "speakerId": "1233",
+        "topic": "Onsite",
+        "sentences": [
+          {
+            "start": 541592,
+            "end": 549734,
+            "text": "And afterwards, how did the clipboard names get back into the system?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4744",
+        "topic": "Onsite",
+        "sentences": [
+          {
+            "start": 553734,
+            "end": 559988,
+            "text": "Two volunteers typed them in over the following week."
+          },
+          {
+            "start": 559988,
+            "end": 575446,
+            "text": "We lost the arrival times entirely, which matters to us because the insurance requires us to show who was on site and roughly when."
+          },
+          {
+            "start": 575446,
+            "end": 595152,
+            "text": "So the attendee kiosk carrying on through an outage and reconciling afterwards is not a nice to have for us, it is the difference between a compliant record and a gap."
+          }
+        ]
+      },
+      {
+        "speakerId": "1233",
+        "topic": "Onsite",
+        "sentences": [
+          {
+            "start": 599152,
+            "end": 612722,
+            "text": "That insurance point is the part I had not understood from the ticket, and it is the part that will make this land."
+          },
+          {
+            "start": 612722,
+            "end": 615722,
+            "text": "Can I quote you on it?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4744",
+        "topic": "Onsite",
+        "sentences": [
+          {
+            "start": 619722,
+            "end": 629752,
+            "text": "Quote me on all of it. I have nothing to hide and I would rather it was said plainly."
+          }
+        ]
+      },
+      {
+        "speakerId": "1233",
+        "topic": "Membership",
+        "sentences": [
+          {
+            "start": 633752,
+            "end": 643074,
+            "text": "Since we have covered the gatherings, tell me how the membership side is going."
+          },
+          {
+            "start": 643074,
+            "end": 650508,
+            "text": "Your renewal is in January if I remember the account correctly."
+          }
+        ]
+      },
+      {
+        "speakerId": "4744",
+        "topic": "Membership",
+        "sentences": [
+          {
+            "start": 654508,
+            "end": 660880,
+            "text": "End of January, and I am not expecting any difficulty."
+          },
+          {
+            "start": 660880,
+            "end": 673034,
+            "text": "Membership is up about three percent this year, which for a heritage trade body is close to miraculous."
+          },
+          {
+            "start": 673034,
+            "end": 684834,
+            "text": "The apprenticeship programme is the reason. Every apprentice becomes a member and most of them stay."
+          }
+        ]
+      },
+      {
+        "speakerId": "1233",
+        "topic": "Membership",
+        "sentences": [
+          {
+            "start": 688834,
+            "end": 695442,
+            "text": "Is the dues structure the same across the four chapters?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4744",
+        "topic": "Membership",
+        "sentences": [
+          {
+            "start": 699442,
+            "end": 713130,
+            "text": "The national dues are the same and each chapter adds its own supplement, which ranges from nothing to forty dollars."
+          },
+          {
+            "start": 713130,
+            "end": 727290,
+            "text": "The chapter with the forty dollar supplement also runs the best programme, and funnily enough nobody complains about it."
+          },
+          {
+            "start": 727290,
+            "end": 738264,
+            "text": "The one that charges nothing has the highest churn, which is not the lesson anybody expected."
+          }
+        ]
+      },
+      {
+        "speakerId": "1233",
+        "topic": "Membership",
+        "sentences": [
+          {
+            "start": 742264,
+            "end": 747338,
+            "text": "People value what they pay for, apparently."
+          }
+        ]
+      },
+      {
+        "speakerId": "4744",
+        "topic": "Membership",
+        "sentences": [
+          {
+            "start": 751338,
+            "end": 763020,
+            "text": "Or they value what somebody bothers to organise, and the supplement is what pays for the bothering."
+          },
+          {
+            "start": 763020,
+            "end": 774466,
+            "text": "I think it is the second one, but I hold the view loosely because it is one chapter and one year."
+          }
+        ]
+      },
+      {
+        "speakerId": "1233",
+        "topic": "Membership",
+        "sentences": [
+          {
+            "start": 778466,
+            "end": 786608,
+            "text": "How do the standards and certification pieces sit against membership?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4744",
+        "topic": "Membership",
+        "sentences": [
+          {
+            "start": 790608,
+            "end": 809724,
+            "text": "We publish the construction standards that a good part of the trade works to, and about six hundred members hold a guild certification on top of their membership."
+          },
+          {
+            "start": 809724,
+            "end": 821760,
+            "text": "The certification is voluntary and it is renewed every five years with evidence of continued practice."
+          },
+          {
+            "start": 821760,
+            "end": 835920,
+            "text": "It matters most to the members who work on historic vessels, because the grant funders for that work ask for it by name."
+          }
+        ]
+      },
+      {
+        "speakerId": "1233",
+        "topic": "Venue",
+        "sentences": [
+          {
+            "start": 839920,
+            "end": 848062,
+            "text": "Is there any prospect of a better connection at the yards themselves?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4744",
+        "topic": "Venue",
+        "sentences": [
+          {
+            "start": 852062,
+            "end": 868464,
+            "text": "Not really. Two of the four are on working waterfronts where the infrastructure is sixty years old and nobody is going to dig it up for us."
+          },
+          {
+            "start": 868464,
+            "end": 879556,
+            "text": "We have looked at satellite units and the cost per gathering is more than the catering budget."
+          }
+        ]
+      },
+      {
+        "speakerId": "1233",
+        "topic": "Venue",
+        "sentences": [
+          {
+            "start": 883556,
+            "end": 894176,
+            "text": "Then planning around the connection rather than relying on it is the only sensible answer."
+          }
+        ]
+      },
+      {
+        "speakerId": "4744",
+        "topic": "Venue",
+        "sentences": [
+          {
+            "start": 898176,
+            "end": 902070,
+            "text": "That is where we have landed too."
+          },
+          {
+            "start": 902070,
+            "end": 916702,
+            "text": "We are a guild of people who build wooden boats. We are quite comfortable with the idea that the weather will not cooperate."
+          }
+        ]
+      },
+      {
+        "speakerId": "1233",
+        "topic": "Apprenticeship",
+        "sentences": [
+          {
+            "start": 920702,
+            "end": 934036,
+            "text": "Tell me about the apprenticeship programme. It came up in one of your tickets and I did not follow the reference."
+          }
+        ]
+      },
+      {
+        "speakerId": "4744",
+        "topic": "Apprenticeship",
+        "sentences": [
+          {
+            "start": 938036,
+            "end": 945352,
+            "text": "It is the thing I am proudest of and it is four years old now."
+          },
+          {
+            "start": 945352,
+            "end": 961164,
+            "text": "We place about thirty apprentices a year with member yards, on a two year structured programme with a logbook and assessed milestones."
+          },
+          {
+            "start": 961164,
+            "end": 979454,
+            "text": "The yards take them on properly, with wages, and the guild does the assessment and the paperwork so that a small yard is not put off by the administration."
+          }
+        ]
+      },
+      {
+        "speakerId": "1233",
+        "topic": "Apprenticeship",
+        "sentences": [
+          {
+            "start": 983454,
+            "end": 993130,
+            "text": "Thirty a year against a trade that size is a significant proportion of the intake."
+          }
+        ]
+      },
+      {
+        "speakerId": "4744",
+        "topic": "Apprenticeship",
+        "sentences": [
+          {
+            "start": 997130,
+            "end": 1012116,
+            "text": "It is close to a fifth of all new entrants to the trade on this coast, according to the one piece of research anybody has done."
+          },
+          {
+            "start": 1012116,
+            "end": 1026276,
+            "text": "Nineteen of the first cohort of twenty two are still in the trade four years on, which is far better than we dared hope."
+          },
+          {
+            "start": 1026276,
+            "end": 1039964,
+            "text": "The three who left all went into boat repair for the marine insurance side, so arguably we did not lose them at all."
+          }
+        ]
+      },
+      {
+        "speakerId": "1233",
+        "topic": "Apprenticeship",
+        "sentences": [
+          {
+            "start": 1043964,
+            "end": 1046964,
+            "text": "How is it funded?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4744",
+        "topic": "Apprenticeship",
+        "sentences": [
+          {
+            "start": 1050964,
+            "end": 1066894,
+            "text": "A mix. Member yards pay a placement fee, two maritime trusts fund the assessment side, and one state has a skills grant we qualify for."
+          },
+          {
+            "start": 1066894,
+            "end": 1082352,
+            "text": "The funding is the fragile part, because the state grant is renewed annually and nobody will tell us anything about it until March."
+          },
+          {
+            "start": 1082352,
+            "end": 1094860,
+            "text": "So every year we plan a cohort we are not certain we can pay for, and every year so far it has worked out."
+          }
+        ]
+      },
+      {
+        "speakerId": "1233",
+        "topic": "Apprenticeship",
+        "sentences": [
+          {
+            "start": 1098860,
+            "end": 1108418,
+            "text": "Does any of the logbook and milestone tracking sit in the system we host for you?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4744",
+        "topic": "Apprenticeship",
+        "sentences": [
+          {
+            "start": 1112418,
+            "end": 1135310,
+            "text": "The enrolment and the member records do. The logbook itself is on paper, because the apprentices are in sheds with wet hands and a paper logbook survives that better than anything with a screen."
+          },
+          {
+            "start": 1135310,
+            "end": 1145458,
+            "text": "That is a deliberate choice rather than a limitation, and the assessors prefer it too."
+          }
+        ]
+      },
+      {
+        "speakerId": "1233",
+        "topic": "Workshops",
+        "sentences": [
+          {
+            "start": 1149458,
+            "end": 1156184,
+            "text": "Let me move on to the member workshops, since I have you."
+          },
+          {
+            "start": 1156184,
+            "end": 1161376,
+            "text": "How is the enrolment side running this term?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4744",
+        "topic": "Workshops",
+        "sentences": [
+          {
+            "start": 1165376,
+            "end": 1172220,
+            "text": "Fine, and that is a genuine fine rather than a polite one."
+          },
+          {
+            "start": 1172220,
+            "end": 1185908,
+            "text": "We have thirty one workshops running this term across the four chapters, with an average of fourteen people in each."
+          },
+          {
+            "start": 1185908,
+            "end": 1192634,
+            "text": "Enrolment opened in July and filled in about three weeks."
+          }
+        ]
+      },
+      {
+        "speakerId": "1233",
+        "topic": "Workshops",
+        "sentences": [
+          {
+            "start": 1196634,
+            "end": 1203006,
+            "text": "Any trouble with the materials lists and the deposits?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4744",
+        "topic": "Workshops",
+        "sentences": [
+          {
+            "start": 1207006,
+            "end": 1215384,
+            "text": "No. The deposit handling has been solid since you changed it last year."
+          },
+          {
+            "start": 1215384,
+            "end": 1233438,
+            "text": "The materials lists we keep outside the system because they change with what timber we can get, and that is our choice rather than a limitation of yours."
+          }
+        ]
+      },
+      {
+        "speakerId": "1233",
+        "topic": "Workshops",
+        "sentences": [
+          {
+            "start": 1237438,
+            "end": 1246996,
+            "text": "Good. And your volunteer coordinators, are they set up with the access they need?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4744",
+        "topic": "Workshops",
+        "sentences": [
+          {
+            "start": 1250996,
+            "end": 1264094,
+            "text": "Three of the four are. The fourth chapter appointed a new coordinator in August and I have not got round to it."
+          },
+          {
+            "start": 1264094,
+            "end": 1272000,
+            "text": "If you could send me the instructions again I will do it this week."
+          }
+        ]
+      },
+      {
+        "speakerId": "1233",
+        "topic": "Volunteers",
+        "sentences": [
+          {
+            "start": 1276000,
+            "end": 1283552,
+            "text": "Last area from me. How do you train the four hundred volunteers?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4744",
+        "topic": "Volunteers",
+        "sentences": [
+          {
+            "start": 1287552,
+            "end": 1305606,
+            "text": "Badly, historically. For years it was whoever did it last time showing whoever is doing it this time, in a car park, ten minutes before the gates opened."
+          },
+          {
+            "start": 1305606,
+            "end": 1323660,
+            "text": "Two years ago we wrote it all down properly into eleven short guides, none longer than two pages, and we send them out a fortnight before each gathering."
+          },
+          {
+            "start": 1323660,
+            "end": 1332982,
+            "text": "It has made a noticeable difference and it cost one person three weeks of work."
+          }
+        ]
+      },
+      {
+        "speakerId": "1233",
+        "topic": "Volunteers",
+        "sentences": [
+          {
+            "start": 1336982,
+            "end": 1346540,
+            "text": "Two pages is about the right length for something somebody will read standing up."
+          }
+        ]
+      },
+      {
+        "speakerId": "4744",
+        "topic": "Volunteers",
+        "sentences": [
+          {
+            "start": 1350540,
+            "end": 1368594,
+            "text": "That was the rule we set ourselves. If it does not fit on two sides it is not a guide, it is a manual, and nobody reads a manual at seven in the morning."
+          },
+          {
+            "start": 1368594,
+            "end": 1383462,
+            "text": "We also made every guide start with the three things that go wrong most often, rather than with a description of the software."
+          }
+        ]
+      },
+      {
+        "speakerId": "1233",
+        "topic": "Volunteers",
+        "sentences": [
+          {
+            "start": 1387462,
+            "end": 1396194,
+            "text": "That is better documentation practice than most software companies manage."
+          }
+        ]
+      },
+      {
+        "speakerId": "4744",
+        "topic": "Volunteers",
+        "sentences": [
+          {
+            "start": 1400194,
+            "end": 1403380,
+            "text": "I will take the compliment."
+          },
+          {
+            "start": 1403380,
+            "end": 1420726,
+            "text": "It came out of watching people rather than out of any theory. We stood at the gate for a whole morning and wrote down every question anybody asked."
+          },
+          {
+            "start": 1420726,
+            "end": 1432526,
+            "text": "Forty one questions, of which eleven accounted for most of them, and those eleven became the guides."
+          }
+        ]
+      },
+      {
+        "speakerId": "1233",
+        "topic": "Volunteers",
+        "sentences": [
+          {
+            "start": 1436526,
+            "end": 1445022,
+            "text": "Would you be willing to let me show those to our own documentation team?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4744",
+        "topic": "Volunteers",
+        "sentences": [
+          {
+            "start": 1449022,
+            "end": 1459052,
+            "text": "Happily, as long as nobody minds that they are written in the language of a boatyard."
+          }
+        ]
+      },
+      {
+        "speakerId": "1233",
+        "topic": "Next steps",
+        "sentences": [
+          {
+            "start": 1463052,
+            "end": 1476386,
+            "text": "I will send those this afternoon, and I will offer a short session for the new coordinator if she would like one."
+          },
+          {
+            "start": 1476386,
+            "end": 1480516,
+            "text": "Thirty minutes, whenever suits her."
+          }
+        ]
+      },
+      {
+        "speakerId": "4744",
+        "topic": "Next steps",
+        "sentences": [
+          {
+            "start": 1484516,
+            "end": 1495726,
+            "text": "She would take you up on that. She is thorough and she will ask you better questions than I do."
+          }
+        ]
+      },
+      {
+        "speakerId": "1233",
+        "topic": "Next steps",
+        "sentences": [
+          {
+            "start": 1499726,
+            "end": 1521084,
+            "text": "Then to summarise: I am writing up the offline request with your insurance point attached, sending the coordinator instructions today, and offering a session to the new coordinator."
+          },
+          {
+            "start": 1521084,
+            "end": 1528872,
+            "text": "I will update the ticket with all three so you have it in writing."
+          }
+        ]
+      },
+      {
+        "speakerId": "4744",
+        "topic": "Next steps",
+        "sentences": [
+          {
+            "start": 1532872,
+            "end": 1540896,
+            "text": "That covers it. Thanks Elena, that was more useful than the tickets."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0.0",
+  "case": {
+    "attributes": {
+      "type": "Case",
+      "url": "/services/data/v62.0/sobjects/Case/500000000000000004"
+    },
+    "Id": "500000000000000004",
+    "CaseNumber": "00005004",
+    "AccountId": "0018W00002HkLmSQAV",
+    "Subject": "A good number of our members tell us",
+    "Status": "Closed",
+    "Priority": "Low",
+    "CreatedDate": "2026-09-10T12:50:10Z",
+    "ClosedDate": "2026-09-10T20:50:00Z"
+  },
+  "comments": [
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a00000000000000f"
+      },
+      "Id": "00a00000000000000f",
+      "ParentId": "500000000000000004",
+      "CommentBody": "A good number of our members tell us the renewal notice never showed up, and when we check, it landed in their spam folder instead of the inbox. We checked our September 15th send and about 220 of our 1,400 members never got the notice in their inbox.",
+      "IsPublished": true,
+      "CreatedById": "005000000000000069",
+      "CreatedDate": "2026-09-10T12:55:59Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000010"
+      },
+      "Id": "00a000000000000010",
+      "ParentId": "500000000000000004",
+      "CommentBody": "Good to hear the details, one more thing I want to ask about. Do you know which email providers those members are on, big consumer ones or something else?",
+      "IsPublished": true,
+      "CreatedById": "005000000000000003",
+      "CreatedDate": "2026-09-10T13:10:51Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000011"
+      },
+      "Id": "00a000000000000011",
+      "ParentId": "500000000000000004",
+      "CommentBody": "Most of the ones we checked were on one of the big consumer providers, a handful were on another.",
+      "IsPublished": true,
+      "CreatedById": "005000000000000069",
+      "CreatedDate": "2026-09-10T13:35:00Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000012"
+      },
+      "Id": "00a000000000000012",
+      "ParentId": "500000000000000004",
+      "CommentBody": "We have a temporary fix in place while the team works on a permanent solution.",
+      "IsPublished": true,
+      "CreatedById": "005000000000000003",
+      "CreatedDate": "2026-09-10T14:00:40Z"
+    }
+  ]
+}

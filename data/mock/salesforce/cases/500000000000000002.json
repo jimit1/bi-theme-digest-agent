@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0.0",
+  "case": {
+    "attributes": {
+      "type": "Case",
+      "url": "/services/data/v62.0/sobjects/Case/500000000000000002"
+    },
+    "Id": "500000000000000002",
+    "CaseNumber": "00005002",
+    "AccountId": "0018W00002HkLmOQAV",
+    "Subject": "Our onsite team needs event check-in to keep working",
+    "Status": "Working",
+    "Priority": "Low",
+    "CreatedDate": "2026-09-08T10:20:52Z",
+    "ClosedDate": null
+  },
+  "comments": [
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000005"
+      },
+      "Id": "00a000000000000005",
+      "ParentId": "500000000000000002",
+      "CommentBody": "Our onsite team needs event check-in to keep working even when the venue wifi drops, and then sync everything back once we are online again. At our spring conference we had about 1,800 attendees come through, and check-in went down for almost 40 minutes when the venue wifi dropped.",
+      "IsPublished": true,
+      "CreatedById": "005000000000000066",
+      "CreatedDate": "2026-09-08T10:25:12Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000009"
+      },
+      "Id": "00a000000000000009",
+      "ParentId": "500000000000000002",
+      "CommentBody": "Routing to the billing team for review, ref MOMENT-4821.",
+      "IsPublished": false,
+      "CreatedById": "005000000000000003",
+      "CreatedDate": "2026-09-08T10:32:29Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000006"
+      },
+      "Id": "00a000000000000006",
+      "ParentId": "500000000000000002",
+      "CommentBody": "Appreciate the detail, let me ask a quick follow up. Do you know roughly how long the outage lasted and whether anyone had to be checked in manually on paper in the meantime?",
+      "IsPublished": true,
+      "CreatedById": "005000000000000003",
+      "CreatedDate": "2026-09-08T10:40:54Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000007"
+      },
+      "Id": "00a000000000000007",
+      "ParentId": "500000000000000002",
+      "CommentBody": "It was about 40 minutes, and our two volunteers ended up writing names on a clipboard until it came back.",
+      "IsPublished": true,
+      "CreatedById": "005000000000000066",
+      "CreatedDate": "2026-09-08T11:05:02Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000008"
+      },
+      "Id": "00a000000000000008",
+      "ParentId": "500000000000000002",
+      "CommentBody": "Just checking in, is there any update on this?",
+      "IsPublished": true,
+      "CreatedById": "005000000000000066",
+      "CreatedDate": "2026-09-08T11:30:19Z"
+    }
+  ]
+}

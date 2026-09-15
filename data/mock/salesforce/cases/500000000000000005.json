@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0.0",
+  "case": {
+    "attributes": {
+      "type": "Case",
+      "url": "/services/data/v62.0/sobjects/Case/500000000000000005"
+    },
+    "Id": "500000000000000005",
+    "CaseNumber": "00005005",
+    "AccountId": "0018W00002HkLmTQAV",
+    "Subject": "Our renewal reminder emails are getting flagged as spam",
+    "Status": "Working",
+    "Priority": "High",
+    "CreatedDate": "2026-09-11T10:40:40Z",
+    "ClosedDate": null
+  },
+  "comments": [
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000013"
+      },
+      "Id": "00a000000000000013",
+      "ParentId": "500000000000000005",
+      "CommentBody": "Our renewal reminder emails are getting flagged as spam by some of the bigger providers, so members are missing the notice entirely. Out of our last renewal batch on September 8th, roughly 90 of our 500 families told us the notice never arrived.",
+      "IsPublished": true,
+      "CreatedById": "00500000000000006a",
+      "CreatedDate": "2026-09-11T10:45:09Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000014"
+      },
+      "Id": "00a000000000000014",
+      "ParentId": "500000000000000005",
+      "CommentBody": "That helps a lot, I have one clarifying question. Do you know which email providers those members are on, big consumer ones or something else?",
+      "IsPublished": true,
+      "CreatedById": "005000000000000002",
+      "CreatedDate": "2026-09-11T11:00:10Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000015"
+      },
+      "Id": "00a000000000000015",
+      "ParentId": "500000000000000005",
+      "CommentBody": "It was mostly one of the big consumer providers, a few smaller ones as well.",
+      "IsPublished": true,
+      "CreatedById": "00500000000000006a",
+      "CreatedDate": "2026-09-11T11:25:07Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000016"
+      },
+      "Id": "00a000000000000016",
+      "ParentId": "500000000000000005",
+      "CommentBody": "We have escalated this internally and are tracking it closely.",
+      "IsPublished": true,
+      "CreatedById": "005000000000000002",
+      "CreatedDate": "2026-09-11T11:50:14Z"
+    }
+  ]
+}

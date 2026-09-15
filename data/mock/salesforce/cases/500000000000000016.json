@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0.0",
+  "case": {
+    "attributes": {
+      "type": "Case",
+      "url": "/services/data/v62.0/sobjects/Case/500000000000000016"
+    },
+    "Id": "500000000000000016",
+    "CaseNumber": "00005022",
+    "AccountId": "0018W00002HkLmNQAV",
+    "Subject": "When someone changes roles in our identity provider",
+    "Status": "Working",
+    "Priority": "High",
+    "CreatedDate": "2026-09-21T13:00:07Z",
+    "ClosedDate": null
+  },
+  "comments": [
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a00000000000005a"
+      },
+      "Id": "00a00000000000005a",
+      "ParentId": "500000000000000016",
+      "CommentBody": "When someone changes roles in our identity provider the sync misses it, and they keep the old permission set until someone catches it manually. Two staff members changed departments back in August and still had their old access as of last week when someone noticed.",
+      "IsPublished": true,
+      "CreatedById": "005000000000000065",
+      "CreatedDate": "2026-09-21T13:05:41Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a00000000000005b"
+      },
+      "Id": "00a00000000000005b",
+      "ParentId": "500000000000000016",
+      "CommentBody": "That makes sense, one thing I want to confirm. How long did it take before anyone noticed the access had not updated?",
+      "IsPublished": true,
+      "CreatedById": "005000000000000003",
+      "CreatedDate": "2026-09-21T13:20:55Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a00000000000005c"
+      },
+      "Id": "00a00000000000005c",
+      "ParentId": "500000000000000016",
+      "CommentBody": "It was almost three weeks before someone flagged it.",
+      "IsPublished": true,
+      "CreatedById": "005000000000000065",
+      "CreatedDate": "2026-09-21T13:45:19Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a00000000000005d"
+      },
+      "Id": "00a00000000000005d",
+      "ParentId": "500000000000000016",
+      "CommentBody": "In the meantime, here is a workaround that should help until this is fully resolved.",
+      "IsPublished": true,
+      "CreatedById": "005000000000000003",
+      "CreatedDate": "2026-09-21T14:10:41Z"
+    }
+  ]
+}

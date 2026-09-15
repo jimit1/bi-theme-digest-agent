@@ -1,0 +1,1039 @@
+{
+  "schema_version": "1.0.0",
+  "call": {
+    "metaData": {
+      "id": "7782934451002",
+      "url": "https://gong.invalid/call?id=7782934451002",
+      "title": "Great Lakes Museum Alliance quarterly check in",
+      "scheduled": "2026-09-08T15:00:00Z",
+      "started": "2026-09-08T15:01:12Z",
+      "duration": 1725,
+      "primaryUserId": "1187",
+      "direction": "Conference",
+      "system": "Gong",
+      "scope": "External",
+      "media": "Video",
+      "language": "eng",
+      "workspaceId": "9911",
+      "sdrDisposition": null,
+      "clientUniqueId": null,
+      "customData": null,
+      "purpose": "Quarterly check in",
+      "meetingUrl": null,
+      "isPrivate": false,
+      "calendarEventId": "cal-88213"
+    },
+    "parties": [
+      {
+        "id": "p-1187",
+        "emailAddress": "marcus.oyelaran@momentivesoftware.example.org",
+        "name": "Marcus Oyelaran",
+        "title": "Customer Success Manager",
+        "userId": "1187",
+        "speakerId": "1187",
+        "context": [],
+        "affiliation": "Internal"
+      },
+      {
+        "id": "p-4521",
+        "emailAddress": "rhonda.calloway@greatlakesmuseums.example.org",
+        "name": "Rhonda Calloway",
+        "title": "Director of Membership",
+        "userId": null,
+        "speakerId": "4521",
+        "context": [],
+        "affiliation": "External"
+      }
+    ]
+  },
+  "transcript": {
+    "callId": "7782934451002",
+    "transcript": [
+      {
+        "speakerId": "1187",
+        "topic": "Opening",
+        "sentences": [
+          {
+            "start": 8000,
+            "end": 13074,
+            "text": "Morning Rhonda, thanks for making the time."
+          },
+          {
+            "start": 13074,
+            "end": 28650,
+            "text": "I have us down for about half an hour today, and I would like to spend most of it on the renewal run you have coming up in November."
+          },
+          {
+            "start": 28650,
+            "end": 43754,
+            "text": "After that I want to hear about the autumn exhibition, and then leave a bit of room at the end for whatever is on your own list."
+          }
+        ]
+      },
+      {
+        "speakerId": "4521",
+        "topic": "Opening",
+        "sentences": [
+          {
+            "start": 47754,
+            "end": 53772,
+            "text": "Morning Marcus, half an hour works fine on my side."
+          },
+          {
+            "start": 53772,
+            "end": 69584,
+            "text": "I have my notes from the board meeting last Tuesday in front of me, so there are two or three things I want to raise while I have you."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Opening",
+        "sentences": [
+          {
+            "start": 73584,
+            "end": 79130,
+            "text": "Good, that is exactly what these calls are for."
+          },
+          {
+            "start": 79130,
+            "end": 94116,
+            "text": "Before we get into the renewal cycle, give me the general picture. How did the summer close out for you on the membership side?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4521",
+        "topic": "Membership",
+        "sentences": [
+          {
+            "start": 98116,
+            "end": 102128,
+            "text": "Better than we expected, honestly."
+          },
+          {
+            "start": 102128,
+            "end": 116642,
+            "text": "We finished August at just over eleven thousand active records, which is up about four percent on the same point last year."
+          },
+          {
+            "start": 116642,
+            "end": 131392,
+            "text": "A good part of that came from the family tier, which we only launched back in February, so it has had seven months to bed in."
+          },
+          {
+            "start": 131392,
+            "end": 148620,
+            "text": "The board is pleased with it and they have asked us to hold that growth through the winter, which is a polite way of saying do not lose any of it."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Membership",
+        "sentences": [
+          {
+            "start": 152620,
+            "end": 163240,
+            "text": "Four percent through a summer is a good number, especially with a new tier still settling."
+          },
+          {
+            "start": 163240,
+            "end": 174804,
+            "text": "Was the family tier mostly new households coming in, or people moving up from the individual tier?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4521",
+        "topic": "Membership",
+        "sentences": [
+          {
+            "start": 178804,
+            "end": 187536,
+            "text": "Roughly two thirds new households and one third moving up from individual."
+          },
+          {
+            "start": 187536,
+            "end": 203348,
+            "text": "We track that split by hand at the moment, because the reason codes we use are ours rather than yours and they do not line up cleanly."
+          },
+          {
+            "start": 203348,
+            "end": 218688,
+            "text": "It is not a problem I am asking you to solve today. It just means one person on my team spends a morning a month on a spreadsheet."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Membership",
+        "sentences": [
+          {
+            "start": 222688,
+            "end": 235078,
+            "text": "Noted anyway. If it ever turns into more than a morning a month, tell me and we will look at it properly."
+          }
+        ]
+      },
+      {
+        "speakerId": "4521",
+        "topic": "Membership",
+        "sentences": [
+          {
+            "start": 239078,
+            "end": 242078,
+            "text": "I will."
+          },
+          {
+            "start": 242078,
+            "end": 254704,
+            "text": "For now it is fine, and the person who does it actually enjoys that sort of thing, which I am told is rare."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Membership",
+        "sentences": [
+          {
+            "start": 258704,
+            "end": 267082,
+            "text": "While we are on the records, let me ask about the data cleanup project."
+          },
+          {
+            "start": 267082,
+            "end": 273218,
+            "text": "That was meant to finish in the spring. Did it land?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4521",
+        "topic": "Membership",
+        "sentences": [
+          {
+            "start": 277218,
+            "end": 294564,
+            "text": "It finished at the end of June, three weeks later than we promised the board, which by the standards of data cleanup projects is practically early."
+          },
+          {
+            "start": 294564,
+            "end": 311674,
+            "text": "We merged about nine hundred duplicate households, most of which were couples who had joined separately over the years and had never been linked."
+          },
+          {
+            "start": 311674,
+            "end": 326070,
+            "text": "We retired four thousand two hundred records that had not been touched since 2018 and had no email address on them at all."
+          },
+          {
+            "start": 326070,
+            "end": 339168,
+            "text": "What is left is smaller and a great deal more honest than what we had before, and I would do it again tomorrow."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Membership",
+        "sentences": [
+          {
+            "start": 343168,
+            "end": 354496,
+            "text": "Did retiring four thousand records move any of your headline numbers in a way the board noticed?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4521",
+        "topic": "Membership",
+        "sentences": [
+          {
+            "start": 358496,
+            "end": 372774,
+            "text": "It moved them considerably, and we told the board in advance, which was the single best decision we made on that project."
+          },
+          {
+            "start": 372774,
+            "end": 381506,
+            "text": "Our active count dropped by nearly a third on paper in the week we ran it."
+          },
+          {
+            "start": 381506,
+            "end": 398970,
+            "text": "We spent most of a board meeting explaining why a number falling off a cliff was good news, and the chair understood it within about ninety seconds."
+          },
+          {
+            "start": 398970,
+            "end": 414900,
+            "text": "Two of the trustees took rather longer, and one of them still brings it up when he wants to make a point about something else entirely."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Membership",
+        "sentences": [
+          {
+            "start": 418900,
+            "end": 429402,
+            "text": "Getting ahead of a number like that is the difference between a briefing and an incident."
+          },
+          {
+            "start": 429402,
+            "end": 438842,
+            "text": "I have watched organisations get that wrong and spend a year recovering from it."
+          }
+        ]
+      },
+      {
+        "speakerId": "4521",
+        "topic": "Membership",
+        "sentences": [
+          {
+            "start": 442842,
+            "end": 458890,
+            "text": "We got it wrong ourselves about six years ago in a completely different context, and I have never forgotten what that meeting felt like."
+          },
+          {
+            "start": 458890,
+            "end": 475646,
+            "text": "Now anything that moves a reported number by more than five percent gets a written paragraph in advance rather than an explanation afterwards."
+          },
+          {
+            "start": 475646,
+            "end": 483670,
+            "text": "It costs me an hour and it has saved me several days more than once."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Membership",
+        "sentences": [
+          {
+            "start": 487670,
+            "end": 497818,
+            "text": "Is the cleanup something you would now do every year, or was this genuinely a one off?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4521",
+        "topic": "Membership",
+        "sentences": [
+          {
+            "start": 501818,
+            "end": 514208,
+            "text": "Every year, but far smaller. The size of it this time was eleven years of neglect all coming due at once."
+          },
+          {
+            "start": 514208,
+            "end": 531082,
+            "text": "From now on it is a half day in July, and one of the people who joined in the spring will own it so that it does not live in one person's head."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Membership",
+        "sentences": [
+          {
+            "start": 535082,
+            "end": 549478,
+            "text": "That is a sensible way to hold it. Single points of knowledge are the thing that bites organisations of your size hardest."
+          }
+        ]
+      },
+      {
+        "speakerId": "4521",
+        "topic": "Membership",
+        "sentences": [
+          {
+            "start": 553478,
+            "end": 564216,
+            "text": "We have three of those left that I know about, and I am working through them one a quarter."
+          },
+          {
+            "start": 564216,
+            "end": 578258,
+            "text": "The renewal preparation is one of the three, which is part of why the next thing on my list matters as much as it does."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Renewals",
+        "sentences": [
+          {
+            "start": 582258,
+            "end": 593114,
+            "text": "Let us move to the renewal run then, because I suspect that is the bigger item on your list."
+          },
+          {
+            "start": 593114,
+            "end": 602908,
+            "text": "You have your main cycle starting on the first of November, is that still the plan?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4521",
+        "topic": "Renewals",
+        "sentences": [
+          {
+            "start": 606908,
+            "end": 611392,
+            "text": "First of November, same as every year."
+          },
+          {
+            "start": 611392,
+            "end": 620596,
+            "text": "We stagger it over three weeks so the phone lines do not fall over on day one."
+          },
+          {
+            "start": 620596,
+            "end": 634756,
+            "text": "The first batch is about four thousand records, then two more batches of roughly the same size on the following Mondays."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Renewals",
+        "sentences": [
+          {
+            "start": 638756,
+            "end": 646308,
+            "text": "And as far as I remember last year that ran clean from our side."
+          },
+          {
+            "start": 646308,
+            "end": 659288,
+            "text": "Has anything changed in how you are preparing it this time, or is it the same process with more records in it?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4521",
+        "topic": "Renewals",
+        "sentences": [
+          {
+            "start": 663288,
+            "end": 681342,
+            "text": "The preparation is the same. There is a problem in the output that we have been working around since the spring though, and the board has now noticed it."
+          },
+          {
+            "start": 681342,
+            "end": 699750,
+            "text": "Every renewal statement we send out is missing the balance that carried over from the previous period, so the invoice total reads far higher than it should."
+          },
+          {
+            "start": 699750,
+            "end": 709662,
+            "text": "The first time it happened we caught it in a spot check, more by luck than anything."
+          },
+          {
+            "start": 709662,
+            "end": 722760,
+            "text": "Now my finance lead rebuilds the figure by hand in a spreadsheet before a single statement leaves the building."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Renewals",
+        "sentences": [
+          {
+            "start": 726760,
+            "end": 738442,
+            "text": "That is not where I expected this call to go, but I am glad you have told me rather than sat on it."
+          },
+          {
+            "start": 738442,
+            "end": 754372,
+            "text": "Let me make sure I have it exactly right before I take it anywhere, because I will be repeating it to people who were not on this call."
+          }
+        ]
+      },
+      {
+        "speakerId": "4521",
+        "topic": "Renewals",
+        "sentences": [
+          {
+            "start": 758372,
+            "end": 764036,
+            "text": "Take your time, I would rather you had it right."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Renewals",
+        "sentences": [
+          {
+            "start": 768036,
+            "end": 787270,
+            "text": "So the statement generates on schedule, the figure appears on it, and the part that came across from the earlier period simply is not shown on the document at all."
+          },
+          {
+            "start": 787270,
+            "end": 790270,
+            "text": "Is that a fair summary?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4521",
+        "topic": "Renewals",
+        "sentences": [
+          {
+            "start": 794270,
+            "end": 797270,
+            "text": "That is it exactly."
+          },
+          {
+            "start": 797270,
+            "end": 814970,
+            "text": "And because nobody looking at the document can see where the number came from, the people answering our phones cannot explain it to whoever is asking."
+          },
+          {
+            "start": 814970,
+            "end": 825944,
+            "text": "So it becomes a longer conversation than it needs to be, three or four hundred times a cycle."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Renewals",
+        "sentences": [
+          {
+            "start": 829944,
+            "end": 838558,
+            "text": "How long does the rebuild take your finance lead, in practice, per batch?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4521",
+        "topic": "Renewals",
+        "sentences": [
+          {
+            "start": 842558,
+            "end": 851644,
+            "text": "Two days a batch, give or take half a day depending on how clean the data is."
+          },
+          {
+            "start": 851644,
+            "end": 855656,
+            "text": "So six days across the full cycle."
+          },
+          {
+            "start": 855656,
+            "end": 868636,
+            "text": "In November that is six days she very much does not have, because she is closing the quarter at the same time."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Renewals",
+        "sentences": [
+          {
+            "start": 872636,
+            "end": 892342,
+            "text": "Right. I am going to write this up today with the exact figures you have just given me, and put it in front of the product group with your name on it rather than mine."
+          },
+          {
+            "start": 892342,
+            "end": 910396,
+            "text": "I will also ask our support team to confirm whether there is anything we can do on your instance in the meantime, even if it is only a better workaround."
+          }
+        ]
+      },
+      {
+        "speakerId": "4521",
+        "topic": "Renewals",
+        "sentences": [
+          {
+            "start": 914396,
+            "end": 917464,
+            "text": "That would genuinely help."
+          },
+          {
+            "start": 917464,
+            "end": 933276,
+            "text": "The chair asked me directly last week whether it was fixed, and I had to say I did not know, which is not a good answer to give twice."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Renewals",
+        "sentences": [
+          {
+            "start": 937276,
+            "end": 944238,
+            "text": "You will know one way or the other by the end of next week."
+          },
+          {
+            "start": 944238,
+            "end": 955920,
+            "text": "I would rather come back and tell you there is no short term fix than leave you waiting and hoping."
+          }
+        ]
+      },
+      {
+        "speakerId": "4521",
+        "topic": "Support",
+        "sentences": [
+          {
+            "start": 959920,
+            "end": 972310,
+            "text": "Thank you. While we are being honest with one another, can I give you some feedback on support generally?"
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Support",
+        "sentences": [
+          {
+            "start": 976310,
+            "end": 990116,
+            "text": "Please do. I ask everybody and I get a very wide range of answers, so yours is useful whichever direction it goes in."
+          }
+        ]
+      },
+      {
+        "speakerId": "4521",
+        "topic": "Support",
+        "sentences": [
+          {
+            "start": 994116,
+            "end": 1004146,
+            "text": "It is better than last year, and I say that without any qualification attached to it."
+          },
+          {
+            "start": 1004146,
+            "end": 1020666,
+            "text": "The response times are genuinely faster and the first reply usually comes from somebody who has read the ticket rather than from a template."
+          },
+          {
+            "start": 1020666,
+            "end": 1039428,
+            "text": "We raised nineteen tickets in the last six months and fourteen of them closed without a second round of questions, which was certainly not the case a year ago."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Support",
+        "sentences": [
+          {
+            "start": 1043428,
+            "end": 1051688,
+            "text": "And the five that needed a second round. Was there a pattern to those?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4521",
+        "topic": "Support",
+        "sentences": [
+          {
+            "start": 1055688,
+            "end": 1076220,
+            "text": "Three of them were our fault, if I am being fair about it. We described the problem badly because the person raising it was relaying it from somebody who was not in the room."
+          },
+          {
+            "start": 1076220,
+            "end": 1087194,
+            "text": "The other two were genuinely complicated and I would not have expected them to close quickly."
+          },
+          {
+            "start": 1087194,
+            "end": 1097932,
+            "text": "So I would call it one difficult ticket out of nineteen, and even that one was mostly ours."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Support",
+        "sentences": [
+          {
+            "start": 1101932,
+            "end": 1119042,
+            "text": "That is a fairer answer than most people give me, and I will pass the good half of it on to the team by name rather than as a general compliment."
+          }
+        ]
+      },
+      {
+        "speakerId": "4521",
+        "topic": "Support",
+        "sentences": [
+          {
+            "start": 1123042,
+            "end": 1139916,
+            "text": "Pass on the other half as well. My team always tells me the honest version is more useful than the kind version, and they are right about that."
+          },
+          {
+            "start": 1139916,
+            "end": 1156554,
+            "text": "I have said the same thing to them about the feedback they give me, so it would be inconsistent of me to soften it when I am the one talking."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Support",
+        "sentences": [
+          {
+            "start": 1160554,
+            "end": 1167398,
+            "text": "Noted, and I will keep it in mind the next time I ask you."
+          }
+        ]
+      },
+      {
+        "speakerId": "4521",
+        "topic": "Events",
+        "sentences": [
+          {
+            "start": 1171398,
+            "end": 1182372,
+            "text": "Fair enough, and thank you. Shall I move on to the autumn programme while we still have time?"
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Events",
+        "sentences": [
+          {
+            "start": 1186372,
+            "end": 1189372,
+            "text": "Please do."
+          }
+        ]
+      },
+      {
+        "speakerId": "4521",
+        "topic": "Events",
+        "sentences": [
+          {
+            "start": 1193372,
+            "end": 1205762,
+            "text": "We have the touring exhibition opening on the ninth of October and running through to the end of January."
+          },
+          {
+            "start": 1205762,
+            "end": 1217562,
+            "text": "It is the biggest thing we have put on in four years and it has taken two of those years to arrange."
+          },
+          {
+            "start": 1217562,
+            "end": 1233610,
+            "text": "We are expecting somewhere between eighteen and twenty two thousand visitors across the run, and about a fifth of those will be members."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Events",
+        "sentences": [
+          {
+            "start": 1237610,
+            "end": 1242802,
+            "text": "That is a serious number for a touring show."
+          },
+          {
+            "start": 1242802,
+            "end": 1253422,
+            "text": "Are you running member preview evenings again the way you did for the maritime exhibition?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4521",
+        "topic": "Events",
+        "sentences": [
+          {
+            "start": 1257422,
+            "end": 1265210,
+            "text": "Three of them, on consecutive Thursdays before the public opening."
+          },
+          {
+            "start": 1265210,
+            "end": 1278780,
+            "text": "Two hundred and fifty places each, ticketed through your platform, free to members at the supporter tier and above."
+          },
+          {
+            "start": 1278780,
+            "end": 1288456,
+            "text": "They sold out in under a day last time, which I am told is a nice problem to have."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Events",
+        "sentences": [
+          {
+            "start": 1292456,
+            "end": 1299890,
+            "text": "Those ran smoothly last time from what I could see on our side."
+          },
+          {
+            "start": 1299890,
+            "end": 1313932,
+            "text": "Is your team comfortable setting them up on their own, or would a refresher session help before you open the first one?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4521",
+        "topic": "Events",
+        "sentences": [
+          {
+            "start": 1317932,
+            "end": 1321944,
+            "text": "A refresher would not hurt at all."
+          },
+          {
+            "start": 1321944,
+            "end": 1335278,
+            "text": "I have two people who joined since the spring and they have only ever watched someone else do it over a shoulder."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Events",
+        "sentences": [
+          {
+            "start": 1339278,
+            "end": 1342278,
+            "text": "I will get one booked."
+          },
+          {
+            "start": 1342278,
+            "end": 1358444,
+            "text": "Half an hour, screen share, whoever on your team wants to join, and I will record it so the two new people can watch it again afterwards."
+          },
+          {
+            "start": 1358444,
+            "end": 1362102,
+            "text": "Would early next week suit you?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4521",
+        "topic": "Events",
+        "sentences": [
+          {
+            "start": 1366102,
+            "end": 1371412,
+            "text": "Tuesday or Wednesday morning, either is fine."
+          },
+          {
+            "start": 1371412,
+            "end": 1379554,
+            "text": "Afternoons here are wall to wall meetings until the exhibition opens."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Archive",
+        "sentences": [
+          {
+            "start": 1383554,
+            "end": 1390634,
+            "text": "There is one more thing on my list before we get to actions."
+          },
+          {
+            "start": 1390634,
+            "end": 1399838,
+            "text": "The digital archive project you mentioned back in June, where has that got to?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4521",
+        "topic": "Archive",
+        "sentences": [
+          {
+            "start": 1403838,
+            "end": 1412806,
+            "text": "It is funded, which was the hard part and the part I fully expected to fail."
+          },
+          {
+            "start": 1412806,
+            "end": 1431450,
+            "text": "A regional trust has put up two hundred and forty thousand dollars over three years to digitise the photographic collections across all eleven member museums."
+          },
+          {
+            "start": 1431450,
+            "end": 1444548,
+            "text": "We start with the two largest collections in January and work outwards from there over the following two years."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Archive",
+        "sentences": [
+          {
+            "start": 1448548,
+            "end": 1457634,
+            "text": "Eleven collections in three years is ambitious. Who is doing the actual work?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4521",
+        "topic": "Archive",
+        "sentences": [
+          {
+            "start": 1461634,
+            "end": 1472962,
+            "text": "Two full time cataloguers funded by the grant, plus a rotating group of volunteers at each site."
+          },
+          {
+            "start": 1472962,
+            "end": 1494674,
+            "text": "The cataloguers are the expensive part and they are also the part the trust cared most about, because they have watched other projects put volunteers on work that needed professionals."
+          },
+          {
+            "start": 1494674,
+            "end": 1513082,
+            "text": "We agreed with the trust that volunteers handle handling and transport, and that everything touching the catalogue record is done by somebody paid to do it."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Archive",
+        "sentences": [
+          {
+            "start": 1517082,
+            "end": 1526404,
+            "text": "Does any of that touch the systems we hold for you, or is it entirely separate?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4521",
+        "topic": "Archive",
+        "sentences": [
+          {
+            "start": 1530404,
+            "end": 1549874,
+            "text": "Almost entirely separate. The catalogue lives in a collections management system and it always will, because that is a different discipline with different standards."
+          },
+          {
+            "start": 1549874,
+            "end": 1567456,
+            "text": "The only overlap is that members get access to the digitised collections as a benefit, and the trust wants that access recorded in the grant reports."
+          },
+          {
+            "start": 1567456,
+            "end": 1582324,
+            "text": "That is a conversation for the spring rather than for today, and I will bring it to you properly once we know the shape of it."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Archive",
+        "sentences": [
+          {
+            "start": 1586324,
+            "end": 1601664,
+            "text": "Put it on the agenda for the spring and I will bring somebody who knows that area properly rather than trying to answer it myself."
+          }
+        ]
+      },
+      {
+        "speakerId": "4521",
+        "topic": "Archive",
+        "sentences": [
+          {
+            "start": 1605664,
+            "end": 1611328,
+            "text": "That is exactly what I was hoping you would say."
+          },
+          {
+            "start": 1611328,
+            "end": 1626432,
+            "text": "It is far enough out that nobody needs to worry about it, and near enough that it would be foolish to leave it until the summer."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Next steps",
+        "sentences": [
+          {
+            "start": 1630432,
+            "end": 1638338,
+            "text": "Tuesday morning then, and I will send an invitation this afternoon."
+          },
+          {
+            "start": 1638338,
+            "end": 1653796,
+            "text": "So my actions are the write up on the renewal statements, the support check on your instance, and the refresher session on Tuesday."
+          },
+          {
+            "start": 1653796,
+            "end": 1658398,
+            "text": "Anything on your side before we finish?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4521",
+        "topic": "Next steps",
+        "sentences": [
+          {
+            "start": 1662398,
+            "end": 1677738,
+            "text": "Only that I will send you the chair's question in writing, so you have it in his words rather than mine relayed over a phone line."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Next steps",
+        "sentences": [
+          {
+            "start": 1681738,
+            "end": 1689526,
+            "text": "That is useful, send it over and I will attach it to the write up."
+          },
+          {
+            "start": 1689526,
+            "end": 1700618,
+            "text": "I will come back to you by Friday next week at the very latest, and sooner if I hear anything."
+          }
+        ]
+      },
+      {
+        "speakerId": "4521",
+        "topic": "Next steps",
+        "sentences": [
+          {
+            "start": 1704618,
+            "end": 1707686,
+            "text": "Thanks Marcus. Speak soon."
+          }
+        ]
+      }
+    ]
+  }
+}

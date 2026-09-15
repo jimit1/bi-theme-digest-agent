@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "key": "3823746c3a9622d3",
+  "recorded_at": "2026-09-14T23:40:58.022Z",
+  "request": {
+    "tier": "extraction",
+    "agent": "editor",
+    "schema_name": "EditorThemeRequest",
+    "system": "You are the editor of a weekly business intelligence digest. You return JSON only, with no prose and no code fence.",
+    "user": "Here is the theme index, one theme per line.\n\nTHEME-0003 | renewal invoice credit | membership | score 0.81\nTHEME-0007 | bulk member import timeouts | membership | score 0.64\nTHEME-0011 | donation receipt wording | fundraising | score 0.22\n\nThis week's verified claims are about renewal invoices not showing dues already paid, and about a bulk member import timing out above ten thousand rows.\n\nReturn the ids of the themes you want opened in full. Return an object with schema_version set to 1.0.0 and needs_themes set to the list of ids.",
+    "attempt": 1
+  },
+  "result": {
+    "data": {
+      "schema_version": "1.0.0",
+      "needs_themes": [
+        "THEME-0003",
+        "THEME-0007"
+      ]
+    },
+    "model_id": "claude-haiku-4-5",
+    "tier": "extraction",
+    "tokens_in": 10,
+    "tokens_out": 298,
+    "cache_read": 0,
+    "cache_write": 41536,
+    "cost_usd": 0.05342,
+    "prompt_hash": "f344937c08376c1d",
+    "provider": "agent_sdk_seat",
+    "raw_text": "{\"schema_version\": \"1.0.0\", \"needs_themes\": [\"THEME-0003\", \"THEME-0007\"]}",
+    "replayed": false
+  }
+}

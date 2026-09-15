@@ -1,0 +1,54 @@
+# Weekly digest: runs the editor over the week's verified claims, scores themes, writes
+# the markdown digest and the single-file HTML page, commits both to the store repository,
+# and opens file proposals for the human gate to review.
+#
+# This workflow runs in --mode replay against the corpus already committed to this
+# repository, so it is green with no secret configured. The store commit and push step is
+# skipped unless the STORE_TOKEN secret is present. In production this would run
+# --mode live with model credentials held in a secret store, never committed here.
+name: digest
+
+on:
+  schedule:
+    - cron: "0 7 * * 1"
+  workflow_dispatch: {}
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    env:
+      STORE_TOKEN: ${{ secrets.STORE_TOKEN }}
+    steps:
+      - name: Check out the code repository
+        uses: actions/checkout@v4
+
+      - name: Check out the store repository
+        uses: actions/checkout@v4
+        with:
+          repository: jimit1/bi-theme-digest-store
+          path: store
+          token: ${{ secrets.STORE_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install the package
+        run: pip install -e .
+
+      - name: Run build in replay mode
+        run: python -m digest build --week $(date +%G-W%V) --mode replay --store store
+
+      - name: Run the golden set eval
+        run: python -m digest eval --store store
+
+      - name: Commit and push the store repository
+        if: env.STORE_TOKEN != ''
+        working-directory: store
+        run: |
+          git config user.name "bi-theme-digest-bot"
+          git config user.email "jimit1@gmail.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "digest: weekly build commit"
+          git push

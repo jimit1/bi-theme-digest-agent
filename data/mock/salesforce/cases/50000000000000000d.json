@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0.0",
+  "case": {
+    "attributes": {
+      "type": "Case",
+      "url": "/services/data/v62.0/sobjects/Case/50000000000000000d"
+    },
+    "Id": "50000000000000000d",
+    "CaseNumber": "00005013",
+    "AccountId": "0018W00002HkLmQQAV",
+    "Subject": "The general ledger sync has posted the same journal",
+    "Status": "Escalated",
+    "Priority": "Medium",
+    "CreatedDate": "2026-09-23T09:30:35Z",
+    "ClosedDate": null
+  },
+  "comments": [
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000033"
+      },
+      "Id": "00a000000000000033",
+      "ParentId": "50000000000000000d",
+      "CommentBody": "The general ledger sync has posted the same journal entry twice on more than one closing, and our bookkeeper has to go back and reverse the duplicate by hand. It happened on our August close, 14 journal entries posted twice, totaling about 8,600 dollars we had to reverse.",
+      "IsPublished": true,
+      "CreatedById": "005000000000000067",
+      "CreatedDate": "2026-09-23T09:35:05Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000034"
+      },
+      "Id": "00a000000000000034",
+      "ParentId": "50000000000000000d",
+      "CommentBody": "Appreciate you walking through that, quick question on my end. Can you tell me which close date that was and roughly how many entries were affected?",
+      "IsPublished": true,
+      "CreatedById": "005000000000000002",
+      "CreatedDate": "2026-09-23T09:50:33Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000035"
+      },
+      "Id": "00a000000000000035",
+      "ParentId": "50000000000000000d",
+      "CommentBody": "That was the August 31st close, 14 entries in total, all posted exactly twice.",
+      "IsPublished": true,
+      "CreatedById": "005000000000000067",
+      "CreatedDate": "2026-09-23T10:15:41Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000036"
+      },
+      "Id": "00a000000000000036",
+      "ParentId": "50000000000000000d",
+      "CommentBody": "Just checking in, is there any update on this?",
+      "IsPublished": true,
+      "CreatedById": "005000000000000067",
+      "CreatedDate": "2026-09-23T10:40:20Z"
+    }
+  ]
+}

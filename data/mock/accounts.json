@@ -1,0 +1,158 @@
+{
+  "schema_version": "1.0.0",
+  "accounts": [
+    {
+      "account_id": "ACC-0001",
+      "account_type": "customer",
+      "domain": "greatlakesmuseums.example.org",
+      "record": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v62.0/sobjects/Account/0018W00002HkLmNQAV"
+        },
+        "Id": "0018W00002HkLmNQAV",
+        "Name": "Great Lakes Museum Alliance",
+        "Tier__c": "Enterprise",
+        "ARR__c": 340000,
+        "Renewal_Date__c": "2026-12-31",
+        "Products__c": "membership;events;fundraising"
+      }
+    },
+    {
+      "account_id": "ACC-0002",
+      "account_type": "customer",
+      "domain": "cascadianurses.example.org",
+      "record": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v62.0/sobjects/Account/0018W00002HkLmOQAV"
+        },
+        "Id": "0018W00002HkLmOQAV",
+        "Name": "Cascadia Nurses Association",
+        "Tier__c": "Enterprise",
+        "ARR__c": 268000,
+        "Renewal_Date__c": "2027-03-31",
+        "Products__c": "membership;lms;events"
+      }
+    },
+    {
+      "account_id": "ACC-0003",
+      "account_type": "customer",
+      "domain": "prairielandtrust.example.org",
+      "record": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v62.0/sobjects/Account/0018W00002HkLmQQAV"
+        },
+        "Id": "0018W00002HkLmQQAV",
+        "Name": "Prairie Land Trust Council",
+        "Tier__c": "Professional",
+        "ARR__c": 154000,
+        "Renewal_Date__c": "2026-11-30",
+        "Products__c": "fundraising;accounting"
+      }
+    },
+    {
+      "account_id": "ACC-0004",
+      "account_type": "customer",
+      "domain": "atlanticshipwrights.example.org",
+      "record": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v62.0/sobjects/Account/0018W00002HkLmRQAV"
+        },
+        "Id": "0018W00002HkLmRQAV",
+        "Name": "Atlantic Shipwrights Guild",
+        "Tier__c": "Professional",
+        "ARR__c": 96000,
+        "Renewal_Date__c": "2027-01-31",
+        "Products__c": "membership;jobs"
+      }
+    },
+    {
+      "account_id": "ACC-0005",
+      "account_type": "customer",
+      "domain": "sunbeltliteracy.example.org",
+      "record": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v62.0/sobjects/Account/0018W00002HkLmSQAV"
+        },
+        "Id": "0018W00002HkLmSQAV",
+        "Name": "Sunbelt Literacy Network",
+        "Tier__c": "Standard",
+        "ARR__c": 41000,
+        "Renewal_Date__c": "2026-10-31",
+        "Products__c": "membership;fundraising"
+      }
+    },
+    {
+      "account_id": "ACC-0006",
+      "account_type": "customer",
+      "domain": "copperridgeyouth.example.org",
+      "record": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v62.0/sobjects/Account/0018W00002HkLmTQAV"
+        },
+        "Id": "0018W00002HkLmTQAV",
+        "Name": "Copper Ridge Youth Foundation",
+        "Tier__c": "Standard",
+        "ARR__c": 18000,
+        "Renewal_Date__c": "2027-02-28",
+        "Products__c": "fundraising;events;reporting"
+      }
+    },
+    {
+      "account_id": "ACC-0007",
+      "account_type": "prospect",
+      "domain": "northwoodsarborists.example.org",
+      "record": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v62.0/sobjects/Account/0018W00002HkLmPQAV"
+        },
+        "Id": "0018W00002HkLmPQAV",
+        "Name": "Northwoods Arborists Society",
+        "Tier__c": "Prospect",
+        "ARR__c": 0,
+        "Renewal_Date__c": null,
+        "Products__c": ""
+      }
+    },
+    {
+      "account_id": "ACC-0008",
+      "account_type": "prospect",
+      "domain": "harborcityteachers.example.org",
+      "record": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v62.0/sobjects/Account/0018W00002HkLmUQAV"
+        },
+        "Id": "0018W00002HkLmUQAV",
+        "Name": "Harbor City Teachers Collective",
+        "Tier__c": "Prospect",
+        "ARR__c": 0,
+        "Renewal_Date__c": null,
+        "Products__c": ""
+      }
+    },
+    {
+      "account_id": "ACC-0009",
+      "account_type": "prospect",
+      "domain": "silvercreekvets.example.org",
+      "record": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v62.0/sobjects/Account/0018W00002HkLmVQAV"
+        },
+        "Id": "0018W00002HkLmVQAV",
+        "Name": "Silver Creek Veterinary Association",
+        "Tier__c": "Prospect",
+        "ARR__c": 0,
+        "Renewal_Date__c": null,
+        "Products__c": ""
+      }
+    }
+  ]
+}

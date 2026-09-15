@@ -1,0 +1,989 @@
+{
+  "schema_version": "1.0.0",
+  "call": {
+    "metaData": {
+      "id": "7782934451311",
+      "url": "https://gong.invalid/call?id=7782934451311",
+      "title": "Northwoods Arborists Society discovery call",
+      "scheduled": "2026-09-09T16:00:00Z",
+      "started": "2026-09-09T16:00:48Z",
+      "duration": 1642,
+      "primaryUserId": "1201",
+      "direction": "Conference",
+      "system": "Gong",
+      "scope": "External",
+      "media": "Video",
+      "language": "eng",
+      "workspaceId": "9911",
+      "sdrDisposition": null,
+      "clientUniqueId": null,
+      "customData": null,
+      "purpose": "Discovery",
+      "meetingUrl": null,
+      "isPrivate": false,
+      "calendarEventId": "cal-88317"
+    },
+    "parties": [
+      {
+        "id": "p-1201",
+        "emailAddress": "priya.natarajan@momentivesoftware.example.org",
+        "name": "Priya Natarajan",
+        "title": "Account Executive",
+        "userId": "1201",
+        "speakerId": "1201",
+        "context": [],
+        "affiliation": "Internal"
+      },
+      {
+        "id": "p-1244",
+        "emailAddress": "tom.bradshaw@momentivesoftware.example.org",
+        "name": "Tom Bradshaw",
+        "title": "Solutions Consultant",
+        "userId": "1244",
+        "speakerId": "1244",
+        "context": [],
+        "affiliation": "Internal"
+      },
+      {
+        "id": "p-4852",
+        "emailAddress": "delphine.okerlund@northwoodsarborists.example.org",
+        "name": "Delphine Okerlund",
+        "title": "Director of Professional Development",
+        "userId": null,
+        "speakerId": "4852",
+        "context": [],
+        "affiliation": "External"
+      }
+    ]
+  },
+  "transcript": {
+    "callId": "7782934451311",
+    "transcript": [
+      {
+        "speakerId": "1201",
+        "topic": "Opening",
+        "sentences": [
+          {
+            "start": 8000,
+            "end": 13310,
+            "text": "Good afternoon Delphine, thanks for the time."
+          },
+          {
+            "start": 13310,
+            "end": 27470,
+            "text": "I have Tom Bradshaw with me, he is one of our solutions consultants and he knows the learning side far better than I do."
+          },
+          {
+            "start": 27470,
+            "end": 42928,
+            "text": "The plan for today is that you talk and we listen, and towards the end Tom will show you two or three things if they seem relevant."
+          }
+        ]
+      },
+      {
+        "speakerId": "4852",
+        "topic": "Opening",
+        "sentences": [
+          {
+            "start": 46928,
+            "end": 50114,
+            "text": "Good afternoon to you both."
+          },
+          {
+            "start": 50114,
+            "end": 65218,
+            "text": "That suits me. I have sat through enough presentations this year to last a while, so being asked questions is a pleasant change."
+          }
+        ]
+      },
+      {
+        "speakerId": "1244",
+        "topic": "Opening",
+        "sentences": [
+          {
+            "start": 69218,
+            "end": 77950,
+            "text": "Hello Delphine. I will mostly be quiet until Priya has got what she needs."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Discovery",
+        "sentences": [
+          {
+            "start": 81950,
+            "end": 90446,
+            "text": "Start wherever you like. What does the society actually do, and who for?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4852",
+        "topic": "Discovery",
+        "sentences": [
+          {
+            "start": 94446,
+            "end": 104240,
+            "text": "We are the professional body for arborists across five states in the upper midwest."
+          },
+          {
+            "start": 104240,
+            "end": 118400,
+            "text": "About seven thousand members, of whom roughly four thousand five hundred hold a certification that has to be maintained."
+          },
+          {
+            "start": 118400,
+            "end": 134330,
+            "text": "Maintaining it means a set number of education units every three years, and we are the ones who deliver and record most of those units."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Discovery",
+        "sentences": [
+          {
+            "start": 138330,
+            "end": 148714,
+            "text": "So the education programme is not an extra for you, it is the reason people are members."
+          }
+        ]
+      },
+      {
+        "speakerId": "4852",
+        "topic": "Discovery",
+        "sentences": [
+          {
+            "start": 152714,
+            "end": 156608,
+            "text": "It is the whole proposition, yes."
+          },
+          {
+            "start": 156608,
+            "end": 172302,
+            "text": "If somebody lets their certification lapse they are off the approved contractor lists in three states, and that is their income gone."
+          },
+          {
+            "start": 172302,
+            "end": 182804,
+            "text": "So the stakes for the individual member are high, which means the stakes for us are high."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Discovery",
+        "sentences": [
+          {
+            "start": 186804,
+            "end": 191878,
+            "text": "How are you delivering the education today?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4852",
+        "topic": "Discovery",
+        "sentences": [
+          {
+            "start": 195878,
+            "end": 205554,
+            "text": "Three ways. In person workshops at regional chapters, which is about forty a year."
+          },
+          {
+            "start": 205554,
+            "end": 217000,
+            "text": "Live online sessions, which grew enormously in the last few years and are now about sixty a year."
+          },
+          {
+            "start": 217000,
+            "end": 223962,
+            "text": "And self paced courses, which is the part that is breaking."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Discovery",
+        "sentences": [
+          {
+            "start": 227962,
+            "end": 242240,
+            "text": "Tell me about the chapter structure, because you mentioned five states and I want to understand how independent they are."
+          }
+        ]
+      },
+      {
+        "speakerId": "4852",
+        "topic": "Discovery",
+        "sentences": [
+          {
+            "start": 246240,
+            "end": 262052,
+            "text": "Each state chapter has its own board, its own treasurer and its own bank account, and they remit a share of dues to the national body."
+          },
+          {
+            "start": 262052,
+            "end": 279162,
+            "text": "The national body holds the certification, the standards and the education programme, and the chapters hold the local events and the social side."
+          },
+          {
+            "start": 279162,
+            "end": 292142,
+            "text": "It is a federation rather than branches, and anybody who forgets that finds out quickly at the annual meeting."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Discovery",
+        "sentences": [
+          {
+            "start": 296142,
+            "end": 303222,
+            "text": "How much of the administration happens at the chapter level?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4852",
+        "topic": "Discovery",
+        "sentences": [
+          {
+            "start": 307222,
+            "end": 323270,
+            "text": "More than I would like. Each chapter keeps its own event records and three of the five keep their own spreadsheets of who attended what."
+          },
+          {
+            "start": 323270,
+            "end": 335188,
+            "text": "Two of the five have a paid part time administrator and three rely entirely on a volunteer treasurer."
+          },
+          {
+            "start": 335188,
+            "end": 352416,
+            "text": "So the quality of the records varies enormously, and at the end of every year we spend six weeks reconciling five different versions of the truth."
+          }
+        ]
+      },
+      {
+        "speakerId": "1244",
+        "topic": "Discovery",
+        "sentences": [
+          {
+            "start": 356416,
+            "end": 366210,
+            "text": "Does that reconciliation feed the certification records, or is it purely financial?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4852",
+        "topic": "Discovery",
+        "sentences": [
+          {
+            "start": 370210,
+            "end": 387674,
+            "text": "Both, and that is the problem. A chapter workshop carries education units, so if the chapter record is wrong then somebody's certification is wrong."
+          },
+          {
+            "start": 387674,
+            "end": 407380,
+            "text": "We caught two cases last year where a member had been credited units for a workshop they did not attend, and both were honest mistakes by a volunteer with a clipboard."
+          },
+          {
+            "start": 407380,
+            "end": 417882,
+            "text": "The certification board was understanding about it. They will not be understanding twice."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Discovery",
+        "sentences": [
+          {
+            "start": 421882,
+            "end": 435570,
+            "text": "So part of what you are buying is a single record that the chapters can write to without being able to get it wrong."
+          }
+        ]
+      },
+      {
+        "speakerId": "4852",
+        "topic": "Discovery",
+        "sentences": [
+          {
+            "start": 439570,
+            "end": 447712,
+            "text": "That is a better summary of it than anything in the document I wrote."
+          },
+          {
+            "start": 447712,
+            "end": 455618,
+            "text": "I may borrow that sentence for the board paper, if you do not mind."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Discovery",
+        "sentences": [
+          {
+            "start": 459618,
+            "end": 471654,
+            "text": "Borrow it freely. What is the current relationship between the chapters and whatever systems they use?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4852",
+        "topic": "Discovery",
+        "sentences": [
+          {
+            "start": 475654,
+            "end": 491230,
+            "text": "There is no relationship. Five chapters, five sets of tools, and a national office that receives spreadsheets by email twice a year."
+          },
+          {
+            "start": 491230,
+            "end": 507632,
+            "text": "I have been here three years and changing that is essentially why I was hired, although the job description said something more diplomatic."
+          }
+        ]
+      },
+      {
+        "speakerId": "1244",
+        "topic": "Discovery",
+        "sentences": [
+          {
+            "start": 511632,
+            "end": 520482,
+            "text": "Tell us about the self paced courses. What are they built in at the moment?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4852",
+        "topic": "Discovery",
+        "sentences": [
+          {
+            "start": 524482,
+            "end": 534394,
+            "text": "They are built by two different vendors who specialise in technical safety training."
+          },
+          {
+            "start": 534394,
+            "end": 552684,
+            "text": "One of them produces course packages in an industry standard format, and the other one does too, because that is what everyone in safety training produces."
+          },
+          {
+            "start": 552684,
+            "end": 560826,
+            "text": "We have ninety four of those courses and we add about a dozen a year."
+          }
+        ]
+      },
+      {
+        "speakerId": "1244",
+        "topic": "Discovery",
+        "sentences": [
+          {
+            "start": 564826,
+            "end": 568012,
+            "text": "And where do they live now?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4852",
+        "topic": "Discovery",
+        "sentences": [
+          {
+            "start": 572012,
+            "end": 584166,
+            "text": "On a hosted platform we have used for eleven years, which is being retired by its owner next September."
+          },
+          {
+            "start": 584166,
+            "end": 600096,
+            "text": "That deadline is the reason we are having this conversation at all, and it is the reason I am talking to four vendors rather than none."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Discovery",
+        "sentences": [
+          {
+            "start": 604096,
+            "end": 609878,
+            "text": "That is a helpful piece of context to have early."
+          },
+          {
+            "start": 609878,
+            "end": 625690,
+            "text": "So the requirement is not simply a learning system, it is somewhere those ninety four existing courses can live without being rebuilt."
+          }
+        ]
+      },
+      {
+        "speakerId": "4852",
+        "topic": "Requirements",
+        "sentences": [
+          {
+            "start": 629690,
+            "end": 643260,
+            "text": "Correct, and I want to be very direct about this because it has already ended one conversation with another vendor."
+          },
+          {
+            "start": 643260,
+            "end": 658128,
+            "text": "We need to upload SCORM 1.2 and SCORM 2004 packages straight into the learning module without rebuilding every course by hand."
+          },
+          {
+            "start": 658128,
+            "end": 675828,
+            "text": "If that is not possible then nothing else you show me matters, because rebuilding ninety four courses is a two year project and we have twelve months."
+          }
+        ]
+      },
+      {
+        "speakerId": "1244",
+        "topic": "Requirements",
+        "sentences": [
+          {
+            "start": 679828,
+            "end": 690802,
+            "text": "That is a fair way to put it and I would rather you put it that way now than in three months."
+          },
+          {
+            "start": 690802,
+            "end": 701068,
+            "text": "Let me ask two clarifying questions so that my answer is useful rather than reassuring."
+          },
+          {
+            "start": 701068,
+            "end": 713576,
+            "text": "Are the packages single course files, or are some of them larger collections with multiple modules inside?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4852",
+        "topic": "Requirements",
+        "sentences": [
+          {
+            "start": 717576,
+            "end": 733034,
+            "text": "Both. About sixty are single courses. The rest are collections, and the largest one has eleven modules in it with a required order."
+          },
+          {
+            "start": 733034,
+            "end": 741176,
+            "text": "The ordering matters because the certification board audits us on it."
+          }
+        ]
+      },
+      {
+        "speakerId": "1244",
+        "topic": "Requirements",
+        "sentences": [
+          {
+            "start": 745176,
+            "end": 761578,
+            "text": "And do you need the completion and score data to come back out of the courses into your member records, or is completion enough on its own?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4852",
+        "topic": "Requirements",
+        "sentences": [
+          {
+            "start": 765578,
+            "end": 777024,
+            "text": "Completion, score and time spent. All three go on the member record and all three can be audited."
+          },
+          {
+            "start": 777024,
+            "end": 793190,
+            "text": "The time spent one surprises people, but the board requires a minimum time for some units regardless of how fast somebody clicks through."
+          }
+        ]
+      },
+      {
+        "speakerId": "1244",
+        "topic": "Requirements",
+        "sentences": [
+          {
+            "start": 797190,
+            "end": 813474,
+            "text": "That is clear. I will come back to exactly what we do and do not support there before the end of the call, and I will be precise about it."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Requirements",
+        "sentences": [
+          {
+            "start": 817474,
+            "end": 824082,
+            "text": "What else is on the list, beyond the courses themselves?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4852",
+        "topic": "Requirements",
+        "sentences": [
+          {
+            "start": 828082,
+            "end": 840708,
+            "text": "Member records and dues, obviously, because the certification and the membership are the same thing for us."
+          },
+          {
+            "start": 840708,
+            "end": 852272,
+            "text": "Chapter structure, because our five state chapters each run their own budget and their own events."
+          },
+          {
+            "start": 852272,
+            "end": 870444,
+            "text": "And reporting that the certification board will accept without an argument, which today is a person exporting to a spreadsheet for two days every quarter."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Requirements",
+        "sentences": [
+          {
+            "start": 874444,
+            "end": 884474,
+            "text": "Who is the certification board, in terms of how much say they have over your choices?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4852",
+        "topic": "Requirements",
+        "sentences": [
+          {
+            "start": 888474,
+            "end": 895436,
+            "text": "They are a national body and they have a great deal of say."
+          },
+          {
+            "start": 895436,
+            "end": 914080,
+            "text": "They do not tell us what software to buy, but they do tell us what records we have to be able to produce on demand, and the practical effect is much the same."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Finance",
+        "sentences": [
+          {
+            "start": 918080,
+            "end": 928228,
+            "text": "Let me ask about dues and the money side, since your chapters hold their own accounts."
+          },
+          {
+            "start": 928228,
+            "end": 932240,
+            "text": "How does that actually work today?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4852",
+        "topic": "Finance",
+        "sentences": [
+          {
+            "start": 936240,
+            "end": 949456,
+            "text": "A member pays one amount to the national body. We keep sixty percent and remit forty to their chapter quarterly."
+          },
+          {
+            "start": 949456,
+            "end": 964088,
+            "text": "Dues are one hundred and eighty dollars a year for a certified member, ninety for an associate and forty five for a student."
+          },
+          {
+            "start": 964088,
+            "end": 983204,
+            "text": "That gives us about one point one million in dues income, against a total income of about two point six million once education and the annual meeting are counted."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Finance",
+        "sentences": [
+          {
+            "start": 987204,
+            "end": 995582,
+            "text": "And the remittance to the chapters, how is that calculated and checked?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4852",
+        "topic": "Finance",
+        "sentences": [
+          {
+            "start": 999582,
+            "end": 1010556,
+            "text": "By our finance manager, in a spreadsheet, four times a year, over about three days each time."
+          },
+          {
+            "start": 1010556,
+            "end": 1024244,
+            "text": "She is meticulous and it has never been wrong, which is precisely what worries me, because she retires in two years."
+          },
+          {
+            "start": 1024244,
+            "end": 1039230,
+            "text": "Nobody else in the building could do it from a standing start and that is an institutional risk rather than a software problem."
+          }
+        ]
+      },
+      {
+        "speakerId": "1244",
+        "topic": "Finance",
+        "sentences": [
+          {
+            "start": 1043230,
+            "end": 1057980,
+            "text": "Would you want that calculation to happen in the system, or would you rather it stayed where it is and simply became visible?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4852",
+        "topic": "Finance",
+        "sentences": [
+          {
+            "start": 1061980,
+            "end": 1072836,
+            "text": "Visible first, automatic second. I would not want to move it and change it in the same year."
+          },
+          {
+            "start": 1072836,
+            "end": 1088176,
+            "text": "If I can see the same numbers she can see, and the chapters can see their own share without asking her, that is most of the value."
+          }
+        ]
+      },
+      {
+        "speakerId": "1244",
+        "topic": "Finance",
+        "sentences": [
+          {
+            "start": 1092176,
+            "end": 1104094,
+            "text": "That is a more realistic sequencing than most organisations propose to us, and it tends to go better."
+          }
+        ]
+      },
+      {
+        "speakerId": "4852",
+        "topic": "Finance",
+        "sentences": [
+          {
+            "start": 1108094,
+            "end": 1120838,
+            "text": "I have been through one bad system replacement in a previous role and I learned to move one thing at a time."
+          },
+          {
+            "start": 1120838,
+            "end": 1132874,
+            "text": "The year we tried to change the process and the software together is a year I would rather not relive."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Process",
+        "sentences": [
+          {
+            "start": 1136874,
+            "end": 1146668,
+            "text": "Understood. What does your decision process look like between now and the deadline?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4852",
+        "topic": "Process",
+        "sentences": [
+          {
+            "start": 1150668,
+            "end": 1156450,
+            "text": "We are talking to four vendors through September."
+          },
+          {
+            "start": 1156450,
+            "end": 1170964,
+            "text": "Two go forward to a proper evaluation in October, which will involve our education committee and two of the chapter chairs."
+          },
+          {
+            "start": 1170964,
+            "end": 1183590,
+            "text": "A recommendation to the board in December, a decision in January, and then eight months to move everything."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Process",
+        "sentences": [
+          {
+            "start": 1187590,
+            "end": 1203638,
+            "text": "Eight months to move ninety four courses, seven thousand member records and five chapter structures is tight but it is not unreasonable."
+          },
+          {
+            "start": 1203638,
+            "end": 1213904,
+            "text": "Who else is in the room for the October evaluation, and what will they each care about?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4852",
+        "topic": "Process",
+        "sentences": [
+          {
+            "start": 1217904,
+            "end": 1226046,
+            "text": "The education committee will care about the courses and nothing else."
+          },
+          {
+            "start": 1226046,
+            "end": 1240560,
+            "text": "The chapter chairs will care about whether their treasurers can still do what they do today without learning something new."
+          },
+          {
+            "start": 1240560,
+            "end": 1253540,
+            "text": "Our executive director will care about the total cost over five years, and she will ask you for it in writing."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Process",
+        "sentences": [
+          {
+            "start": 1257540,
+            "end": 1269930,
+            "text": "What does your procurement actually require of us? I would rather know now than be surprised in November."
+          }
+        ]
+      },
+      {
+        "speakerId": "4852",
+        "topic": "Process",
+        "sentences": [
+          {
+            "start": 1273930,
+            "end": 1295878,
+            "text": "We are a nonprofit rather than a public body, so there is no formal tender requirement, but our own policy says three written quotations above one hundred thousand dollars over the term."
+          },
+          {
+            "start": 1295878,
+            "end": 1314640,
+            "text": "You will need to give us a written proposal, a five year cost, two references from organisations of a similar size, and evidence of your security arrangements."
+          },
+          {
+            "start": 1314640,
+            "end": 1324552,
+            "text": "The security part is new this year and it came from our insurer rather than from us."
+          }
+        ]
+      },
+      {
+        "speakerId": "1244",
+        "topic": "Process",
+        "sentences": [
+          {
+            "start": 1328552,
+            "end": 1335278,
+            "text": "What form does the insurer want the security evidence in?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4852",
+        "topic": "Process",
+        "sentences": [
+          {
+            "start": 1339278,
+            "end": 1350488,
+            "text": "A completed questionnaire, about sixty questions, and whatever independent assessment you hold."
+          },
+          {
+            "start": 1350488,
+            "end": 1363704,
+            "text": "I have sent it to the other three vendors already and two of them have returned it, so it is not an unusual ask."
+          },
+          {
+            "start": 1363704,
+            "end": 1374796,
+            "text": "I will send it to you this evening so that it is not sitting on the critical path in November."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Process",
+        "sentences": [
+          {
+            "start": 1378796,
+            "end": 1384814,
+            "text": "Please do, and I will get it back inside two weeks."
+          },
+          {
+            "start": 1384814,
+            "end": 1399800,
+            "text": "On the references, would you rather speak to an organisation with a similar certification obligation, or one of a similar size?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4852",
+        "topic": "Process",
+        "sentences": [
+          {
+            "start": 1403800,
+            "end": 1424214,
+            "text": "Certification obligation, every time. Size I can imagine. A board that audits our records is a specific kind of pressure and I want to hear from somebody who lives under it."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Process",
+        "sentences": [
+          {
+            "start": 1428214,
+            "end": 1440250,
+            "text": "Then that is who I will offer you, and I will ask them first rather than giving you a name and hoping."
+          }
+        ]
+      },
+      {
+        "speakerId": "4852",
+        "topic": "Process",
+        "sentences": [
+          {
+            "start": 1444250,
+            "end": 1463838,
+            "text": "That courtesy is rarer than it should be. One of the other vendors gave me three names who had not been warned and two of them were plainly irritated to hear from me."
+          }
+        ]
+      },
+      {
+        "speakerId": "1244",
+        "topic": "Requirements",
+        "sentences": [
+          {
+            "start": 1467838,
+            "end": 1479284,
+            "text": "Then let me answer your first question now, since it decides whether the rest is worth your time."
+          },
+          {
+            "start": 1479284,
+            "end": 1505126,
+            "text": "On the package formats you named, I want to check one detail on the collections with a required order before I give you a yes, so I am going to confirm that in writing tomorrow rather than say something loose on a call."
+          },
+          {
+            "start": 1505126,
+            "end": 1520820,
+            "text": "Everything else you have described, including completion, score and time spent going back onto the member record, is standard for us."
+          }
+        ]
+      },
+      {
+        "speakerId": "4852",
+        "topic": "Requirements",
+        "sentences": [
+          {
+            "start": 1524820,
+            "end": 1535676,
+            "text": "I would rather have that answer tomorrow in writing than today out loud, so that works well."
+          },
+          {
+            "start": 1535676,
+            "end": 1548420,
+            "text": "Send it with the five year cost while you are at it and you will have saved our executive director an email."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Next steps",
+        "sentences": [
+          {
+            "start": 1552420,
+            "end": 1555420,
+            "text": "We will do both."
+          },
+          {
+            "start": 1555420,
+            "end": 1572884,
+            "text": "Written answer on the course packages from Tom tomorrow, and an indicative five year cost from me by the end of the week, clearly marked indicative."
+          },
+          {
+            "start": 1572884,
+            "end": 1582324,
+            "text": "Would a longer session with your education committee in early October be useful?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4852",
+        "topic": "Next steps",
+        "sentences": [
+          {
+            "start": 1586324,
+            "end": 1593876,
+            "text": "It would, assuming tomorrow's answer is the one I am hoping for."
+          },
+          {
+            "start": 1593876,
+            "end": 1604142,
+            "text": "Let us leave that hanging until then rather than book something I might have to cancel."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Next steps",
+        "sentences": [
+          {
+            "start": 1608142,
+            "end": 1617110,
+            "text": "That is sensible. Thank you Delphine, this has been a genuinely useful hour."
+          }
+        ]
+      },
+      {
+        "speakerId": "4852",
+        "topic": "Next steps",
+        "sentences": [
+          {
+            "start": 1621110,
+            "end": 1624768,
+            "text": "Thank you both. Speak tomorrow."
+          }
+        ]
+      }
+    ]
+  }
+}

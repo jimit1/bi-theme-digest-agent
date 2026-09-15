@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0.0",
+  "case": {
+    "attributes": {
+      "type": "Case",
+      "url": "/services/data/v62.0/sobjects/Case/5008W00002aQpLrQAK"
+    },
+    "Id": "5008W00002aQpLrQAK",
+    "CaseNumber": "00001042",
+    "AccountId": "0018W00002HkLmQQAV",
+    "Subject": "Renewal billing wrong for mid year upgrades",
+    "Status": "Working",
+    "Priority": "High",
+    "CreatedDate": "2026-09-10T13:58:41.000Z",
+    "ClosedDate": null
+  },
+  "comments": [
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a8W00000XfT2mQAF"
+      },
+      "Id": "00a8W00000XfT2mQAF",
+      "ParentId": "5008W00002aQpLrQAK",
+      "CommentBody": "We have been chasing this since the July run and I am told it is not new. Members who upgraded partway through the year are billed the whole annual figure again with nothing knocked off, and we end up correcting each invoice by hand. Finance has flagged it twice now and I need to give the trustees an answer before the November cycle opens.",
+      "IsPublished": true,
+      "CreatedById": "0058W00000LmNoPQAV",
+      "CreatedDate": "2026-09-10T14:22:05.000Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a8W00000XfT2nQAF"
+      },
+      "Id": "00a8W00000XfT2nQAF",
+      "ParentId": "5008W00002aQpLrQAK",
+      "CommentBody": "Thanks Marla. I have reproduced this against a sandbox copy of your data and I see the same result on two of the three examples you sent through. I am raising it with the billing engineering group today and I will put the reference number on this case as soon as I have it.",
+      "IsPublished": true,
+      "CreatedById": "0058W00000JkPqRQAV",
+      "CreatedDate": "2026-09-10T15:44:19.000Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a8W00000XfT2pQAF"
+      },
+      "Id": "00a8W00000XfT2pQAF",
+      "ParentId": "5008W00002aQpLrQAK",
+      "CommentBody": "Internal note for the account team, not for the customer. This is the third case from them on billing since June and the tone of it has changed. Honestly I think this account is a churn risk if the invoice thing drags on. Worth a call from the client success side before the November cycle rather than after it.",
+      "IsPublished": false,
+      "CreatedById": "0058W00000JkPqRQAV",
+      "CreatedDate": "2026-09-10T15:52:40.000Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a8W00000XfT2qQAF"
+      },
+      "Id": "00a8W00000XfT2qQAF",
+      "ParentId": "5008W00002aQpLrQAK",
+      "CommentBody": "I have picked this up on the client success side as well. Marla, I will join the call on Tuesday so that you only have to tell the story once.",
+      "IsPublished": true,
+      "CreatedById": "0058W00000MaOyEQAV",
+      "CreatedDate": "2026-09-11T09:12:03.000Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a8W00000XfT2rQAF"
+      },
+      "Id": "00a8W00000XfT2rQAF",
+      "ParentId": "5008W00002aQpLrQAK",
+      "CommentBody": "The reference number is on the case now and the billing engineering group have it in their current queue. I will post an update here on Friday whether or not there is news to give.",
+      "IsPublished": true,
+      "CreatedById": "0058W00000JkPqRQAV",
+      "CreatedDate": "2026-09-11T16:30:55.000Z"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0.0",
+  "accounts": [
+    {
+      "account_id": "ACC-0001",
+      "account_type": "customer",
+      "domain": "greatlakesmuseums.example.org",
+      "record": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v62.0/sobjects/Account/0018W00002HkLmNQAV"
+        },
+        "Id": "0018W00002HkLmNQAV",
+        "Name": "Great Lakes Museum Alliance",
+        "Tier__c": "Enterprise",
+        "ARR__c": 340000,
+        "Renewal_Date__c": "2026-12-31",
+        "Products__c": "membership;events;fundraising"
+      }
+    },
+    {
+      "account_id": "ACC-0002",
+      "account_type": "customer",
+      "domain": "cascadianurses.example.org",
+      "record": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v62.0/sobjects/Account/0018W00002HkLmOQAV"
+        },
+        "Id": "0018W00002HkLmOQAV",
+        "Name": "Cascadia Nurses Association",
+        "Tier__c": "Enterprise",
+        "ARR__c": 268000,
+        "Renewal_Date__c": "2027-03-31",
+        "Products__c": "events;lms"
+      }
+    },
+    {
+      "account_id": "ACC-0003",
+      "account_type": "customer",
+      "domain": "prairielandtrust.example.org",
+      "record": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v62.0/sobjects/Account/0018W00002HkLmPQAV"
+        },
+        "Id": "0018W00002HkLmPQAV",
+        "Name": "Prairie Land Trust Council",
+        "Tier__c": "Professional",
+        "ARR__c": 154000,
+        "Renewal_Date__c": "2027-01-31",
+        "Products__c": "membership;fundraising"
+      }
+    }
+  ]
+}

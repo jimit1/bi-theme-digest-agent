@@ -1,0 +1,1046 @@
+{
+  "schema_version": "1.0.0",
+  "call": {
+    "metaData": {
+      "id": "7782934451118",
+      "url": "https://gong.invalid/call?id=7782934451118",
+      "title": "Cascadia Nurses Association annual conference planning",
+      "scheduled": "2026-09-08T17:30:00Z",
+      "started": "2026-09-08T17:31:40Z",
+      "duration": 1655,
+      "primaryUserId": "1187",
+      "direction": "Conference",
+      "system": "Gong",
+      "scope": "External",
+      "media": "Video",
+      "language": "eng",
+      "workspaceId": "9911",
+      "sdrDisposition": null,
+      "clientUniqueId": null,
+      "customData": null,
+      "purpose": "Conference planning",
+      "meetingUrl": null,
+      "isPrivate": false,
+      "calendarEventId": "cal-88231"
+    },
+    "parties": [
+      {
+        "id": "p-1187",
+        "emailAddress": "marcus.oyelaran@momentivesoftware.example.org",
+        "name": "Marcus Oyelaran",
+        "title": "Customer Success Manager",
+        "userId": "1187",
+        "speakerId": "1187",
+        "context": [],
+        "affiliation": "Internal"
+      },
+      {
+        "id": "p-4631",
+        "emailAddress": "sylvia.marchetti@cascadianurses.example.org",
+        "name": "Sylvia Marchetti",
+        "title": "Director of Education and Events",
+        "userId": null,
+        "speakerId": "4631",
+        "context": [],
+        "affiliation": "External"
+      }
+    ]
+  },
+  "transcript": {
+    "callId": "7782934451118",
+    "transcript": [
+      {
+        "speakerId": "1187",
+        "topic": "Opening",
+        "sentences": [
+          {
+            "start": 8000,
+            "end": 11540,
+            "text": "Hello Sylvia, good to see you."
+          },
+          {
+            "start": 11540,
+            "end": 24756,
+            "text": "I know the conference is the only thing on your mind at this point in the year, so I have kept the agenda short."
+          },
+          {
+            "start": 24756,
+            "end": 39624,
+            "text": "I want to walk through where you are with planning, then whatever is causing you trouble, and I will keep an eye on the clock."
+          }
+        ]
+      },
+      {
+        "speakerId": "4631",
+        "topic": "Opening",
+        "sentences": [
+          {
+            "start": 43624,
+            "end": 54244,
+            "text": "Hello Marcus. That is the right agenda, because it is genuinely the only thing on my mind."
+          },
+          {
+            "start": 54244,
+            "end": 60144,
+            "text": "We are six months out and it feels like six weeks."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Background",
+        "sentences": [
+          {
+            "start": 64144,
+            "end": 74764,
+            "text": "Before the conference swallows the call, remind me of the shape of the association itself."
+          },
+          {
+            "start": 74764,
+            "end": 82906,
+            "text": "I want the numbers in my head when I am arguing your case internally."
+          }
+        ]
+      },
+      {
+        "speakerId": "4631",
+        "topic": "Background",
+        "sentences": [
+          {
+            "start": 86906,
+            "end": 102836,
+            "text": "Forty one thousand members across the four Pacific northwest states, which makes us one of the larger state level nursing associations."
+          },
+          {
+            "start": 102836,
+            "end": 118530,
+            "text": "About thirty two thousand are practising registered nurses, five thousand are students and the rest are retired or associate members."
+          },
+          {
+            "start": 118530,
+            "end": 130448,
+            "text": "We have sixty one staff, of whom about a third work on education and the annual meeting in some form."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Background",
+        "sentences": [
+          {
+            "start": 134448,
+            "end": 143062,
+            "text": "And membership is voluntary rather than tied to licensure in your states?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4631",
+        "topic": "Background",
+        "sentences": [
+          {
+            "start": 147062,
+            "end": 154968,
+            "text": "Entirely voluntary, which is the fact that shapes everything we do."
+          },
+          {
+            "start": 154968,
+            "end": 166060,
+            "text": "Nobody has to join us, so every year we have to be worth the dues again from a standing start."
+          },
+          {
+            "start": 166060,
+            "end": 181400,
+            "text": "That is why the education programme matters so much. It is the most concrete answer to the question of what the membership is for."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Background",
+        "sentences": [
+          {
+            "start": 185400,
+            "end": 189884,
+            "text": "What is the renewal rate looking like?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4631",
+        "topic": "Background",
+        "sentences": [
+          {
+            "start": 193884,
+            "end": 207100,
+            "text": "Eighty seven percent, which is up two points on last year and the highest it has been since before the pandemic."
+          },
+          {
+            "start": 207100,
+            "end": 223738,
+            "text": "The ones we lose are overwhelmingly in the first two years of membership, and the ones who make it past year three tend to stay for a career."
+          },
+          {
+            "start": 223738,
+            "end": 237780,
+            "text": "So most of our retention effort is now concentrated on the first twenty four months, which was not true five years ago."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Background",
+        "sentences": [
+          {
+            "start": 241780,
+            "end": 248034,
+            "text": "What changed your mind about where to put the effort?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4631",
+        "topic": "Background",
+        "sentences": [
+          {
+            "start": 252034,
+            "end": 260884,
+            "text": "Somebody finally looked at the data properly instead of at our assumptions."
+          },
+          {
+            "start": 260884,
+            "end": 279056,
+            "text": "We had been spending most of our retention budget on long standing members who were never going to leave, because they were the ones who answered surveys."
+          },
+          {
+            "start": 279056,
+            "end": 290030,
+            "text": "That was an uncomfortable meeting and it was probably the most valuable one we had that year."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Conference",
+        "sentences": [
+          {
+            "start": 294030,
+            "end": 304296,
+            "text": "Let us start with the shape of it. Same size as last year, or are you growing it again?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4631",
+        "topic": "Conference",
+        "sentences": [
+          {
+            "start": 308296,
+            "end": 312662,
+            "text": "Growing, unfortunately for my sanity."
+          },
+          {
+            "start": 312662,
+            "end": 329654,
+            "text": "Last year we had just under three thousand people in Seattle. This year we are in Portland and we are budgeting for three thousand four hundred."
+          },
+          {
+            "start": 329654,
+            "end": 339684,
+            "text": "It runs Wednesday through Saturday, with the pre conference workshops on the Tuesday."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Conference",
+        "sentences": [
+          {
+            "start": 343684,
+            "end": 355484,
+            "text": "Three thousand four hundred across four days is a different animal from three thousand across three."
+          },
+          {
+            "start": 355484,
+            "end": 358788,
+            "text": "When does registration open?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4631",
+        "topic": "Conference",
+        "sentences": [
+          {
+            "start": 362788,
+            "end": 371992,
+            "text": "Early bird opens the first week of November and runs to the middle of January."
+          },
+          {
+            "start": 371992,
+            "end": 392642,
+            "text": "Standard registration from then until two weeks out, and then on site registration at the door for anyone who leaves it late, which is always more people than you would think."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Conference",
+        "sentences": [
+          {
+            "start": 396642,
+            "end": 402424,
+            "text": "And the session programme, is that built already?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4631",
+        "topic": "Conference",
+        "sentences": [
+          {
+            "start": 406424,
+            "end": 419758,
+            "text": "The call for abstracts closed in August and we had four hundred and twelve submissions, which is a record for us."
+          },
+          {
+            "start": 419758,
+            "end": 432620,
+            "text": "The review committee is working through them now and the programme should be locked by the middle of October."
+          },
+          {
+            "start": 432620,
+            "end": 440526,
+            "text": "There are eleven parallel tracks, which is two more than last year."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Conference",
+        "sentences": [
+          {
+            "start": 444526,
+            "end": 454084,
+            "text": "Before we get to the practical side, tell me about the exhibition hall this year."
+          },
+          {
+            "start": 454084,
+            "end": 460928,
+            "text": "That is usually where the budget either works or does not."
+          }
+        ]
+      },
+      {
+        "speakerId": "4631",
+        "topic": "Conference",
+        "sentences": [
+          {
+            "start": 464928,
+            "end": 478498,
+            "text": "One hundred and forty booths, up from one hundred and twenty two last year, and we are ninety percent sold already."
+          },
+          {
+            "start": 478498,
+            "end": 497732,
+            "text": "The exhibition income covers roughly forty percent of the total conference budget, so it is not a side show for us, it is the thing that makes the rest affordable."
+          },
+          {
+            "start": 497732,
+            "end": 510476,
+            "text": "Our largest exhibitors are staffing agencies and equipment manufacturers, and they book eighteen months out."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Conference",
+        "sentences": [
+          {
+            "start": 514476,
+            "end": 523916,
+            "text": "Ninety percent sold six months out is a strong position. Are you holding prices?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4631",
+        "topic": "Conference",
+        "sentences": [
+          {
+            "start": 527916,
+            "end": 539480,
+            "text": "We put booth prices up six percent and lost nobody, which tells me we were under priced last year."
+          },
+          {
+            "start": 539480,
+            "end": 553758,
+            "text": "Registration we held flat for members and put up eight percent for non members, partly to make the membership worth more."
+          },
+          {
+            "start": 553758,
+            "end": 563552,
+            "text": "The board debated that for two meetings and eventually agreed it on the second one."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Conference",
+        "sentences": [
+          {
+            "start": 567552,
+            "end": 577818,
+            "text": "And how does the room block look? That is the other number that usually causes trouble."
+          }
+        ]
+      },
+      {
+        "speakerId": "4631",
+        "topic": "Conference",
+        "sentences": [
+          {
+            "start": 581818,
+            "end": 594916,
+            "text": "Two thousand one hundred room nights across four hotels, which is a bigger commitment than we have made before."
+          },
+          {
+            "start": 594916,
+            "end": 611436,
+            "text": "If we do not fill it we pay for the difference, so there is a genuine downside to being cautious and a genuine downside to being optimistic."
+          },
+          {
+            "start": 611436,
+            "end": 627130,
+            "text": "We settled on a number about eight percent below what our attendance forecast would suggest, which the treasurer is comfortable with."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Conference",
+        "sentences": [
+          {
+            "start": 631130,
+            "end": 637974,
+            "text": "That sounds like a well argued number rather than a guess."
+          }
+        ]
+      },
+      {
+        "speakerId": "4631",
+        "topic": "Conference",
+        "sentences": [
+          {
+            "start": 641974,
+            "end": 654010,
+            "text": "It is three years of data and one very long spreadsheet, and I would still not bet my own money on it."
+          },
+          {
+            "start": 654010,
+            "end": 670294,
+            "text": "Conferences are the only part of this job where I find out whether I was right all at once, on a Wednesday morning, in front of everybody."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Conference",
+        "sentences": [
+          {
+            "start": 674294,
+            "end": 680076,
+            "text": "Eleven tracks is a lot of rooms to keep straight."
+          },
+          {
+            "start": 680076,
+            "end": 693292,
+            "text": "Let me ask about the part that usually goes wrong at this size. How are you handling people arriving on the day?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4631",
+        "topic": "Onsite",
+        "sentences": [
+          {
+            "start": 697292,
+            "end": 704962,
+            "text": "That is exactly where I wanted to get to, so I am glad you asked."
+          },
+          {
+            "start": 704962,
+            "end": 720538,
+            "text": "We run event check-in on tablets across six desks in the convention centre lobby, starting at seven in the morning on the Wednesday."
+          },
+          {
+            "start": 720538,
+            "end": 731276,
+            "text": "On a normal morning we process about two thousand two hundred people between seven and ten."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Onsite",
+        "sentences": [
+          {
+            "start": 735276,
+            "end": 746014,
+            "text": "Two thousand two hundred in three hours is roughly twelve people a minute across six desks."
+          },
+          {
+            "start": 746014,
+            "end": 750970,
+            "text": "How did that hold up in Seattle last year?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4631",
+        "topic": "Onsite",
+        "sentences": [
+          {
+            "start": 754970,
+            "end": 766534,
+            "text": "It held up until the convention centre network went down for about forty minutes just after eight."
+          },
+          {
+            "start": 766534,
+            "end": 782228,
+            "text": "When the venue wifi drops we need event check-in to keep running on the tablets and sync everything back up once we are online again."
+          },
+          {
+            "start": 782228,
+            "end": 790252,
+            "text": "That is the single thing I would change if I could change one thing."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Onsite",
+        "sentences": [
+          {
+            "start": 794252,
+            "end": 805462,
+            "text": "Forty minutes at twelve people a minute is close to five hundred people standing in a corridor."
+          },
+          {
+            "start": 805462,
+            "end": 812188,
+            "text": "What did your team actually do while the network was out?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4631",
+        "topic": "Onsite",
+        "sentences": [
+          {
+            "start": 816188,
+            "end": 831410,
+            "text": "We fell back to printed alphabetical lists and a highlighter, which is not a sentence I enjoy saying out loud in a planning call."
+          },
+          {
+            "start": 831410,
+            "end": 844508,
+            "text": "Then four people spent the rest of the Wednesday typing those names back in so the session scanning would work."
+          },
+          {
+            "start": 844508,
+            "end": 854420,
+            "text": "Nobody complained loudly, but the queue went out of the building and people noticed."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Onsite",
+        "sentences": [
+          {
+            "start": 858420,
+            "end": 865500,
+            "text": "Was the venue able to tell you what happened to the network?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4631",
+        "topic": "Onsite",
+        "sentences": [
+          {
+            "start": 869500,
+            "end": 876226,
+            "text": "An upstream fault, apparently, and outside their control."
+          },
+          {
+            "start": 876226,
+            "end": 895224,
+            "text": "The Portland venue has given us a written commitment on bandwidth this year, but a written commitment does not help me at eight fifteen on the Wednesday morning."
+          },
+          {
+            "start": 895224,
+            "end": 907496,
+            "text": "I have to plan as though it will happen again, because once you have seen it happen you cannot unsee it."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Onsite",
+        "sentences": [
+          {
+            "start": 911496,
+            "end": 919638,
+            "text": "That is a reasonable way to plan and I am not going to argue with it."
+          },
+          {
+            "start": 919638,
+            "end": 939108,
+            "text": "I am going to take that back as a product request in your words rather than my summary of them, because the detail about syncing afterwards is the part that matters."
+          }
+        ]
+      },
+      {
+        "speakerId": "4631",
+        "topic": "Onsite",
+        "sentences": [
+          {
+            "start": 943108,
+            "end": 954082,
+            "text": "Please do. I am not the only association running an event in a building with unreliable wifi."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Registration",
+        "sentences": [
+          {
+            "start": 958082,
+            "end": 968820,
+            "text": "Let me come back to registration for a moment, since the process side is on my list anyway."
+          },
+          {
+            "start": 968820,
+            "end": 975310,
+            "text": "How are you handling the group registrations this year?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4631",
+        "topic": "Registration",
+        "sentences": [
+          {
+            "start": 979310,
+            "end": 996656,
+            "text": "Hospital systems send groups of anything from five to two hundred people, and they pay on a single invoice afterwards rather than by card up front."
+          },
+          {
+            "start": 996656,
+            "end": 1008338,
+            "text": "That is about a third of our attendance and it is the part that takes the most administrative time."
+          },
+          {
+            "start": 1008338,
+            "end": 1018840,
+            "text": "One person on my team effectively works on group registrations from November until March."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Registration",
+        "sentences": [
+          {
+            "start": 1022840,
+            "end": 1030982,
+            "text": "Is the group process itself working, or is the effort inherent in it?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4631",
+        "topic": "Registration",
+        "sentences": [
+          {
+            "start": 1034982,
+            "end": 1056812,
+            "text": "Most of the effort is inherent. A hospital sends a list of names in a spreadsheet of their own design, three of the names are wrong, and two people have left since the list was written."
+          },
+          {
+            "start": 1056812,
+            "end": 1067786,
+            "text": "No system is going to solve that, because the problem is at their end and it always has been."
+          },
+          {
+            "start": 1067786,
+            "end": 1078288,
+            "text": "We have got it down from two people to one over three years, which I count as a real win."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Registration",
+        "sentences": [
+          {
+            "start": 1082288,
+            "end": 1086536,
+            "text": "And cancellations and substitutions?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4631",
+        "topic": "Registration",
+        "sentences": [
+          {
+            "start": 1090536,
+            "end": 1105758,
+            "text": "Substitutions are free up to a week out, which is the only sane policy when a third of your attendance works shifts in hospitals."
+          },
+          {
+            "start": 1105758,
+            "end": 1125110,
+            "text": "Cancellations are refundable to sixty days and then not at all, and we hold to that firmly because otherwise we would be underwriting everybody's staffing problems."
+          },
+          {
+            "start": 1125110,
+            "end": 1144344,
+            "text": "We make about forty exceptions a year, all of them for the same sorts of reasons, and I approve every one personally so that there is one standard rather than six."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Registration",
+        "sentences": [
+          {
+            "start": 1148344,
+            "end": 1154362,
+            "text": "One approver is the only way that stays consistent."
+          }
+        ]
+      },
+      {
+        "speakerId": "4631",
+        "topic": "Registration",
+        "sentences": [
+          {
+            "start": 1158362,
+            "end": 1169808,
+            "text": "It also means I hear the forty stories, which keeps me honest about who our members actually are."
+          },
+          {
+            "start": 1169808,
+            "end": 1179248,
+            "text": "It is half an hour a month and it is probably the most useful half hour I spend."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Education",
+        "sentences": [
+          {
+            "start": 1183248,
+            "end": 1196582,
+            "text": "Let us move to the education side while we have time. How is continuing education credit being handled this year?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4631",
+        "topic": "Education",
+        "sentences": [
+          {
+            "start": 1200582,
+            "end": 1212854,
+            "text": "Same as last year in principle. Attendees claim credit per session and we issue certificates afterwards."
+          },
+          {
+            "start": 1212854,
+            "end": 1230672,
+            "text": "The difference is that our accrediting body has tightened the evidence requirements, so we now have to show attendance per session rather than per day."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Education",
+        "sentences": [
+          {
+            "start": 1234672,
+            "end": 1243758,
+            "text": "Per session evidence across eleven tracks and four days is a lot of scanning."
+          },
+          {
+            "start": 1243758,
+            "end": 1248596,
+            "text": "Are you scanning badges at the room door?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4631",
+        "topic": "Education",
+        "sentences": [
+          {
+            "start": 1252596,
+            "end": 1262862,
+            "text": "At the door for the sessions that carry credit, which is about seventy percent of them."
+          },
+          {
+            "start": 1262862,
+            "end": 1273246,
+            "text": "Two volunteers per room with handheld scanners, and the rest of the rooms we leave open."
+          },
+          {
+            "start": 1273246,
+            "end": 1280562,
+            "text": "It works, it is just a lot of volunteers to recruit and train."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Education",
+        "sentences": [
+          {
+            "start": 1284562,
+            "end": 1287984,
+            "text": "How many volunteers in total?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4631",
+        "topic": "Education",
+        "sentences": [
+          {
+            "start": 1291984,
+            "end": 1300952,
+            "text": "About ninety across the four days, mostly students and early career members."
+          },
+          {
+            "start": 1300952,
+            "end": 1312634,
+            "text": "We give them a free registration and a meal voucher, and most of them come back the following year."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Education",
+        "sentences": [
+          {
+            "start": 1316634,
+            "end": 1319634,
+            "text": "That is a good programme."
+          },
+          {
+            "start": 1319634,
+            "end": 1329782,
+            "text": "Is the speaker portal working for you this year, or is that another thing on the list?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4631",
+        "topic": "Education",
+        "sentences": [
+          {
+            "start": 1333782,
+            "end": 1354786,
+            "text": "The speaker portal is fine. Four hundred and twelve people managed to upload abstracts to it without a single support ticket reaching my desk, which tells me it is doing its job."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Programme",
+        "sentences": [
+          {
+            "start": 1358786,
+            "end": 1368462,
+            "text": "You mentioned four hundred and twelve abstracts. How does the review actually run?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4631",
+        "topic": "Programme",
+        "sentences": [
+          {
+            "start": 1372462,
+            "end": 1384262,
+            "text": "Every abstract goes to three reviewers, blind, scored on four criteria, and the scores are averaged."
+          },
+          {
+            "start": 1384262,
+            "end": 1400546,
+            "text": "We have about ninety reviewers drawn from the membership, and each of them takes fourteen abstracts, which is roughly three hours of work."
+          },
+          {
+            "start": 1400546,
+            "end": 1416004,
+            "text": "Anything where the three scores disagree sharply goes to the committee chair to arbitrate, and that happens on about one in twelve."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Programme",
+        "sentences": [
+          {
+            "start": 1420004,
+            "end": 1427438,
+            "text": "Blind review at that scale takes real discipline to administer."
+          }
+        ]
+      },
+      {
+        "speakerId": "4631",
+        "topic": "Programme",
+        "sentences": [
+          {
+            "start": 1431438,
+            "end": 1441822,
+            "text": "It does, and we protect it fiercely because it is the reason people trust the programme."
+          },
+          {
+            "start": 1441822,
+            "end": 1457634,
+            "text": "Two years ago somebody suggested we fast track abstracts from our largest chapters and the committee very nearly resigned on the spot."
+          },
+          {
+            "start": 1457634,
+            "end": 1465540,
+            "text": "That was the end of that idea and I have not heard it raised since."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Programme",
+        "sentences": [
+          {
+            "start": 1469540,
+            "end": 1474968,
+            "text": "Good. What proportion get accepted in the end?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4631",
+        "topic": "Programme",
+        "sentences": [
+          {
+            "start": 1478968,
+            "end": 1486992,
+            "text": "About fifty five percent, split between podium sessions and posters."
+          },
+          {
+            "start": 1486992,
+            "end": 1507996,
+            "text": "The poster hall is two hundred and forty boards and it is genuinely one of the better parts of the conference, which surprises people who think of posters as a consolation prize."
+          },
+          {
+            "start": 1507996,
+            "end": 1524634,
+            "text": "We give poster presenters a proper two hour window with no competing sessions, and that one decision changed how the whole thing is regarded."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Programme",
+        "sentences": [
+          {
+            "start": 1528634,
+            "end": 1536422,
+            "text": "Protecting the time was the trick there rather than anything else."
+          }
+        ]
+      },
+      {
+        "speakerId": "4631",
+        "topic": "Programme",
+        "sentences": [
+          {
+            "start": 1540422,
+            "end": 1551396,
+            "text": "Entirely. Nothing about the posters changed, only what else was happening at the same moment."
+          },
+          {
+            "start": 1551396,
+            "end": 1565792,
+            "text": "It is the cheapest improvement we have ever made to that conference and it cost us nothing but an argument about the grid."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Next steps",
+        "sentences": [
+          {
+            "start": 1569792,
+            "end": 1574630,
+            "text": "Good to hear at least one thing is quiet."
+          },
+          {
+            "start": 1574630,
+            "end": 1589026,
+            "text": "So from this call I am taking away the offline resilience request, and I will get you a written answer on where that sits."
+          }
+        ]
+      },
+      {
+        "speakerId": "4631",
+        "topic": "Next steps",
+        "sentences": [
+          {
+            "start": 1593026,
+            "end": 1606124,
+            "text": "A written answer is all I need. Even a no is useful, because then I plan around it properly rather than hoping."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Next steps",
+        "sentences": [
+          {
+            "start": 1610124,
+            "end": 1613428,
+            "text": "You will get one either way."
+          },
+          {
+            "start": 1613428,
+            "end": 1622632,
+            "text": "Shall we put the next call in for early October, once the programme is locked?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4631",
+        "topic": "Next steps",
+        "sentences": [
+          {
+            "start": 1626632,
+            "end": 1634538,
+            "text": "Early October works. Send me a couple of times and I will pick one."
+          },
+          {
+            "start": 1634538,
+            "end": 1637538,
+            "text": "Thanks Marcus."
+          }
+        ]
+      }
+    ]
+  }
+}

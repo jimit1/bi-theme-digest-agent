@@ -1,0 +1,153 @@
+{
+  "schema_version": "1.0.0",
+  "totalSize": 13,
+  "done": true,
+  "records": [
+    {
+      "attributes": {
+        "type": "User",
+        "url": "/services/data/v62.0/sobjects/User/005000000000000001"
+      },
+      "Id": "005000000000000001",
+      "Name": "Priya Natarajan",
+      "UserType": "Standard",
+      "IsActive": true
+    },
+    {
+      "attributes": {
+        "type": "User",
+        "url": "/services/data/v62.0/sobjects/User/005000000000000002"
+      },
+      "Id": "005000000000000002",
+      "Name": "Marcus Oyelaran",
+      "UserType": "Standard",
+      "IsActive": true
+    },
+    {
+      "attributes": {
+        "type": "User",
+        "url": "/services/data/v62.0/sobjects/User/005000000000000003"
+      },
+      "Id": "005000000000000003",
+      "Name": "Elena Kowalczyk",
+      "UserType": "Standard",
+      "IsActive": true
+    },
+    {
+      "attributes": {
+        "type": "User",
+        "url": "/services/data/v62.0/sobjects/User/005000000000000004"
+      },
+      "Id": "005000000000000004",
+      "Name": "Tom Bradshaw",
+      "UserType": "Standard",
+      "IsActive": true
+    },
+    {
+      "attributes": {
+        "type": "User",
+        "url": "/services/data/v62.0/sobjects/User/005000000000000065"
+      },
+      "Id": "005000000000000065",
+      "Name": "Naomi Castellanos",
+      "UserType": "CustomerSuccess",
+      "IsActive": true
+    },
+    {
+      "attributes": {
+        "type": "User",
+        "url": "/services/data/v62.0/sobjects/User/005000000000000066"
+      },
+      "Id": "005000000000000066",
+      "Name": "Renee Okafor",
+      "UserType": "CspLitePortal",
+      "IsActive": true
+    },
+    {
+      "attributes": {
+        "type": "User",
+        "url": "/services/data/v62.0/sobjects/User/005000000000000067"
+      },
+      "Id": "005000000000000067",
+      "Name": "Miguel Ferreira",
+      "UserType": "CustomerSuccess",
+      "IsActive": true
+    },
+    {
+      "attributes": {
+        "type": "User",
+        "url": "/services/data/v62.0/sobjects/User/005000000000000068"
+      },
+      "Id": "005000000000000068",
+      "Name": "Colin Bramwell",
+      "UserType": "CspLitePortal",
+      "IsActive": true
+    },
+    {
+      "attributes": {
+        "type": "User",
+        "url": "/services/data/v62.0/sobjects/User/005000000000000069"
+      },
+      "Id": "005000000000000069",
+      "Name": "Yolanda Pruitt",
+      "UserType": "CustomerSuccess",
+      "IsActive": true
+    },
+    {
+      "attributes": {
+        "type": "User",
+        "url": "/services/data/v62.0/sobjects/User/00500000000000006a"
+      },
+      "Id": "00500000000000006a",
+      "Name": "Denise Okonkwo",
+      "UserType": "CspLitePortal",
+      "IsActive": true
+    },
+    {
+      "attributes": {
+        "type": "User",
+        "url": "/services/data/v62.0/sobjects/User/00500000000000006b"
+      },
+      "Id": "00500000000000006b",
+      "Name": "Grant Halverson",
+      "UserType": "CustomerSuccess",
+      "IsActive": true
+    },
+    {
+      "attributes": {
+        "type": "User",
+        "url": "/services/data/v62.0/sobjects/User/00500000000000006c"
+      },
+      "Id": "00500000000000006c",
+      "Name": "Simone Whitfield",
+      "UserType": "CspLitePortal",
+      "IsActive": true
+    },
+    {
+      "attributes": {
+        "type": "User",
+        "url": "/services/data/v62.0/sobjects/User/00500000000000006d"
+      },
+      "Id": "00500000000000006d",
+      "Name": "Owen Delacroix",
+      "UserType": "CustomerSuccess",
+      "IsActive": true
+    }
+  ],
+  "meta": {
+    "window": {
+      "from": "2026-09-07T00:00:00Z",
+      "to": "2026-09-27T23:59:59Z"
+    },
+    "rows_returned": 13,
+    "row_cap": 200,
+    "withheld_comment_count": null,
+    "fields_allowlisted": [
+      "Id",
+      "Name",
+      "UserType",
+      "IsActive"
+    ],
+    "soql": "SELECT Id, Name, UserType, IsActive FROM User"
+  }
+}

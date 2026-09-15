@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0.0",
+  "case": {
+    "attributes": {
+      "type": "Case",
+      "url": "/services/data/v62.0/sobjects/Case/500000000000000001"
+    },
+    "Id": "500000000000000001",
+    "CaseNumber": "00005001",
+    "AccountId": "0018W00002HkLmNQAV",
+    "Subject": "Our renewal invoice keeps landing without a line",
+    "Status": "Escalated",
+    "Priority": "Medium",
+    "CreatedDate": "2026-09-17T14:10:51Z",
+    "ClosedDate": null
+  },
+  "comments": [
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000001"
+      },
+      "Id": "00a000000000000001",
+      "ParentId": "500000000000000001",
+      "CommentBody": "Our renewal invoice keeps landing without a line for the credit we are owed from the partial year adjustment, and finance ends up chasing it every single cycle. It happened again on the October 1st renewal batch, about 340 memberships, and the missing credit averaged around 45 dollars each.",
+      "IsPublished": true,
+      "CreatedById": "005000000000000065",
+      "CreatedDate": "2026-09-17T14:15:26Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000002"
+      },
+      "Id": "00a000000000000002",
+      "ParentId": "500000000000000001",
+      "CommentBody": "Thanks, that gives me a clearer picture, one follow up though. Can you tell me roughly how many accounts this hit on that last cycle, and do you have a specific invoice number or date I can pull up?",
+      "IsPublished": true,
+      "CreatedById": "005000000000000003",
+      "CreatedDate": "2026-09-17T14:30:12Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000003"
+      },
+      "Id": "00a000000000000003",
+      "ParentId": "500000000000000001",
+      "CommentBody": "The batch date was October 1st and I can send over three invoice numbers where it happened, they all show the same missing line.",
+      "IsPublished": true,
+      "CreatedById": "005000000000000065",
+      "CreatedDate": "2026-09-17T14:55:53Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000004"
+      },
+      "Id": "00a000000000000004",
+      "ParentId": "500000000000000001",
+      "CommentBody": "Just wanted to keep this on your radar.",
+      "IsPublished": true,
+      "CreatedById": "005000000000000065",
+      "CreatedDate": "2026-09-17T15:20:03Z"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0.0",
+  "case": {
+    "attributes": {
+      "type": "Case",
+      "url": "/services/data/v62.0/sobjects/Case/500000000000000012"
+    },
+    "Id": "500000000000000012",
+    "CaseNumber": "00005018",
+    "AccountId": "0018W00002HkLmOQAV",
+    "Subject": "Pledge reminders keep going out on the standard schedule",
+    "Status": "Working",
+    "Priority": "High",
+    "CreatedDate": "2026-09-10T10:40:38Z",
+    "ClosedDate": null
+  },
+  "comments": [
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000047"
+      },
+      "Id": "00a000000000000047",
+      "ParentId": "500000000000000012",
+      "CommentBody": "Pledge reminders keep going out on the standard schedule even for donors who told us they only want a single reminder before the campaign closes. We have around 140 donors who asked for a single reminder only, and the system sent all of them the full three part schedule anyway during our spring campaign.",
+      "IsPublished": true,
+      "CreatedById": "005000000000000066",
+      "CreatedDate": "2026-09-10T10:45:56Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a00000000000004b"
+      },
+      "Id": "00a00000000000004b",
+      "ParentId": "500000000000000012",
+      "CommentBody": "Flagged this internally for visibility, nothing urgent yet.",
+      "IsPublished": false,
+      "CreatedById": "005000000000000002",
+      "CreatedDate": "2026-09-10T10:52:07Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000048"
+      },
+      "Id": "00a000000000000048",
+      "ParentId": "500000000000000012",
+      "CommentBody": "Good to know, let me dig in with one more question. How many donors does that affect roughly, and was this during a specific campaign?",
+      "IsPublished": true,
+      "CreatedById": "005000000000000002",
+      "CreatedDate": "2026-09-10T11:00:49Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000049"
+      },
+      "Id": "00a000000000000049",
+      "ParentId": "500000000000000012",
+      "CommentBody": "It was about 140 donors, all during the spring campaign that closed in May.",
+      "IsPublished": true,
+      "CreatedById": "005000000000000066",
+      "CreatedDate": "2026-09-10T11:25:59Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a00000000000004a"
+      },
+      "Id": "00a00000000000004a",
+      "ParentId": "500000000000000012",
+      "CommentBody": "I have looped in a specialist on our team to take a closer look.",
+      "IsPublished": true,
+      "CreatedById": "005000000000000002",
+      "CreatedDate": "2026-09-10T11:50:01Z"
+    }
+  ]
+}

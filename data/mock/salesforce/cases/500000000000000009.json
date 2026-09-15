@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0.0",
+  "case": {
+    "attributes": {
+      "type": "Case",
+      "url": "/services/data/v62.0/sobjects/Case/500000000000000009"
+    },
+    "Id": "500000000000000009",
+    "CaseNumber": "00005009",
+    "AccountId": "0018W00002HkLmNQAV",
+    "Subject": "Any report we try to export once membership crosses",
+    "Status": "Working",
+    "Priority": "Medium",
+    "CreatedDate": "2026-09-25T15:50:58Z",
+    "ClosedDate": null
+  },
+  "comments": [
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000022"
+      },
+      "Id": "00a000000000000022",
+      "ParentId": "500000000000000009",
+      "CommentBody": "Any report we try to export once membership crosses about ten thousand rows just cuts off partway through instead of finishing the file. Our membership export cuts off right around 10,500 rows, and the full roster runs closer to 14,000.",
+      "IsPublished": true,
+      "CreatedById": "005000000000000065",
+      "CreatedDate": "2026-09-25T15:55:01Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000023"
+      },
+      "Id": "00a000000000000023",
+      "ParentId": "500000000000000009",
+      "CommentBody": "That is really helpful context, thank you for walking me through it. Which specific report is that, and do you know roughly what row count it stops at?",
+      "IsPublished": true,
+      "CreatedById": "005000000000000002",
+      "CreatedDate": "2026-09-25T16:10:23Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000024"
+      },
+      "Id": "00a000000000000024",
+      "ParentId": "500000000000000009",
+      "CommentBody": "It is the full membership roster export, and it stops right around 10,500 rows every time.",
+      "IsPublished": true,
+      "CreatedById": "005000000000000065",
+      "CreatedDate": "2026-09-25T16:35:55Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000025"
+      },
+      "Id": "00a000000000000025",
+      "ParentId": "500000000000000009",
+      "CommentBody": "Checking back in, happy to hop on a call if that is easier.",
+      "IsPublished": true,
+      "CreatedById": "005000000000000065",
+      "CreatedDate": "2026-09-25T17:00:25Z"
+    }
+  ]
+}

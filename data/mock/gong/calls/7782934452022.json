@@ -1,0 +1,457 @@
+{
+  "schema_version": "1.0.0",
+  "call": {
+    "metaData": {
+      "id": "7782934452022",
+      "url": "https://gong.invalid/call?id=7782934452022",
+      "title": "Great Lakes Museum Alliance - integrations check-in",
+      "scheduled": "2026-09-15T14:15:00Z",
+      "started": "2026-09-15T14:16:20Z",
+      "duration": 2580,
+      "primaryUserId": "2002",
+      "direction": "Conference",
+      "system": "Gong",
+      "scope": "External",
+      "media": "Audio",
+      "language": "eng",
+      "workspaceId": "9911",
+      "sdrDisposition": null,
+      "clientUniqueId": null,
+      "customData": null,
+      "purpose": "integrations check-in",
+      "meetingUrl": null,
+      "isPrivate": false,
+      "calendarEventId": "cal-452022"
+    },
+    "parties": [
+      {
+        "id": "p-c01",
+        "emailAddress": "naomi.castellanos@greatlakesmuseums.example.org",
+        "name": "Naomi Castellanos",
+        "title": "Director of Membership",
+        "userId": null,
+        "speakerId": "c-01",
+        "context": [],
+        "affiliation": "External"
+      },
+      {
+        "id": "p-2002",
+        "emailAddress": "marcus.oyelaran@momentivesoftware.example.org",
+        "name": "Marcus Oyelaran",
+        "title": "Customer Success Manager",
+        "userId": "2002",
+        "speakerId": "2002",
+        "context": [],
+        "affiliation": "Internal"
+      }
+    ]
+  },
+  "transcript": {
+    "callId": "7782934452022",
+    "transcript": [
+      {
+        "speakerId": "c-01",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 0,
+            "end": 27350,
+            "text": "Hi there, thanks for getting this on the calendar."
+          },
+          {
+            "start": 27351,
+            "end": 91166,
+            "text": "Hi, thanks for having us, ready when you are."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 118516,
+            "end": 164099,
+            "text": "Hi, good to have you, ready to dive in whenever you are."
+          },
+          {
+            "start": 164100,
+            "end": 200565,
+            "text": "Hi, glad this time worked for both of us."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-01",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 209682,
+            "end": 237032,
+            "text": "Nothing major on our end generally, just a couple of specific items."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 255265,
+            "end": 300848,
+            "text": "Let's start wherever is most useful for you."
+          },
+          {
+            "start": 300849,
+            "end": 319081,
+            "text": "Happy to go through whatever is on your list today."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-01",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 337314,
+            "end": 401131,
+            "text": "It has been a fairly normal month for us, a couple of things came up though."
+          },
+          {
+            "start": 401132,
+            "end": 437597,
+            "text": "We wanted to make sure we covered a couple of open items today."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 446714,
+            "end": 474064,
+            "text": "Let's get into it, what would you like to start with?"
+          },
+          {
+            "start": 474065,
+            "end": 556113,
+            "text": "Let me know which item you would like to prioritize first."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-01",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 565230,
+            "end": 647279,
+            "text": "When someone changes roles in our identity provider the sync misses it, and they keep the old permission set until someone catches it manually."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-01",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 665512,
+            "end": 683746,
+            "text": "Two staff members changed departments back in August and still had their old access as of last week when someone noticed."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 711095,
+            "end": 765795,
+            "text": "Thanks for explaining that, I want to get one more detail."
+          },
+          {
+            "start": 765796,
+            "end": 811378,
+            "text": "How long did it take before anyone noticed the access had not updated?"
+          }
+        ]
+      },
+      {
+        "speakerId": "c-01",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 820495,
+            "end": 875194,
+            "text": "It was almost three weeks before someone flagged it."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 902544,
+            "end": 975477,
+            "text": "Before we close out, anything else worth flagging while we have time?"
+          }
+        ]
+      },
+      {
+        "speakerId": "c-01",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 984594,
+            "end": 1021060,
+            "text": "We have been fielding a steady stream of renewal questions lately."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1030177,
+            "end": 1093993,
+            "text": "That is a healthy renewal rate, nice work on the follow up calls."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-01",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1103110,
+            "end": 1121343,
+            "text": "Registration for our next event opened last week."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1148693,
+            "end": 1239859,
+            "text": "Glad to hear registration is picking up already."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-01",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1248975,
+            "end": 1285442,
+            "text": "A few of our staff are still getting up to speed on the system."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1312792,
+            "end": 1358375,
+            "text": "Happy to help however is useful for the newer staff."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-01",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1385724,
+            "end": 1413074,
+            "text": "We are a little ahead of where we were on renewals last year."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1422191,
+            "end": 1486007,
+            "text": "Good to know which accounts you are watching, flag if we can help."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-01",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1495124,
+            "end": 1577173,
+            "text": "Planning for next year's event calendar starts right after this one wraps."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1604523,
+            "end": 1640989,
+            "text": "Interesting, let us know how the new platform works out."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-01",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1650106,
+            "end": 1723039,
+            "text": "A few of our board members asked to sit in on training too."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1732155,
+            "end": 1741272,
+            "text": "Let us know if the schedule shifts and we can adjust."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-01",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1759505,
+            "end": 1795972,
+            "text": "The team has been tracking renewal numbers pretty closely this quarter."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1805088,
+            "end": 1814205,
+            "text": "Good to know, I will keep that in mind for the account review."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-01",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1841555,
+            "end": 1932721,
+            "text": "Our annual meeting is coming up in a few weeks."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1960071,
+            "end": 2023887,
+            "text": "That is a good sign if attendance keeps trending up."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-01",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 2033004,
+            "end": 2115053,
+            "text": "We try to run a refresher training every few months."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 2124170,
+            "end": 2206219,
+            "text": "Happy to help put together some training resources if that would be useful."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-01",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 2233569,
+            "end": 2270035,
+            "text": "Renewal season for us always ramps up around this time of year."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 2288269,
+            "end": 2370318,
+            "text": "That survey data sounds useful, happy to hear more about it sometime."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-01",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 2379435,
+            "end": 2452367,
+            "text": "Glad we got through everything on our list, thanks for the time."
+          },
+          {
+            "start": 2452368,
+            "end": 2461484,
+            "text": "Thanks so much, we will be in touch if anything changes."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 2470601,
+            "end": 2497951,
+            "text": "Appreciate the detail, I will get this in front of the right people."
+          },
+          {
+            "start": 2497952,
+            "end": 2561767,
+            "text": "Thanks for the thorough rundown, I will take it from here."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,978 @@
+{
+  "schema_version": "1.0.0",
+  "call": {
+    "metaData": {
+      "id": "7782934451119",
+      "url": "https://gong.invalid/call?id=7782934451119",
+      "title": "Copper Ridge Youth Foundation reporting discussion",
+      "scheduled": "2026-09-11T15:30:00Z",
+      "started": "2026-09-11T15:31:22Z",
+      "duration": 1567,
+      "primaryUserId": "1201",
+      "direction": "Conference",
+      "system": "Gong",
+      "scope": "External",
+      "media": "Video",
+      "language": "eng",
+      "workspaceId": "9911",
+      "sdrDisposition": null,
+      "clientUniqueId": null,
+      "customData": null,
+      "purpose": "Expansion discussion",
+      "meetingUrl": null,
+      "isPrivate": false,
+      "calendarEventId": "cal-88411"
+    },
+    "parties": [
+      {
+        "id": "p-1201",
+        "emailAddress": "priya.natarajan@momentivesoftware.example.org",
+        "name": "Priya Natarajan",
+        "title": "Account Executive",
+        "userId": "1201",
+        "speakerId": "1201",
+        "context": [],
+        "affiliation": "Internal"
+      },
+      {
+        "id": "p-5066",
+        "emailAddress": "marisol.quintero@copperridgeyouth.example.org",
+        "name": "Marisol Quintero",
+        "title": "Operations Director",
+        "userId": null,
+        "speakerId": "5066",
+        "context": [],
+        "affiliation": "External"
+      }
+    ]
+  },
+  "transcript": {
+    "callId": "7782934451119",
+    "transcript": [
+      {
+        "speakerId": "1201",
+        "topic": "Opening",
+        "sentences": [
+          {
+            "start": 8000,
+            "end": 12130,
+            "text": "Hello Marisol, thanks for the time."
+          },
+          {
+            "start": 12130,
+            "end": 22632,
+            "text": "You asked for this one rather than the other way round, so I will let you set the agenda."
+          }
+        ]
+      },
+      {
+        "speakerId": "5066",
+        "topic": "Opening",
+        "sentences": [
+          {
+            "start": 26632,
+            "end": 44332,
+            "text": "Hello Priya. I asked for it because our grant reporting season starts in four weeks and I want to know what is possible before it does, not during it."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Reporting",
+        "sentences": [
+          {
+            "start": 48332,
+            "end": 58716,
+            "text": "Then let us start there. Talk me through what grant reporting season looks like for you."
+          }
+        ]
+      },
+      {
+        "speakerId": "5066",
+        "topic": "Reporting",
+        "sentences": [
+          {
+            "start": 62716,
+            "end": 71330,
+            "text": "We hold thirty one active grants from foundations and two state agencies."
+          },
+          {
+            "start": 71330,
+            "end": 90210,
+            "text": "Each one has its own reporting template, its own period and its own definition of what counts as a served youth, which is the part that causes most of the pain."
+          },
+          {
+            "start": 90210,
+            "end": 100594,
+            "text": "Between the middle of October and the end of November we produce all thirty one reports."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Reporting",
+        "sentences": [
+          {
+            "start": 104594,
+            "end": 114506,
+            "text": "Thirty one reports with thirty one definitions in six weeks, with what size of team?"
+          }
+        ]
+      },
+      {
+        "speakerId": "5066",
+        "topic": "Reporting",
+        "sentences": [
+          {
+            "start": 118506,
+            "end": 128654,
+            "text": "Me, one programme analyst and whatever time I can beg from the two programme managers."
+          },
+          {
+            "start": 128654,
+            "end": 140808,
+            "text": "So roughly two and a half people for six weeks, on top of everything else that does not stop happening."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Funders",
+        "sentences": [
+          {
+            "start": 144808,
+            "end": 154602,
+            "text": "Before we go further into the mechanics, help me understand the funders themselves."
+          },
+          {
+            "start": 154602,
+            "end": 160738,
+            "text": "Thirty one grants is a lot of relationships to hold."
+          }
+        ]
+      },
+      {
+        "speakerId": "5066",
+        "topic": "Funders",
+        "sentences": [
+          {
+            "start": 164738,
+            "end": 178898,
+            "text": "Twenty nine private foundations and two state agencies, and the two state agencies are about forty percent of the money."
+          },
+          {
+            "start": 178898,
+            "end": 203560,
+            "text": "The foundations range from a family trust that gives us fifteen thousand a year and asks for one page, up to a regional foundation at four hundred thousand that wants a quarterly narrative and a full data set."
+          },
+          {
+            "start": 203560,
+            "end": 216422,
+            "text": "The reporting burden is not proportional to the money, which is the thing that outsiders never quite believe."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Funders",
+        "sentences": [
+          {
+            "start": 220422,
+            "end": 225142,
+            "text": "Give me an example of the disproportion."
+          }
+        ]
+      },
+      {
+        "speakerId": "5066",
+        "topic": "Funders",
+        "sentences": [
+          {
+            "start": 229142,
+            "end": 246016,
+            "text": "One foundation gives us twenty five thousand dollars and requires a report with fourteen distinct measures, half of which nobody else asks for."
+          },
+          {
+            "start": 246016,
+            "end": 261002,
+            "text": "It takes about the same effort as the four hundred thousand dollar report and I have said so to them politely on two occasions."
+          },
+          {
+            "start": 261002,
+            "end": 278112,
+            "text": "We keep the grant because the programme officer is genuinely helpful in other ways, and because twenty five thousand dollars is two staff months."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Funders",
+        "sentences": [
+          {
+            "start": 282112,
+            "end": 290018,
+            "text": "Has anybody tried to get the funders onto a common set of measures?"
+          }
+        ]
+      },
+      {
+        "speakerId": "5066",
+        "topic": "Funders",
+        "sentences": [
+          {
+            "start": 294018,
+            "end": 313252,
+            "text": "There is a regional funders collaborative that has been trying for six years and has achieved agreement on four measures out of an eventual target of about twenty."
+          },
+          {
+            "start": 313252,
+            "end": 321512,
+            "text": "I am on the working group, which is how I know exactly how slow it is."
+          },
+          {
+            "start": 321512,
+            "end": 328356,
+            "text": "I expect to retire before it finishes, and I am forty one."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Funders",
+        "sentences": [
+          {
+            "start": 332356,
+            "end": 342268,
+            "text": "That is the most honest assessment of a sector working group I have heard this year."
+          }
+        ]
+      },
+      {
+        "speakerId": "5066",
+        "topic": "Funders",
+        "sentences": [
+          {
+            "start": 346268,
+            "end": 360546,
+            "text": "It is worth doing anyway. Four common measures is four we no longer argue about, and in six more years it might be eight."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Reporting",
+        "sentences": [
+          {
+            "start": 364546,
+            "end": 375048,
+            "text": "How much of that is pulling the data out, and how much is the writing and the formatting?"
+          }
+        ]
+      },
+      {
+        "speakerId": "5066",
+        "topic": "Reporting",
+        "sentences": [
+          {
+            "start": 379048,
+            "end": 395214,
+            "text": "It used to be about half and half. It is now closer to seventy percent pulling the data out, and that shift is why I asked for this call."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Reporting",
+        "sentences": [
+          {
+            "start": 399214,
+            "end": 402214,
+            "text": "Tell me what changed."
+          }
+        ]
+      },
+      {
+        "speakerId": "5066",
+        "topic": "Reporting",
+        "sentences": [
+          {
+            "start": 406214,
+            "end": 424976,
+            "text": "We grew. Three years ago we served about four thousand young people a year across eleven programmes, and now it is nearly seventeen thousand across twenty six."
+          },
+          {
+            "start": 424976,
+            "end": 438900,
+            "text": "Every export we run over about ten thousand rows comes back cut off at the bottom and nobody is told that it happened."
+          },
+          {
+            "start": 438900,
+            "end": 453060,
+            "text": "We only discovered it because a foundation queried a total that was eleven percent lower than the one in our newsletter."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Reporting",
+        "sentences": [
+          {
+            "start": 457060,
+            "end": 464966,
+            "text": "That is a bad way to find out, and I am sorry it happened that way."
+          },
+          {
+            "start": 464966,
+            "end": 467966,
+            "text": "What did you do about it?"
+          }
+        ]
+      },
+      {
+        "speakerId": "5066",
+        "topic": "Reporting",
+        "sentences": [
+          {
+            "start": 471966,
+            "end": 484592,
+            "text": "We now split every pull into quarters by hand, run four exports, and stitch them together in a spreadsheet."
+          },
+          {
+            "start": 484592,
+            "end": 499342,
+            "text": "Then somebody checks the row count against a count we run separately, because once you have been caught you check everything."
+          },
+          {
+            "start": 499342,
+            "end": 508900,
+            "text": "It adds about a day and a half to every report, and there are thirty one of them."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Reporting",
+        "sentences": [
+          {
+            "start": 512900,
+            "end": 523166,
+            "text": "A day and a half times thirty one is more than a person month inside a six week window."
+          }
+        ]
+      },
+      {
+        "speakerId": "5066",
+        "topic": "Reporting",
+        "sentences": [
+          {
+            "start": 527166,
+            "end": 536016,
+            "text": "That is exactly the arithmetic I did before I sent you the meeting request."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Reporting",
+        "sentences": [
+          {
+            "start": 540016,
+            "end": 544264,
+            "text": "A lot of our customers ask for this."
+          },
+          {
+            "start": 544264,
+            "end": 558896,
+            "text": "I want to be careful here, because I would rather tell you what I actually know than what would be convenient for me to say."
+          }
+        ]
+      },
+      {
+        "speakerId": "5066",
+        "topic": "Reporting",
+        "sentences": [
+          {
+            "start": 562896,
+            "end": 573752,
+            "text": "I would appreciate that. I have had the convenient version from two other vendors this year."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Reporting",
+        "sentences": [
+          {
+            "start": 577752,
+            "end": 586484,
+            "text": "So let me take the specific number back rather than the general complaint."
+          },
+          {
+            "start": 586484,
+            "end": 605482,
+            "text": "Seventeen thousand young people, thirty one grants, and a pull that has to hold together past ten thousand rows is a concrete requirement that somebody can size."
+          },
+          {
+            "start": 605482,
+            "end": 613860,
+            "text": "A general request for better exports is not, and it will sit in a list."
+          }
+        ]
+      },
+      {
+        "speakerId": "5066",
+        "topic": "Reporting",
+        "sentences": [
+          {
+            "start": 617860,
+            "end": 630840,
+            "text": "Then take the specific one. I can give you the exact row counts for the four largest programmes if that helps."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Reporting",
+        "sentences": [
+          {
+            "start": 634840,
+            "end": 642628,
+            "text": "It would help a great deal. Send them over and I will attach them."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Finance",
+        "sentences": [
+          {
+            "start": 646628,
+            "end": 659254,
+            "text": "Let me ask about the finance side, because grant reporting and finance reporting usually collide somewhere."
+          }
+        ]
+      },
+      {
+        "speakerId": "5066",
+        "topic": "Finance",
+        "sentences": [
+          {
+            "start": 663254,
+            "end": 684022,
+            "text": "They collide constantly, because the grants have their own periods and our fiscal year has another, and neither aligns with the school year that the programmes actually run on."
+          },
+          {
+            "start": 684022,
+            "end": 699008,
+            "text": "So the same young person can appear in three different reporting periods with three different totals, all of which are correct."
+          },
+          {
+            "start": 699008,
+            "end": 710690,
+            "text": "Explaining that to a new programme officer takes about twenty minutes and I have the diagram saved."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Finance",
+        "sentences": [
+          {
+            "start": 714690,
+            "end": 722950,
+            "text": "Do you run the finance side in the same system, or somewhere separate?"
+          }
+        ]
+      },
+      {
+        "speakerId": "5066",
+        "topic": "Finance",
+        "sentences": [
+          {
+            "start": 726950,
+            "end": 746538,
+            "text": "Separate, and deliberately so. The accounting lives with our finance director in a package she has used for fifteen years and she is not giving it up, nor should she."
+          },
+          {
+            "start": 746538,
+            "end": 761288,
+            "text": "What we need is the programme data to be solid enough that her allocations can rest on it, and that is where the effort goes."
+          },
+          {
+            "start": 761288,
+            "end": 772734,
+            "text": "Every quarter she asks me for the same six numbers and every quarter I produce them the same way."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Finance",
+        "sentences": [
+          {
+            "start": 776734,
+            "end": 784050,
+            "text": "And the annual audit, how does programme data feature in that?"
+          }
+        ]
+      },
+      {
+        "speakerId": "5066",
+        "topic": "Finance",
+        "sentences": [
+          {
+            "start": 788050,
+            "end": 802328,
+            "text": "The auditors sample. They pick twelve grants and they test the programme numbers against the source records for each one."
+          },
+          {
+            "start": 802328,
+            "end": 818494,
+            "text": "Last year they picked one where our stitched together export had been done by somebody in a hurry and the totals were out by forty three."
+          },
+          {
+            "start": 818494,
+            "end": 832772,
+            "text": "It was corrected within a day and it did not become a finding, but I do not want to have that conversation a second time."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Finance",
+        "sentences": [
+          {
+            "start": 836772,
+            "end": 847746,
+            "text": "That is a good illustration of why the manual step is the risk rather than the inconvenience."
+          }
+        ]
+      },
+      {
+        "speakerId": "5066",
+        "topic": "Finance",
+        "sentences": [
+          {
+            "start": 851746,
+            "end": 864844,
+            "text": "That is precisely how I put it to our board in June, and it is why they backed me asking for this conversation."
+          }
+        ]
+      },
+      {
+        "speakerId": "5066",
+        "topic": "Programmes",
+        "sentences": [
+          {
+            "start": 868844,
+            "end": 872148,
+            "text": "I will do it this afternoon."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Programmes",
+        "sentences": [
+          {
+            "start": 876148,
+            "end": 886532,
+            "text": "While I have you, tell me about the twenty six programmes. Is that number still growing?"
+          }
+        ]
+      },
+      {
+        "speakerId": "5066",
+        "topic": "Programmes",
+        "sentences": [
+          {
+            "start": 890532,
+            "end": 903158,
+            "text": "It is, though more slowly now. Two new ones opened this year, both after school literacy in rural counties."
+          },
+          {
+            "start": 903158,
+            "end": 915312,
+            "text": "The board has asked us to hold at around thirty and deepen rather than keep adding, which I agree with."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Programmes",
+        "sentences": [
+          {
+            "start": 919312,
+            "end": 924268,
+            "text": "What does deepening look like in practice?"
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Programmes",
+        "sentences": [
+          {
+            "start": 928268,
+            "end": 940304,
+            "text": "Tell me about the two new rural programmes. Rural delivery is usually harder than the numbers suggest."
+          }
+        ]
+      },
+      {
+        "speakerId": "5066",
+        "topic": "Programmes",
+        "sentences": [
+          {
+            "start": 944304,
+            "end": 952446,
+            "text": "Much harder, and we went in knowing that and still underestimated it."
+          },
+          {
+            "start": 952446,
+            "end": 968258,
+            "text": "The two counties have a combined population of about thirty one thousand across an area you would need ninety minutes to drive across."
+          },
+          {
+            "start": 968258,
+            "end": 988554,
+            "text": "There is no public transport worth the name, so every young person who attends is attending because an adult drove them, and that adult has to be willing every single week."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Programmes",
+        "sentences": [
+          {
+            "start": 992554,
+            "end": 998690,
+            "text": "How did you solve the transport problem, or did you?"
+          }
+        ]
+      },
+      {
+        "speakerId": "5066",
+        "topic": "Programmes",
+        "sentences": [
+          {
+            "start": 1002690,
+            "end": 1017558,
+            "text": "Partly. We moved the sessions to the school buildings immediately after the school day, so the young people are already there."
+          },
+          {
+            "start": 1017558,
+            "end": 1032308,
+            "text": "That solved the arrival and created a new problem at the other end, because now somebody has to collect them two hours later."
+          },
+          {
+            "start": 1032308,
+            "end": 1049536,
+            "text": "We fund a return bus run in one county and in the other the school district absorbed it, and those two arrangements took nine months to negotiate."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Programmes",
+        "sentences": [
+          {
+            "start": 1053536,
+            "end": 1063920,
+            "text": "Nine months of negotiation for a bus is the part that never appears in a grant proposal."
+          }
+        ]
+      },
+      {
+        "speakerId": "5066",
+        "topic": "Programmes",
+        "sentences": [
+          {
+            "start": 1067920,
+            "end": 1081726,
+            "text": "It appears in ours now, because I put it in as a line item called partnership development and I defend it every time."
+          },
+          {
+            "start": 1081726,
+            "end": 1097656,
+            "text": "The funders who understand the work do not blink at it. The ones who do not understand it ask why we are not simply opening more sites."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Programmes",
+        "sentences": [
+          {
+            "start": 1101656,
+            "end": 1108972,
+            "text": "How are the two programmes performing against the urban sites?"
+          }
+        ]
+      },
+      {
+        "speakerId": "5066",
+        "topic": "Programmes",
+        "sentences": [
+          {
+            "start": 1112972,
+            "end": 1127604,
+            "text": "Attendance consistency is actually better, because the young people who come are committed and their families are committed."
+          },
+          {
+            "start": 1127604,
+            "end": 1143298,
+            "text": "Absolute numbers are much smaller, about sixty young people across the two counties against three hundred at a comparable urban site."
+          },
+          {
+            "start": 1143298,
+            "end": 1157930,
+            "text": "So the cost per young person is roughly three times higher, and I have to make that argument to somebody about twice a year."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Programmes",
+        "sentences": [
+          {
+            "start": 1161930,
+            "end": 1164930,
+            "text": "What is the argument?"
+          }
+        ]
+      },
+      {
+        "speakerId": "5066",
+        "topic": "Programmes",
+        "sentences": [
+          {
+            "start": 1168930,
+            "end": 1184388,
+            "text": "That the alternative for those sixty is nothing at all, whereas in the city there are four other organisations doing adjacent work."
+          },
+          {
+            "start": 1184388,
+            "end": 1195244,
+            "text": "It is a good argument and it works, and I would still rather not have to make it every year."
+          }
+        ]
+      },
+      {
+        "speakerId": "5066",
+        "topic": "Programmes",
+        "sentences": [
+          {
+            "start": 1199244,
+            "end": 1208448,
+            "text": "Longer engagement with the same young people rather than one term and goodbye."
+          },
+          {
+            "start": 1208448,
+            "end": 1224732,
+            "text": "It is better for them and it is much better for our reporting, because a young person we see for two years is one record rather than four."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Programmes",
+        "sentences": [
+          {
+            "start": 1228732,
+            "end": 1237700,
+            "text": "And your programme managers, how are they finding the day to day system use?"
+          }
+        ]
+      },
+      {
+        "speakerId": "5066",
+        "topic": "Programmes",
+        "sentences": [
+          {
+            "start": 1241700,
+            "end": 1253736,
+            "text": "Genuinely fine. Attendance goes in on phones at the sites and that has been reliable since the spring."
+          },
+          {
+            "start": 1253736,
+            "end": 1264946,
+            "text": "The complaints I get are all about what comes out of the system, never about what goes into it."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Staffing",
+        "sentences": [
+          {
+            "start": 1268946,
+            "end": 1279330,
+            "text": "How is the team holding up? Twenty six programmes with the staff you described is a lot."
+          }
+        ]
+      },
+      {
+        "speakerId": "5066",
+        "topic": "Staffing",
+        "sentences": [
+          {
+            "start": 1283330,
+            "end": 1295484,
+            "text": "Sixty one staff in total, of whom forty four are programme staff at the sites and the rest are central."
+          },
+          {
+            "start": 1295484,
+            "end": 1312830,
+            "text": "Turnover at the sites runs about twenty two percent a year, which is low for youth work and still means ten people to recruit and train every year."
+          },
+          {
+            "start": 1312830,
+            "end": 1323686,
+            "text": "Central turnover is almost nothing. Four of the seventeen have been here more than a decade."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Staffing",
+        "sentences": [
+          {
+            "start": 1327686,
+            "end": 1337126,
+            "text": "Twenty two percent in youth work is genuinely good. What do you attribute it to?"
+          }
+        ]
+      },
+      {
+        "speakerId": "5066",
+        "topic": "Staffing",
+        "sentences": [
+          {
+            "start": 1341126,
+            "end": 1353280,
+            "text": "Pay that is at the top of our local band rather than the middle, and supervision that actually happens."
+          },
+          {
+            "start": 1353280,
+            "end": 1368738,
+            "text": "Every site worker has a scheduled hour a fortnight with a supervisor and it is protected in the same way that a shift is protected."
+          },
+          {
+            "start": 1368738,
+            "end": 1384196,
+            "text": "When we let that slip during a difficult year, turnover went to thirty four percent, so we have the natural experiment to prove it."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Staffing",
+        "sentences": [
+          {
+            "start": 1388196,
+            "end": 1397636,
+            "text": "And training for the system side, how is that handled for ten new people a year?"
+          }
+        ]
+      },
+      {
+        "speakerId": "5066",
+        "topic": "Staffing",
+        "sentences": [
+          {
+            "start": 1401636,
+            "end": 1414026,
+            "text": "Half a day in the first week, then a second half day after a month once they have something to ask about."
+          },
+          {
+            "start": 1414026,
+            "end": 1433024,
+            "text": "The second half day is the one that works. The first one is mostly forgotten and I keep it only because people need to be able to do the basic things on day two."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Staffing",
+        "sentences": [
+          {
+            "start": 1437024,
+            "end": 1450122,
+            "text": "Splitting it is more effective than most organisations manage. Would recorded material help the second session?"
+          }
+        ]
+      },
+      {
+        "speakerId": "5066",
+        "topic": "Staffing",
+        "sentences": [
+          {
+            "start": 1454122,
+            "end": 1467338,
+            "text": "Possibly, though our site staff are not at desks and the second session is mostly questions rather than content."
+          },
+          {
+            "start": 1467338,
+            "end": 1483504,
+            "text": "If there were short pieces they could watch on a phone between sessions that might work, but I would want to ask them rather than assume."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Next steps",
+        "sentences": [
+          {
+            "start": 1487504,
+            "end": 1493522,
+            "text": "That is a useful way to put it and I will quote it."
+          },
+          {
+            "start": 1493522,
+            "end": 1515588,
+            "text": "So my actions are to take your row counts and the thirty one grant reports to the product group as a specific sized request, and come back to you with an honest answer within three weeks."
+          }
+        ]
+      },
+      {
+        "speakerId": "5066",
+        "topic": "Next steps",
+        "sentences": [
+          {
+            "start": 1519588,
+            "end": 1526078,
+            "text": "Three weeks is before the season starts, so that works."
+          },
+          {
+            "start": 1526078,
+            "end": 1534928,
+            "text": "Even a no lets me plan, as long as it arrives before the middle of October."
+          }
+        ]
+      },
+      {
+        "speakerId": "1201",
+        "topic": "Next steps",
+        "sentences": [
+          {
+            "start": 1538928,
+            "end": 1542114,
+            "text": "It will. Thank you Marisol."
+          }
+        ]
+      },
+      {
+        "speakerId": "5066",
+        "topic": "Next steps",
+        "sentences": [
+          {
+            "start": 1546114,
+            "end": 1549114,
+            "text": "Thank you Priya."
+          }
+        ]
+      }
+    ]
+  }
+}

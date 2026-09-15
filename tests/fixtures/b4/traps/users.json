@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "totalSize": 1,
+  "done": true,
+  "records": [
+    {
+      "attributes": {
+        "type": "User",
+        "url": "/services/data/v62.0/sobjects/User/0058W00000QqRsTQAV"
+      },
+      "Id": "0058W00000QqRsTQAV",
+      "Name": "Priya Nand",
+      "UserType": "PowerPartner",
+      "IsActive": true
+    }
+  ],
+  "meta": {
+    "window": {
+      "from": "2026-09-08T00:00:00Z",
+      "to": "2026-09-11T23:59:59Z"
+    },
+    "rows_returned": 1,
+    "row_cap": 200,
+    "withheld_comment_count": 0,
+    "fields_allowlisted": [
+      "Id",
+      "Name",
+      "UserType",
+      "IsActive"
+    ],
+    "soql": "SELECT Id, Name, UserType, IsActive FROM User LIMIT 200"
+  }
+}

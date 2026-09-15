@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0.0",
+  "case": {
+    "attributes": {
+      "type": "Case",
+      "url": "/services/data/v62.0/sobjects/Case/500000000000000010"
+    },
+    "Id": "500000000000000010",
+    "CaseNumber": "00005016",
+    "AccountId": "0018W00002HkLmRQAV",
+    "Subject": "A posting expires and comes down with no warning",
+    "Status": "Working",
+    "Priority": "Medium",
+    "CreatedDate": "2026-09-25T14:20:24Z",
+    "ClosedDate": null
+  },
+  "comments": [
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a00000000000003e"
+      },
+      "Id": "00a00000000000003e",
+      "ParentId": "500000000000000010",
+      "CommentBody": "A posting expires and comes down with no warning to the person who placed it, so postings vanish while they still think it is live. We had a posting from one of our members expire on September 5th with zero warning, and they only found out when someone asked why it was gone.",
+      "IsPublished": true,
+      "CreatedById": "005000000000000068",
+      "CreatedDate": "2026-09-25T14:25:31Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a00000000000003f"
+      },
+      "Id": "00a00000000000003f",
+      "ParentId": "500000000000000010",
+      "CommentBody": "Good to know, let me dig in with one more question. Do you know how far in advance a warning would need to go out to be useful for your posters?",
+      "IsPublished": true,
+      "CreatedById": "005000000000000003",
+      "CreatedDate": "2026-09-25T14:40:22Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000040"
+      },
+      "Id": "00a000000000000040",
+      "ParentId": "500000000000000010",
+      "CommentBody": "At least a week ahead would give them time to renew it before it drops.",
+      "IsPublished": true,
+      "CreatedById": "005000000000000068",
+      "CreatedDate": "2026-09-25T15:05:29Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000041"
+      },
+      "Id": "00a000000000000041",
+      "ParentId": "500000000000000010",
+      "CommentBody": "I have flagged this to the product team and will follow up here with next steps.",
+      "IsPublished": true,
+      "CreatedById": "005000000000000003",
+      "CreatedDate": "2026-09-25T15:30:42Z"
+    }
+  ]
+}

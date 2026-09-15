@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "case": {
+    "attributes": {
+      "type": "Case",
+      "url": "/services/data/v62.0/sobjects/Case/50000000000000000e"
+    },
+    "Id": "50000000000000000e",
+    "CaseNumber": "00005014",
+    "AccountId": "0018W00002HkLmRQAV",
+    "Subject": "A posting expires and comes down with no warning",
+    "Status": "Escalated",
+    "Priority": "High",
+    "CreatedDate": "2026-09-09T13:00:27Z",
+    "ClosedDate": null
+  },
+  "comments": [
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000037"
+      },
+      "Id": "00a000000000000037",
+      "ParentId": "50000000000000000e",
+      "CommentBody": "A posting expires and comes down with no warning to the person who placed it, so postings vanish while they still think it is live. We had a posting from one of our members expire on September 5th with zero warning, and they only found out when someone asked why it was gone.",
+      "IsPublished": true,
+      "CreatedById": "005000000000000068",
+      "CreatedDate": "2026-09-09T13:05:24Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000038"
+      },
+      "Id": "00a000000000000038",
+      "ParentId": "50000000000000000e",
+      "CommentBody": "Thanks for laying that out, I want to make sure I understand it fully. Do you know how far in advance a warning would need to go out to be useful for your posters?",
+      "IsPublished": true,
+      "CreatedById": "005000000000000003",
+      "CreatedDate": "2026-09-09T13:20:45Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000039"
+      },
+      "Id": "00a000000000000039",
+      "ParentId": "50000000000000000e",
+      "CommentBody": "At least a week ahead would give them time to renew it before it drops.",
+      "IsPublished": true,
+      "CreatedById": "005000000000000068",
+      "CreatedDate": "2026-09-09T13:45:16Z"
+    }
+  ]
+}

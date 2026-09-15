@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0.0",
+  "case": {
+    "attributes": {
+      "type": "Case",
+      "url": "/services/data/v62.0/sobjects/Case/500000000000000011"
+    },
+    "Id": "500000000000000011",
+    "CaseNumber": "00005017",
+    "AccountId": "0018W00002HkLmSQAV",
+    "Subject": "We have donors who asked to be reminded",
+    "Status": "Escalated",
+    "Priority": "Medium",
+    "CreatedDate": "2026-09-09T10:20:11Z",
+    "ClosedDate": null
+  },
+  "comments": [
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000042"
+      },
+      "Id": "00a000000000000042",
+      "ParentId": "500000000000000011",
+      "CommentBody": "We have donors who asked to be reminded by mail only, and the system still emails them pledge reminders on top of that. About 60 of our mail only donors got the pledge reminders during the November campaign even though they opted out of that channel entirely.",
+      "IsPublished": true,
+      "CreatedById": "005000000000000069",
+      "CreatedDate": "2026-09-09T10:25:00Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000046"
+      },
+      "Id": "00a000000000000046",
+      "ParentId": "500000000000000011",
+      "CommentBody": "Assigning to the integrations queue, tracking under MOMENT-5102.",
+      "IsPublished": false,
+      "CreatedById": "005000000000000002",
+      "CreatedDate": "2026-09-09T10:32:51Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000043"
+      },
+      "Id": "00a000000000000043",
+      "ParentId": "500000000000000011",
+      "CommentBody": "Appreciate that, let me confirm one thing before we continue. How many donors does that affect roughly, and was this during a specific campaign?",
+      "IsPublished": true,
+      "CreatedById": "005000000000000002",
+      "CreatedDate": "2026-09-09T10:40:56Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000044"
+      },
+      "Id": "00a000000000000044",
+      "ParentId": "500000000000000011",
+      "CommentBody": "Around 60 donors, and it was the November campaign specifically.",
+      "IsPublished": true,
+      "CreatedById": "005000000000000069",
+      "CreatedDate": "2026-09-09T11:05:19Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000045"
+      },
+      "Id": "00a000000000000045",
+      "ParentId": "500000000000000011",
+      "CommentBody": "We have escalated this internally and are tracking it closely.",
+      "IsPublished": true,
+      "CreatedById": "005000000000000002",
+      "CreatedDate": "2026-09-09T11:30:45Z"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+# Cheaper build time tier map, for re-running build tasks at lower cost when full
+# quality is not required. Same scaffolding role as build_models.yaml: read only by the
+# build roster, never by the digest application itself.
+#
+# T0 and T1 are unchanged from build_models.yaml: the orchestrator and the highest
+# judgment tasks keep their strongest model even on the cheap map. Only the bulk
+# implementation tier (T2) and the mechanical scaffolding tier (T3) step down.
+schema_version: "1.0.0"
+tiers:
+  T0: claude-fable-5-1
+  T1: claude-opus-5
+  T2: claude-sonnet-5
+  T3: claude-haiku-4-5

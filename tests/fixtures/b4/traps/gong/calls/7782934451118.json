@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0.0",
+  "call": {
+    "metaData": {
+      "id": "7782934451118",
+      "url": "https://gong.invalid/call?id=7782934451118",
+      "title": "Cascadia Nurses Association event operations review",
+      "scheduled": "2026-09-09T16:00:00Z",
+      "started": "2026-09-09T16:00:40Z",
+      "duration": 1840,
+      "primaryUserId": "1188",
+      "direction": "Conference",
+      "system": "Gong",
+      "scope": "External",
+      "media": "Video",
+      "language": "eng",
+      "workspaceId": "9911",
+      "sdrDisposition": null,
+      "clientUniqueId": null,
+      "customData": null,
+      "purpose": "Quarterly check in",
+      "meetingUrl": null,
+      "isPrivate": false,
+      "calendarEventId": "cal-88213"
+    },
+    "parties": [
+      {
+        "id": "p-6602",
+        "emailAddress": "priya.nand@cascadianurses.example.org",
+        "name": "Priya Nand",
+        "title": "Events Manager",
+        "userId": null,
+        "speakerId": "6602",
+        "context": [],
+        "affiliation": "External"
+      },
+      {
+        "id": "p-1188",
+        "emailAddress": "ae@momentive.invalid",
+        "name": "Owen Barrow",
+        "title": "Account Executive",
+        "userId": "1188",
+        "speakerId": "1188",
+        "context": [],
+        "affiliation": "Internal"
+      },
+      {
+        "id": "p-9001",
+        "emailAddress": null,
+        "name": "Unidentified speaker",
+        "title": null,
+        "userId": null,
+        "speakerId": "9001",
+        "context": [],
+        "affiliation": "Unknown"
+      }
+    ]
+  },
+  "transcript": {
+    "callId": "7782934451118",
+    "transcript": [
+      {
+        "speakerId": "6602",
+        "topic": "Events",
+        "sentences": [
+          {
+            "start": 92000,
+            "end": 101000,
+            "text": "The event check-in kiosk stalls whenever two staff scan badges at the same desk at the same time."
+          }
+        ]
+      },
+      {
+        "speakerId": "9001",
+        "topic": "Events",
+        "sentences": [
+          {
+            "start": 101000,
+            "end": 106500,
+            "text": "A lot of associations ask us for a faster attendee kiosk."
+          }
+        ]
+      }
+    ]
+  }
+}

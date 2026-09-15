@@ -1,0 +1,54 @@
+# Nightly ingest: pulls new Gong calls and Salesforce cases since the last watermark,
+# scrubs, extracts, verifies and enriches them, then commits verified claims to the store
+# repository.
+#
+# This workflow runs in --mode replay against the corpus already committed to this
+# repository, so it is green with no secret configured. The store commit and push step is
+# skipped unless the STORE_TOKEN secret is present. In production this would run
+# --mode live with model credentials held in a secret store, never committed here.
+name: ingest
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch: {}
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    env:
+      STORE_TOKEN: ${{ secrets.STORE_TOKEN }}
+    steps:
+      - name: Check out the code repository
+        uses: actions/checkout@v4
+
+      - name: Check out the store repository
+        uses: actions/checkout@v4
+        with:
+          repository: jimit1/bi-theme-digest-store
+          path: store
+          token: ${{ secrets.STORE_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install the package
+        run: pip install -e .
+
+      - name: Run ingest in replay mode
+        run: python -m digest ingest --since-watermark --mode replay --store store
+
+      - name: Run the golden set eval
+        run: python -m digest eval --store store
+
+      - name: Commit and push the store repository
+        if: env.STORE_TOKEN != ''
+        working-directory: store
+        run: |
+          git config user.name "bi-theme-digest-bot"
+          git config user.email "jimit1@gmail.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "ingest: nightly claims commit"
+          git push

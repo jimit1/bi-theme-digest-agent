@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0.0",
+  "totalSize": 5,
+  "done": true,
+  "records": [
+    {
+      "attributes": {
+        "type": "User",
+        "url": "/services/data/v62.0/sobjects/User/0058W00000PrNaTQAV"
+      },
+      "Id": "0058W00000PrNaTQAV",
+      "Name": "Priya Natarajan",
+      "UserType": "Standard",
+      "IsActive": true
+    },
+    {
+      "attributes": {
+        "type": "User",
+        "url": "/services/data/v62.0/sobjects/User/0058W00000MaOyEQAV"
+      },
+      "Id": "0058W00000MaOyEQAV",
+      "Name": "Marcus Oyelaran",
+      "UserType": "Standard",
+      "IsActive": true
+    },
+    {
+      "attributes": {
+        "type": "User",
+        "url": "/services/data/v62.0/sobjects/User/0058W00000JkPqRQAV"
+      },
+      "Id": "0058W00000JkPqRQAV",
+      "Name": "Elena Kowalczyk",
+      "UserType": "Standard",
+      "IsActive": true
+    },
+    {
+      "attributes": {
+        "type": "User",
+        "url": "/services/data/v62.0/sobjects/User/0058W00000ToBrAQAV"
+      },
+      "Id": "0058W00000ToBrAQAV",
+      "Name": "Tom Bradshaw",
+      "UserType": "Standard",
+      "IsActive": true
+    },
+    {
+      "attributes": {
+        "type": "User",
+        "url": "/services/data/v62.0/sobjects/User/0058W00000LmNoPQAV"
+      },
+      "Id": "0058W00000LmNoPQAV",
+      "Name": "Marla Thorsby",
+      "UserType": "CspLitePortal",
+      "IsActive": true
+    }
+  ],
+  "meta": {
+    "window": {
+      "from": "2026-09-07T00:00:00Z",
+      "to": "2026-09-13T23:59:59Z"
+    },
+    "rows_returned": 5,
+    "row_cap": 200,
+    "withheld_comment_count": null,
+    "fields_allowlisted": [
+      "Id",
+      "Name",
+      "UserType",
+      "IsActive"
+    ],
+    "soql": "SELECT Id, Name, UserType, IsActive FROM User WHERE Id IN ('0058W00000PrNaTQAV', '0058W00000MaOyEQAV', '0058W00000JkPqRQAV', '0058W00000ToBrAQAV', '0058W00000LmNoPQAV') LIMIT 200"
+  }
+}

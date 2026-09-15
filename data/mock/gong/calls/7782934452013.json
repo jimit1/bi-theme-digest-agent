@@ -1,0 +1,381 @@
+{
+  "schema_version": "1.0.0",
+  "call": {
+    "metaData": {
+      "id": "7782934452013",
+      "url": "https://gong.invalid/call?id=7782934452013",
+      "title": "Copper Ridge Youth Foundation - reporting review",
+      "scheduled": "2026-09-15T15:00:00Z",
+      "started": "2026-09-15T15:00:51Z",
+      "duration": 2520,
+      "primaryUserId": "2002",
+      "direction": "Conference",
+      "system": "Gong",
+      "scope": "External",
+      "media": "Audio",
+      "language": "eng",
+      "workspaceId": "9911",
+      "sdrDisposition": null,
+      "clientUniqueId": null,
+      "customData": null,
+      "purpose": "reporting review",
+      "meetingUrl": null,
+      "isPrivate": false,
+      "calendarEventId": "cal-452013"
+    },
+    "parties": [
+      {
+        "id": "p-c06",
+        "emailAddress": "denise.okonkwo@copperridgeyouth.example.org",
+        "name": "Denise Okonkwo",
+        "title": "Executive Director",
+        "userId": null,
+        "speakerId": "c-06",
+        "context": [],
+        "affiliation": "External"
+      },
+      {
+        "id": "p-2002",
+        "emailAddress": "marcus.oyelaran@momentivesoftware.example.org",
+        "name": "Marcus Oyelaran",
+        "title": "Customer Success Manager",
+        "userId": "2002",
+        "speakerId": "2002",
+        "context": [],
+        "affiliation": "Internal"
+      }
+    ]
+  },
+  "transcript": {
+    "callId": "7782934452013",
+    "transcript": [
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 0,
+            "end": 21913,
+            "text": "Hey, glad we could get this on the calendar."
+          },
+          {
+            "start": 21914,
+            "end": 87652,
+            "text": "Hi, good to have you, ready to dive in whenever you are."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-06",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 120522,
+            "end": 230087,
+            "text": "Hi, glad we could find a slot this week."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 252000,
+            "end": 339652,
+            "text": "Let's start wherever is most useful for you."
+          },
+          {
+            "start": 339653,
+            "end": 438261,
+            "text": "Let me know which item you would like to prioritize first."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-06",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 471130,
+            "end": 514957,
+            "text": "Nothing major on our end generally, just a couple of specific items."
+          },
+          {
+            "start": 514958,
+            "end": 602609,
+            "text": "We are doing fine day to day, a couple of specific things came up though."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 613565,
+            "end": 690261,
+            "text": "Let me know what is top of mind and we will work through it."
+          },
+          {
+            "start": 690262,
+            "end": 756000,
+            "text": "Sounds good, let's get started."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-06",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 777913,
+            "end": 788870,
+            "text": "Our year end donor report stops short of the full list once it gets past a few thousand rows, so we are stitching multiple exports together by hand."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-06",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 821739,
+            "end": 920348,
+            "text": "Our year end donor report stops at about 3,200 rows even though we have close to 5,000 donors on file."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 953217,
+            "end": 975130,
+            "text": "That is useful, I just want to nail down one detail."
+          },
+          {
+            "start": 975131,
+            "end": 1073739,
+            "text": "Which specific report is that, and do you know roughly what row count it stops at?"
+          }
+        ]
+      },
+      {
+        "speakerId": "c-06",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1106609,
+            "end": 1183304,
+            "text": "It is the year end donor summary report, and it consistently cuts off near 3,200 rows."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1194261,
+            "end": 1260000,
+            "text": "Before we wrap up, how has everything else been going on your end?"
+          }
+        ]
+      },
+      {
+        "speakerId": "c-06",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1292870,
+            "end": 1336696,
+            "text": "We just finished onboarding a new batch of volunteers."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1358609,
+            "end": 1369565,
+            "text": "Let us know if a live walkthrough for the board would be helpful."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-06",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1402435,
+            "end": 1413391,
+            "text": "Our board has been pretty engaged with the strategic plan lately."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1435304,
+            "end": 1446261,
+            "text": "That is great, strategic planning sessions tend to pay off."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-06",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1468174,
+            "end": 1501043,
+            "text": "We are still backfilling a role that opened up over the summer."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1533913,
+            "end": 1610609,
+            "text": "Nice that you were able to promote from within."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-06",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1621565,
+            "end": 1665391,
+            "text": "Our new hires go through a couple weeks of training before they are on their own."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1698261,
+            "end": 1742087,
+            "text": "That is great, glad the new staff are getting up to speed."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-06",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1764000,
+            "end": 1840696,
+            "text": "The next board meeting is scheduled for the middle of next month."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1851652,
+            "end": 1928348,
+            "text": "Good to hear, let us know if anything comes out of that meeting."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-06",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1939304,
+            "end": 2016000,
+            "text": "Our new hire starts full time next week."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 2048870,
+            "end": 2125565,
+            "text": "Hope being short staffed does not last too much longer."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-06",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 2147478,
+            "end": 2169391,
+            "text": "Our volunteer coordinator handles most of the training these days."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 2191304,
+            "end": 2202261,
+            "text": "Let us know if the schedule shifts and we can adjust."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-06",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 2224174,
+            "end": 2268000,
+            "text": "We just wrapped our quarterly board meeting."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 2289913,
+            "end": 2311826,
+            "text": "Good talking through this, I will be in touch with next steps."
+          },
+          {
+            "start": 2311827,
+            "end": 2410435,
+            "text": "Thanks for the thorough rundown, I will take it from here."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-06",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 2421391,
+            "end": 2509043,
+            "text": "This was a good use of the time, thanks again."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,685 @@
+{
+  "schema_version": "1.0.0",
+  "call": {
+    "metaData": {
+      "id": "7782934452021",
+      "url": "https://gong.invalid/call?id=7782934452021",
+      "title": "Sunbelt Literacy Network - fundraising campaign review",
+      "scheduled": "2026-09-22T10:00:00Z",
+      "started": "2026-09-22T10:02:10Z",
+      "duration": 1260,
+      "primaryUserId": "2002",
+      "direction": "Conference",
+      "system": "Gong",
+      "scope": "External",
+      "media": "Video",
+      "language": "eng",
+      "workspaceId": "9911",
+      "sdrDisposition": null,
+      "clientUniqueId": null,
+      "customData": null,
+      "purpose": "fundraising campaign review",
+      "meetingUrl": null,
+      "isPrivate": false,
+      "calendarEventId": "cal-452021"
+    },
+    "parties": [
+      {
+        "id": "p-c05",
+        "emailAddress": "yolanda.pruitt@sunbeltliteracy.example.org",
+        "name": "Yolanda Pruitt",
+        "title": "Program Director",
+        "userId": null,
+        "speakerId": "c-05",
+        "context": [],
+        "affiliation": "External"
+      },
+      {
+        "id": "p-2002",
+        "emailAddress": "marcus.oyelaran@momentivesoftware.example.org",
+        "name": "Marcus Oyelaran",
+        "title": "Customer Success Manager",
+        "userId": "2002",
+        "speakerId": "2002",
+        "context": [],
+        "affiliation": "Internal"
+      }
+    ]
+  },
+  "transcript": {
+    "callId": "7782934452021",
+    "transcript": [
+      {
+        "speakerId": "c-05",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 0,
+            "end": 19865,
+            "text": "Good to connect, thanks for scheduling this."
+          },
+          {
+            "start": 19866,
+            "end": 28378,
+            "text": "Good afternoon, appreciate you fitting us in."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 31216,
+            "end": 48243,
+            "text": "Good to connect again, thanks for hopping on."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-05",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 56757,
+            "end": 70946,
+            "text": "Nothing major on our end generally, just a couple of specific items."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 79459,
+            "end": 85135,
+            "text": "Happy to go through whatever is on your list today."
+          },
+          {
+            "start": 85136,
+            "end": 102162,
+            "text": "Sounds good, I have some time blocked so we can cover everything."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-05",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 110676,
+            "end": 130541,
+            "text": "We have donors who asked to be reminded by mail only, and the system still emails them pledge reminders on top of that."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-05",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 133378,
+            "end": 156081,
+            "text": "About 60 of our mail only donors got the pledge reminders during the November campaign even though they opted out of that channel entirely."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 164595,
+            "end": 167432,
+            "text": "Thanks for explaining that, I want to get one more detail."
+          },
+          {
+            "start": 167433,
+            "end": 181622,
+            "text": "How many donors does that affect roughly, and was this during a specific campaign?"
+          }
+        ]
+      },
+      {
+        "speakerId": "c-05",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 184459,
+            "end": 195811,
+            "text": "Around 60 donors, and it was the November campaign specifically."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 198649,
+            "end": 221351,
+            "text": "Let's shift focus for a bit, how have things been otherwise?"
+          }
+        ]
+      },
+      {
+        "speakerId": "c-05",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 224189,
+            "end": 235541,
+            "text": "Our board likes to review the finances at every meeting."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 238378,
+            "end": 266757,
+            "text": "Hope the next meeting goes smoothly."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-05",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 269595,
+            "end": 297973,
+            "text": "This year's renewal push started a little earlier than usual."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 306486,
+            "end": 334865,
+            "text": "Good to know which accounts you are watching, flag if we can help."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-05",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 340541,
+            "end": 363243,
+            "text": "Our board asked for an update on a few initiatives this month."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 368919,
+            "end": 394459,
+            "text": "Sounds like a full agenda, glad it all got covered."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-05",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 400135,
+            "end": 408649,
+            "text": "We are getting the renewal notices ready to go out in the next couple of weeks."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 411486,
+            "end": 425676,
+            "text": "Makes sense, we see that pattern with a lot of accounts your size."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-05",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 431351,
+            "end": 456892,
+            "text": "We are putting together the board packet for next week."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 465405,
+            "end": 479595,
+            "text": "That is good to hear, budgets can be tricky to get through."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-05",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 488108,
+            "end": 507973,
+            "text": "We just wrapped a round of renewal follow up calls last week."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 510811,
+            "end": 522162,
+            "text": "Glad it is going smoothly, let us know if anything changes."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-05",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 530676,
+            "end": 544865,
+            "text": "The board meeting ran a little long this time."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 550541,
+            "end": 576081,
+            "text": "Happy to provide any data that would help with the board report."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-05",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 578919,
+            "end": 581757,
+            "text": "We have been fielding a steady stream of renewal questions lately."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 590270,
+            "end": 593108,
+            "text": "Renewal season can be a lot, glad the team is staying on top of it."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-05",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 598784,
+            "end": 612973,
+            "text": "The board approved next year's budget last week."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 621486,
+            "end": 644189,
+            "text": "That is a healthy habit, reviewing finances regularly."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-05",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 649865,
+            "end": 675405,
+            "text": "Our renewal rate has held pretty steady compared to last cycle."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 681081,
+            "end": 703784,
+            "text": "Appreciate the update, sounds like a solid cycle so far."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-05",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 706622,
+            "end": 735000,
+            "text": "The board signed off on a new initiative last month."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 740676,
+            "end": 769054,
+            "text": "Sounds like a lot of board engagement lately, that is a good sign."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-05",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 774730,
+            "end": 788919,
+            "text": "Renewal season always brings a few last minute surprises."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 791757,
+            "end": 820135,
+            "text": "That survey data sounds useful, happy to hear more about it sometime."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-05",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 825811,
+            "end": 837162,
+            "text": "Our executive committee meets in between the full board sessions."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 842838,
+            "end": 859865,
+            "text": "Let us know if you need anything pulled together for next week."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-05",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 865541,
+            "end": 874054,
+            "text": "Renewal season for us always ramps up around this time of year."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 882568,
+            "end": 905270,
+            "text": "Nice to hear the numbers are holding steady."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-05",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 910946,
+            "end": 927973,
+            "text": "We just wrapped our quarterly board meeting."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 936486,
+            "end": 950676,
+            "text": "Good to know the executive committee stays active between meetings."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-05",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 959189,
+            "end": 967703,
+            "text": "The team has been tracking renewal numbers pretty closely this quarter."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 970541,
+            "end": 987568,
+            "text": "That is great context, I will note it for the account file."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-05",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 990405,
+            "end": 996081,
+            "text": "We spent most of the last board meeting on strategic planning."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 998919,
+            "end": 1013108,
+            "text": "Good to hear, let us know if anything comes out of that meeting."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-05",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1021622,
+            "end": 1030135,
+            "text": "Most of our members renew online now instead of mailing anything in."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1038649,
+            "end": 1058514,
+            "text": "Appreciate you sharing that, it helps us plan around your calendar."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-05",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1061351,
+            "end": 1064189,
+            "text": "The board wants a report on member growth at the next meeting."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1069865,
+            "end": 1075541,
+            "text": "Nice to have new voices on the board this year."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-05",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1084054,
+            "end": 1101081,
+            "text": "Our renewal cycle is in full swing right now, keeps the team busy."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1109595,
+            "end": 1132297,
+            "text": "Good timing on the reminders, that usually helps with response rates."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-05",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1135135,
+            "end": 1143649,
+            "text": "Our board has been pretty engaged with the strategic plan lately."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1146486,
+            "end": 1149324,
+            "text": "Sounds like a productive session, glad the board is engaged."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-05",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1155000,
+            "end": 1166351,
+            "text": "We send a short renewal survey out once the cycle wraps up."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1169189,
+            "end": 1180541,
+            "text": "Good to hear things are tracking ahead of last year."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-05",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1189054,
+            "end": 1214595,
+            "text": "We have a board retreat coming up in a few weeks."
+          }
+        ]
+      },
+      {
+        "speakerId": "2002",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1223108,
+            "end": 1248649,
+            "text": "Good session today, I will follow up with next steps soon."
+          }
+        ]
+      },
+      {
+        "speakerId": "c-05",
+        "topic": null,
+        "sentences": [
+          {
+            "start": 1251486,
+            "end": 1257162,
+            "text": "Appreciate it, talk again soon."
+          }
+        ]
+      }
+    ]
+  }
+}

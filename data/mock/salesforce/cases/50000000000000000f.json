@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0.0",
+  "case": {
+    "attributes": {
+      "type": "Case",
+      "url": "/services/data/v62.0/sobjects/Case/50000000000000000f"
+    },
+    "Id": "50000000000000000f",
+    "CaseNumber": "00005015",
+    "AccountId": "0018W00002HkLmRQAV",
+    "Subject": "A posting expires and comes down with no warning",
+    "Status": "Working",
+    "Priority": "High",
+    "CreatedDate": "2026-09-17T09:30:22Z",
+    "ClosedDate": null
+  },
+  "comments": [
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a00000000000003a"
+      },
+      "Id": "00a00000000000003a",
+      "ParentId": "50000000000000000f",
+      "CommentBody": "A posting expires and comes down with no warning to the person who placed it, so postings vanish while they still think it is live. We had a posting from one of our members expire on September 5th with zero warning, and they only found out when someone asked why it was gone.",
+      "IsPublished": true,
+      "CreatedById": "005000000000000068",
+      "CreatedDate": "2026-09-17T09:35:07Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a00000000000003b"
+      },
+      "Id": "00a00000000000003b",
+      "ParentId": "50000000000000000f",
+      "CommentBody": "That helps a lot, I have one clarifying question. Do you know how far in advance a warning would need to go out to be useful for your posters?",
+      "IsPublished": true,
+      "CreatedById": "005000000000000003",
+      "CreatedDate": "2026-09-17T09:50:08Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a00000000000003c"
+      },
+      "Id": "00a00000000000003c",
+      "ParentId": "50000000000000000f",
+      "CommentBody": "At least a week ahead would give them time to renew it before it drops.",
+      "IsPublished": true,
+      "CreatedById": "005000000000000068",
+      "CreatedDate": "2026-09-17T10:15:25Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a00000000000003d"
+      },
+      "Id": "00a00000000000003d",
+      "ParentId": "50000000000000000f",
+      "CommentBody": "For now, here is a manual process that should get you through the next cycle.",
+      "IsPublished": true,
+      "CreatedById": "005000000000000003",
+      "CreatedDate": "2026-09-17T10:40:18Z"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "case": {
+    "attributes": {
+      "type": "Case",
+      "url": "/services/data/v62.0/sobjects/Case/5008W00002aQpLsQAK"
+    },
+    "Id": "5008W00002aQpLsQAK",
+    "CaseNumber": "00001043",
+    "AccountId": "0018W00002HkLmPQAV",
+    "Subject": "Dues credit not applied to the renewal notice",
+    "Status": "New",
+    "Priority": "Medium",
+    "CreatedDate": "2026-09-11T09:12:00.000Z",
+    "ClosedDate": null
+  },
+  "comments": [
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a8W00000XfT3aQAF"
+      },
+      "Id": "00a8W00000XfT3aQAF",
+      "ParentId": "5008W00002aQpLsQAK",
+      "CommentBody": "Every renewal notice we send out still bills the full year even after a mid year upgrade was paid for.",
+      "IsPublished": true,
+      "CreatedById": "0058W00000QqRsTQAV",
+      "CreatedDate": "2026-09-11T09:40:12.000Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a8W00000XfT3bQAF"
+      },
+      "Id": "00a8W00000XfT3bQAF",
+      "ParentId": "5008W00002aQpLsQAK",
+      "CommentBody": "An author no user record resolves, so this one must read as momentive rather than as a client.",
+      "IsPublished": true,
+      "CreatedById": "0058W00000ZzZzZQAV",
+      "CreatedDate": "2026-09-11T10:05:00.000Z"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+# Build time tier map for the parallel build worker roster (see ownership.yaml).
+#
+# This is scaffolding for the people or agents doing the build, not runtime configuration
+# for the digest pipeline itself. The only file that names a model id for the running
+# application is config/models.yaml (and its cheap counterpart config/models.cheap.yaml).
+#
+# Tier meaning, per build/COMMON_RULES.md and the task roster:
+#   T0  the orchestrator holding the whole plan
+#   T1  tasks needing the strongest reasoning: contracts, editor, docs with judgment calls
+#   T2  the bulk of implementation tasks
+#   T3  scaffolding and mechanical tasks
+schema_version: "1.0.0"
+tiers:
+  T0: claude-fable-5-1
+  T1: claude-opus-5
+  T2: claude-opus-5
+  T3: claude-sonnet-5

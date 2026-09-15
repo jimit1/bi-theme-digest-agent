@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0.0",
+  "case": {
+    "attributes": {
+      "type": "Case",
+      "url": "/services/data/v62.0/sobjects/Case/500000000000000007"
+    },
+    "Id": "500000000000000007",
+    "CaseNumber": "00005007",
+    "AccountId": "0018W00002HkLmTQAV",
+    "Subject": "Our year end donor report stops short",
+    "Status": "Working",
+    "Priority": "Medium",
+    "CreatedDate": "2026-09-11T15:40:28Z",
+    "ClosedDate": null
+  },
+  "comments": [
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a00000000000001a"
+      },
+      "Id": "00a00000000000001a",
+      "ParentId": "500000000000000007",
+      "CommentBody": "Our year end donor report stops short of the full list once it gets past a few thousand rows, so we are stitching multiple exports together by hand. Our year end donor report stops at about 3,200 rows even though we have close to 5,000 donors on file.",
+      "IsPublished": true,
+      "CreatedById": "00500000000000006a",
+      "CreatedDate": "2026-09-11T15:45:55Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a00000000000001b"
+      },
+      "Id": "00a00000000000001b",
+      "ParentId": "500000000000000007",
+      "CommentBody": "That makes sense, one thing I want to confirm. Which specific report is that, and do you know roughly what row count it stops at?",
+      "IsPublished": true,
+      "CreatedById": "005000000000000003",
+      "CreatedDate": "2026-09-11T16:00:26Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a00000000000001c"
+      },
+      "Id": "00a00000000000001c",
+      "ParentId": "500000000000000007",
+      "CommentBody": "It is the year end donor summary report, and it consistently cuts off near 3,200 rows.",
+      "IsPublished": true,
+      "CreatedById": "00500000000000006a",
+      "CreatedDate": "2026-09-11T16:25:51Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a00000000000001d"
+      },
+      "Id": "00a00000000000001d",
+      "ParentId": "500000000000000007",
+      "CommentBody": "Just checking in, is there any update on this?",
+      "IsPublished": true,
+      "CreatedById": "00500000000000006a",
+      "CreatedDate": "2026-09-11T16:50:10Z"
+    }
+  ]
+}

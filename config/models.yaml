@@ -1,0 +1,43 @@
+# The only runtime file that names a model. Application code asks for a tier.
+#
+# Validates against contracts/ModelsConfig.schema.json. There is deliberately no thinking
+# key: thinking handling is a property of the model family, not of the tier, and putting it
+# here invites a 400 that configuration cannot explain. The adapter derives it.
+#
+# Which agent asks for which tier:
+#   gong_reader, sfdc_reader  -> extraction
+#   editor, both calls        -> synthesis
+#   analyst                   -> narrative
+#
+# pricing is dollars per million tokens, absolute rates rather than multipliers, so a
+# reviewer can read the bill without arithmetic. cache_read is a tenth of the input rate and
+# cache_write is 1.25 times it.
+schema_version: "1.0.0"
+provider: agent_sdk_seat
+tiers:
+  extraction:
+    model: claude-haiku-4-5
+    effort: low
+    max_tokens: 4000
+    temperature: 0
+  synthesis:
+    model: claude-opus-5
+    effort: high
+    max_tokens: 16000
+    temperature: null
+  narrative:
+    model: claude-opus-5
+    effort: high
+    max_tokens: 8000
+    temperature: null
+pricing:
+  claude-haiku-4-5:
+    input: 1.00
+    output: 5.00
+    cache_read: 0.10
+    cache_write: 1.25
+  claude-opus-5:
+    input: 5.00
+    output: 25.00
+    cache_read: 0.50
+    cache_write: 6.25

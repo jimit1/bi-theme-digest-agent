@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0.0",
+  "case": {
+    "attributes": {
+      "type": "Case",
+      "url": "/services/data/v62.0/sobjects/Case/50000000000000000b"
+    },
+    "Id": "50000000000000000b",
+    "CaseNumber": "00005011",
+    "AccountId": "0018W00002HkLmQQAV",
+    "Subject": "The general ledger sync has posted the same journal",
+    "Status": "Escalated",
+    "Priority": "Low",
+    "CreatedDate": "2026-09-10T16:40:30Z",
+    "ClosedDate": null
+  },
+  "comments": [
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a00000000000002a"
+      },
+      "Id": "00a00000000000002a",
+      "ParentId": "50000000000000000b",
+      "CommentBody": "The general ledger sync has posted the same journal entry twice on more than one closing, and our bookkeeper has to go back and reverse the duplicate by hand. It happened on our August close, 14 journal entries posted twice, totaling about 8,600 dollars we had to reverse.",
+      "IsPublished": true,
+      "CreatedById": "005000000000000067",
+      "CreatedDate": "2026-09-10T16:45:27Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a00000000000002e"
+      },
+      "Id": "00a00000000000002e",
+      "ParentId": "50000000000000000b",
+      "CommentBody": "Created MOMENT-4477 to track this on the engineering backlog.",
+      "IsPublished": false,
+      "CreatedById": "005000000000000002",
+      "CreatedDate": "2026-09-10T16:52:19Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a00000000000002b"
+      },
+      "Id": "00a00000000000002b",
+      "ParentId": "50000000000000000b",
+      "CommentBody": "Thanks for laying that out, I want to make sure I understand it fully. Can you tell me which close date that was and roughly how many entries were affected?",
+      "IsPublished": true,
+      "CreatedById": "005000000000000002",
+      "CreatedDate": "2026-09-10T17:00:11Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a00000000000002c"
+      },
+      "Id": "00a00000000000002c",
+      "ParentId": "50000000000000000b",
+      "CommentBody": "That was the August 31st close, 14 entries in total, all posted exactly twice.",
+      "IsPublished": true,
+      "CreatedById": "005000000000000067",
+      "CreatedDate": "2026-09-10T17:25:33Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a00000000000002d"
+      },
+      "Id": "00a00000000000002d",
+      "ParentId": "50000000000000000b",
+      "CommentBody": "Circling back on this, appreciate any update when you have one.",
+      "IsPublished": true,
+      "CreatedById": "005000000000000067",
+      "CreatedDate": "2026-09-10T17:50:27Z"
+    }
+  ]
+}

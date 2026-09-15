@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0.0",
+  "case": {
+    "attributes": {
+      "type": "Case",
+      "url": "/services/data/v62.0/sobjects/Case/50000000000000000a"
+    },
+    "Id": "50000000000000000a",
+    "CaseNumber": "00005010",
+    "AccountId": "0018W00002HkLmSQAV",
+    "Subject": "Every few weeks a batch of transactions shows up",
+    "Status": "New",
+    "Priority": "Medium",
+    "CreatedDate": "2026-09-09T11:40:12Z",
+    "ClosedDate": null
+  },
+  "comments": [
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000026"
+      },
+      "Id": "00a000000000000026",
+      "ParentId": "50000000000000000a",
+      "CommentBody": "Every few weeks a batch of transactions shows up twice in the ledger after the sync runs, and finance has to hunt down which one to remove. Our July close had 9 duplicate entries come through, adding up to roughly 4,300 dollars our bookkeeper had to back out.",
+      "IsPublished": true,
+      "CreatedById": "005000000000000069",
+      "CreatedDate": "2026-09-09T11:45:46Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000027"
+      },
+      "Id": "00a000000000000027",
+      "ParentId": "50000000000000000a",
+      "CommentBody": "Thanks for the specifics, I have a quick question before we move on. Can you tell me which close date that was and roughly how many entries were affected?",
+      "IsPublished": true,
+      "CreatedById": "005000000000000003",
+      "CreatedDate": "2026-09-09T12:00:55Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000028"
+      },
+      "Id": "00a000000000000028",
+      "ParentId": "50000000000000000a",
+      "CommentBody": "It was the July 31st close, 9 entries, each one duplicated once.",
+      "IsPublished": true,
+      "CreatedById": "005000000000000069",
+      "CreatedDate": "2026-09-09T12:25:23Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000029"
+      },
+      "Id": "00a000000000000029",
+      "ParentId": "50000000000000000a",
+      "CommentBody": "I will keep this case open until we have a permanent fix in place.",
+      "IsPublished": true,
+      "CreatedById": "005000000000000003",
+      "CreatedDate": "2026-09-09T12:50:00Z"
+    }
+  ]
+}

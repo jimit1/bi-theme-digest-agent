@@ -1,0 +1,1023 @@
+{
+  "schema_version": "1.0.0",
+  "call": {
+    "metaData": {
+      "id": "7782934451404",
+      "url": "https://gong.invalid/call?id=7782934451404",
+      "title": "Sunbelt Literacy Network annual giving review",
+      "scheduled": "2026-09-09T14:00:00Z",
+      "started": "2026-09-09T14:01:30Z",
+      "duration": 1612,
+      "primaryUserId": "1187",
+      "direction": "Conference",
+      "system": "Gong",
+      "scope": "External",
+      "media": "Video",
+      "language": "eng",
+      "workspaceId": "9911",
+      "sdrDisposition": null,
+      "clientUniqueId": null,
+      "customData": null,
+      "purpose": "Annual giving review",
+      "meetingUrl": null,
+      "isPrivate": false,
+      "calendarEventId": "cal-88309"
+    },
+    "parties": [
+      {
+        "id": "p-1187",
+        "emailAddress": "marcus.oyelaran@momentivesoftware.example.org",
+        "name": "Marcus Oyelaran",
+        "title": "Customer Success Manager",
+        "userId": "1187",
+        "speakerId": "1187",
+        "context": [],
+        "affiliation": "Internal"
+      },
+      {
+        "id": "p-4955",
+        "emailAddress": "yvette.bramhall@sunbeltliteracy.example.org",
+        "name": "Yvette Bramhall",
+        "title": "Development Director",
+        "userId": null,
+        "speakerId": "4955",
+        "context": [],
+        "affiliation": "External"
+      }
+    ]
+  },
+  "transcript": {
+    "callId": "7782934451404",
+    "transcript": [
+      {
+        "speakerId": "1187",
+        "topic": "Opening",
+        "sentences": [
+          {
+            "start": 8000,
+            "end": 13428,
+            "text": "Hello Yvette, thanks for making room for this."
+          },
+          {
+            "start": 13428,
+            "end": 24284,
+            "text": "I know you are in the middle of building the autumn appeal, so I will keep to the half hour."
+          },
+          {
+            "start": 24284,
+            "end": 36438,
+            "text": "I want to hear how the annual giving programme is going, and then anything that is getting in your way."
+          }
+        ]
+      },
+      {
+        "speakerId": "4955",
+        "topic": "Opening",
+        "sentences": [
+          {
+            "start": 40438,
+            "end": 52238,
+            "text": "Hello Marcus. The autumn appeal is indeed eating everything, but this is a good use of half an hour."
+          },
+          {
+            "start": 52238,
+            "end": 63094,
+            "text": "There is one thing I have been wanting to raise with somebody who can do something about it."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Giving",
+        "sentences": [
+          {
+            "start": 67094,
+            "end": 78540,
+            "text": "Then let us make sure we get to it. Start with the overall picture though. How has the year been?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4955",
+        "topic": "Giving",
+        "sentences": [
+          {
+            "start": 82540,
+            "end": 89384,
+            "text": "Steady, which in our sector this year counts as good news."
+          },
+          {
+            "start": 89384,
+            "end": 106612,
+            "text": "We are at about one point four million in individual giving with a quarter still to run, against one point three seven for the whole of last year."
+          },
+          {
+            "start": 106612,
+            "end": 119710,
+            "text": "The donor count is down slightly but the average gift is up, which is the pattern everybody seems to be seeing."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Giving",
+        "sentences": [
+          {
+            "start": 123710,
+            "end": 133386,
+            "text": "Down in count and up in value is a pattern worth watching rather than celebrating."
+          },
+          {
+            "start": 133386,
+            "end": 138106,
+            "text": "How many active donors are you carrying?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4955",
+        "topic": "Giving",
+        "sentences": [
+          {
+            "start": 142106,
+            "end": 149422,
+            "text": "Just under nine thousand who have given in the last two years."
+          },
+          {
+            "start": 149422,
+            "end": 163936,
+            "text": "About two thousand two hundred of those are on a recurring arrangement, which is the group I spend most of my attention on."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Programmes",
+        "sentences": [
+          {
+            "start": 167936,
+            "end": 180680,
+            "text": "Give me the shape of the programme side for a moment, because I want the giving numbers to sit in a context."
+          }
+        ]
+      },
+      {
+        "speakerId": "4955",
+        "topic": "Programmes",
+        "sentences": [
+          {
+            "start": 184680,
+            "end": 201200,
+            "text": "We run adult literacy and family literacy across nine counties, through twenty three partner sites, mostly libraries and community colleges."
+          },
+          {
+            "start": 201200,
+            "end": 215124,
+            "text": "About four thousand six hundred adult learners a year, and another two thousand children through the family programme."
+          },
+          {
+            "start": 215124,
+            "end": 225272,
+            "text": "The tutors are volunteers, eleven hundred of them, and we train and support every one."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Programmes",
+        "sentences": [
+          {
+            "start": 229272,
+            "end": 241190,
+            "text": "Eleven hundred volunteer tutors is a larger operation than most people would assume from your budget."
+          }
+        ]
+      },
+      {
+        "speakerId": "4955",
+        "topic": "Programmes",
+        "sentences": [
+          {
+            "start": 245190,
+            "end": 260176,
+            "text": "That is the whole model. Our paid staff is thirty one people and almost all of them exist to make the eleven hundred effective."
+          },
+          {
+            "start": 260176,
+            "end": 278584,
+            "text": "A dollar into tutor training goes considerably further than a dollar into anything else we could spend it on, and we have the evaluation data to argue that."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Programmes",
+        "sentences": [
+          {
+            "start": 282584,
+            "end": 289074,
+            "text": "Has the learner mix changed much in the last few years?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4955",
+        "topic": "Programmes",
+        "sentences": [
+          {
+            "start": 293074,
+            "end": 305228,
+            "text": "Considerably. Six years ago the majority were adults returning to education after leaving school early."
+          },
+          {
+            "start": 305228,
+            "end": 325760,
+            "text": "Now nearly half are people learning English as an additional language, and many of them are highly educated in their first language, which changes what a tutor needs to know."
+          },
+          {
+            "start": 325760,
+            "end": 338504,
+            "text": "We rewrote the whole tutor curriculum two years ago because of it, and that was a significant piece of work."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Programmes",
+        "sentences": [
+          {
+            "start": 342504,
+            "end": 348758,
+            "text": "And does that shift change the story you tell donors?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4955",
+        "topic": "Programmes",
+        "sentences": [
+          {
+            "start": 352758,
+            "end": 368098,
+            "text": "It changes it a great deal and not always comfortably, because some of our older donors gave to a different picture of what we do."
+          },
+          {
+            "start": 368098,
+            "end": 385916,
+            "text": "We have been careful and slow about it, and we have lost almost nobody, but it has taken three years of steady explanation rather than one bold letter."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Pledges",
+        "sentences": [
+          {
+            "start": 389916,
+            "end": 395816,
+            "text": "And the multi year pledges, how big is that group?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4955",
+        "topic": "Pledges",
+        "sentences": [
+          {
+            "start": 399816,
+            "end": 413622,
+            "text": "Four hundred and ten open pledges at the moment, worth about six hundred thousand dollars over their remaining terms."
+          },
+          {
+            "start": 413622,
+            "end": 428136,
+            "text": "Most are three year commitments made at our spring breakfast, paid quarterly or annually depending on what the donor chose."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Pledges",
+        "sentences": [
+          {
+            "start": 432136,
+            "end": 442166,
+            "text": "Four hundred and ten open pledges is a serious book for an organisation of your size."
+          },
+          {
+            "start": 442166,
+            "end": 445706,
+            "text": "How are the reminders handled?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4955",
+        "topic": "Pledges",
+        "sentences": [
+          {
+            "start": 449706,
+            "end": 456786,
+            "text": "That is the thing I wanted to raise, so this is good timing."
+          },
+          {
+            "start": 456786,
+            "end": 472834,
+            "text": "Our pledge reminders still go out by email to donors who told us twice that they only want paper, and there is no way to hold them back."
+          },
+          {
+            "start": 472834,
+            "end": 486168,
+            "text": "It is not a large number of people, perhaps sixty, but they are sixty of our most careful donors and they notice."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Pledges",
+        "sentences": [
+          {
+            "start": 490168,
+            "end": 501496,
+            "text": "Sixty out of four hundred and ten is fifteen percent, which is not small at all in this context."
+          },
+          {
+            "start": 501496,
+            "end": 512470,
+            "text": "When you say they told you twice, is that recorded somewhere in the system or somewhere else?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4955",
+        "topic": "Pledges",
+        "sentences": [
+          {
+            "start": 516470,
+            "end": 526618,
+            "text": "It is recorded properly. The preference is set on the record, and the record is right."
+          },
+          {
+            "start": 526618,
+            "end": 531338,
+            "text": "The reminder simply does not look at it."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Pledges",
+        "sentences": [
+          {
+            "start": 535338,
+            "end": 549970,
+            "text": "Can you give me a concrete example I can take back, without telling me anything you would rather not say on a recorded call?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4955",
+        "topic": "Pledges",
+        "sentences": [
+          {
+            "start": 553970,
+            "end": 562938,
+            "text": "I can do better than that, I have one open in front of me from this morning."
+          },
+          {
+            "start": 562938,
+            "end": 585830,
+            "text": "The pledge is under Harold Pemberton-Vance, the reminder goes to dana.whitfield@example.net, the phone we have is (612) 555-0147, and the mailing address is 4821 Larkspur Lane, Duluth, MN 55803."
+          },
+          {
+            "start": 585830,
+            "end": 600698,
+            "text": "The preference field says paper only, it has said that since 2023, and he received an email on Tuesday morning like clockwork."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Pledges",
+        "sentences": [
+          {
+            "start": 604698,
+            "end": 613312,
+            "text": "That is exactly the kind of example that makes a request real, thank you."
+          },
+          {
+            "start": 613312,
+            "end": 622988,
+            "text": "What happens when one of these donors receives an email they asked not to receive?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4955",
+        "topic": "Pledges",
+        "sentences": [
+          {
+            "start": 626988,
+            "end": 638670,
+            "text": "Usually a phone call to me personally, which I do not mind because it means they are still engaged."
+          },
+          {
+            "start": 638670,
+            "end": 652004,
+            "text": "Twice this year it has been a letter from a family member asking us to stop, which is a much harder conversation."
+          },
+          {
+            "start": 652004,
+            "end": 665692,
+            "text": "Once it was somebody cancelling a pledge over it, and that one was eight thousand dollars across the remaining term."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Pledges",
+        "sentences": [
+          {
+            "start": 669692,
+            "end": 687038,
+            "text": "An eight thousand dollar cancellation over a preference flag is the number that will get this taken seriously, if you are willing for me to use it."
+          }
+        ]
+      },
+      {
+        "speakerId": "4955",
+        "topic": "Pledges",
+        "sentences": [
+          {
+            "start": 691038,
+            "end": 698118,
+            "text": "Use it. I would rather it bought a fix than sat in my notes."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Pledges",
+        "sentences": [
+          {
+            "start": 702118,
+            "end": 711794,
+            "text": "I will write it up this week with your wording and the example you have described."
+          },
+          {
+            "start": 711794,
+            "end": 718048,
+            "text": "In the meantime, is there a workaround you are using?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4955",
+        "topic": "Pledges",
+        "sentences": [
+          {
+            "start": 722048,
+            "end": 732668,
+            "text": "We pull those sixty records out into a suppression list by hand before every reminder run."
+          },
+          {
+            "start": 732668,
+            "end": 740220,
+            "text": "It works, until somebody is on holiday and it does not get done."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Major gifts",
+        "sentences": [
+          {
+            "start": 744220,
+            "end": 755784,
+            "text": "Let me ask about the top of the pyramid. How does major giving sit alongside the annual programme?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4955",
+        "topic": "Major gifts",
+        "sentences": [
+          {
+            "start": 759784,
+            "end": 775242,
+            "text": "Forty two households give five thousand dollars or more, and between them they are about thirty eight percent of individual giving."
+          },
+          {
+            "start": 775242,
+            "end": 789048,
+            "text": "Eleven of those forty two have given at that level for more than ten years, which is the number I watch most closely."
+          },
+          {
+            "start": 789048,
+            "end": 802972,
+            "text": "The concentration is a risk and everybody on the board knows it is a risk, and knowing it has not yet made it smaller."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Major gifts",
+        "sentences": [
+          {
+            "start": 806972,
+            "end": 810866,
+            "text": "What is the plan for widening it?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4955",
+        "topic": "Major gifts",
+        "sentences": [
+          {
+            "start": 814866,
+            "end": 831858,
+            "text": "Move people up from the middle rather than find new people at the top, because finding new people at the top is mostly luck dressed as strategy."
+          },
+          {
+            "start": 831858,
+            "end": 849440,
+            "text": "We have about three hundred households in the one to five thousand band and we have started treating that band the way we used to treat the top only."
+          },
+          {
+            "start": 849440,
+            "end": 858290,
+            "text": "Two years in, nineteen of them have moved up, which is slow but it is real."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Major gifts",
+        "sentences": [
+          {
+            "start": 862290,
+            "end": 865290,
+            "text": "And board giving?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4955",
+        "topic": "Major gifts",
+        "sentences": [
+          {
+            "start": 869290,
+            "end": 878494,
+            "text": "One hundred percent participation, which every board claims and fewer achieve."
+          },
+          {
+            "start": 878494,
+            "end": 894660,
+            "text": "The amounts vary enormously because we recruit for skills and community connection rather than for capacity, and I would not change that."
+          },
+          {
+            "start": 894660,
+            "end": 907640,
+            "text": "What I ask of every trustee is that we are on their personal list somewhere, not that we are at the top of it."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Major gifts",
+        "sentences": [
+          {
+            "start": 911640,
+            "end": 921316,
+            "text": "That is a healthier ask than most and it probably explains the participation rate."
+          }
+        ]
+      },
+      {
+        "speakerId": "4955",
+        "topic": "Major gifts",
+        "sentences": [
+          {
+            "start": 925316,
+            "end": 932868,
+            "text": "It does, and it means nobody dreads the conversation in January."
+          },
+          {
+            "start": 932868,
+            "end": 945848,
+            "text": "The year before I arrived, two trustees resigned over the giving expectation, and repairing that took a while."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Appeal",
+        "sentences": [
+          {
+            "start": 949848,
+            "end": 961058,
+            "text": "Understood. Let us move to the autumn appeal while we still have time. What is the shape of it?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4955",
+        "topic": "Appeal",
+        "sentences": [
+          {
+            "start": 965058,
+            "end": 972610,
+            "text": "It drops in the first week of November, mail and email together."
+          },
+          {
+            "start": 972610,
+            "end": 987714,
+            "text": "Twenty two thousand households in the mail file, eleven thousand on email, with an overlap of about seven thousand who get both."
+          },
+          {
+            "start": 987714,
+            "end": 1001402,
+            "text": "The theme this year is the volunteer tutors rather than the learners, which is a change we argued about for a month."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Appeal",
+        "sentences": [
+          {
+            "start": 1005402,
+            "end": 1008402,
+            "text": "Why the change?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4955",
+        "topic": "Appeal",
+        "sentences": [
+          {
+            "start": 1012402,
+            "end": 1023730,
+            "text": "Because we have told the learner story for nine years and it is starting to sound like a script."
+          },
+          {
+            "start": 1023730,
+            "end": 1040250,
+            "text": "The tutors are ordinary people giving four hours a week and there are eleven hundred of them, so it is a story with more shoulders under it."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Appeal",
+        "sentences": [
+          {
+            "start": 1044250,
+            "end": 1060416,
+            "text": "How are you handling the overlap between the mail file and the email file? Seven thousand getting both is a lot of duplication to manage."
+          }
+        ]
+      },
+      {
+        "speakerId": "4955",
+        "topic": "Appeal",
+        "sentences": [
+          {
+            "start": 1064416,
+            "end": 1073620,
+            "text": "Deliberate duplication rather than accidental, and we tested it two years ago."
+          },
+          {
+            "start": 1073620,
+            "end": 1095332,
+            "text": "The households who get both give at a measurably higher rate than the households who get either alone, and the difference is large enough that paying for the postage twice is worth it."
+          },
+          {
+            "start": 1095332,
+            "end": 1113740,
+            "text": "What we changed is the sequencing. The letter lands first and the email follows four days later, referring to it, rather than the two arriving as strangers."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Appeal",
+        "sentences": [
+          {
+            "start": 1117740,
+            "end": 1124112,
+            "text": "Four days is a specific number. Did you test that too?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4955",
+        "topic": "Appeal",
+        "sentences": [
+          {
+            "start": 1128112,
+            "end": 1134248,
+            "text": "We tested two, four and seven, and four won clearly."
+          },
+          {
+            "start": 1134248,
+            "end": 1152420,
+            "text": "Two days is too soon because half the mail has not arrived yet, and seven is too late because the letter has already been dealt with one way or the other."
+          },
+          {
+            "start": 1152420,
+            "end": 1164928,
+            "text": "It is the sort of finding that sounds trivial until you multiply it across twenty two thousand households."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Appeal",
+        "sentences": [
+          {
+            "start": 1168928,
+            "end": 1174238,
+            "text": "What is your target for the appeal this year?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4955",
+        "topic": "Appeal",
+        "sentences": [
+          {
+            "start": 1178238,
+            "end": 1188504,
+            "text": "Four hundred and sixty thousand dollars, against four hundred and thirty one last year."
+          },
+          {
+            "start": 1188504,
+            "end": 1199950,
+            "text": "That is a seven percent increase, which the board thinks is ambitious and I think is about right."
+          },
+          {
+            "start": 1199950,
+            "end": 1216234,
+            "text": "If we hit it, the year closes at roughly one point five million in individual giving, which would be our best ever by a reasonable margin."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Appeal",
+        "sentences": [
+          {
+            "start": 1220234,
+            "end": 1225898,
+            "text": "And if the appeal underperforms, what gives way?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4955",
+        "topic": "Appeal",
+        "sentences": [
+          {
+            "start": 1229898,
+            "end": 1242642,
+            "text": "Nothing in the programme, because we hold a reserve specifically so that a bad appeal does not close a site."
+          },
+          {
+            "start": 1242642,
+            "end": 1261640,
+            "text": "What gives way is the capital work on our training centre, which has now been deferred twice and will be deferred a third time without complaint if it has to be."
+          },
+          {
+            "start": 1261640,
+            "end": 1269310,
+            "text": "The building has waited four years. A learner cannot wait a year."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Appeal",
+        "sentences": [
+          {
+            "start": 1273310,
+            "end": 1276310,
+            "text": "That is a good instinct."
+          },
+          {
+            "start": 1276310,
+            "end": 1283508,
+            "text": "Are you segmenting the ask amounts the way you did last year?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4955",
+        "topic": "Appeal",
+        "sentences": [
+          {
+            "start": 1287508,
+            "end": 1296712,
+            "text": "Four bands rather than three this time, based on the last two years of giving."
+          },
+          {
+            "start": 1296712,
+            "end": 1309102,
+            "text": "We tested it on the spring appeal and the middle band performed noticeably better with a lower first ask."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Appeal",
+        "sentences": [
+          {
+            "start": 1313102,
+            "end": 1318530,
+            "text": "And the online side, is the giving page ready?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4955",
+        "topic": "Appeal",
+        "sentences": [
+          {
+            "start": 1322530,
+            "end": 1329256,
+            "text": "Built and in review. It goes live the day the mail drops."
+          },
+          {
+            "start": 1329256,
+            "end": 1340702,
+            "text": "We learned that lesson the hard way in 2022 when the mail arrived three days before the page did."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Stewardship",
+        "sentences": [
+          {
+            "start": 1344702,
+            "end": 1356030,
+            "text": "One more area and then I will let you get back to the appeal. How do you handle thanking people?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4955",
+        "topic": "Stewardship",
+        "sentences": [
+          {
+            "start": 1360030,
+            "end": 1371948,
+            "text": "Within seventy two hours, always, and that is the one rule nobody in this office is allowed to break."
+          },
+          {
+            "start": 1371948,
+            "end": 1391654,
+            "text": "Under one hundred dollars gets a letter. Over one hundred gets a letter and a phone call from a volunteer, and over one thousand gets a call from me or from a trustee."
+          },
+          {
+            "start": 1391654,
+            "end": 1407230,
+            "text": "Every first time donor also gets a handwritten line at the bottom of the letter, which is somebody's actual job for two hours a day."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Stewardship",
+        "sentences": [
+          {
+            "start": 1411230,
+            "end": 1421378,
+            "text": "Two hours a day of handwriting is a real commitment. Have you tested whether it works?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4955",
+        "topic": "Stewardship",
+        "sentences": [
+          {
+            "start": 1425378,
+            "end": 1439892,
+            "text": "We tested it for a year against a control group and the second gift rate was eleven points higher in the handwritten group."
+          },
+          {
+            "start": 1439892,
+            "end": 1453462,
+            "text": "That is the single most conclusive test we have ever run and it ended an argument that had been going for a decade."
+          },
+          {
+            "start": 1453462,
+            "end": 1467858,
+            "text": "It also means I can defend those two hours a day to anybody who asks, which is most of the value of running a test at all."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Stewardship",
+        "sentences": [
+          {
+            "start": 1471858,
+            "end": 1479056,
+            "text": "Eleven points is not marginal. Did you publish that anywhere?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4955",
+        "topic": "Stewardship",
+        "sentences": [
+          {
+            "start": 1483056,
+            "end": 1497688,
+            "text": "We wrote it up for a regional fundraising association newsletter and about forty organisations have asked us about it since."
+          },
+          {
+            "start": 1497688,
+            "end": 1513854,
+            "text": "I am always slightly embarrassed by the attention, because it is not a clever idea, it is simply an old idea that we bothered to measure."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Stewardship",
+        "sentences": [
+          {
+            "start": 1517854,
+            "end": 1524816,
+            "text": "Measuring the old ideas is generally where the returns are."
+          }
+        ]
+      },
+      {
+        "speakerId": "4955",
+        "topic": "Stewardship",
+        "sentences": [
+          {
+            "start": 1528816,
+            "end": 1535660,
+            "text": "That has been my experience of this whole profession, yes."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Next steps",
+        "sentences": [
+          {
+            "start": 1539660,
+            "end": 1559248,
+            "text": "Then my actions are the pledge reminder write up with your example and the cancellation figure, and I will come back to you within two weeks with where it has landed."
+          },
+          {
+            "start": 1559248,
+            "end": 1563260,
+            "text": "Anything else you want on my list?"
+          }
+        ]
+      },
+      {
+        "speakerId": "4955",
+        "topic": "Next steps",
+        "sentences": [
+          {
+            "start": 1567260,
+            "end": 1574576,
+            "text": "That is the one that matters. Everything else I can live with."
+          }
+        ]
+      },
+      {
+        "speakerId": "1187",
+        "topic": "Next steps",
+        "sentences": [
+          {
+            "start": 1578576,
+            "end": 1586128,
+            "text": "Then I will not pad the list. Good luck with the appeal, Yvette."
+          }
+        ]
+      },
+      {
+        "speakerId": "4955",
+        "topic": "Next steps",
+        "sentences": [
+          {
+            "start": 1590128,
+            "end": 1594494,
+            "text": "Thank you Marcus. Speak in two weeks."
+          }
+        ]
+      }
+    ]
+  }
+}

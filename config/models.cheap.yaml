@@ -1,0 +1,34 @@
+# The cheap tier map: every tier on the small model.
+#
+# Same shape as config/models.yaml, one model instead of two. `make swap-models
+# MODELS=config/models.cheap.yaml` reruns the same week against this file and prints cost,
+# eval pass rate and theme assignment overlap against the reference run. That is the whole
+# routing argument made checkable in one command.
+#
+# The small model family rejects an effort parameter, so every tier here carries effort
+# null. The adapter would drop it anyway and record the drop, but saying it in the config
+# means the diff against models.yaml reads as a decision rather than an oversight.
+schema_version: "1.0.0"
+provider: agent_sdk_seat
+tiers:
+  extraction:
+    model: claude-haiku-4-5
+    effort: null
+    max_tokens: 4000
+    temperature: 0
+  synthesis:
+    model: claude-haiku-4-5
+    effort: null
+    max_tokens: 16000
+    temperature: 0
+  narrative:
+    model: claude-haiku-4-5
+    effort: null
+    max_tokens: 8000
+    temperature: 0
+pricing:
+  claude-haiku-4-5:
+    input: 1.00
+    output: 5.00
+    cache_read: 0.10
+    cache_write: 1.25

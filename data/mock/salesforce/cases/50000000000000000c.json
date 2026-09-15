@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0.0",
+  "case": {
+    "attributes": {
+      "type": "Case",
+      "url": "/services/data/v62.0/sobjects/Case/50000000000000000c"
+    },
+    "Id": "50000000000000000c",
+    "CaseNumber": "00005012",
+    "AccountId": "0018W00002HkLmQQAV",
+    "Subject": "The general ledger sync has posted the same journal",
+    "Status": "Closed",
+    "Priority": "High",
+    "CreatedDate": "2026-09-14T16:20:17Z",
+    "ClosedDate": "2026-09-14T18:20:00Z"
+  },
+  "comments": [
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a00000000000002f"
+      },
+      "Id": "00a00000000000002f",
+      "ParentId": "50000000000000000c",
+      "CommentBody": "The general ledger sync has posted the same journal entry twice on more than one closing, and our bookkeeper has to go back and reverse the duplicate by hand. It happened on our August close, 14 journal entries posted twice, totaling about 8,600 dollars we had to reverse.",
+      "IsPublished": true,
+      "CreatedById": "005000000000000067",
+      "CreatedDate": "2026-09-14T16:25:27Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000032"
+      },
+      "Id": "00a000000000000032",
+      "ParentId": "50000000000000000c",
+      "CommentBody": "Checked the account history, this has not come up before.",
+      "IsPublished": false,
+      "CreatedById": "005000000000000002",
+      "CreatedDate": "2026-09-14T16:32:57Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000030"
+      },
+      "Id": "00a000000000000030",
+      "ParentId": "50000000000000000c",
+      "CommentBody": "That is really helpful context, thank you for walking me through it. Can you tell me which close date that was and roughly how many entries were affected?",
+      "IsPublished": true,
+      "CreatedById": "005000000000000002",
+      "CreatedDate": "2026-09-14T16:40:21Z"
+    },
+    {
+      "attributes": {
+        "type": "CaseComment",
+        "url": "/services/data/v62.0/sobjects/CaseComment/00a000000000000031"
+      },
+      "Id": "00a000000000000031",
+      "ParentId": "50000000000000000c",
+      "CommentBody": "That was the August 31st close, 14 entries in total, all posted exactly twice.",
+      "IsPublished": true,
+      "CreatedById": "005000000000000067",
+      "CreatedDate": "2026-09-14T17:05:20Z"
+    }
+  ]
+}
