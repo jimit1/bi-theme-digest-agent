@@ -10,7 +10,10 @@ exact substring of a turn it was shown, and that turn belongs to the client. Fro
 version 1.1.0 the fixtures also pin the three rules the first live run got wrong: one claim
 per underlying point (a problem and the fix asked for are one point), the quote comes from
 the FIRST and fullest statement rather than a later restatement, and staffing, scheduling
-and thanks are never claims at all.
+and thanks are never claims at all. Version 1.2.0 adds the rules the second
+live run got wrong, this time on real corpus documents: read every client turn before
+deciding, a need said calmly is still a claim, praise needs a named capability, and the
+Gong locator is the turn header rather than the sentence marker.
 """
 from __future__ import annotations
 
@@ -164,6 +167,52 @@ def test_prompt_states_the_three_rules_the_first_run_got_wrong():
         assert "Nothing else is a claim." in system
         assert "staffing" in system and "scheduling" in system
         assert "When in doubt, return fewer claims." in system
+
+
+def test_prompt_states_the_recall_rules_the_second_live_run_got_wrong():
+    # Live run 2 on a 62 turn call returned one claim quoting a bland remark about workshops
+    # and left the explicit need in the middle of the call behind. Recall is therefore stated
+    # first, the quiet need is named as a claim, and stopping early is ruled out in words.
+    for source in ("gong", "salesforce"):
+        system, _ = prompt_for(source)
+        assert "Recall comes first, precision second." in system
+        assert "Read every client turn in the document" in system
+        assert "Do not stop at the first candidate you find" in system
+        for phrase in ('"has to"', '"needs to"', '"must"', '"we cannot"', '"it does not"'):
+            assert phrase in system, phrase
+        assert "Tone decides nothing." in system
+        # Order carries meaning here: the recall rule has to be read before the rule that
+        # tells the model to return fewer claims, or the precision rule wins by default.
+        assert system.index("Recall comes first") < system.index("Nothing else is a claim.")
+        assert system.index("Recall comes first") < system.index("When in doubt, return fewer")
+
+
+def test_prompt_tightens_what_counts_as_praise():
+    # W37 opened three positive signal themes out of remarks like "genuinely fine". A praise
+    # claim now needs a named capability and an explicit good word about it.
+    for source in ("gong", "salesforce"):
+        system, _ = prompt_for(source)
+        assert "explicit positive statement by the client about a NAMED product capability" in system
+        for weak in ('"Fine"', '"no complaints"', '"going well"', '"genuinely fine"'):
+            assert weak in system, weak
+        assert "If you cannot name the product capability being praised, there is no praise claim." in system
+        assert "are the client's operations, not the product" in system
+
+
+def test_gong_prompt_works_the_locator_example_through():
+    # Two of three diagnostic runs at 1.1.0 copied the sentence marker into source_ref, so
+    # the claim resolved to no turn and the verifier threw a correct extraction away.
+    system, _ = prompt_for("gong")
+    assert "Worked example of the locator." in system
+    assert "neither belongs in `source_ref`" in system
+    assert "resolves to no turn at all and is thrown away" in system
+
+
+def test_prompt_quotes_the_sentence_that_states_the_point():
+    for source in ("gong", "salesforce"):
+        system, _ = prompt_for(source)
+        assert "quote the sentence that states the point" in system
+        assert "belongs in `importance_reason`, not in the verbatim" in system
 
 
 def test_agent_for_rejects_an_unknown_source():
